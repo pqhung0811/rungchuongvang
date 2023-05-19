@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../../images/background1.jpg</file>
+        <file>../../images/playnow.png</file>
+        <file>../../images/create.png</file>
+        <file>../../images/createaccount.png</file>
+        <file>../../images/play.png</file>
+        <file>../../images/findroom.png</file>
+        <file>../../images/logout.png</file>
+        <file>../../images/back.png</file>
+        <file>../../images/exit.png</file>
+        <file>../../images/login.png</file>
+        <file>../../images/rank.png</file>
+        <file>../../images/register.png</file>
+        <file>../../images/aaa.jpg</file>
+        <file>../../images/4122417.png</file>
+        <file>../../images/frameicon.png</file>
+        <file>../../images/images.png</file>
+        <file>../../images/icons8-student-64.png</file>
+        <file>../../images/whiteboard-cabinets-room_1639-13783.jpg</file>
+        <file>../../images/icons8-student-61.png</file>
+        <file>../../images/icons8-student-41.png</file>
+        <file>../../images/icons8-bronze-medal-41.png</file>
+        <file>../../images/icons8-gold-medal-41.png</file>
+        <file>../../images/icons8-silver-medal-41.png</file>
+        <file>../../images/icons8-bronze-medal-30.png</file>
+        <file>../../images/icons8-gold-medal-30.png</file>
+        <file>../../images/icons8-silver-medal-30.png</file>
+    </qresource>
+</RCC>

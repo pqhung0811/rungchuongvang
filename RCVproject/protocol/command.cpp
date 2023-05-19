@@ -1,0 +1,40 @@
+
+#include "command.h"
+
+Command::Command(QObject *parent)
+    : QObject{parent}
+{
+
+}
+
+Command::Command(QString cmd,/* Priority priority,*/ QObject *parent) : QObject{parent}
+{
+    this->command = cmd;
+//    this->priority = priority;
+}
+
+QString Command::getCommandString() {
+    return this->command;
+}
+
+//Command::Priority Command::getCommandPriority() {
+//    return this->priority;
+//}
+
+//quint64 Command::comparePriority(Command* anotherCommand) {
+//    if (priority > anotherCommand->getCommandPriority()) {
+//        return -1;
+//    } else if (priority == anotherCommand->getCommandPriority()) {
+//        return 0;
+//    }
+//    return 1;
+//}
+
+Command* Command::toCommand(QString input){
+    QMap<QString, Command*> commands; /*= {
+        {"LOGIN", Command("LOGIN", Priority::NORMAL)}
+    };*/
+    commands.insert("LOGIN", new Command("LOGIN" /*, Command::NORMAL, 0*/));
+    commands.insert("LOGOUT", new Command("LOGOUT"));
+    return commands.value(input);
+}

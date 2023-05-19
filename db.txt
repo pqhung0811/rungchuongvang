@@ -1,0 +1,45 @@
+CREATE TABLE "room" (
+	"id"	INTEGER,
+	"name"	TEXT,
+	"start_time"	TEXT,
+	"end_time"	TEXT,
+	"status"	INTEGER,
+	"level"	INTEGER,
+	"owner"	INTEGER,
+	PRIMARY KEY("id" AUTOINCREMENT)
+)
+
+CREATE TABLE "user" (
+	"id"	INTEGER,
+	"username"	TEXT,
+	"password"	TEXT,
+	"ranked"	INTEGER,
+	"rank_score"	INTEGER,
+	"room_id"	INTEGER,
+	PRIMARY KEY("id" AUTOINCREMENT),
+	FOREIGN KEY("room_id") REFERENCES "room"("id")
+)
+
+CREATE TABLE "question" (
+	"id"	INTEGER,
+	"content"	TEXT,
+	"topic"	TEXT,
+	PRIMARY KEY("id" AUTOINCREMENT)
+)
+
+CREATE TABLE room_question ( 
+    id           INTEGER PRIMARY KEY AUTOINCREMENT, 
+	room_id 	 INTEGER,
+	question_id  INTEGER,
+    FOREIGN KEY (room_id) REFERENCES room(id),
+	FOREIGN KEY (question_id) REFERENCES question(id)
+)
+
+CREATE TABLE answer ( 
+    id           INTEGER PRIMARY KEY AUTOINCREMENT, 
+	content 	 TEXT,
+	result		 INTEGER,
+	question_id  INTEGER,
+    FOREIGN KEY (question_id) REFERENCES question(id)
+)
+
