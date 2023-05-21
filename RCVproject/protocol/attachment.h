@@ -14,7 +14,7 @@ class Attachment : public QObject
 
 private:
     QString sendMessage;
-    QVector<QString> returnMessage;
+    QListr<QString> returnMessage;
     QAtomicInt active;
     QAbstractSocket* socket;
     quint64 attachmentID;
