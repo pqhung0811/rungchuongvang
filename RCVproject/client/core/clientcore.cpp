@@ -57,7 +57,7 @@ void ClientCore::start() {
 }
 
 void ClientCore::sendRequest(QString strMsgToSend) {
-    Attachment* attachment = new Attachment(strMsgToSend, 1);
+//    Attachment* attachment = new Attachment(strMsgToSend, 1);
     QByteArray data = strMsgToSend.toUtf8();
     QBuffer* buffer = new QBuffer(this);
     buffer->setData(data);
