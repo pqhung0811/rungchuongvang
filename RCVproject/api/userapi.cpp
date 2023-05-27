@@ -49,19 +49,16 @@ User* UserAPI::getUserByNameAndPass(QString name, QString pass) {
 
     while(query.next()){
         quint64 id = query.value(0).toInt();
-        qDebug() << "id: " << id;
         QString username1 = query.value(1).toString();
         QString password1 = query.value(2).toString();
         quint64 ranked1 = query.value(3).toInt();
         quint64 rankscore1 = query.value(4).toInt();
-        qDebug() << "The value of id is: " << id;
         // xử lí dữ liệu như bạn muốn ở đây
         user->setId(id);
         user->setUsername(username1);
         user->setPassword(password1);
         user->setRank(ranked1);
         user->setRankScore(rankscore1);
-        qDebug() << "user id: " << user->getId();
     }
 
     return user;
@@ -91,7 +88,6 @@ QList<QString> UserAPI::getAllUsernames() {
     while (query.next()) {
         QString username = query.value(0).toString();
         listUsername.append(username);
-        qDebug() << "username:" << username;
     }
     return listUsername;
 }
@@ -151,6 +147,18 @@ void UserAPI::updateRankscoreAndRanked(quint64 rankscore, quint64 ranked, quint6
     query.prepare(sqlQuery);
     query.bindValue(":ranked", ranked);
     query.bindValue(":rankscore", rankscore);
+    query.bindValue(":id", id);
+
+    if(!query.exec()) {
+        qDebug() << "can not query";
+    }
+}
+
+void UserAPI::updateRoomId(quint64 roomId, quint64 id) {
+    QSqlQuery query;
+    QString sqlQuery = "UPDATE user SET room_id = :roomid WHERE id = :id";
+    query.prepare(sqlQuery);
+    query.bindValue(":roomid", roomId);
     query.bindValue(":id", id);
 
     if(!query.exec()) {

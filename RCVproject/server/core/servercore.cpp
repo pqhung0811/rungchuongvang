@@ -36,12 +36,23 @@ void ServerCore::onNewConnection() {
 
 void ServerCore::onReadyRead() {
     QTcpSocket *clientSocket = qobject_cast<QTcpSocket*>(sender());
+    RequestProcessing *requestProcessing = new RequestProcessing();
+
     if (clientSocket)
     {
         // Read and process data from the client
         QByteArray requestData = clientSocket->readAll();
         // Process the requestData as needed
+        QJsonDocument jsonDoc = QJsonDocument::fromJson(requestData);
 
+        // Kiểm tra xem dữ liệu có đúng định dạng JSON không
+        if (!jsonDoc.isNull() && jsonDoc.isObject()) {
+            // Chuyển đổi QJsonDocument thành QJsonObject
+            QJsonObject jsonObject = jsonDoc.object();
+            qDebug() << "server core requestData jsonob: " << jsonObject;
+            requestProcessing->setMessage(jsonObject);
+            qDebug() << "server core processing handle: " << requestProcessing->handle();
+        }
         // Send response back to the client
         QByteArray responseData = "Hello from server!";
         clientSocket->write(responseData);

@@ -20,6 +20,7 @@ public slots:
     User* getUserbyId(quint64 id);
     User* getUserbyUsername(QString name);
     void updateRankscoreAndRanked(quint64 rankscore, quint64 rank, quint64 id);
+    void updateRoomId(quint64 roomId, quint64 id);
 
 signals:
 

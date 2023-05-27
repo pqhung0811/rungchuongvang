@@ -6,6 +6,9 @@
 #include <QObject>
 #include <QtNetwork/QTcpServer>
 #include <QtNetwork/QTcpSocket>
+#include "requestprocessing.h"
+#include <QJsonDocument>
+#include <QJsonObject>
 
 class ServerCore : public QObject
 {
@@ -14,6 +17,7 @@ class ServerCore : public QObject
 private:
     QTcpServer* server;
     QList<QTcpSocket*> connectionSet;
+//    RequestProcessing* requestProcessing;
 
 public:
     explicit ServerCore(QObject *parent = nullptr);
@@ -24,7 +28,6 @@ public slots:
 //    void appendToSocketList(QTcpSocket* socket);
     void onReadyRead();
     void onDisconnected();
-
 signals:
 
 };

@@ -586,27 +586,33 @@
 			null
 		],
 		[
-			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/answercontroller.h",
+			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/createroomcontroller.h",
 			"MU",
-			"NPUKSKGWT2/moc_answercontroller.cpp",
+			"NPUKSKGWT2/moc_createroomcontroller.cpp",
 			null
 		],
 		[
-			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/questioncontroller.h",
+			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/logincontroller.h",
 			"MU",
-			"NPUKSKGWT2/moc_questioncontroller.cpp",
+			"NPUKSKGWT2/moc_logincontroller.cpp",
 			null
 		],
 		[
-			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/roomcontroller.h",
+			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/logoutcontroller.h",
 			"MU",
-			"NPUKSKGWT2/moc_roomcontroller.cpp",
+			"NPUKSKGWT2/moc_logoutcontroller.cpp",
 			null
 		],
 		[
-			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/usercontroller.h",
+			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/registercontroller.h",
 			"MU",
-			"NPUKSKGWT2/moc_usercontroller.cpp",
+			"NPUKSKGWT2/moc_registercontroller.cpp",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/requestjoinroomcontroller.h",
+			"MU",
+			"NPUKSKGWT2/moc_requestjoinroomcontroller.cpp",
 			null
 		],
 		[
@@ -640,6 +646,18 @@
 			null
 		],
 		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomclientmessage.h",
+			"MU",
+			"OOZCG2O6XU/moc_createroomclientmessage.cpp",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomservermessage.h",
+			"MU",
+			"OOZCG2O6XU/moc_createroomservermessage.cpp",
+			null
+		],
+		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.h",
 			"MU",
 			"HJUDRXRLBF/moc_loginclientmessage.cpp",
@@ -667,6 +685,30 @@
 			"D:/Networkprogramming/project/qtPrj/RCVproject/message/message.h",
 			"MU",
 			"TGVJH5J54A/moc_message.cpp",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/register/registerclientmessage.h",
+			"MU",
+			"S3MP2EI2XT/moc_registerclientmessage.cpp",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/register/registerservermessage.h",
+			"MU",
+			"S3MP2EI2XT/moc_registerservermessage.cpp",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/requestjoinroomclientmessage.h",
+			"MU",
+			"73AMGEJVFF/moc_requestjoinroomclientmessage.cpp",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/requestjoinroomservermessage.h",
+			"MU",
+			"73AMGEJVFF/moc_requestjoinroomservermessage.cpp",
 			null
 		],
 		[
@@ -751,6 +793,12 @@
 			"D:/Networkprogramming/project/qtPrj/RCVproject/server/core/processor/requestprocessor.h",
 			"MU",
 			"KKF42NIXGB/moc_requestprocessor.cpp",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/server/core/requestprocessing.h",
+			"MU",
+			"V2SYCHURF4/moc_requestprocessing.cpp",
 			null
 		],
 		[
@@ -894,22 +942,27 @@
 			null
 		],
 		[
-			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/answercontroller.cpp",
+			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/createroomcontroller.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/questioncontroller.cpp",
+			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/logincontroller.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/roomcontroller.cpp",
+			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/logoutcontroller.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/usercontroller.cpp",
+			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/registercontroller.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/requestjoinroomcontroller.cpp",
 			"MU",
 			null
 		],
@@ -940,6 +993,16 @@
 			null
 		],
 		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomclientmessage.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomservermessage.cpp",
+			"MU",
+			null
+		],
+		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.cpp",
 			"MU",
 			null
@@ -961,6 +1024,26 @@
 		],
 		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/message/message.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/register/registerclientmessage.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/register/registerservermessage.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/requestjoinroomclientmessage.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/requestjoinroomservermessage.cpp",
 			"MU",
 			null
 		],
@@ -1031,6 +1114,11 @@
 		],
 		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/server/core/processor/requestprocessor.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/server/core/requestprocessing.cpp",
 			"MU",
 			null
 		],

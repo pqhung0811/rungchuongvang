@@ -61,18 +61,30 @@ set(PROJECT_SOURCES
         api/questionapi.cpp
         api/answerapi.h
         api/answerapi.cpp
-        controller/usercontroller.h
-        controller/usercontroller.cpp
-        controller/roomcontroller.h
-        controller/roomcontroller.cpp
-        controller/questioncontroller.h
-        controller/questioncontroller.cpp
-        controller/answercontroller.h
-        controller/answercontroller.cpp
-        server/ServerMain.h
-        server/ServerMain.cpp
-        server/core/ServerCore.h
-        server/core/ServerCore.cpp
+#        controller/usercontroller.h
+#        controller/usercontroller.cpp
+#        controller/roomcontroller.h
+#        controller/roomcontroller.cpp
+#        controller/questioncontroller.h
+#        controller/questioncontroller.cpp
+#        controller/answercontroller.h
+#        controller/answercontroller.cpp
+        controller/logincontroller.h
+        controller/logincontroller.cpp
+        controller/logoutcontroller.h
+        controller/logoutcontroller.cpp
+        controller/registercontroller.h
+        controller/registercontroller.cpp
+        controller/createroomcontroller.h
+        controller/createroomcontroller.cpp
+        controller/requestjoinroomcontroller.h
+        controller/requestjoinroomcontroller.cpp
+        server/servermain.h
+        server/servermain.cpp
+        server/core/servercore.h
+        server/core/servercore.cpp
+        server/core/requestprocessing.h
+        server/core/requestprocessing.cpp
         server/core/processor/requestprocessor.h
         server/core/processor/requestprocessor.cpp
         client/clientmain.h
@@ -93,6 +105,18 @@ set(PROJECT_SOURCES
         message/logout/logoutclientmessage.cpp
         message/logout/logoutservermessage.h
         message/logout/logoutservermessage.cpp
+        message/register/registerclientmessage.h
+        message/register/registerclientmessage.cpp
+        message/register/registerservermessage.h
+        message/register/registerservermessage.cpp
+        message/createroom/createroomclientmessage.h
+        message/createroom/createroomclientmessage.cpp
+        message/createroom/createroomservermessage.h
+        message/createroom/createroomservermessage.cpp
+        message/requestjoinroom/requestjoinroomclientmessage.h
+        message/requestjoinroom/requestjoinroomclientmessage.cpp
+        message/requestjoinroom/requestjoinroomservermessage.h
+        message/requestjoinroom/requestjoinroomservermessage.cpp
         protocol/requestbody.h
         protocol/requestbody.cpp
         protocol/responsebody.h

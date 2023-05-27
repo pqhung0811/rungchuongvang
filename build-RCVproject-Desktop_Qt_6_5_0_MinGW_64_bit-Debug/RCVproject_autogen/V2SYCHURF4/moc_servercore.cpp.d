@@ -1,6 +1,22 @@
 D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/V2SYCHURF4/moc_servercore.cpp: D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercore.h \
   D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/moc_predefs.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/api/roomapi.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/api/userapi.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/controller/createroomcontroller.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/controller/logincontroller.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/controller/registercontroller.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/entity/room.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/entity/user.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/server/core/requestprocessing.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QDateTime \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QDebug \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QHash \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonDocument \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonObject \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QList \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QMap \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QObject \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QTime \
   D:/Qt/6.5.0/mingw_64/include/QtCore/q20memory.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/q20type_traits.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qalgorithms.h \
@@ -17,6 +33,9 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qbytearrayalgorithms.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qbytearraylist.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qbytearrayview.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qcalendar.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qcborcommon.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qcborvalue.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qchar.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qcompare.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qcompare_impl.h \
@@ -29,6 +48,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qcontiguouscache.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qdarwinhelpers.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qdatastream.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qdatetime.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qdebug.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qexceptionhandling.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qflags.h \
@@ -44,7 +64,11 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qiodevicebase.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qiterable.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qiterator.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qjsondocument.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qjsonobject.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qjsonvalue.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qlist.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qlocale.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qlogging.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qmalloc.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qmap.h \
@@ -62,6 +86,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qpair.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qprocessordetection.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qrefcount.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qregularexpression.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qscopedpointer.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qscopeguard.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qset.h \
@@ -99,7 +124,9 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qtversionchecks.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qtypeinfo.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qtypes.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qurl.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qutf8stringview.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/quuid.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qvariant.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qvarlengtharray.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qversiontagging.h \
@@ -113,6 +140,11 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtNetwork/qtnetwork-config.h \
   D:/Qt/6.5.0/mingw_64/include/QtNetwork/qtnetworkexports.h \
   D:/Qt/6.5.0/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+  D:/Qt/6.5.0/mingw_64/include/QtSql/QSqlDatabase \
+  D:/Qt/6.5.0/mingw_64/include/QtSql/qsqldatabase.h \
+  D:/Qt/6.5.0/mingw_64/include/QtSql/qtsql-config.h \
+  D:/Qt/6.5.0/mingw_64/include/QtSql/qtsqlexports.h \
+  D:/Qt/6.5.0/mingw_64/include/QtSql/qtsqlglobal.h \
   D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/limits.h \
   D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/syslimits.h \
   D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/algorithm \

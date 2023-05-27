@@ -15,6 +15,7 @@
 #include "logout/logoutclientmessage.h"
 #include "logout/logoutservermessage.h"
 #include "core/servercore.h"
+#include "core/clientcore.h"
 
 int main(int argc, char *argv[])
 {
@@ -29,13 +30,17 @@ int main(int argc, char *argv[])
         qDebug() << "abc";
     }
 
-//    LoginClientMessage* login = new LoginClientMessage("hung", "1");
-//    QString tmp = login->toString();
 //    LogoutClientMessage *login1 = new LogoutClientMessage(1, "hung");
 //    QString tmp = login1->toString();
 //    qDebug() << "login: " << tmp;
     ServerCore* serverCore = new ServerCore();
     serverCore->start();
+    ClientCore* clientCore = new ClientCore();
+    clientCore->start();
+//    clientCore->createRoom("room7", 9, "hung", 1, 600);
+//    RoomAPI* roomAPI = new RoomAPI();
+//    roomAPI->addRoom(1, "abcd", "12/03/2031");
+//    roomAPI->getRoomsByStatusAndLevel(1, 1);
 
 
     return a.exec();

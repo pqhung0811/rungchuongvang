@@ -5,7 +5,9 @@
 
 #include <QObject>
 #include <QList>
+#include <QtSql/QSqlDatabase>
 #include <room.h>
+#include "userapi.h"
 
 class RoomAPI : public QObject
 {
@@ -15,6 +17,8 @@ public:
 
 public slots:
     QList<Room*> getRoomsByStatusAndLevel(quint64 status, quint64 level);
+    void addRoom(quint64 ownerId, QString roomname, quint64 level);
+    Room* getLastRoom();
 
 signals:
 

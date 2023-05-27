@@ -14,14 +14,16 @@ RCVproject_autogen/timestamp: \
   D:/Networkprogramming/project/qtPrj/RCVproject/client/clientmain.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/client/core/clientcore.cpp \
   D:/Networkprogramming/project/qtPrj/RCVproject/client/core/clientcore.h \
-  D:/Networkprogramming/project/qtPrj/RCVproject/controller/answercontroller.cpp \
-  D:/Networkprogramming/project/qtPrj/RCVproject/controller/answercontroller.h \
-  D:/Networkprogramming/project/qtPrj/RCVproject/controller/questioncontroller.cpp \
-  D:/Networkprogramming/project/qtPrj/RCVproject/controller/questioncontroller.h \
-  D:/Networkprogramming/project/qtPrj/RCVproject/controller/roomcontroller.cpp \
-  D:/Networkprogramming/project/qtPrj/RCVproject/controller/roomcontroller.h \
-  D:/Networkprogramming/project/qtPrj/RCVproject/controller/usercontroller.cpp \
-  D:/Networkprogramming/project/qtPrj/RCVproject/controller/usercontroller.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/controller/createroomcontroller.cpp \
+  D:/Networkprogramming/project/qtPrj/RCVproject/controller/createroomcontroller.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/controller/logincontroller.cpp \
+  D:/Networkprogramming/project/qtPrj/RCVproject/controller/logincontroller.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/controller/logoutcontroller.cpp \
+  D:/Networkprogramming/project/qtPrj/RCVproject/controller/logoutcontroller.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/controller/registercontroller.cpp \
+  D:/Networkprogramming/project/qtPrj/RCVproject/controller/registercontroller.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/controller/requestjoinroomcontroller.cpp \
+  D:/Networkprogramming/project/qtPrj/RCVproject/controller/requestjoinroomcontroller.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/entity/answer.cpp \
   D:/Networkprogramming/project/qtPrj/RCVproject/entity/answer.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/entity/question.cpp \
@@ -33,6 +35,10 @@ RCVproject_autogen/timestamp: \
   D:/Networkprogramming/project/qtPrj/RCVproject/main.cpp \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/clientmessage.cpp \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/clientmessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomclientmessage.cpp \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomclientmessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomservermessage.cpp \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomservermessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.cpp \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginservermessage.cpp \
@@ -43,6 +49,14 @@ RCVproject_autogen/timestamp: \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/logout/logoutservermessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/message.cpp \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/message.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/register/registerclientmessage.cpp \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/register/registerclientmessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/register/registerservermessage.cpp \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/register/registerservermessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/requestjoinroomclientmessage.cpp \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/requestjoinroomclientmessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/requestjoinroomservermessage.cpp \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/requestjoinroomservermessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/servermessage.cpp \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/servermessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/protocol/attachment.cpp \
@@ -72,6 +86,8 @@ RCVproject_autogen/timestamp: \
   D:/Networkprogramming/project/qtPrj/RCVproject/scene/roomscene.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/server/core/processor/requestprocessor.cpp \
   D:/Networkprogramming/project/qtPrj/RCVproject/server/core/processor/requestprocessor.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/server/core/requestprocessing.cpp \
+  D:/Networkprogramming/project/qtPrj/RCVproject/server/core/requestprocessing.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercore.cpp \
   D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercore.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/server/servermain.cpp \
@@ -87,6 +103,7 @@ RCVproject_autogen/timestamp: \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QAtomicInt \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QBuffer \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QByteArray \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QDateTime \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QDeadlineTimer \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QDebug \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QEvent \

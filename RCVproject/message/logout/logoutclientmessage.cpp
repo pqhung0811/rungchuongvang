@@ -30,6 +30,6 @@ LogoutClientMessage::LogoutClientMessage(quint64 id, QString username, QObject *
 LogoutClientMessage::LogoutClientMessage(QString input, QObject *parent)
     : ClientMessage{input, parent}
 {
-    this->id = this->requestBody->getRequestBody().value("id").toInteger();
+    this->id = this->requestBody->getRequestBody().value("id").toInt();
     this->username = this->requestBody->getRequestBody().value("username").toString();
 }

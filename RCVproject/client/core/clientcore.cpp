@@ -1,6 +1,16 @@
 
 #include "clientcore.h"
 
+QString ClientCore::getInputMessage() const
+{
+    return inputMessage;
+}
+
+void ClientCore::setInputMessage(const QString &newInputMessage)
+{
+    inputMessage = newInputMessage;
+}
+
 ClientCore::ClientCore(QObject *parent)
     : QObject{parent}
 {
@@ -15,18 +25,18 @@ void ClientCore::connectToServer(const QString &host, quint16 port)
     socket->connectToHost(host, port);
 }
 
-void onConnected()
+void ClientCore::onConnected()
 {
     qDebug() << "Connected to server!";
 }
 
-void onReadyRead()
+void ClientCore::onReadyRead()
 {
-    QByteArray responseData = m_socket->readAll();
+    QByteArray responseData = this->socket->readAll();
     // Process the responseData received from the server
 }
 
-void onDisconnected()
+void ClientCore::onDisconnected()
 {
     qDebug() << "Disconnected from server!";
 }
@@ -40,20 +50,6 @@ void ClientCore::start() {
         qDebug() << QString("The following error occurred: %1.").arg(socket->errorString());
         exit(EXIT_FAILURE);
     }
-    QString inputMessage;
-    quint64 input;
-    while (inputMessage.compare("login") == 0) {
-        if(inputMessage.compare("login") == 0) input=1;
-        switch (input) {
-            case 1: {
-                login("hikaru", "123456");
-                break;
-            }
-            default: {
-                qDebug() << "unknown command";
-            }
-        }
-    }
 }
 
 void ClientCore::sendRequest(QString strMsgToSend) {
@@ -63,9 +59,30 @@ void ClientCore::sendRequest(QString strMsgToSend) {
     buffer->setData(data);
     buffer->open(QIODevice::ReadWrite);
     socket->write(buffer->data());
+    socket->waitForBytesWritten();
 }
 
 void ClientCore::login(QString username, QString password) {
     LoginClientMessage* clientMsg = new LoginClientMessage(username, password);
+    sendRequest(clientMsg->toString());
+}
+
+void ClientCore::logout(quint64 id, QString username) {
+    LogoutClientMessage* clientMsg = new LogoutClientMessage(id, username);
+    sendRequest((clientMsg->toString()));
+}
+
+void ClientCore::registers(QString username, QString password) {
+    RegisterClientMessage* clientMsg = new RegisterClientMessage(username, password);
+    sendRequest(clientMsg->toString());
+}
+
+void ClientCore::createRoom(QString roomname, quint64 ownerId, QString username, quint64 ranked, quint64 rankScore) {
+    CreateRoomClientMessage* clientMsg = new CreateRoomClientMessage(roomname, ownerId, username, ranked, rankScore);
+    sendRequest(clientMsg->toString());
+}
+
+void ClientCore::requestJoinRoom(quint64 userId, quint64 roomId) {
+    RequestJoinRoomClientMessage* clientMsg = new RequestJoinRoomClientMessage(userId, roomId);
     sendRequest(clientMsg->toString());
 }

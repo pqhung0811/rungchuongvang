@@ -36,5 +36,8 @@ Command* Command::toCommand(QString input){
     };*/
     commands.insert("LOGIN", new Command("LOGIN" /*, Command::NORMAL, 0*/));
     commands.insert("LOGOUT", new Command("LOGOUT"));
+    commands.insert("REGISTER", new Command("REGISTER"));
+    commands.insert("CREATEROOM", new Command("CREATEROOM"));
+    commands.insert("REQUESTJOINROOM", new Command("REQUESTJOINROOM"));
     return commands.value(input);
 }

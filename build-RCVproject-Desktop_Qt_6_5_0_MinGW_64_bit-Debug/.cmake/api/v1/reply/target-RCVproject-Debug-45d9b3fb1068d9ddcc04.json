@@ -54,7 +54,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 120,
+				"line" : 146,
 				"parent" : 0
 			},
 			{
@@ -78,13 +78,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 158,
+				"line" : 184,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 142,
+				"line" : 168,
 				"parent" : 0
 			},
 			{
@@ -302,55 +302,55 @@
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 109,
+				"line" : 135,
 				"parent" : 0
 			},
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 110,
+				"line" : 136,
 				"parent" : 0
 			},
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 111,
+				"line" : 137,
 				"parent" : 0
 			},
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 112,
+				"line" : 138,
 				"parent" : 0
 			},
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 113,
+				"line" : 139,
 				"parent" : 0
 			},
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 114,
+				"line" : 140,
 				"parent" : 0
 			},
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 115,
+				"line" : 141,
 				"parent" : 0
 			},
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 116,
+				"line" : 142,
 				"parent" : 0
 			},
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 117,
+				"line" : 143,
 				"parent" : 0
 			}
 		]
@@ -568,18 +568,27 @@
 				78,
 				80,
 				82,
-				92
+				84,
+				86,
+				88,
+				90,
+				92,
+				94,
+				96,
+				98,
+				100,
+				110
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "RCVproject_autogen::@6890427a1f51a3e7e1df"
+			"id" : "RCVproject_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "RCVproject_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 0,
+			"id" : "RCVproject_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "RCVproject::@6890427a1f51a3e7e1df",
@@ -748,7 +757,16 @@
 				78,
 				80,
 				82,
-				92
+				84,
+				86,
+				88,
+				90,
+				92,
+				94,
+				96,
+				98,
+				100,
+				110
 			]
 		},
 		{
@@ -792,13 +810,22 @@
 				77,
 				79,
 				81,
-				84,
+				83,
 				85,
-				86,
 				87,
-				88,
 				89,
-				90
+				91,
+				93,
+				95,
+				97,
+				99,
+				102,
+				103,
+				104,
+				105,
+				106,
+				107,
+				108
 			]
 		},
 		{
@@ -812,16 +839,16 @@
 				16,
 				19,
 				22,
-				83,
-				91
+				101,
+				109
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				93,
-				94
+				111,
+				112
 			]
 		}
 	],
@@ -1053,46 +1080,57 @@
 		},
 		{
 			"backtrace" : 4,
-			"path" : "controller/usercontroller.h",
+			"path" : "controller/logincontroller.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "controller/usercontroller.cpp",
+			"path" : "controller/logincontroller.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 4,
-			"path" : "controller/roomcontroller.h",
+			"path" : "controller/logoutcontroller.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "controller/roomcontroller.cpp",
+			"path" : "controller/logoutcontroller.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 4,
-			"path" : "controller/questioncontroller.h",
+			"path" : "controller/registercontroller.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "controller/questioncontroller.cpp",
+			"path" : "controller/registercontroller.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 4,
-			"path" : "controller/answercontroller.h",
+			"path" : "controller/createroomcontroller.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "controller/answercontroller.cpp",
+			"path" : "controller/createroomcontroller.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "controller/requestjoinroomcontroller.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "controller/requestjoinroomcontroller.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -1115,6 +1153,28 @@
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
 			"path" : "server/core/servercore.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "server/core/requestprocessing.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "server/core/requestprocessing.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "server/core/processor/requestprocessor.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "server/core/processor/requestprocessor.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -1214,6 +1274,72 @@
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
 			"path" : "message/logout/logoutservermessage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "message/register/registerclientmessage.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "message/register/registerclientmessage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "message/register/registerservermessage.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "message/register/registerservermessage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "message/createroom/createroomclientmessage.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "message/createroom/createroomclientmessage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "message/createroom/createroomservermessage.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "message/createroom/createroomservermessage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "message/requestjoinroom/requestjoinroomclientmessage.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "message/requestjoinroom/requestjoinroomclientmessage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "message/requestjoinroom/requestjoinroomservermessage.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "message/requestjoinroom/requestjoinroomservermessage.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

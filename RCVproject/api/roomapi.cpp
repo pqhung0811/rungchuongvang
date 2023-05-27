@@ -32,11 +32,56 @@ QList<Room*> RoomAPI::getRoomsByStatusAndLevel(quint64 status, quint64 level) {
         room->setRoomname(roomname);
         room->setStartTime(starttime);
         room->setEndTime(endtime);
-        room->setstatus(status);
+        room->setStatus(status);
         room->setLevel(level);
         qDebug() << "ids: " << room->getId();
         listRoom.append(room);
     }
     return listRoom;
+}
 
+Room* RoomAPI::getLastRoom() {
+//    UserAPI* userAPI = new UserAPI();
+    Room* room = new Room();
+    QSqlQuery query;
+    query.prepare("SELECT * FROM room ORDER BY id DESC LIMIT 1");
+
+    if (!query.exec()) {
+        qDebug() << "Không thể thực hiện truy vấn";
+    }
+
+    while (query.next()) {
+        quint64 id = query.value(0).toInt();
+        QString roomname = query.value(1).toString();
+        QString startTime = query.value(2).toString();
+        QString endTime = query.value(3).toString();
+        quint64 status = query.value(4).toInt();
+        quint64 level = query.value(5).toInt();
+//        quint64 owner = query.value(6).toInt();
+        room->setId(id);
+        room->setRoomname(roomname);
+        room->setStartTime(startTime);
+        room->setEndTime(endTime);
+        room->setStatus(status);
+        room->setLevel(level);
+//        room->setOwner(userAPI->getUserbyId(owner));
+//        QMap<User *, quint64> userAndPoints;
+//        userAndPoints.insert(room->getOwner(), 0);
+//        room->setUserAndPoint(userAndPoints);
+    }
+    return room;
+}
+
+void RoomAPI::addRoom(quint64 ownerId, QString roomname, quint64 level) {
+    QSqlQuery query;
+    QString sqlQuery = "INSERT INTO room (name, status, level, owner) VALUES (:name, :status, :level, :owner)";
+    query.prepare(sqlQuery);
+    query.bindValue(":name", roomname);
+    query.bindValue(":status", 1);
+    query.bindValue(":level", level);
+    query.bindValue(":owner", ownerId);
+
+    if(!query.exec()) {
+        qDebug() << "can not query";
+    }
 }
