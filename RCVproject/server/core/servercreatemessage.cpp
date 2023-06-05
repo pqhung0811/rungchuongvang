@@ -28,11 +28,19 @@ QString ServerCreateMessage::createMessage(QString msg)
         return serverMsg->toString();
     }
     else if(msg.compare("invalid username")==0) {
-        FinalErrorMessage* serverMsg = new FinalErrorMessage("error", "invalid username", "LOGIN");
+        NoInfoMessage* serverMsg = new NoInfoMessage("error", "invalid username", "LOGIN");
         return serverMsg->toString();
     }
     else if(msg.compare("invalid password")==0) {
-        FinalErrorMessage* serverMsg = new FinalErrorMessage("error", "invalid password", "LOGIN");
+        NoInfoMessage* serverMsg = new NoInfoMessage("error", "invalid password", "LOGIN");
+        return serverMsg->toString();
+    }
+    else if(msg.compare("username exist")==0) {
+        NoInfoMessage* serverMsg = new NoInfoMessage("error", "username exist", "REGISTER");
+        return serverMsg->toString();
+    }
+    else if(msg.compare("register successfully")==0) {
+        NoInfoMessage* serverMsg = new NoInfoMessage("success", "register successfully", "REGISTER");
         return serverMsg->toString();
     }
 }

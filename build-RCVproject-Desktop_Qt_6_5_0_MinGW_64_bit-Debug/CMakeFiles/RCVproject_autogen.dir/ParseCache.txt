@@ -6645,10 +6645,10 @@ D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercore.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/controller/requestjoinroomcontroller.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/entity/room.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/entity/user.h
- mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/finalerrormessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginservermessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/logout/logoutservermessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/message.h
+ mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/noinfomessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/register/registerservermessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/servermessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/protocol/command.h
@@ -10555,10 +10555,10 @@ D:/Networkprogramming/project/qtPrj/RCVproject/server/servermain.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/controller/requestjoinroomcontroller.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/entity/room.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/entity/user.h
- mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/finalerrormessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginservermessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/logout/logoutservermessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/message.h
+ mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/noinfomessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/register/registerservermessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/servermessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/protocol/command.h
@@ -17752,10 +17752,10 @@ D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercreatemessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/controller/requestjoinroomcontroller.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/entity/room.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/entity/user.h
- mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/finalerrormessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginservermessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/logout/logoutservermessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/message.h
+ mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/noinfomessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/register/registerservermessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/message/servermessage.h
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/protocol/command.h
@@ -18106,3 +18106,5 @@ D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercreatemessage.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h
 D:/Networkprogramming/project/qtPrj/RCVproject/message/finalerrormessage.cpp
 D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercreatemessage.cpp
+D:/Networkprogramming/project/qtPrj/RCVproject/message/noinfomessage.h
+D:/Networkprogramming/project/qtPrj/RCVproject/message/noinfomessage.cpp

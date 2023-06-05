@@ -42,7 +42,6 @@ QString RequestProcessing::handle() {
     QString output;
     if (this->message.contains("command_code") && this->message["command_code"].isString()) {
         QString command = this->message["command_code"].toString();
-        qDebug() << "command in processing: " << command;
         if(command.compare("LOGIN")==0)  cmd=1;
         else if(command.compare("LOGOUT")==0) cmd=2;
         else if(command.compare("REGISTER")==0) cmd=3;
@@ -90,7 +89,6 @@ QString RequestProcessing::login() {
         if (infoObject.contains("password") && infoObject["password"].isString()) {
             password = infoObject["password"].toString();
         }
-        qDebug() << "username and pass processing: " << username << password;
         LoginController* loginController = new LoginController();
         msg = loginController->checkLogin(username, password);
         if(msg.compare("login successfully")==0) {
@@ -170,9 +168,6 @@ QString RequestProcessing::createRoom() {
             QString rankScoreStr = infoObject["rankScore"].toString();
             rankScore = rankScoreStr.toInt();
         }
-        qDebug() << "processing owner: " << ownerId;
-        qDebug() << "processing ranked: " << ranked;
-        qDebug() << "processing rankScore: " << rankScore;
         CreateRoomController* createRoomController = new CreateRoomController();
         User* owner = new User();
         owner->setId(ownerId);
@@ -202,7 +197,6 @@ QString RequestProcessing::requestJoinRoom() {
     }
     RequestJoinRoomController* requestJoinRoomController = new RequestJoinRoomController();
     msg = requestJoinRoomController->requestJoin() + " " + roomIdStr;
-    qDebug() << "msg: " << msg;
     return msg;
 }
 

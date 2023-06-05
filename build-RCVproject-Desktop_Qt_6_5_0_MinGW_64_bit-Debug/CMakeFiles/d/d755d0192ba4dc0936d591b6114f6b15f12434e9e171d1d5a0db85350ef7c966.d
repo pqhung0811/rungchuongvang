@@ -39,8 +39,6 @@ RCVproject_autogen/timestamp: \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomclientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomservermessage.cpp \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomservermessage.h \
-  D:/Networkprogramming/project/qtPrj/RCVproject/message/finalerrormessage.cpp \
-  D:/Networkprogramming/project/qtPrj/RCVproject/message/finalerrormessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.cpp \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginservermessage.cpp \
@@ -51,6 +49,8 @@ RCVproject_autogen/timestamp: \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/logout/logoutservermessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/message.cpp \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/message.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/noinfomessage.cpp \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/noinfomessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/register/registerclientmessage.cpp \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/register/registerclientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/register/registerservermessage.cpp \

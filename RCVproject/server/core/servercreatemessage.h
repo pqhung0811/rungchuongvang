@@ -8,7 +8,7 @@
 #include "login/loginservermessage.h"
 #include "logout/logoutservermessage.h"
 #include "register/registerservermessage.h"
-#include "finalerrormessage.h"
+#include "noinfomessage.h"
 
 class ServerCreateMessage : public QObject
 {

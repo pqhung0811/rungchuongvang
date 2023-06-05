@@ -53,6 +53,7 @@ void MainWindow::handleLoginResponse(const QJsonDocument &response)
     QString errorMsg;
     QString username;
     QString rankScore;
+    QString ranked;
     if (!response.isNull() && response.isObject()) {
         QJsonObject jsonObject = response.object();
         if (jsonObject.contains("status_code") && jsonObject["status_code"].isString()) {
@@ -70,8 +71,11 @@ void MainWindow::handleLoginResponse(const QJsonDocument &response)
                 username = infoObject["username"].toString();
                 qDebug() << "main window app: " << username;
             }
-            if (infoObject.contains("rankScore") && infoObject["rankScore"].isString()) {
-                rankScore = infoObject["rankScore"].toString();
+            if(infoObject.contains("ranked") && infoObject["ranked"].isString()) {
+                ranked = infoObject["ranked"].toString();
+            }
+            if (infoObject.contains("rankscore") && infoObject["rankscore"].isString()) {
+                rankScore = infoObject["rankscore"].toString();
             }
         }
     }
@@ -79,18 +83,27 @@ void MainWindow::handleLoginResponse(const QJsonDocument &response)
         HomeScene* homeScene = new HomeScene();
         qDebug() << "main win: " << username;
         homeScene->on_label_2_linkActivated("   " + username);
+        if(ranked.compare("0")==0) {
+            homeScene->on_label_3_linkActivated("   Bronze: " + rankScore);
+        }
+        else if(ranked.compare("1")==0) {
+            homeScene->on_label_3_linkActivated("   Silver: " + rankScore);
+        }
+        else {
+            homeScene->on_label_3_linkActivated("   Gold: " + rankScore);
+        }
         homeScene->show();
         close();
     } else {
         if(errorMsg.compare("invalid username")==0) {
             MyDialog* myDialog = new MyDialog();
             myDialog->changLabel("Invalid Username");
-            myDialog->show();
+            myDialog->exec();
         }
         else {
             MyDialog* myDialog = new MyDialog();
             myDialog->changLabel("Invalid Password");
-            myDialog->show();
+            myDialog->exec();
         }
     }
 }

@@ -49,7 +49,6 @@ void ClientCore::onConnected()
 void ClientCore::onReadyRead()
 {
     QByteArray responseData = this->socket->readAll();
-    qDebug() << "clientCore: " << responseData;
     // Process the responseData received from the server
     QJsonDocument jsonDoc = QJsonDocument::fromJson(responseData);
 
@@ -77,7 +76,6 @@ void ClientCore::start() {
 void ClientCore::sendRequest(QString strMsgToSend) {
 //    Attachment* attachment = new Attachment(strMsgToSend, 1);
     QByteArray data = strMsgToSend.toUtf8();
-    qDebug() << "clientcore: " << data;
     QBuffer* buffer = new QBuffer(this);
     buffer->setData(data);
     buffer->open(QIODevice::ReadWrite);

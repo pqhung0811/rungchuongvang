@@ -34,13 +34,22 @@ void RegisterScene::handleConfirmPassLineEditReturnPressed()
 
 void RegisterScene::handleRegisterResponse(const QJsonDocument &response)
 {
-//    if (response.compare("register successfully") == 0) {
-//        MainWindow* w = new MainWindow();
-//        w->show();
-//        close();
-//    } else {
-//        // Xử lý trường hợp đăng nhập thất bại
-//    }
+    QString status;
+    if (!response.isNull() && response.isObject()) {
+        QJsonObject jsonObject = response.object();
+        if (jsonObject.contains("status_code") && jsonObject["status_code"].isString()) {
+            status = jsonObject["status_code"].toString();
+        }
+    }
+    if (status.compare("success") == 0) {
+        MainWindow* w = new MainWindow();
+        w->show();
+        close();
+    } else {
+        MyDialog* myDialog = new MyDialog();
+        myDialog->changLabel("Username exist");
+        myDialog->show();
+    }
 }
 
 void RegisterScene::on_backBtn_clicked()

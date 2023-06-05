@@ -8,10 +8,10 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Networkprogramming/project/qtPrj/RCVproject/controller/requestjoinroomcontroller.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/entity/room.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/entity/user.h \
-  D:/Networkprogramming/project/qtPrj/RCVproject/message/finalerrormessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginservermessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/logout/logoutservermessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/message.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/noinfomessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/register/registerservermessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/servermessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/protocol/command.h \

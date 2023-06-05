@@ -49,12 +49,10 @@ void ServerCore::onReadyRead() {
     ServerCreateMessage* serverCreateMessage = new ServerCreateMessage();
     QString responseString;
 
-    qDebug() << "con cac";
     if (clientSocket)
     {
         // Read and process data from the client
         QByteArray requestData = clientSocket->readAll();
-        qDebug() << "request Data: " << requestData;
         // Process the requestData as needed
         QJsonDocument jsonDoc = QJsonDocument::fromJson(requestData);
         QString msg;
@@ -64,7 +62,6 @@ void ServerCore::onReadyRead() {
             // Chuyển đổi QJsonDocument thành QJsonObject
             QJsonObject jsonObject = jsonDoc.object();
             serverCreateMessage->getRequestProcessing()->setMessage(jsonObject);
-//            requestProcessing->setMessage(jsonObject);
             msg = serverCreateMessage->getRequestProcessing()->handle();
             responseString = serverCreateMessage->createMessage(msg);
 

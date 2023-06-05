@@ -30,3 +30,4 @@ void ResponseBody::createLogoutBody(quint64 id, QString username) {
     this->responseBody.insert("id", QString::number(id));
     this->responseBody.insert("username", username);
 }
+

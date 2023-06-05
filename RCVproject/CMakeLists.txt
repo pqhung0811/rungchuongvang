@@ -106,8 +106,8 @@ set(PROJECT_SOURCES
         message/clientmessage.cpp
         message/servermessage.h
         message/servermessage.cpp
-        message/finalerrormessage.h
-        message/finalerrormessage.cpp
+        message/noinfomessage.h
+        message/noinfomessage.cpp
         message/logout/logoutclientmessage.h
         message/logout/logoutclientmessage.cpp
         message/logout/logoutservermessage.h

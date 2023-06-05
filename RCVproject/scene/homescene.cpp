@@ -44,3 +44,9 @@ void HomeScene::on_label_2_linkActivated(const QString &link)
     this->ui->label_2->setText(link);
 }
 
+
+void HomeScene::on_label_3_linkActivated(const QString &link)
+{
+    this->ui->label_3->setText(link);
+}
+

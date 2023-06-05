@@ -18,7 +18,6 @@ LoginClientMessage::LoginClientMessage(QString username, QString password, QObje
 
     this->addCommandCode(command->toCommand("LOGIN"));
     this->requestBody->createLoginBody(username, password);
-    qDebug() << "requesbody: " << this->requestBody->getRequestBody();
 
     this->finalizeMessageObject();
 }

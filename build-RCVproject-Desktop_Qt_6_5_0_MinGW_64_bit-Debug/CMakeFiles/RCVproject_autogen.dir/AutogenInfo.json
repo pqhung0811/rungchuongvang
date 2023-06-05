@@ -658,12 +658,6 @@
 			null
 		],
 		[
-			"D:/Networkprogramming/project/qtPrj/RCVproject/message/finalerrormessage.h",
-			"MU",
-			"TGVJH5J54A/moc_finalerrormessage.cpp",
-			null
-		],
-		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.h",
 			"MU",
 			"HJUDRXRLBF/moc_loginclientmessage.cpp",
@@ -691,6 +685,12 @@
 			"D:/Networkprogramming/project/qtPrj/RCVproject/message/message.h",
 			"MU",
 			"TGVJH5J54A/moc_message.cpp",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/noinfomessage.h",
+			"MU",
+			"TGVJH5J54A/moc_noinfomessage.cpp",
 			null
 		],
 		[
@@ -1033,11 +1033,6 @@
 			null
 		],
 		[
-			"D:/Networkprogramming/project/qtPrj/RCVproject/message/finalerrormessage.cpp",
-			"MU",
-			null
-		],
-		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.cpp",
 			"MU",
 			null
@@ -1059,6 +1054,11 @@
 		],
 		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/message/message.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/noinfomessage.cpp",
 			"MU",
 			null
 		],
