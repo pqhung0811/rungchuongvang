@@ -4,6 +4,6 @@
 ClientMain::ClientMain(QObject *parent)
     : QObject{parent}
 {
-    ClientCore* clientCore = new ClientCore();
+    ClientCore* clientCore = ClientCore::getInstance();
 }
 

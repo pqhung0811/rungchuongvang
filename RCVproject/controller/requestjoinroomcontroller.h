@@ -1,26 +1,27 @@
 
-#ifndef CREATEJOINROOMCONTROLLER_H
-#define CREATEJOINROOMCONTROLLER_H
+#ifndef REQUESTJOINROOMCONTROLLER_H
+#define REQUESTJOINROOMCONTROLLER_H
 
 
 #include <QObject>
 #include "userapi.h"
 
-class CreateJoinRoomController : public QObject
+class RequestJoinRoomController : public QObject
 {
     Q_OBJECT
 private:
     UserAPI* userAPI;
 
 public:
-    explicit CreateJoinRoomController(QObject *parent = nullptr);
+    explicit RequestJoinRoomController(QObject *parent = nullptr);
 
 public slots:
-    void addUserToRoom();
+    QString requestJoin();
+    QString responseJoin(quint64 userId, quint64 roomId, quint8 reply);
 
 
 signals:
 
 };
 
-#endif // CREATEJOINROOMCONTROLLER_H
+#endif // REQUESTJOINROOMCONTROLLER_H

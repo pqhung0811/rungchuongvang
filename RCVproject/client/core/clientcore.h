@@ -15,10 +15,12 @@
 #include "register/registerclientmessage.h"
 #include "createroom/createroomclientmessage.h"
 #include "requestjoinroom/requestjoinroomclientmessage.h"
+#include "requestjoinroom/responsejoinroomclientmessage.h"
 #include "attachment.h"
 #include <QBuffer>
 #include <QIODevice>
 #include <QByteArray>
+#include <QJsonDocument>
 
 class ClientCore : public QObject
 {
@@ -27,13 +29,19 @@ class ClientCore : public QObject
 private:
     QTcpSocket* socket;
     QString inputMessage;
+    QString outputMessage;
+    explicit ClientCore(QObject *parent = nullptr);
+    Q_DISABLE_COPY(ClientCore)
 
 public:
-    explicit ClientCore(QObject *parent = nullptr);
+    static ClientCore *getInstance();
     void connectToServer(const QString &host, quint16 port);
 
     QString getInputMessage() const;
     void setInputMessage(const QString &newInputMessage);
+
+    QString getOutputMessage() const;
+    void setOutputMessage(const QString &newOutputMessage);
 
 public slots:
     void start();
@@ -46,8 +54,11 @@ public slots:
     void registers(QString username, QString password);
     void createRoom(QString roomname, quint64 ownerId, QString username, quint64 ranked, quint64 rankScore);
     void requestJoinRoom(quint64 userId, quint64 roomId);
+    void responseJoinRoom(quint64 userId, quint64 roomId, quint8 reply);
 
 signals:
+    void Finished(const QJsonDocument& response);
+//    void Finished(const QString& response);
 
 };
 

@@ -19,6 +19,7 @@ public slots:
     QList<Room*> getRoomsByStatusAndLevel(quint64 status, quint64 level);
     void addRoom(quint64 ownerId, QString roomname, quint64 level);
     Room* getLastRoom();
+    quint64 getOwnerIdByRoomId(quint64 roomId);
 
 signals:
 

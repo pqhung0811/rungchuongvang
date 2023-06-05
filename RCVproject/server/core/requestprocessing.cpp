@@ -21,6 +21,16 @@ void RequestProcessing::setRoom(Room *newRoom)
     room = newRoom;
 }
 
+User *RequestProcessing::getUser() const
+{
+    return user;
+}
+
+void RequestProcessing::setUser(User *newUser)
+{
+    user = newUser;
+}
+
 RequestProcessing::RequestProcessing(QObject *parent)
     : QObject{parent}
 {
@@ -38,7 +48,7 @@ QString RequestProcessing::handle() {
         else if(command.compare("REGISTER")==0) cmd=3;
         else if(command.compare("CREATEROOM")==0) cmd=4;
         else if(command.compare("REQUESTJOINROOM")==0) cmd=5;
-        qDebug() << "cmd: " << cmd;
+        else if(command.compare("RESPONSEJOINROOM")==0) cmd=6;
         switch (cmd) {
             case 1:
                 output = this->login();
@@ -54,6 +64,9 @@ QString RequestProcessing::handle() {
             case 5:
                 output = this->requestJoinRoom();
                 break;
+            case 6:
+                output = this->responseJoinRoom();
+                break;
             default:
                 break;
         }
@@ -68,8 +81,6 @@ QString RequestProcessing::login() {
     QString msg;
     if (this->message.contains("info") && this->message["info"].isString()) {
         QString infoString = this->message["info"].toString();
-
-        // Chuyển đổi chuỗi "info" thành QJsonObject
         QJsonObject infoObject = QJsonDocument::fromJson(infoString.toUtf8()).object();
 
         // Lấy giá trị của key "username" từ QJsonObject "infoObject"
@@ -92,10 +103,9 @@ QString RequestProcessing::login() {
 QString RequestProcessing::logout() {
     if (this->message.contains("info") && this->message["info"].isString())
     {
-        QString infoString = this->message["info"].toString();
-
-        // Chuyển đổi chuỗi "info" thành QJsonObject
-        QJsonObject infoObject = QJsonDocument::fromJson(infoString.toUtf8()).object();
+//        QString infoString = this->message["info"].toString();
+//        QJsonObject infoObject = QJsonDocument::fromJson(infoString.toUtf8()).object();
+        QJsonObject infoObject = this->message.value("info").toObject();
 
         if (infoObject.contains("id") && infoObject["id"].isString()) {
             QString idStr = infoObject["id"].toString();
@@ -114,9 +124,8 @@ QString RequestProcessing::registers() {
     if (this->message.contains("info") && this->message["info"].isString())
     {
         QString infoString = this->message["info"].toString();
-
-        // Chuyển đổi chuỗi "info" thành QJsonObject
         QJsonObject infoObject = QJsonDocument::fromJson(infoString.toUtf8()).object();
+
         // Lấy giá trị của key "username" từ QJsonObject "infoObject"
         if (infoObject.contains("username") && infoObject["username"].isString()) {
             username = infoObject["username"].toString();
@@ -140,9 +149,8 @@ QString RequestProcessing::createRoom() {
     if (this->message.contains("info") && this->message["info"].isString())
     {
         QString infoString = this->message["info"].toString();
-
-        // Chuyển đổi chuỗi "info" thành QJsonObject
         QJsonObject infoObject = QJsonDocument::fromJson(infoString.toUtf8()).object();
+
         // Lấy giá trị của key "username" từ QJsonObject "infoObject"
         if (infoObject.contains("roomname") && infoObject["roomname"].isString()) {
             roomname = infoObject["roomname"].toString();
@@ -181,17 +189,34 @@ QString RequestProcessing::createRoom() {
 }
 
 QString RequestProcessing::requestJoinRoom() {
-    quint64 userId;
-    quint64 roomId;
+    QString roomIdStr;
     QString msg;
     if (this->message.contains("info") && this->message["info"].isString())
     {
         QString infoString = this->message["info"].toString();
-
-        // Chuyển đổi chuỗi "info" thành QJsonObject
         QJsonObject infoObject = QJsonDocument::fromJson(infoString.toUtf8()).object();
 
-        // Lấy giá trị của key "userId" từ QJsonObject "infoObject"
+        if (infoObject.contains("roomId") && infoObject["roomId"].isString()) {
+            roomIdStr = infoObject["roomId"].toString();
+        }
+    }
+    RequestJoinRoomController* requestJoinRoomController = new RequestJoinRoomController();
+    msg = requestJoinRoomController->requestJoin() + " " + roomIdStr;
+    qDebug() << "msg: " << msg;
+    return msg;
+}
+
+QString RequestProcessing::responseJoinRoom() {
+    QString msg;
+    quint64 userId;
+    quint64 roomId;
+    quint8 reply;
+    if (this->message.contains("info") && this->message["info"].isString())
+    {
+        QString infoString = this->message["info"].toString();
+        QJsonObject infoObject = QJsonDocument::fromJson(infoString.toUtf8()).object();
+//        QJsonObject infoObject = this->message.value("info").toObject();
+
         if (infoObject.contains("userId") && infoObject["userId"].isString()) {
             QString userIdStr = infoObject["userId"].toString();
             userId = userIdStr.toInt();
@@ -200,6 +225,12 @@ QString RequestProcessing::requestJoinRoom() {
             QString roomIdStr = infoObject["roomId"].toString();
             roomId = roomIdStr.toInt();
         }
+        if (infoObject.contains("reply") && infoObject["reply"].isString()) {
+            QString replyStr = infoObject["reply"].toString();
+            reply = replyStr.toInt();
+        }
+        RequestJoinRoomController* requestJoinRoomController = new RequestJoinRoomController();
+        msg = requestJoinRoomController->responseJoin(userId, roomId, reply);
     }
     return msg;
 }

@@ -17,17 +17,15 @@ LoginServerMessage::LoginServerMessage(QObject *parent)
 
 }
 
-LoginServerMessage::LoginServerMessage(quint64 id, QString username, QString password, quint64 ranked, quint64 rankScore, QString status, QString errorMsg, QObject *parent)
+LoginServerMessage::LoginServerMessage(quint64 id, QString username, quint64 ranked, quint64 rankScore, QString status, QString errorMsg, QObject *parent)
     : ServerMessage(status, errorMsg, parent)
 {
     this->username = username;
-    this->password = password;
     this->id = id;
     this->ranked = ranked;
     this->rankScore = rankScore;
     this->addCommandCode(this->command->toCommand("LOGIN"));
-    this->responseBody->createLoginBody(id, username, password, ranked, rankScore);
-    qDebug() << "ressponse: " << this->responseBody->getResponseBody();
+    this->responseBody->createLoginBody(id, username, ranked, rankScore);
     this->finalizeMessageObject();
 }
 

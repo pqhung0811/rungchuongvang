@@ -52,3 +52,11 @@ void RequestBody::createRequestJoinRoomBody(quint64 userId, quint64 roomId) {
     this->requestBody.insert("userId", QString::number(userId));
     this->requestBody.insert("roomId", QString::number(roomId));
 }
+
+void RequestBody::createResponseJoinRoomBody(quint64 userId, quint64 roomId, quint8 reply) {
+    this->requestBody = QJsonObject();
+
+    this->requestBody.insert("userId", QString::number(userId));
+    this->requestBody.insert("roomId", QString::number(roomId));
+    this->requestBody.insert("reply", QString::number(reply));
+}

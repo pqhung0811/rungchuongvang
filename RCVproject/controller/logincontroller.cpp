@@ -24,13 +24,12 @@ QString LoginController::checkLogin(QString username, QString password) {
     }
     else {
         User* anUser = this->userAPI->getUserByNameAndPass(username, password);
-        qDebug() << password;
-        qDebug() << "anUser: " << anUser->getUsername();
         if(anUser->getId()==NULL) {
             return "invalid password";
         }
         else {
             this->user = anUser;
+            qDebug() << "user login: " << this->user->getId();
             return "login successfully";
         }
     }

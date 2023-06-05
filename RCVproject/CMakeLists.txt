@@ -25,9 +25,9 @@ set(PROJECT_SOURCES
         scene/mainwindow.cpp
         scene/mainwindow.h
         scene/mainwindow.ui
-        scene/register.cpp
-        scene/register.h
-        scene/register.ui
+        scene/registerscene.cpp
+        scene/registerscene.h
+        scene/registerscene.ui
         scene/homescene.cpp
         scene/homescene.h
         scene/homescene.ui
@@ -43,6 +43,9 @@ set(PROJECT_SOURCES
         scene/gamescene.h
         scene/gamescene.cpp
         scene/gamescene.ui
+        scene/mydialog.h
+        scene/mydialog.cpp
+        scene/mydialog.ui
         entity/user.h
         entity/user.cpp
         entity/room.h
@@ -87,6 +90,8 @@ set(PROJECT_SOURCES
         server/core/requestprocessing.cpp
         server/core/processor/requestprocessor.h
         server/core/processor/requestprocessor.cpp
+        server/core/servercreatemessage.h
+        server/core/servercreatemessage.cpp
         client/clientmain.h
         client/clientmain.cpp
         client/core/clientcore.h
@@ -101,6 +106,8 @@ set(PROJECT_SOURCES
         message/clientmessage.cpp
         message/servermessage.h
         message/servermessage.cpp
+        message/finalerrormessage.h
+        message/finalerrormessage.cpp
         message/logout/logoutclientmessage.h
         message/logout/logoutclientmessage.cpp
         message/logout/logoutservermessage.h
@@ -117,6 +124,10 @@ set(PROJECT_SOURCES
         message/requestjoinroom/requestjoinroomclientmessage.cpp
         message/requestjoinroom/requestjoinroomservermessage.h
         message/requestjoinroom/requestjoinroomservermessage.cpp
+        message/requestjoinroom/responsejoinroomclientmessage.h
+        message/requestjoinroom/responsejoinroomclientmessage.cpp
+        message/requestjoinroom/responsejoinroomservermessage.h
+        message/requestjoinroom/responsejoinroomservermessage.cpp
         protocol/requestbody.h
         protocol/requestbody.cpp
         protocol/responsebody.h

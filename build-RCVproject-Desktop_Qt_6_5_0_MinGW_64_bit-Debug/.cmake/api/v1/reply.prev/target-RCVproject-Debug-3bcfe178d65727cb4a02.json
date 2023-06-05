@@ -54,7 +54,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 146,
+				"line" : 155,
 				"parent" : 0
 			},
 			{
@@ -78,13 +78,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 184,
+				"line" : 193,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 168,
+				"line" : 177,
 				"parent" : 0
 			},
 			{
@@ -302,55 +302,55 @@
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 135,
+				"line" : 144,
 				"parent" : 0
 			},
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 136,
+				"line" : 145,
 				"parent" : 0
 			},
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 137,
+				"line" : 146,
 				"parent" : 0
 			},
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 138,
+				"line" : 147,
 				"parent" : 0
 			},
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 139,
+				"line" : 148,
 				"parent" : 0
 			},
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 140,
+				"line" : 149,
 				"parent" : 0
 			},
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 141,
+				"line" : 150,
 				"parent" : 0
 			},
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 142,
+				"line" : 151,
 				"parent" : 0
 			},
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 143,
+				"line" : 152,
 				"parent" : 0
 			}
 		]
@@ -539,45 +539,49 @@
 				18,
 				21,
 				24,
-				26,
-				28,
-				30,
-				32,
-				34,
-				36,
-				38,
-				40,
-				42,
-				44,
-				46,
-				48,
-				50,
-				52,
-				54,
-				56,
-				58,
-				60,
-				62,
-				64,
-				66,
-				68,
-				70,
-				72,
-				74,
-				76,
-				78,
-				80,
-				82,
-				84,
-				86,
-				88,
-				90,
-				92,
-				94,
-				96,
-				98,
-				100,
-				110
+				27,
+				29,
+				31,
+				33,
+				35,
+				37,
+				39,
+				41,
+				43,
+				45,
+				47,
+				49,
+				51,
+				53,
+				55,
+				57,
+				59,
+				61,
+				63,
+				65,
+				67,
+				69,
+				71,
+				73,
+				75,
+				77,
+				79,
+				81,
+				83,
+				85,
+				87,
+				89,
+				91,
+				93,
+				95,
+				97,
+				99,
+				101,
+				103,
+				105,
+				107,
+				109,
+				120
 			]
 		}
 	],
@@ -728,6 +732,63 @@
 				18,
 				21,
 				24,
+				27,
+				29,
+				31,
+				33,
+				35,
+				37,
+				39,
+				41,
+				43,
+				45,
+				47,
+				49,
+				51,
+				53,
+				55,
+				57,
+				59,
+				61,
+				63,
+				65,
+				67,
+				69,
+				71,
+				73,
+				75,
+				77,
+				79,
+				81,
+				83,
+				85,
+				87,
+				89,
+				91,
+				93,
+				95,
+				97,
+				99,
+				101,
+				103,
+				105,
+				107,
+				109,
+				120
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				3,
+				6,
+				9,
+				12,
+				15,
+				17,
+				20,
+				23,
 				26,
 				28,
 				30,
@@ -766,66 +827,18 @@
 				96,
 				98,
 				100,
-				110
-			]
-		},
-		{
-			"name" : "Header Files",
-			"sourceIndexes" : 
-			[
-				3,
-				6,
-				9,
-				12,
-				15,
-				17,
-				20,
-				23,
-				25,
-				27,
-				29,
-				31,
-				33,
-				35,
-				37,
-				39,
-				41,
-				43,
-				45,
-				47,
-				49,
-				51,
-				53,
-				55,
-				57,
-				59,
-				61,
-				63,
-				65,
-				67,
-				69,
-				71,
-				73,
-				75,
-				77,
-				79,
-				81,
-				83,
-				85,
-				87,
-				89,
-				91,
-				93,
-				95,
-				97,
-				99,
 				102,
-				103,
 				104,
-				105,
 				106,
-				107,
-				108
+				108,
+				111,
+				112,
+				113,
+				114,
+				115,
+				116,
+				117,
+				118
 			]
 		},
 		{
@@ -839,16 +852,17 @@
 				16,
 				19,
 				22,
-				101,
-				109
+				25,
+				110,
+				119
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				111,
-				112
+				121,
+				122
 			]
 		}
 	],
@@ -886,17 +900,17 @@
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "scene/register.cpp",
+			"path" : "scene/registerscene.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 4,
-			"path" : "scene/register.h",
+			"path" : "scene/registerscene.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
-			"path" : "scene/register.ui",
+			"path" : "scene/registerscene.ui",
 			"sourceGroupIndex" : 2
 		},
 		{
@@ -977,6 +991,22 @@
 		{
 			"backtrace" : 4,
 			"path" : "scene/gamescene.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "scene/mydialog.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "scene/mydialog.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "scene/mydialog.ui",
 			"sourceGroupIndex" : 2
 		},
 		{
@@ -1157,13 +1187,13 @@
 		},
 		{
 			"backtrace" : 4,
-			"path" : "server/core/processing.h",
+			"path" : "server/core/requestprocessing.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "server/core/processing.cpp",
+			"path" : "server/core/requestprocessing.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -1175,6 +1205,17 @@
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
 			"path" : "server/core/processor/requestprocessor.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "server/core/servercreatemessage.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "server/core/servercreatemessage.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -1344,6 +1385,28 @@
 		},
 		{
 			"backtrace" : 4,
+			"path" : "message/requestjoinroom/responsejoinroomclientmessage.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "message/requestjoinroom/responsejoinroomclientmessage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "message/requestjoinroom/responsejoinroomservermessage.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "message/requestjoinroom/responsejoinroomservermessage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
 			"path" : "protocol/requestbody.h",
 			"sourceGroupIndex" : 1
 		},
@@ -1422,7 +1485,7 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/include/scene/ui_register.h",
+			"path" : "D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/include/scene/ui_registerscene.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -1453,6 +1516,12 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/include/scene/ui_gamescene.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/include/scene/ui_mydialog.h",
 			"sourceGroupIndex" : 1
 		},
 		{

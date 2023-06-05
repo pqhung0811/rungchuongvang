@@ -2,6 +2,8 @@
 #define REGISTER_H
 
 #include <QWidget>
+#include "core/clientcore.h"
+#include "mainwindow.h"
 
 namespace Ui {
 class Register;
@@ -15,11 +17,15 @@ public:
     explicit Register(QWidget *parent = nullptr);
     ~Register();
 
+    ClientCore *getClientCore() const;
+    void setClientCore(ClientCore *newClientCore);
+
 private slots:
     void on_registerBtn_clicked();
 
 private:
     Ui::Register *ui;
+    ClientCore* clientCore;
 };
 
 #endif // REGISTER_H

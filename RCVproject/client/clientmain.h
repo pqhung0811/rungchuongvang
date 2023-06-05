@@ -9,6 +9,8 @@
 class ClientMain : public QObject
 {
     Q_OBJECT
+private:
+    ClientCore* clientCore;
 public:
     explicit ClientMain(QObject *parent = nullptr);
 

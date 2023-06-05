@@ -20,7 +20,7 @@ private:
 
 public:
     explicit LoginServerMessage(QObject *parent = nullptr);
-    explicit LoginServerMessage(quint64 id, QString username, QString password, quint64 ranked, quint64 rankScore, QString status, QString errMsg, QObject *parent = nullptr);
+    explicit LoginServerMessage(quint64 id, QString username, quint64 ranked, quint64 rankScore, QString status, QString errMsg, QObject *parent = nullptr);
     explicit LoginServerMessage(QString input, QObject *parent = nullptr);
 
     void setId(quint64 newId);

@@ -9,6 +9,9 @@
 #include "requestprocessing.h"
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QMap>
+#include "login/loginservermessage.h"
+#include "servercreatemessage.h"
 
 class ServerCore : public QObject
 {
@@ -16,11 +19,15 @@ class ServerCore : public QObject
 
 private:
     QTcpServer* server;
-    QList<QTcpSocket*> connectionSet;
+    QMap<quint64, QTcpSocket*> connectionSet;
+//    QList<QTcpSocket*> connectionSet;
 //    RequestProcessing* requestProcessing;
 
 public:
     explicit ServerCore(QObject *parent = nullptr);
+
+    QMap<quint64, QTcpSocket *> getConnectionSet() const;
+    void setConnectionSet(const QMap<quint64, QTcpSocket *> &newConnectionSet);
 
 public slots:
     void start();
@@ -28,6 +35,7 @@ public slots:
 //    void appendToSocketList(QTcpSocket* socket);
     void onReadyRead();
     void onDisconnected();
+
 signals:
 
 };

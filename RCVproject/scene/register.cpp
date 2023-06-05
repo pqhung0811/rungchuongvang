@@ -19,3 +19,14 @@ void Register::on_registerBtn_clicked()
 
 }
 
+ClientCore *Register::getClientCore() const
+{
+    return clientCore;
+}
+
+void Register::setClientCore(ClientCore *newClientCore)
+{
+    clientCore = newClientCore;
+}
+
+

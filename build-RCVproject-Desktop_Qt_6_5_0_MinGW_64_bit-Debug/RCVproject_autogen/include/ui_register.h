@@ -25,14 +25,12 @@ class Ui_Register
 public:
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
-    QLabel *label_4;
-    QLineEdit *lineEdit_2;
-    QLabel *label_3;
-    QLineEdit *lineEdit_3;
-    QLabel *label_2;
-    QLineEdit *lineEdit_4;
-    QLineEdit *lineEdit;
     QLabel *label;
+    QLineEdit *confirmPassEdit;
+    QLabel *label_4;
+    QLineEdit *userEdit;
+    QLineEdit *passEdit;
+    QLabel *label_2;
     QLabel *label_5;
     QPushButton *registerBtn;
     QPushButton *backBtn;
@@ -42,61 +40,51 @@ public:
         if (Register->objectName().isEmpty())
             Register->setObjectName("Register");
         Register->setWindowModality(Qt::NonModal);
+        Register->setEnabled(true);
         Register->resize(400, 456);
         Register->setStyleSheet(QString::fromUtf8(""));
         gridLayoutWidget = new QWidget(Register);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(70, 130, 271, 251));
+        gridLayoutWidget->setGeometry(QRect(70, 130, 271, 201));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        label_4 = new QLabel(gridLayoutWidget);
-        label_4->setObjectName("label_4");
+        label = new QLabel(gridLayoutWidget);
+        label->setObjectName("label");
         QFont font;
         font.setFamilies({QString::fromUtf8("Swis721 Hv BT")});
         font.setPointSize(14);
+        label->setFont(font);
+        label->setStyleSheet(QString::fromUtf8(""));
+
+        gridLayout->addWidget(label, 0, 0, 1, 1);
+
+        confirmPassEdit = new QLineEdit(gridLayoutWidget);
+        confirmPassEdit->setObjectName("confirmPassEdit");
+
+        gridLayout->addWidget(confirmPassEdit, 2, 1, 1, 1);
+
+        label_4 = new QLabel(gridLayoutWidget);
+        label_4->setObjectName("label_4");
         label_4->setFont(font);
 
-        gridLayout->addWidget(label_4, 3, 0, 1, 1);
+        gridLayout->addWidget(label_4, 2, 0, 1, 1);
 
-        lineEdit_2 = new QLineEdit(gridLayoutWidget);
-        lineEdit_2->setObjectName("lineEdit_2");
+        userEdit = new QLineEdit(gridLayoutWidget);
+        userEdit->setObjectName("userEdit");
 
-        gridLayout->addWidget(lineEdit_2, 1, 1, 1, 1);
+        gridLayout->addWidget(userEdit, 0, 1, 1, 1);
 
-        label_3 = new QLabel(gridLayoutWidget);
-        label_3->setObjectName("label_3");
-        label_3->setFont(font);
+        passEdit = new QLineEdit(gridLayoutWidget);
+        passEdit->setObjectName("passEdit");
 
-        gridLayout->addWidget(label_3, 2, 0, 1, 1);
-
-        lineEdit_3 = new QLineEdit(gridLayoutWidget);
-        lineEdit_3->setObjectName("lineEdit_3");
-
-        gridLayout->addWidget(lineEdit_3, 2, 1, 1, 1);
+        gridLayout->addWidget(passEdit, 1, 1, 1, 1);
 
         label_2 = new QLabel(gridLayoutWidget);
         label_2->setObjectName("label_2");
         label_2->setFont(font);
 
         gridLayout->addWidget(label_2, 1, 0, 1, 1);
-
-        lineEdit_4 = new QLineEdit(gridLayoutWidget);
-        lineEdit_4->setObjectName("lineEdit_4");
-
-        gridLayout->addWidget(lineEdit_4, 3, 1, 1, 1);
-
-        lineEdit = new QLineEdit(gridLayoutWidget);
-        lineEdit->setObjectName("lineEdit");
-
-        gridLayout->addWidget(lineEdit, 0, 1, 1, 1);
-
-        label = new QLabel(gridLayoutWidget);
-        label->setObjectName("label");
-        label->setFont(font);
-        label->setStyleSheet(QString::fromUtf8(""));
-
-        gridLayout->addWidget(label, 0, 0, 1, 1);
 
         label_5 = new QLabel(Register);
         label_5->setObjectName("label_5");
@@ -140,11 +128,9 @@ public:
     void retranslateUi(QWidget *Register)
     {
         Register->setWindowTitle(QCoreApplication::translate("Register", "Form", nullptr));
-        label_4->setText(QCoreApplication::translate("Register", "Confirm New\n"
-"Password:", nullptr));
-        label_3->setText(QCoreApplication::translate("Register", "New Password:", nullptr));
-        label_2->setText(QCoreApplication::translate("Register", "Password:", nullptr));
         label->setText(QCoreApplication::translate("Register", "Username:", nullptr));
+        label_4->setText(QCoreApplication::translate("Register", "Confirm Password:", nullptr));
+        label_2->setText(QCoreApplication::translate("Register", "Password:", nullptr));
         label_5->setText(QCoreApplication::translate("Register", "Register", nullptr));
         registerBtn->setText(QCoreApplication::translate("Register", "Register", nullptr));
         backBtn->setText(QCoreApplication::translate("Register", "Back", nullptr));

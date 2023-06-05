@@ -85,3 +85,18 @@ void RoomAPI::addRoom(quint64 ownerId, QString roomname, quint64 level) {
         qDebug() << "can not query";
     }
 }
+
+quint64 RoomAPI::getOwnerIdByRoomId(quint64 roomId) {
+    QSqlQuery query;
+    quint64 ownerId;
+    query.prepare("SELECT owner FROM room WHERE id = :roomId");
+    query.bindValue(":roomId", roomId);
+    if (!query.exec()) {
+        qDebug() << "Không thể thực hiện truy vấn";
+    }
+
+    while (query.next()) {
+        ownerId = query.value(0).toInt();
+    }
+    return ownerId;
+}

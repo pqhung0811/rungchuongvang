@@ -20,8 +20,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-//    MainWindow w;
-//    w.show();
+
     Connection* connection = new Connection();
     if (!connection->setConnection()) {
         qDebug() << "Can not connect";
@@ -30,14 +29,24 @@ int main(int argc, char *argv[])
         qDebug() << "abc";
     }
 
+//    UserAPI* useApi = new UserAPI();
+//    User* user = useApi->getUserByNameAndPass("hung", "1");
+//    qDebug() << "userapi: " << user->getId() << " " << user->getUsername();
+    ServerCore* serverCore = new ServerCore();
+    serverCore->start();
+
+    ClientCore* clientCore = ClientCore::getInstance();
+    clientCore->start();
+//    clientCore->login("hung", "1");
+    MainWindow w = MainWindow();
+    w.show();
+
 //    LogoutClientMessage *login1 = new LogoutClientMessage(1, "hung");
 //    QString tmp = login1->toString();
 //    qDebug() << "login: " << tmp;
-    ServerCore* serverCore = new ServerCore();
-    serverCore->start();
-    ClientCore* clientCore = new ClientCore();
-    clientCore->start();
-//    clientCore->createRoom("room7", 9, "hung", 1, 600);
+//    ClientCore* clientCore = new ClientCore();
+//    clientCore->start();
+//    clientCore->responseJoinRoom(2, 1, 1);
 //    RoomAPI* roomAPI = new RoomAPI();
 //    roomAPI->addRoom(1, "abcd", "12/03/2031");
 //    roomAPI->getRoomsByStatusAndLevel(1, 1);

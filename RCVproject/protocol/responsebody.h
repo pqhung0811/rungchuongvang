@@ -17,7 +17,7 @@ public:
 public slots:
     void setResponseBody(QJsonObject responseBody);
     QJsonObject getResponseBody();
-    void createLoginBody(quint64 id, QString username, QString password, quint64 ranked, quint64 rankScore);
+    void createLoginBody(quint64 id, QString username, quint64 ranked, quint64 rankScore);
     void createLogoutBody(quint64 id, QString username);
 signals:
 

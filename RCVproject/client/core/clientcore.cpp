@@ -11,6 +11,16 @@ void ClientCore::setInputMessage(const QString &newInputMessage)
     inputMessage = newInputMessage;
 }
 
+QString ClientCore::getOutputMessage() const
+{
+    return outputMessage;
+}
+
+void ClientCore::setOutputMessage(const QString &newOutputMessage)
+{
+    outputMessage = newOutputMessage;
+}
+
 ClientCore::ClientCore(QObject *parent)
     : QObject{parent}
 {
@@ -18,6 +28,12 @@ ClientCore::ClientCore(QObject *parent)
     connect(socket, &QTcpSocket::connected, this, &ClientCore::onConnected);
     connect(socket, &QTcpSocket::readyRead, this, &ClientCore::onReadyRead);
     connect(socket, &QTcpSocket::disconnected, this, &ClientCore::onDisconnected);
+}
+
+ClientCore *ClientCore::getInstance()
+{
+    static ClientCore instance;
+    return &instance;
 }
 
 void ClientCore::connectToServer(const QString &host, quint16 port)
@@ -33,7 +49,13 @@ void ClientCore::onConnected()
 void ClientCore::onReadyRead()
 {
     QByteArray responseData = this->socket->readAll();
+    qDebug() << "clientCore: " << responseData;
     // Process the responseData received from the server
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(responseData);
+
+    emit Finished(jsonDoc);
+//    emit Finished(QString::fromUtf8(responseData));
+//    this->outputMessage = QString::fromUtf8(responseData);
 }
 
 void ClientCore::onDisconnected()
@@ -55,6 +77,7 @@ void ClientCore::start() {
 void ClientCore::sendRequest(QString strMsgToSend) {
 //    Attachment* attachment = new Attachment(strMsgToSend, 1);
     QByteArray data = strMsgToSend.toUtf8();
+    qDebug() << "clientcore: " << data;
     QBuffer* buffer = new QBuffer(this);
     buffer->setData(data);
     buffer->open(QIODevice::ReadWrite);
@@ -84,5 +107,10 @@ void ClientCore::createRoom(QString roomname, quint64 ownerId, QString username,
 
 void ClientCore::requestJoinRoom(quint64 userId, quint64 roomId) {
     RequestJoinRoomClientMessage* clientMsg = new RequestJoinRoomClientMessage(userId, roomId);
+    sendRequest(clientMsg->toString());
+}
+
+void ClientCore::responseJoinRoom(quint64 userId, quint64 roomId, quint8 reply) {
+    ResponseJoinRoomClientMessage* clientMsg = new ResponseJoinRoomClientMessage(userId, roomId, reply);
     sendRequest(clientMsg->toString());
 }

@@ -39,6 +39,8 @@ RCVproject_autogen/timestamp: \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomclientmessage.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomservermessage.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomservermessage.h \
+	D:/Networkprogramming/project/qtPrj/RCVproject/message/finalerrormessage.cpp \
+	D:/Networkprogramming/project/qtPrj/RCVproject/message/finalerrormessage.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginservermessage.cpp \
@@ -57,6 +59,10 @@ RCVproject_autogen/timestamp: \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/requestjoinroomclientmessage.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/requestjoinroomservermessage.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/requestjoinroomservermessage.h \
+	D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/responsejoinroomclientmessage.cpp \
+	D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/responsejoinroomclientmessage.h \
+	D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/responsejoinroomservermessage.cpp \
+	D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/responsejoinroomservermessage.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/servermessage.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/servermessage.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/protocol/attachment.cpp \
@@ -78,10 +84,12 @@ RCVproject_autogen/timestamp: \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/listroomscene.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/mainwindow.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/mainwindow.h \
+	D:/Networkprogramming/project/qtPrj/RCVproject/scene/mydialog.cpp \
+	D:/Networkprogramming/project/qtPrj/RCVproject/scene/mydialog.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/rankscene.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/rankscene.h \
-	D:/Networkprogramming/project/qtPrj/RCVproject/scene/register.cpp \
-	D:/Networkprogramming/project/qtPrj/RCVproject/scene/register.h \
+	D:/Networkprogramming/project/qtPrj/RCVproject/scene/registerscene.cpp \
+	D:/Networkprogramming/project/qtPrj/RCVproject/scene/registerscene.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/roomscene.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/roomscene.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/server/core/processor/requestprocessor.cpp \
@@ -90,6 +98,8 @@ RCVproject_autogen/timestamp: \
 	D:/Networkprogramming/project/qtPrj/RCVproject/server/core/requestprocessing.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercore.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercore.h \
+	D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercreatemessage.cpp \
+	D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercreatemessage.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/server/servermain.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/server/servermain.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/test/userapitest.cpp \
@@ -402,6 +412,7 @@ RCVproject_autogen/timestamp: \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qkeysequence.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qpaintdevice.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qpalette.h \
+	D:/Qt/6.5.0/mingw_64/include/QtGui/qpen.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qpixelformat.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qpixmap.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qpointingdevice.h \
@@ -413,6 +424,10 @@ RCVproject_autogen/timestamp: \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qsurface.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qsurfaceformat.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qtestsupport_gui.h \
+	D:/Qt/6.5.0/mingw_64/include/QtGui/qtextcursor.h \
+	D:/Qt/6.5.0/mingw_64/include/QtGui/qtextdocument.h \
+	D:/Qt/6.5.0/mingw_64/include/QtGui/qtextformat.h \
+	D:/Qt/6.5.0/mingw_64/include/QtGui/qtextoption.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qtgui-config.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qtguiexports.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qtguiglobal.h \
@@ -480,10 +495,15 @@ RCVproject_autogen/timestamp: \
 	D:/Qt/6.5.0/mingw_64/include/QtTest/qttestglobal.h \
 	D:/Qt/6.5.0/mingw_64/include/QtTest/qttestlib-config.h \
 	D:/Qt/6.5.0/mingw_64/include/QtTest/qttestversion.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QDialog \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QLineEdit \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QMainWindow \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QSizePolicy \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QWidget \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qapplication.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qframe.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlineedit.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qmainwindow.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qsizepolicy.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtabwidget.h \
@@ -1032,7 +1052,9 @@ RCVproject_autogen/timestamp: \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/homescene.ui \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/listroomscene.ui \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/mainwindow.ui \
+	D:/Networkprogramming/project/qtPrj/RCVproject/scene/mydialog.ui \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/rankscene.ui \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/register.ui \
+	D:/Networkprogramming/project/qtPrj/RCVproject/scene/registerscene.ui \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/roomscene.ui \
 	D:/Qt/Tools/CMake_64/bin/cmake.exe

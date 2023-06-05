@@ -11,6 +11,7 @@
 #include "room.h"
 #include "registercontroller.h"
 #include "createroomcontroller.h"
+#include "requestjoinroomcontroller.h"
 
 class RequestProcessing : public QObject
 {
@@ -29,6 +30,9 @@ public:
     Room *getRoom() const;
     void setRoom(Room *newRoom);
 
+    User *getUser() const;
+    void setUser(User *newUser);
+
 public slots:
     QString handle();
     QString login();
@@ -36,6 +40,7 @@ public slots:
     QString registers();
     QString createRoom();
     QString requestJoinRoom();
+    QString responseJoinRoom();
 
 
 signals:

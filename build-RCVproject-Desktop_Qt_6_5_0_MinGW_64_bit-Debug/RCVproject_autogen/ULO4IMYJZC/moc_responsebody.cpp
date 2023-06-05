@@ -46,14 +46,13 @@ static constexpr auto qt_meta_stringdata_CLASSResponseBodyENDCLASS = QtMocHelper
     "createLoginBody",
     "id",
     "username",
-    "password",
     "ranked",
     "rankScore",
     "createLogoutBody"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSResponseBodyENDCLASS_t {
-    uint offsetsAndSizes[24];
+    uint offsetsAndSizes[22];
     char stringdata0[13];
     char stringdata1[16];
     char stringdata2[1];
@@ -62,10 +61,9 @@ struct qt_meta_stringdata_CLASSResponseBodyENDCLASS_t {
     char stringdata5[16];
     char stringdata6[3];
     char stringdata7[9];
-    char stringdata8[9];
-    char stringdata9[7];
-    char stringdata10[10];
-    char stringdata11[17];
+    char stringdata8[7];
+    char stringdata9[10];
+    char stringdata10[17];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSResponseBodyENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -79,10 +77,9 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSResponseBodyENDCLASS_t qt_meta_
         QT_MOC_LITERAL(59, 15),  // "createLoginBody"
         QT_MOC_LITERAL(75, 2),  // "id"
         QT_MOC_LITERAL(78, 8),  // "username"
-        QT_MOC_LITERAL(87, 8),  // "password"
-        QT_MOC_LITERAL(96, 6),  // "ranked"
-        QT_MOC_LITERAL(103, 9),  // "rankScore"
-        QT_MOC_LITERAL(113, 16)   // "createLogoutBody"
+        QT_MOC_LITERAL(87, 6),  // "ranked"
+        QT_MOC_LITERAL(94, 9),  // "rankScore"
+        QT_MOC_LITERAL(104, 16)   // "createLogoutBody"
     },
     "ResponseBody",
     "setResponseBody",
@@ -92,7 +89,6 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSResponseBodyENDCLASS_t qt_meta_
     "createLoginBody",
     "id",
     "username",
-    "password",
     "ranked",
     "rankScore",
     "createLogoutBody"
@@ -117,13 +113,13 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSResponseBodyENDCLASS[] = {
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
        1,    1,   38,    2, 0x0a,    1 /* Public */,
        4,    0,   41,    2, 0x0a,    3 /* Public */,
-       5,    5,   42,    2, 0x0a,    4 /* Public */,
-      11,    2,   53,    2, 0x0a,   10 /* Public */,
+       5,    4,   42,    2, 0x0a,    4 /* Public */,
+      10,    2,   51,    2, 0x0a,    9 /* Public */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QJsonObject,    3,
     QMetaType::QJsonObject,
-    QMetaType::Void, QMetaType::ULongLong, QMetaType::QString, QMetaType::QString, QMetaType::ULongLong, QMetaType::ULongLong,    6,    7,    8,    9,   10,
+    QMetaType::Void, QMetaType::ULongLong, QMetaType::QString, QMetaType::ULongLong, QMetaType::ULongLong,    6,    7,    8,    9,
     QMetaType::Void, QMetaType::ULongLong, QMetaType::QString,    6,    7,
 
        0        // eod
@@ -147,7 +143,6 @@ Q_CONSTINIT const QMetaObject ResponseBody::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<quint64, std::false_type>,
         QtPrivate::TypeAndForceComplete<QString, std::false_type>,
-        QtPrivate::TypeAndForceComplete<QString, std::false_type>,
         QtPrivate::TypeAndForceComplete<quint64, std::false_type>,
         QtPrivate::TypeAndForceComplete<quint64, std::false_type>,
         // method 'createLogoutBody'
@@ -167,7 +162,7 @@ void ResponseBody::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 0: _t->setResponseBody((*reinterpret_cast< std::add_pointer_t<QJsonObject>>(_a[1]))); break;
         case 1: { QJsonObject _r = _t->getResponseBody();
             if (_a[0]) *reinterpret_cast< QJsonObject*>(_a[0]) = std::move(_r); }  break;
-        case 2: _t->createLoginBody((*reinterpret_cast< std::add_pointer_t<quint64>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[5]))); break;
+        case 2: _t->createLoginBody((*reinterpret_cast< std::add_pointer_t<quint64>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[4]))); break;
         case 3: _t->createLogoutBody((*reinterpret_cast< std::add_pointer_t<quint64>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
         default: ;
         }

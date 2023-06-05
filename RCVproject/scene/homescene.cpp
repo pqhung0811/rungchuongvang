@@ -29,3 +29,18 @@ void HomeScene::on_createRoomBtn_clicked()
 
 }
 
+Ui::HomeScene *HomeScene::getUi() const
+{
+    return ui;
+}
+
+void HomeScene::setUi(Ui::HomeScene *newUi)
+{
+    ui = newUi;
+}
+
+void HomeScene::on_label_2_linkActivated(const QString &link)
+{
+    this->ui->label_2->setText(link);
+}
+

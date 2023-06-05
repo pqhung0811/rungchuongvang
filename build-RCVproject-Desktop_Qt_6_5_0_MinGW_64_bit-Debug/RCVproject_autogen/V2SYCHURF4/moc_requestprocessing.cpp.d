@@ -5,6 +5,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Networkprogramming/project/qtPrj/RCVproject/controller/createroomcontroller.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/controller/logincontroller.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/controller/registercontroller.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/controller/requestjoinroomcontroller.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/entity/room.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/entity/user.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QDateTime \

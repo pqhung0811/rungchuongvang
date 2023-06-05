@@ -1,5 +1,7 @@
 D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/NPUKSKGWT2/moc_requestjoinroomcontroller.cpp: D:/Networkprogramming/project/qtPrj/RCVproject/controller/requestjoinroomcontroller.h \
   D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/moc_predefs.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/api/userapi.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/entity/user.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QObject \
   D:/Qt/6.5.0/mingw_64/include/QtCore/q20type_traits.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qalgorithms.h \

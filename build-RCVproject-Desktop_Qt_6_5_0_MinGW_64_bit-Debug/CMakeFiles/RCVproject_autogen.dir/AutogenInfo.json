@@ -658,6 +658,12 @@
 			null
 		],
 		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/finalerrormessage.h",
+			"MU",
+			"TGVJH5J54A/moc_finalerrormessage.cpp",
+			null
+		],
+		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.h",
 			"MU",
 			"HJUDRXRLBF/moc_loginclientmessage.cpp",
@@ -709,6 +715,18 @@
 			"D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/requestjoinroomservermessage.h",
 			"MU",
 			"73AMGEJVFF/moc_requestjoinroomservermessage.cpp",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/responsejoinroomclientmessage.h",
+			"MU",
+			"73AMGEJVFF/moc_responsejoinroomclientmessage.cpp",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/responsejoinroomservermessage.h",
+			"MU",
+			"73AMGEJVFF/moc_responsejoinroomservermessage.cpp",
 			null
 		],
 		[
@@ -772,15 +790,21 @@
 			null
 		],
 		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/scene/mydialog.h",
+			"MU",
+			"QSLIUTEOWB/moc_mydialog.cpp",
+			null
+		],
+		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/scene/rankscene.h",
 			"MU",
 			"QSLIUTEOWB/moc_rankscene.cpp",
 			null
 		],
 		[
-			"D:/Networkprogramming/project/qtPrj/RCVproject/scene/register.h",
+			"D:/Networkprogramming/project/qtPrj/RCVproject/scene/registerscene.h",
 			"MU",
-			"QSLIUTEOWB/moc_register.cpp",
+			"QSLIUTEOWB/moc_registerscene.cpp",
 			null
 		],
 		[
@@ -805,6 +829,12 @@
 			"D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercore.h",
 			"MU",
 			"V2SYCHURF4/moc_servercore.cpp",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercreatemessage.h",
+			"MU",
+			"V2SYCHURF4/moc_servercreatemessage.cpp",
 			null
 		],
 		[
@@ -1003,6 +1033,11 @@
 			null
 		],
 		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/finalerrormessage.cpp",
+			"MU",
+			null
+		],
+		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.cpp",
 			"MU",
 			null
@@ -1044,6 +1079,16 @@
 		],
 		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/requestjoinroomservermessage.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/responsejoinroomclientmessage.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/responsejoinroomservermessage.cpp",
 			"MU",
 			null
 		],
@@ -1098,12 +1143,17 @@
 			null
 		],
 		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/scene/mydialog.cpp",
+			"MU",
+			null
+		],
+		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/scene/rankscene.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/Networkprogramming/project/qtPrj/RCVproject/scene/register.cpp",
+			"D:/Networkprogramming/project/qtPrj/RCVproject/scene/registerscene.cpp",
 			"MU",
 			null
 		],
@@ -1124,6 +1174,11 @@
 		],
 		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercore.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercreatemessage.cpp",
 			"MU",
 			null
 		],
