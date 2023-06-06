@@ -658,6 +658,18 @@
 			null
 		],
 		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/findroom/findroomclientmessage.h",
+			"MU",
+			"RUDWXYEUKC/moc_findroomclientmessage.cpp",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/findroom/findroomservermessage.h",
+			"MU",
+			"RUDWXYEUKC/moc_findroomservermessage.cpp",
+			null
+		],
+		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.h",
 			"MU",
 			"HJUDRXRLBF/moc_loginclientmessage.cpp",
@@ -793,6 +805,12 @@
 			"D:/Networkprogramming/project/qtPrj/RCVproject/scene/mydialog.h",
 			"MU",
 			"QSLIUTEOWB/moc_mydialog.cpp",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/scene/noeditdelegate.h",
+			"MU",
+			"QSLIUTEOWB/moc_noeditdelegate.cpp",
 			null
 		],
 		[
@@ -1033,6 +1051,16 @@
 			null
 		],
 		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/findroom/findroomclientmessage.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/findroom/findroomservermessage.cpp",
+			"MU",
+			null
+		],
+		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.cpp",
 			"MU",
 			null
@@ -1144,6 +1172,11 @@
 		],
 		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/scene/mydialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/scene/noeditdelegate.cpp",
 			"MU",
 			null
 		],

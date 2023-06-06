@@ -46,6 +46,8 @@ set(PROJECT_SOURCES
         scene/mydialog.h
         scene/mydialog.cpp
         scene/mydialog.ui
+        scene/noeditdelegate.h
+        scene/noeditdelegate.cpp
         entity/user.h
         entity/user.cpp
         entity/room.h
@@ -128,6 +130,10 @@ set(PROJECT_SOURCES
         message/requestjoinroom/responsejoinroomclientmessage.cpp
         message/requestjoinroom/responsejoinroomservermessage.h
         message/requestjoinroom/responsejoinroomservermessage.cpp
+        message/findroom/findroomclientmessage.h
+        message/findroom/findroomclientmessage.cpp
+        message/findroom/findroomservermessage.h
+        message/findroom/findroomservermessage.cpp
         protocol/requestbody.h
         protocol/requestbody.cpp
         protocol/responsebody.h

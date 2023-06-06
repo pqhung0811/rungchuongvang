@@ -5986,6 +5986,7 @@ D:/Networkprogramming/project/qtPrj/RCVproject/test/userapitest.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h
 D:/Networkprogramming/project/qtPrj/RCVproject/entity/question.h
 D:/Networkprogramming/project/qtPrj/RCVproject/api/answerapi.cpp
+D:/Networkprogramming/project/qtPrj/RCVproject/message/findroom/findroomservermessage.h
 D:/Networkprogramming/project/qtPrj/RCVproject/entity/user.h
  mmc:Q_OBJECT
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/entity/user.h
@@ -7008,6 +7009,7 @@ D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercore.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h
+D:/Networkprogramming/project/qtPrj/RCVproject/message/findroom/findroomservermessage.cpp
 D:/Networkprogramming/project/qtPrj/RCVproject/entity/user.cpp
 D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.h
  mmc:Q_OBJECT
@@ -9057,8 +9059,14 @@ D:/Networkprogramming/project/qtPrj/RCVproject/scene/listroomscene.h
  mmc:Q_OBJECT
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/scene/listroomscene.h
  mdp:D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/moc_predefs.h
+ mdp:D:/Networkprogramming/project/qtPrj/RCVproject/scene/noeditdelegate.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/QItemSelection
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/QModelIndex
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/QModelIndexList
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/QVariant
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/q20memory.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/q20type_traits.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qabstractitemmodel.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qalgorithms.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qanystringview.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qarraydata.h
@@ -9097,10 +9105,12 @@ D:/Networkprogramming/project/qtPrj/RCVproject/scene/listroomscene.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qhash.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qhashfunctions.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qiodevicebase.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qitemselectionmodel.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qiterable.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qiterator.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qline.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qlist.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qlocale.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qlogging.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qmalloc.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qmap.h
@@ -9121,6 +9131,7 @@ D:/Networkprogramming/project/qtPrj/RCVproject/scene/listroomscene.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qprocessordetection.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qrect.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qrefcount.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qregularexpression.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qscopedpointer.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qscopeguard.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qset.h
@@ -9164,6 +9175,7 @@ D:/Networkprogramming/project/qtPrj/RCVproject/scene/listroomscene.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qvarlengtharray.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qversiontagging.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtCore/qxptype_traits.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtGui/QStandardItemModel
  mdp:D:/Qt/6.5.0/mingw_64/include/QtGui/qaction.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtGui/qbitmap.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtGui/qbrush.h
@@ -9183,14 +9195,38 @@ D:/Networkprogramming/project/qtPrj/RCVproject/scene/listroomscene.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtGui/qregion.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtGui/qrgb.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtGui/qrgba64.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtGui/qstandarditemmodel.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtGui/qtgui-config.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtGui/qtguiexports.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtGui/qtguiglobal.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtGui/qtransform.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtGui/qvalidator.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtGui/qwindowdefs.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtGui/qwindowdefs_win.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/QListWidget
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/QListWidgetItem
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/QStyleOptionViewItem
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/QStyledItemDelegate
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/QTableWidgetItem
  mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/QWidget
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractitemview.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractscrollarea.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractslider.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractspinbox.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qframe.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlistview.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlistwidget.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qrubberband.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qsizepolicy.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qslider.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qstyle.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qstyleditemdelegate.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qstyleoption.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtabbar.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtableview.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtablewidget.h
+ mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtabwidget.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgets-config.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgetsexports.h
  mdp:D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h
@@ -10933,7 +10969,6 @@ D:/Networkprogramming/project/qtPrj/RCVproject/controller/usercontroller.cpp
 D:/Networkprogramming/project/qtPrj/RCVproject/entity/question.cpp
 D:/Networkprogramming/project/qtPrj/RCVproject/test/userapitest.cpp
 D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.cpp
-D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginservermessage.cpp
 D:/Networkprogramming/project/qtPrj/RCVproject/protocol/attachment.h
  mmc:Q_OBJECT
  mdp:D:/Networkprogramming/project/qtPrj/RCVproject/protocol/attachment.h
@@ -11264,6 +11299,7 @@ D:/Networkprogramming/project/qtPrj/RCVproject/protocol/attachment.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h
+D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginservermessage.cpp
 D:/Networkprogramming/project/qtPrj/RCVproject/scene/gamescene.cpp
  uic:ui_gamescene.h
 D:/Networkprogramming/project/qtPrj/RCVproject/scene/homescene.cpp
@@ -18108,3 +18144,7 @@ D:/Networkprogramming/project/qtPrj/RCVproject/message/finalerrormessage.cpp
 D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercreatemessage.cpp
 D:/Networkprogramming/project/qtPrj/RCVproject/message/noinfomessage.h
 D:/Networkprogramming/project/qtPrj/RCVproject/message/noinfomessage.cpp
+D:/Networkprogramming/project/qtPrj/RCVproject/message/findroom/findroomclientmessage.h
+D:/Networkprogramming/project/qtPrj/RCVproject/message/findroom/findroomclientmessage.cpp
+D:/Networkprogramming/project/qtPrj/RCVproject/scene/noeditdelegate.h
+D:/Networkprogramming/project/qtPrj/RCVproject/scene/noeditdelegate.cpp

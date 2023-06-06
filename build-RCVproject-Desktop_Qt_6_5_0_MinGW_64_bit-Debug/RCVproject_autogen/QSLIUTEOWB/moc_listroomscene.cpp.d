@@ -1,7 +1,13 @@
 D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/QSLIUTEOWB/moc_listroomscene.cpp: D:/Networkprogramming/project/qtPrj/RCVproject/scene/listroomscene.h \
   D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/moc_predefs.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/scene/noeditdelegate.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QItemSelection \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QModelIndex \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QModelIndexList \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QVariant \
   D:/Qt/6.5.0/mingw_64/include/QtCore/q20memory.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/q20type_traits.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qabstractitemmodel.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qalgorithms.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qanystringview.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qarraydata.h \
@@ -40,10 +46,12 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qhash.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qhashfunctions.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qiodevicebase.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qitemselectionmodel.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qiterable.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qiterator.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qline.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qlist.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qlocale.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qlogging.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qmalloc.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qmap.h \
@@ -64,6 +72,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qprocessordetection.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qrect.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qrefcount.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qregularexpression.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qscopedpointer.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qscopeguard.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qset.h \
@@ -107,6 +116,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qvarlengtharray.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qversiontagging.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qxptype_traits.h \
+  D:/Qt/6.5.0/mingw_64/include/QtGui/QStandardItemModel \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qaction.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qbitmap.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qbrush.h \
@@ -126,14 +136,38 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtGui/qregion.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qrgb.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qrgba64.h \
+  D:/Qt/6.5.0/mingw_64/include/QtGui/qstandarditemmodel.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qtgui-config.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qtguiexports.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qtguiglobal.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qtransform.h \
+  D:/Qt/6.5.0/mingw_64/include/QtGui/qvalidator.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qwindowdefs_win.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/QListWidget \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/QListWidgetItem \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/QStyleOptionViewItem \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/QStyledItemDelegate \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/QTableWidgetItem \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/QWidget \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractslider.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qframe.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlistview.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlistwidget.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qrubberband.h \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/qsizepolicy.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qslider.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qstyle.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qstyleditemdelegate.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qstyleoption.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtabbar.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtableview.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtablewidget.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtabwidget.h \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \

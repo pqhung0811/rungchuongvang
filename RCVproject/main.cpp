@@ -16,6 +16,8 @@
 #include "logout/logoutservermessage.h"
 #include "core/servercore.h"
 #include "core/clientcore.h"
+#include "scene/listroomscene.h"
+#include "scene/homescene.h"
 
 int main(int argc, char *argv[])
 {
@@ -29,17 +31,19 @@ int main(int argc, char *argv[])
         qDebug() << "abc";
     }
 
-//    UserAPI* useApi = new UserAPI();
-//    User* user = useApi->getUserByNameAndPass("hung", "1");
-//    qDebug() << "userapi: " << user->getId() << " " << user->getUsername();
-    ServerCore* serverCore = new ServerCore();
-    serverCore->start();
+//    ServerCore* serverCore = new ServerCore();
+//    serverCore->start();
+//    ClientCore* clientCore = ClientCore::getInstance();
+//    clientCore->start();
+//    MainWindow w = MainWindow();
+//    w.show();
 
-    ClientCore* clientCore = ClientCore::getInstance();
-    clientCore->start();
-//    clientCore->login("hung", "1");
-    MainWindow w = MainWindow();
-    w.show();
+
+    ListRoomScene* listRoomScene = new ListRoomScene();
+    listRoomScene->show();
+
+//    HomeScene* homeScene = new HomeScene();
+//    homeScene->show();
 
 //    LogoutClientMessage *login1 = new LogoutClientMessage(1, "hung");
 //    QString tmp = login1->toString();

@@ -39,6 +39,10 @@ RCVproject_autogen/timestamp: \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomclientmessage.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomservermessage.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomservermessage.h \
+	D:/Networkprogramming/project/qtPrj/RCVproject/message/findroom/findroomclientmessage.cpp \
+	D:/Networkprogramming/project/qtPrj/RCVproject/message/findroom/findroomclientmessage.h \
+	D:/Networkprogramming/project/qtPrj/RCVproject/message/findroom/findroomservermessage.cpp \
+	D:/Networkprogramming/project/qtPrj/RCVproject/message/findroom/findroomservermessage.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginservermessage.cpp \
@@ -86,6 +90,8 @@ RCVproject_autogen/timestamp: \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/mainwindow.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/mydialog.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/mydialog.h \
+	D:/Networkprogramming/project/qtPrj/RCVproject/scene/noeditdelegate.cpp \
+	D:/Networkprogramming/project/qtPrj/RCVproject/scene/noeditdelegate.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/rankscene.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/rankscene.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/registerscene.cpp \
@@ -120,6 +126,7 @@ RCVproject_autogen/timestamp: \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QFlags \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QHash \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QIODevice \
+	D:/Qt/6.5.0/mingw_64/include/QtCore/QItemSelection \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonDocument \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonObject \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QList \
@@ -127,6 +134,8 @@ RCVproject_autogen/timestamp: \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QMargins \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QMetaEnum \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QMetaType \
+	D:/Qt/6.5.0/mingw_64/include/QtCore/QModelIndex \
+	D:/Qt/6.5.0/mingw_64/include/QtCore/QModelIndexList \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QMutex \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QObject \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QRect \
@@ -392,6 +401,7 @@ RCVproject_autogen/timestamp: \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/QIcon \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/QImage \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/QPixmap \
+	D:/Qt/6.5.0/mingw_64/include/QtGui/QStandardItemModel \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/QTransform \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qaction.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qbitmap.h \
@@ -421,6 +431,7 @@ RCVproject_autogen/timestamp: \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qrgb.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qrgba64.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qscreen.h \
+	D:/Qt/6.5.0/mingw_64/include/QtGui/qstandarditemmodel.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qsurface.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qsurfaceformat.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qtestsupport_gui.h \
@@ -432,6 +443,7 @@ RCVproject_autogen/timestamp: \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qtguiexports.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qtguiglobal.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qtransform.h \
+	D:/Qt/6.5.0/mingw_64/include/QtGui/qvalidator.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qvector2d.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qvector3d.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qvector4d.h \
@@ -497,15 +509,35 @@ RCVproject_autogen/timestamp: \
 	D:/Qt/6.5.0/mingw_64/include/QtTest/qttestversion.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QDialog \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QLineEdit \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QListWidget \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QListWidgetItem \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QMainWindow \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QSizePolicy \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QStyleOptionViewItem \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QStyledItemDelegate \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QTableWidgetItem \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QWidget \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractslider.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qapplication.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qframe.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlineedit.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlistview.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlistwidget.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qmainwindow.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qrubberband.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qsizepolicy.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qslider.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qstyle.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qstyleditemdelegate.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qstyleoption.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtabbar.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtableview.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtablewidget.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtabwidget.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtestsupport_widgets.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgets-config.h \

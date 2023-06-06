@@ -161,7 +161,7 @@ border-radius: 20px;</string>
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>90</y>
+     <y>110</y>
      <width>191</width>
      <height>31</height>
     </rect>
@@ -179,95 +179,39 @@ border-radius: 20px;</string>
     <string>List Room</string>
    </property>
   </widget>
-  <widget class="QTabWidget" name="tabWidget">
+  <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>160</y>
-     <width>271</width>
-     <height>321</height>
+     <x>50</x>
+     <y>170</y>
+     <width>291</width>
+     <height>331</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <property name="widgetResizable">
+    <bool>true</bool>
    </property>
-   <property name="currentIndex">
-    <number>1</number>
-   </property>
-   <widget class="QWidget" name="tab">
-    <attribute name="title">
-     <string>Tab 1</string>
-    </attribute>
-    <widget class="QScrollArea" name="scrollArea_3">
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>289</width>
+      <height>329</height>
+     </rect>
+    </property>
+    <widget class="QTableView" name="ListRoomView">
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>271</width>
-       <height>301</height>
+       <width>291</width>
+       <height>331</height>
       </rect>
      </property>
-     <property name="widgetResizable">
-      <bool>true</bool>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents_3">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>269</width>
-        <height>299</height>
-       </rect>
-      </property>
-      <widget class="QListWidget" name="listWidget_2">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>271</width>
-         <height>301</height>
-        </rect>
-       </property>
-      </widget>
-     </widget>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="tab_2">
-    <attribute name="title">
-     <string>Tab 2</string>
-    </attribute>
-    <widget class="QScrollArea" name="scrollArea_2">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>271</width>
-       <height>301</height>
-      </rect>
-     </property>
-     <property name="widgetResizable">
-      <bool>true</bool>
-     </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents_2">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>269</width>
-        <height>299</height>
-       </rect>
-      </property>
-      <widget class="QListWidget" name="listWidget">
-       <property name="geometry">
-        <rect>
-         <x>-10</x>
-         <y>0</y>
-         <width>281</width>
-         <height>301</height>
-        </rect>
-       </property>
-      </widget>
-     </widget>
     </widget>
    </widget>
   </widget>
