@@ -22,7 +22,8 @@ public slots:
     void createLoginBody(QString username, QString password);
     void createLogoutBody(quint64 id, QString username);
     void createRegisterBody(QString username, QString password);
-    void createCreateRoomBody(QString roomname, quint64 ownerId, QString username, quint64 ranked, quint64 rankScore);
+//    void createCreateRoomBody(QString roomname, quint64 ownerId, QString username, quint64 ranked, quint64 rankScore);
+    void createCreateRoomBody(QString roomname);
     void createRequestJoinRoomBody(quint64 userId, quint64 roomId);
     void createResponseJoinRoomBody(quint64 userId, quint64 roomId, quint8 reply);
 

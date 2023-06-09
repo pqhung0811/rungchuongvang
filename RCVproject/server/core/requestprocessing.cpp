@@ -31,6 +31,26 @@ void RequestProcessing::setUser(User *newUser)
     user = newUser;
 }
 
+QString RequestProcessing::getOuputMsg() const
+{
+    return ouputMsg;
+}
+
+void RequestProcessing::setOuputMsg(const QString &newOuputMsg)
+{
+    ouputMsg = newOuputMsg;
+}
+
+QList<Room *> RequestProcessing::getRooms() const
+{
+    return rooms;
+}
+
+void RequestProcessing::setRooms(const QList<Room *> &newRooms)
+{
+    rooms = newRooms;
+}
+
 RequestProcessing::RequestProcessing(QObject *parent)
     : QObject{parent}
 {
@@ -48,6 +68,7 @@ QString RequestProcessing::handle() {
         else if(command.compare("CREATEROOM")==0) cmd=4;
         else if(command.compare("REQUESTJOINROOM")==0) cmd=5;
         else if(command.compare("RESPONSEJOINROOM")==0) cmd=6;
+        else if(command.compare("FINDROOM")==0) cmd=7;
         switch (cmd) {
             case 1:
                 output = this->login();
@@ -56,6 +77,7 @@ QString RequestProcessing::handle() {
 //                output = this
             case 3:
                 output = this->registers();
+
                 break;
             case 4:
                 output = this->createRoom();
@@ -65,6 +87,10 @@ QString RequestProcessing::handle() {
                 break;
             case 6:
                 output = this->responseJoinRoom();
+                break;
+            case 7:
+                this->rooms = this->findRoom();
+                output = "find room";
                 break;
             default:
                 break;
@@ -174,13 +200,26 @@ QString RequestProcessing::createRoom() {
         owner->setUsername(username);
         owner->setRank(ranked);
         owner->setRankScore(rankScore);
-        createRoomController->setOwner(owner);
+//        createRoomController->setOwner(owner);
+        qDebug() << "Owner: " << this->user->getUsername();
+        createRoomController->setOwner(this->user);
         msg = createRoomController->createRoom(roomname);
         this->room = createRoomController->getRoom();
         qDebug() << "processing roomname: " << this->room->getRoomname();
         qDebug() << "processing owner: " << this->room->getOwner()->getId();
     }
     return msg;
+}
+
+QList<Room*> RequestProcessing::findRoom()
+{
+    RoomAPI* roomAPI = new RoomAPI();
+    QList<Room*> roomss;
+    if(roomss.empty()) {
+        qDebug() << "empty concac";
+    }
+    roomss = roomAPI->getRoomsByStatusAndLevel(1, this->user->getRank());
+    return roomss;
 }
 
 QString RequestProcessing::requestJoinRoom() {

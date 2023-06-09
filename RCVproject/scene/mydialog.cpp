@@ -22,6 +22,6 @@ void MyDialog::changLabel(const QString &objectName)
 
 void MyDialog::on_pushButton_clicked()
 {
-    accept();
+    close();
 }
 

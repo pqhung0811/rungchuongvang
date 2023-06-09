@@ -18,8 +18,9 @@ private:
 
 public:
     explicit CreateRoomClientMessage(QObject *parent = nullptr);
-    explicit CreateRoomClientMessage(QString input, QObject *parent = nullptr);
+//    explicit CreateRoomClientMessage(QString input, QObject *parent = nullptr);
     explicit CreateRoomClientMessage(QString roomname, quint64 ownerId, QString username, quint64 ranked, quint64 rankScore, QObject *parent = nullptr);
+    explicit CreateRoomClientMessage(QString roomname, QObject *parent = nullptr);
 };
 
 #endif // CREATEROOMCLIENTMESSAGE_H

@@ -98,12 +98,12 @@ void MainWindow::handleLoginResponse(const QJsonDocument &response)
         if(errorMsg.compare("invalid username")==0) {
             MyDialog* myDialog = new MyDialog();
             myDialog->changLabel("Invalid Username");
-            myDialog->exec();
+            myDialog->show();
         }
         else {
             MyDialog* myDialog = new MyDialog();
             myDialog->changLabel("Invalid Password");
-            myDialog->exec();
+            myDialog->show();
         }
     }
 }

@@ -56,18 +56,16 @@ static constexpr auto qt_meta_stringdata_CLASSClientCoreENDCLASS = QtMocHelpers:
     "registers",
     "createRoom",
     "roomname",
-    "ownerId",
-    "ranked",
-    "rankScore",
     "requestJoinRoom",
     "userId",
     "roomId",
     "responseJoinRoom",
-    "reply"
+    "reply",
+    "findRoom"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSClientCoreENDCLASS_t {
-    uint offsetsAndSizes[52];
+    uint offsetsAndSizes[48];
     char stringdata0[11];
     char stringdata1[9];
     char stringdata2[1];
@@ -86,14 +84,12 @@ struct qt_meta_stringdata_CLASSClientCoreENDCLASS_t {
     char stringdata15[10];
     char stringdata16[11];
     char stringdata17[9];
-    char stringdata18[8];
+    char stringdata18[16];
     char stringdata19[7];
-    char stringdata20[10];
-    char stringdata21[16];
-    char stringdata22[7];
-    char stringdata23[7];
-    char stringdata24[17];
-    char stringdata25[6];
+    char stringdata20[7];
+    char stringdata21[17];
+    char stringdata22[6];
+    char stringdata23[9];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSClientCoreENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -117,14 +113,12 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSClientCoreENDCLASS_t qt_meta_st
         QT_MOC_LITERAL(134, 9),  // "registers"
         QT_MOC_LITERAL(144, 10),  // "createRoom"
         QT_MOC_LITERAL(155, 8),  // "roomname"
-        QT_MOC_LITERAL(164, 7),  // "ownerId"
-        QT_MOC_LITERAL(172, 6),  // "ranked"
-        QT_MOC_LITERAL(179, 9),  // "rankScore"
-        QT_MOC_LITERAL(189, 15),  // "requestJoinRoom"
-        QT_MOC_LITERAL(205, 6),  // "userId"
-        QT_MOC_LITERAL(212, 6),  // "roomId"
-        QT_MOC_LITERAL(219, 16),  // "responseJoinRoom"
-        QT_MOC_LITERAL(236, 5)   // "reply"
+        QT_MOC_LITERAL(164, 15),  // "requestJoinRoom"
+        QT_MOC_LITERAL(180, 6),  // "userId"
+        QT_MOC_LITERAL(187, 6),  // "roomId"
+        QT_MOC_LITERAL(194, 16),  // "responseJoinRoom"
+        QT_MOC_LITERAL(211, 5),  // "reply"
+        QT_MOC_LITERAL(217, 8)   // "findRoom"
     },
     "ClientCore",
     "Finished",
@@ -144,14 +138,12 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSClientCoreENDCLASS_t qt_meta_st
     "registers",
     "createRoom",
     "roomname",
-    "ownerId",
-    "ranked",
-    "rankScore",
     "requestJoinRoom",
     "userId",
     "roomId",
     "responseJoinRoom",
-    "reply"
+    "reply",
+    "findRoom"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -163,7 +155,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSClientCoreENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-      12,   14, // methods
+      13,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -171,20 +163,21 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSClientCoreENDCLASS[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   86,    2, 0x06,    1 /* Public */,
+       1,    1,   92,    2, 0x06,    1 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    0,   89,    2, 0x0a,    3 /* Public */,
-       5,    0,   90,    2, 0x0a,    4 /* Public */,
-       6,    0,   91,    2, 0x0a,    5 /* Public */,
-       7,    0,   92,    2, 0x0a,    6 /* Public */,
-       8,    2,   93,    2, 0x0a,    7 /* Public */,
-      11,    1,   98,    2, 0x0a,   10 /* Public */,
-      13,    2,  101,    2, 0x0a,   12 /* Public */,
-      15,    2,  106,    2, 0x0a,   15 /* Public */,
-      16,    5,  111,    2, 0x0a,   18 /* Public */,
-      21,    2,  122,    2, 0x0a,   24 /* Public */,
-      24,    3,  127,    2, 0x0a,   27 /* Public */,
+       4,    0,   95,    2, 0x0a,    3 /* Public */,
+       5,    0,   96,    2, 0x0a,    4 /* Public */,
+       6,    0,   97,    2, 0x0a,    5 /* Public */,
+       7,    0,   98,    2, 0x0a,    6 /* Public */,
+       8,    2,   99,    2, 0x0a,    7 /* Public */,
+      11,    1,  104,    2, 0x0a,   10 /* Public */,
+      13,    2,  107,    2, 0x0a,   12 /* Public */,
+      15,    2,  112,    2, 0x0a,   15 /* Public */,
+      16,    1,  117,    2, 0x0a,   18 /* Public */,
+      18,    2,  120,    2, 0x0a,   20 /* Public */,
+      21,    3,  125,    2, 0x0a,   23 /* Public */,
+      23,    0,  132,    2, 0x0a,   27 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QJsonDocument,    3,
@@ -198,9 +191,10 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSClientCoreENDCLASS[] = {
     QMetaType::Void, QMetaType::QString,   12,
     QMetaType::Void, QMetaType::ULongLong, QMetaType::QString,   14,    9,
     QMetaType::Void, QMetaType::QString, QMetaType::QString,    9,   10,
-    QMetaType::Void, QMetaType::QString, QMetaType::ULongLong, QMetaType::QString, QMetaType::ULongLong, QMetaType::ULongLong,   17,   18,    9,   19,   20,
-    QMetaType::Void, QMetaType::ULongLong, QMetaType::ULongLong,   22,   23,
-    QMetaType::Void, QMetaType::ULongLong, QMetaType::ULongLong, QMetaType::UChar,   22,   23,   25,
+    QMetaType::Void, QMetaType::QString,   17,
+    QMetaType::Void, QMetaType::ULongLong, QMetaType::ULongLong,   19,   20,
+    QMetaType::Void, QMetaType::ULongLong, QMetaType::ULongLong, QMetaType::UChar,   19,   20,   22,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -243,10 +237,6 @@ Q_CONSTINIT const QMetaObject ClientCore::staticMetaObject = { {
         // method 'createRoom'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<QString, std::false_type>,
-        QtPrivate::TypeAndForceComplete<quint64, std::false_type>,
-        QtPrivate::TypeAndForceComplete<QString, std::false_type>,
-        QtPrivate::TypeAndForceComplete<quint64, std::false_type>,
-        QtPrivate::TypeAndForceComplete<quint64, std::false_type>,
         // method 'requestJoinRoom'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<quint64, std::false_type>,
@@ -255,7 +245,9 @@ Q_CONSTINIT const QMetaObject ClientCore::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<quint64, std::false_type>,
         QtPrivate::TypeAndForceComplete<quint64, std::false_type>,
-        QtPrivate::TypeAndForceComplete<quint8, std::false_type>
+        QtPrivate::TypeAndForceComplete<quint8, std::false_type>,
+        // method 'findRoom'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
@@ -275,9 +267,10 @@ void ClientCore::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 6: _t->sendRequest((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 7: _t->logout((*reinterpret_cast< std::add_pointer_t<quint64>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
         case 8: _t->registers((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
-        case 9: _t->createRoom((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[5]))); break;
+        case 9: _t->createRoom((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 10: _t->requestJoinRoom((*reinterpret_cast< std::add_pointer_t<quint64>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[2]))); break;
         case 11: _t->responseJoinRoom((*reinterpret_cast< std::add_pointer_t<quint64>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<quint8>>(_a[3]))); break;
+        case 12: _t->findRoom(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -311,13 +304,13 @@ int ClientCore::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 12)
+        if (_id < 13)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 12;
+        _id -= 13;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 12)
+        if (_id < 13)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 12;
+        _id -= 13;
     }
     return _id;
 }

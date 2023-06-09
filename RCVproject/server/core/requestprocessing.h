@@ -12,6 +12,8 @@
 #include "registercontroller.h"
 #include "createroomcontroller.h"
 #include "requestjoinroomcontroller.h"
+#include "roomapi.h"
+#include <QList>
 
 class RequestProcessing : public QObject
 {
@@ -20,6 +22,8 @@ private:
     QJsonObject message;
     User* user;
     Room* room;
+    QString ouputMsg;
+    QList<Room*> rooms;
 
 public:
     explicit RequestProcessing(QObject *parent = nullptr);
@@ -33,12 +37,19 @@ public:
     User *getUser() const;
     void setUser(User *newUser);
 
+    QString getOuputMsg() const;
+    void setOuputMsg(const QString &newOuputMsg);
+
+    QList<Room *> getRooms() const;
+    void setRooms(const QList<Room *> &newRooms);
+
 public slots:
     QString handle();
     QString login();
     QString logout();
     QString registers();
     QString createRoom();
+    QList<Room*> findRoom();
     QString requestJoinRoom();
     QString responseJoinRoom();
 

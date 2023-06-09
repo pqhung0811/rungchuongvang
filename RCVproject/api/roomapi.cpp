@@ -12,7 +12,7 @@ RoomAPI::RoomAPI(QObject *parent)
 QList<Room*> RoomAPI::getRoomsByStatusAndLevel(quint64 status, quint64 level) {
     QList<Room*> listRoom;
     QSqlQuery query;
-    query.prepare("SELECT * from room WHERE status = :status and level = :level");
+    query.prepare("SELECT * from room WHERE status = :status and level >= :level");
     query.bindValue(":status", status);
     query.bindValue(":level", level);
 

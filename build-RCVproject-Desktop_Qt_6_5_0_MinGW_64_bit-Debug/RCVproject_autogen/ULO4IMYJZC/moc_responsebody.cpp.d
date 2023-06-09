@@ -1,7 +1,10 @@
 D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/ULO4IMYJZC/moc_responsebody.cpp: D:/Networkprogramming/project/qtPrj/RCVproject/protocol/responsebody.h \
   D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/moc_predefs.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonArray \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonObject \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QList \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QObject \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QStringList \
   D:/Qt/6.5.0/mingw_64/include/QtCore/q20memory.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/q20type_traits.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qalgorithms.h \
@@ -48,6 +51,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qiodevicebase.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qiterable.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qiterator.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qjsonarray.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qjsonobject.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qjsonvalue.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qlist.h \

@@ -8,6 +8,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Networkprogramming/project/qtPrj/RCVproject/controller/requestjoinroomcontroller.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/entity/room.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/entity/user.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/findroom/findroomservermessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginservermessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/logout/logoutservermessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/message.h \
@@ -23,11 +24,13 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/QDateTime \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QDebug \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QHash \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonArray \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonDocument \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonObject \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QList \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QMap \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QObject \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QStringList \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QTime \
   D:/Qt/6.5.0/mingw_64/include/QtCore/q20memory.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/q20type_traits.h \
@@ -76,6 +79,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qiodevicebase.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qiterable.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qiterator.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qjsonarray.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qjsondocument.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qjsonobject.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qjsonvalue.h \

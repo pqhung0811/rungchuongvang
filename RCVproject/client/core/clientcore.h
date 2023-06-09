@@ -16,6 +16,7 @@
 #include "createroom/createroomclientmessage.h"
 #include "requestjoinroom/requestjoinroomclientmessage.h"
 #include "requestjoinroom/responsejoinroomclientmessage.h"
+#include "findroom/findroomclientmessage.h"
 #include "attachment.h"
 #include <QBuffer>
 #include <QIODevice>
@@ -52,9 +53,11 @@ public slots:
     void sendRequest(QString strMsgToSend);
     void logout(quint64 id, QString username);
     void registers(QString username, QString password);
-    void createRoom(QString roomname, quint64 ownerId, QString username, quint64 ranked, quint64 rankScore);
+//    void createRoom(QString roomname, quint64 ownerId, QString username, quint64 ranked, quint64 rankScore);
+    void createRoom(QString roomname);
     void requestJoinRoom(quint64 userId, quint64 roomId);
     void responseJoinRoom(quint64 userId, quint64 roomId, quint8 reply);
+    void findRoom();
 
 signals:
     void Finished(const QJsonDocument& response);

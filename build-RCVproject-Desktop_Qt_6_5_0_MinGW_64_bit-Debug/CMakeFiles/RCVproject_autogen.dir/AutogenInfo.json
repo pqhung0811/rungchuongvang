@@ -778,6 +778,12 @@
 			null
 		],
 		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/scene/createroomdialog.h",
+			"MU",
+			"QSLIUTEOWB/moc_createroomdialog.cpp",
+			null
+		],
+		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/scene/gamescene.h",
 			"MU",
 			"QSLIUTEOWB/moc_gamescene.cpp",
@@ -1147,6 +1153,11 @@
 		],
 		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/protocol/statuscode.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/scene/createroomdialog.cpp",
 			"MU",
 			null
 		],

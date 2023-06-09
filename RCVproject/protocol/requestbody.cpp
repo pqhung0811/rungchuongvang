@@ -36,15 +36,22 @@ void RequestBody::createRegisterBody(QString username, QString password) {
     this->requestBody.insert("password", password);
 }
 
-void RequestBody::createCreateRoomBody(QString roomname, quint64 ownerId, QString username, quint64 ranked, quint64 rankScore) {
+//void RequestBody::createCreateRoomBody(QString roomname, quint64 ownerId, QString username, quint64 ranked, quint64 rankScore) {
+//    this->requestBody = QJsonObject();
+
+//    this->requestBody.insert("roomname", roomname);
+//    this->requestBody.insert("ownerId", QString::number(ownerId));
+//    this->requestBody.insert("username", username);
+//    this->requestBody.insert("ranked", QString::number(ranked));
+//    this->requestBody.insert("rankScore", QString::number(rankScore));
+//}
+
+void RequestBody::createCreateRoomBody(QString roomname) {
     this->requestBody = QJsonObject();
 
     this->requestBody.insert("roomname", roomname);
-    this->requestBody.insert("ownerId", QString::number(ownerId));
-    this->requestBody.insert("username", username);
-    this->requestBody.insert("ranked", QString::number(ranked));
-    this->requestBody.insert("rankScore", QString::number(rankScore));
 }
+
 
 void RequestBody::createRequestJoinRoomBody(quint64 userId, quint64 roomId) {
     this->requestBody = QJsonObject();

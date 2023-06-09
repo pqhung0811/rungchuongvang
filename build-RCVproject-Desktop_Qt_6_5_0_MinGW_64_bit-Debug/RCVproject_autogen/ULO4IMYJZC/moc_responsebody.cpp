@@ -8,6 +8,7 @@
 
 #include "../../../RCVproject/protocol/responsebody.h"
 #include <QtCore/qmetatype.h>
+#include <QtCore/QList>
 
 #if __has_include(<QtCore/qtmochelpers.h>)
 #include <QtCore/qtmochelpers.h>
@@ -48,11 +49,15 @@ static constexpr auto qt_meta_stringdata_CLASSResponseBodyENDCLASS = QtMocHelper
     "username",
     "ranked",
     "rankScore",
-    "createLogoutBody"
+    "createLogoutBody",
+    "createFindRoomBody",
+    "QList<quint64>",
+    "roomIds",
+    "roomnames"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSResponseBodyENDCLASS_t {
-    uint offsetsAndSizes[22];
+    uint offsetsAndSizes[30];
     char stringdata0[13];
     char stringdata1[16];
     char stringdata2[1];
@@ -64,6 +69,10 @@ struct qt_meta_stringdata_CLASSResponseBodyENDCLASS_t {
     char stringdata8[7];
     char stringdata9[10];
     char stringdata10[17];
+    char stringdata11[19];
+    char stringdata12[15];
+    char stringdata13[8];
+    char stringdata14[10];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSResponseBodyENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -79,7 +88,11 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSResponseBodyENDCLASS_t qt_meta_
         QT_MOC_LITERAL(78, 8),  // "username"
         QT_MOC_LITERAL(87, 6),  // "ranked"
         QT_MOC_LITERAL(94, 9),  // "rankScore"
-        QT_MOC_LITERAL(104, 16)   // "createLogoutBody"
+        QT_MOC_LITERAL(104, 16),  // "createLogoutBody"
+        QT_MOC_LITERAL(121, 18),  // "createFindRoomBody"
+        QT_MOC_LITERAL(140, 14),  // "QList<quint64>"
+        QT_MOC_LITERAL(155, 7),  // "roomIds"
+        QT_MOC_LITERAL(163, 9)   // "roomnames"
     },
     "ResponseBody",
     "setResponseBody",
@@ -91,7 +104,11 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSResponseBodyENDCLASS_t qt_meta_
     "username",
     "ranked",
     "rankScore",
-    "createLogoutBody"
+    "createLogoutBody",
+    "createFindRoomBody",
+    "QList<quint64>",
+    "roomIds",
+    "roomnames"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -103,7 +120,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSResponseBodyENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -111,16 +128,18 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSResponseBodyENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   38,    2, 0x0a,    1 /* Public */,
-       4,    0,   41,    2, 0x0a,    3 /* Public */,
-       5,    4,   42,    2, 0x0a,    4 /* Public */,
-      10,    2,   51,    2, 0x0a,    9 /* Public */,
+       1,    1,   44,    2, 0x0a,    1 /* Public */,
+       4,    0,   47,    2, 0x0a,    3 /* Public */,
+       5,    4,   48,    2, 0x0a,    4 /* Public */,
+      10,    2,   57,    2, 0x0a,    9 /* Public */,
+      11,    2,   62,    2, 0x0a,   12 /* Public */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QJsonObject,    3,
     QMetaType::QJsonObject,
     QMetaType::Void, QMetaType::ULongLong, QMetaType::QString, QMetaType::ULongLong, QMetaType::ULongLong,    6,    7,    8,    9,
     QMetaType::Void, QMetaType::ULongLong, QMetaType::QString,    6,    7,
+    QMetaType::Void, 0x80000000 | 12, QMetaType::QStringList,   13,   14,
 
        0        // eod
 };
@@ -148,7 +167,11 @@ Q_CONSTINIT const QMetaObject ResponseBody::staticMetaObject = { {
         // method 'createLogoutBody'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<quint64, std::false_type>,
-        QtPrivate::TypeAndForceComplete<QString, std::false_type>
+        QtPrivate::TypeAndForceComplete<QString, std::false_type>,
+        // method 'createFindRoomBody'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QList<quint64>, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QList<QString>, std::false_type>
     >,
     nullptr
 } };
@@ -164,7 +187,19 @@ void ResponseBody::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
             if (_a[0]) *reinterpret_cast< QJsonObject*>(_a[0]) = std::move(_r); }  break;
         case 2: _t->createLoginBody((*reinterpret_cast< std::add_pointer_t<quint64>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[4]))); break;
         case 3: _t->createLogoutBody((*reinterpret_cast< std::add_pointer_t<quint64>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
+        case 4: _t->createFindRoomBody((*reinterpret_cast< std::add_pointer_t<QList<quint64>>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QList<QString>>>(_a[2]))); break;
         default: ;
+        }
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+        case 4:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+            case 0:
+                *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QList<quint64> >(); break;
+            }
+            break;
         }
     }
 }
@@ -188,13 +223,13 @@ int ResponseBody::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
-            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        if (_id < 5)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 5;
     }
     return _id;
 }

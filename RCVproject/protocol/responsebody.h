@@ -5,6 +5,9 @@
 
 #include <QObject>
 #include <QJsonObject>
+#include <QList>
+#include <QJsonArray>
+#include <QStringList>
 
 class ResponseBody : public QObject
 {
@@ -19,6 +22,7 @@ public slots:
     QJsonObject getResponseBody();
     void createLoginBody(quint64 id, QString username, quint64 ranked, quint64 rankScore);
     void createLogoutBody(quint64 id, QString username);
+    void createFindRoomBody(QList<quint64> roomIds, QList<QString> roomnames);
 signals:
 
 };

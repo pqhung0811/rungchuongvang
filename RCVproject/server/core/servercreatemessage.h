@@ -8,7 +8,10 @@
 #include "login/loginservermessage.h"
 #include "logout/logoutservermessage.h"
 #include "register/registerservermessage.h"
+#include "findroom/findroomservermessage.h"
 #include "noinfomessage.h"
+#include "room.h"
+#include "QList"
 
 class ServerCreateMessage : public QObject
 {

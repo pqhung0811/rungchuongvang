@@ -5,10 +5,13 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Networkprogramming/project/qtPrj/RCVproject/protocol/command.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/protocol/responsebody.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/protocol/statuscode.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonArray \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonDocument \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonObject \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QList \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QMap \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QObject \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QStringList \
   D:/Qt/6.5.0/mingw_64/include/QtCore/q20memory.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/q20type_traits.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qalgorithms.h \
@@ -55,6 +58,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qiodevicebase.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qiterable.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qiterator.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qjsonarray.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qjsondocument.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qjsonobject.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qjsonvalue.h \

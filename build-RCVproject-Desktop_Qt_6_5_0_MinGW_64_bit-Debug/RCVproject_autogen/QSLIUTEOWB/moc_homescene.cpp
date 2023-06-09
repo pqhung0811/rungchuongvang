@@ -7,6 +7,7 @@
 *****************************************************************************/
 
 #include "../../../RCVproject/scene/homescene.h"
+#include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 
 #if __has_include(<QtCore/qtmochelpers.h>)
@@ -39,40 +40,48 @@ namespace {
 struct qt_meta_stringdata_CLASSHomeSceneENDCLASS_t {};
 static constexpr auto qt_meta_stringdata_CLASSHomeSceneENDCLASS = QtMocHelpers::stringData(
     "HomeScene",
-    "on_playNowBtn_clicked",
-    "",
     "on_createRoomBtn_clicked",
+    "",
+    "on_findRoomBtn_clicked",
+    "handleFindRoomResponse",
+    "response",
     "on_label_2_linkActivated",
     "link",
     "on_label_3_linkActivated"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSHomeSceneENDCLASS_t {
-    uint offsetsAndSizes[14];
+    uint offsetsAndSizes[18];
     char stringdata0[10];
-    char stringdata1[22];
+    char stringdata1[25];
     char stringdata2[1];
-    char stringdata3[25];
-    char stringdata4[25];
-    char stringdata5[5];
+    char stringdata3[23];
+    char stringdata4[23];
+    char stringdata5[9];
     char stringdata6[25];
+    char stringdata7[5];
+    char stringdata8[25];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSHomeSceneENDCLASS_t::offsetsAndSizes) + ofs), len 
 Q_CONSTINIT static const qt_meta_stringdata_CLASSHomeSceneENDCLASS_t qt_meta_stringdata_CLASSHomeSceneENDCLASS = {
     {
         QT_MOC_LITERAL(0, 9),  // "HomeScene"
-        QT_MOC_LITERAL(10, 21),  // "on_playNowBtn_clicked"
-        QT_MOC_LITERAL(32, 0),  // ""
-        QT_MOC_LITERAL(33, 24),  // "on_createRoomBtn_clicked"
-        QT_MOC_LITERAL(58, 24),  // "on_label_2_linkActivated"
-        QT_MOC_LITERAL(83, 4),  // "link"
-        QT_MOC_LITERAL(88, 24)   // "on_label_3_linkActivated"
+        QT_MOC_LITERAL(10, 24),  // "on_createRoomBtn_clicked"
+        QT_MOC_LITERAL(35, 0),  // ""
+        QT_MOC_LITERAL(36, 22),  // "on_findRoomBtn_clicked"
+        QT_MOC_LITERAL(59, 22),  // "handleFindRoomResponse"
+        QT_MOC_LITERAL(82, 8),  // "response"
+        QT_MOC_LITERAL(91, 24),  // "on_label_2_linkActivated"
+        QT_MOC_LITERAL(116, 4),  // "link"
+        QT_MOC_LITERAL(121, 24)   // "on_label_3_linkActivated"
     },
     "HomeScene",
-    "on_playNowBtn_clicked",
-    "",
     "on_createRoomBtn_clicked",
+    "",
+    "on_findRoomBtn_clicked",
+    "handleFindRoomResponse",
+    "response",
     "on_label_2_linkActivated",
     "link",
     "on_label_3_linkActivated"
@@ -87,7 +96,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSHomeSceneENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -95,16 +104,18 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSHomeSceneENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   38,    2, 0x08,    1 /* Private */,
-       3,    0,   39,    2, 0x08,    2 /* Private */,
-       4,    1,   40,    2, 0x0a,    3 /* Public */,
-       6,    1,   43,    2, 0x0a,    5 /* Public */,
+       1,    0,   44,    2, 0x08,    1 /* Private */,
+       3,    0,   45,    2, 0x08,    2 /* Private */,
+       4,    1,   46,    2, 0x08,    3 /* Private */,
+       6,    1,   49,    2, 0x0a,    5 /* Public */,
+       8,    1,   52,    2, 0x0a,    7 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString,    5,
+    QMetaType::Void, QMetaType::QJsonDocument,    5,
+    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::QString,    7,
 
        0        // eod
 };
@@ -118,10 +129,13 @@ Q_CONSTINIT const QMetaObject HomeScene::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSHomeSceneENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<HomeScene, std::true_type>,
-        // method 'on_playNowBtn_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_createRoomBtn_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_findRoomBtn_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'handleFindRoomResponse'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QJsonDocument &, std::false_type>,
         // method 'on_label_2_linkActivated'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
@@ -138,10 +152,11 @@ void HomeScene::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         auto *_t = static_cast<HomeScene *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_playNowBtn_clicked(); break;
-        case 1: _t->on_createRoomBtn_clicked(); break;
-        case 2: _t->on_label_2_linkActivated((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 3: _t->on_label_3_linkActivated((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 0: _t->on_createRoomBtn_clicked(); break;
+        case 1: _t->on_findRoomBtn_clicked(); break;
+        case 2: _t->handleFindRoomResponse((*reinterpret_cast< std::add_pointer_t<QJsonDocument>>(_a[1]))); break;
+        case 3: _t->on_label_2_linkActivated((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 4: _t->on_label_3_linkActivated((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
     }
@@ -166,13 +181,13 @@ int HomeScene::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }

@@ -45,12 +45,14 @@ static constexpr auto qt_meta_stringdata_CLASSRequestProcessingENDCLASS = QtMocH
     "logout",
     "registers",
     "createRoom",
+    "findRoom",
+    "QList<Room*>",
     "requestJoinRoom",
     "responseJoinRoom"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSRequestProcessingENDCLASS_t {
-    uint offsetsAndSizes[18];
+    uint offsetsAndSizes[22];
     char stringdata0[18];
     char stringdata1[7];
     char stringdata2[1];
@@ -58,8 +60,10 @@ struct qt_meta_stringdata_CLASSRequestProcessingENDCLASS_t {
     char stringdata4[7];
     char stringdata5[10];
     char stringdata6[11];
-    char stringdata7[16];
-    char stringdata8[17];
+    char stringdata7[9];
+    char stringdata8[13];
+    char stringdata9[16];
+    char stringdata10[17];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSRequestProcessingENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -72,8 +76,10 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSRequestProcessingENDCLASS_t qt_
         QT_MOC_LITERAL(32, 6),  // "logout"
         QT_MOC_LITERAL(39, 9),  // "registers"
         QT_MOC_LITERAL(49, 10),  // "createRoom"
-        QT_MOC_LITERAL(60, 15),  // "requestJoinRoom"
-        QT_MOC_LITERAL(76, 16)   // "responseJoinRoom"
+        QT_MOC_LITERAL(60, 8),  // "findRoom"
+        QT_MOC_LITERAL(69, 12),  // "QList<Room*>"
+        QT_MOC_LITERAL(82, 15),  // "requestJoinRoom"
+        QT_MOC_LITERAL(98, 16)   // "responseJoinRoom"
     },
     "RequestProcessing",
     "handle",
@@ -82,6 +88,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSRequestProcessingENDCLASS_t qt_
     "logout",
     "registers",
     "createRoom",
+    "findRoom",
+    "QList<Room*>",
     "requestJoinRoom",
     "responseJoinRoom"
 };
@@ -95,7 +103,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSRequestProcessingENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -103,13 +111,14 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSRequestProcessingENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   56,    2, 0x0a,    1 /* Public */,
-       3,    0,   57,    2, 0x0a,    2 /* Public */,
-       4,    0,   58,    2, 0x0a,    3 /* Public */,
-       5,    0,   59,    2, 0x0a,    4 /* Public */,
-       6,    0,   60,    2, 0x0a,    5 /* Public */,
-       7,    0,   61,    2, 0x0a,    6 /* Public */,
-       8,    0,   62,    2, 0x0a,    7 /* Public */,
+       1,    0,   62,    2, 0x0a,    1 /* Public */,
+       3,    0,   63,    2, 0x0a,    2 /* Public */,
+       4,    0,   64,    2, 0x0a,    3 /* Public */,
+       5,    0,   65,    2, 0x0a,    4 /* Public */,
+       6,    0,   66,    2, 0x0a,    5 /* Public */,
+       7,    0,   67,    2, 0x0a,    6 /* Public */,
+       9,    0,   68,    2, 0x0a,    7 /* Public */,
+      10,    0,   69,    2, 0x0a,    8 /* Public */,
 
  // slots: parameters
     QMetaType::QString,
@@ -117,6 +126,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSRequestProcessingENDCLASS[] = {
     QMetaType::QString,
     QMetaType::QString,
     QMetaType::QString,
+    0x80000000 | 8,
     QMetaType::QString,
     QMetaType::QString,
 
@@ -142,6 +152,8 @@ Q_CONSTINIT const QMetaObject RequestProcessing::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<QString, std::false_type>,
         // method 'createRoom'
         QtPrivate::TypeAndForceComplete<QString, std::false_type>,
+        // method 'findRoom'
+        QtPrivate::TypeAndForceComplete<QList<Room*>, std::false_type>,
         // method 'requestJoinRoom'
         QtPrivate::TypeAndForceComplete<QString, std::false_type>,
         // method 'responseJoinRoom'
@@ -166,9 +178,11 @@ void RequestProcessing::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
         case 4: { QString _r = _t->createRoom();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
-        case 5: { QString _r = _t->requestJoinRoom();
+        case 5: { QList<Room*> _r = _t->findRoom();
+            if (_a[0]) *reinterpret_cast< QList<Room*>*>(_a[0]) = std::move(_r); }  break;
+        case 6: { QString _r = _t->requestJoinRoom();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
-        case 6: { QString _r = _t->responseJoinRoom();
+        case 7: { QString _r = _t->responseJoinRoom();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
@@ -194,13 +208,13 @@ int RequestProcessing::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 8;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 8)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 7;
+        _id -= 8;
     }
     return _id;
 }

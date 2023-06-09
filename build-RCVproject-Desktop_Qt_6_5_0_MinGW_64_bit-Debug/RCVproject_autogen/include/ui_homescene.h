@@ -26,7 +26,6 @@ public:
     QLabel *label;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
-    QPushButton *playNowBtn;
     QPushButton *createRoomBtn;
     QPushButton *findRoomBtn;
     QPushButton *rankBtn;
@@ -56,36 +55,20 @@ public:
         label->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(161, 151, 57, 255), stop:1 rgba(255, 255, 255, 255));"));
         verticalLayoutWidget = new QWidget(HomeScene);
         verticalLayoutWidget->setObjectName("verticalLayoutWidget");
-        verticalLayoutWidget->setGeometry(QRect(100, 190, 151, 301));
+        verticalLayoutWidget->setGeometry(QRect(100, 170, 151, 291));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        playNowBtn = new QPushButton(verticalLayoutWidget);
-        playNowBtn->setObjectName("playNowBtn");
+        createRoomBtn = new QPushButton(verticalLayoutWidget);
+        createRoomBtn->setObjectName("createRoomBtn");
         QFont font1;
         font1.setFamilies({QString::fromUtf8("VNI-Duff")});
         font1.setPointSize(15);
-        playNowBtn->setFont(font1);
-        playNowBtn->setCursor(QCursor(Qt::ArrowCursor));
-        playNowBtn->setMouseTracking(false);
-        playNowBtn->setAutoFillBackground(false);
-        playNowBtn->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(207, 57, 71, 255), stop:1 rgba(255, 255, 255, 255));"));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/images/play.png"), QSize(), QIcon::Selected, QIcon::On);
-        playNowBtn->setIcon(icon);
-        playNowBtn->setIconSize(QSize(20, 20));
-        playNowBtn->setAutoDefault(false);
-        playNowBtn->setFlat(false);
-
-        verticalLayout->addWidget(playNowBtn);
-
-        createRoomBtn = new QPushButton(verticalLayoutWidget);
-        createRoomBtn->setObjectName("createRoomBtn");
         createRoomBtn->setFont(font1);
         createRoomBtn->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(207, 57, 71, 255), stop:1 rgba(255, 255, 255, 255));"));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/images/create.png"), QSize(), QIcon::Normal, QIcon::Off);
-        createRoomBtn->setIcon(icon1);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/images/create.png"), QSize(), QIcon::Normal, QIcon::Off);
+        createRoomBtn->setIcon(icon);
         createRoomBtn->setIconSize(QSize(20, 20));
 
         verticalLayout->addWidget(createRoomBtn);
@@ -94,9 +77,9 @@ public:
         findRoomBtn->setObjectName("findRoomBtn");
         findRoomBtn->setFont(font1);
         findRoomBtn->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(207, 57, 71, 255), stop:1 rgba(255, 255, 255, 255));"));
-        QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/images/findroom.png"), QSize(), QIcon::Normal, QIcon::Off);
-        findRoomBtn->setIcon(icon2);
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/images/findroom.png"), QSize(), QIcon::Normal, QIcon::Off);
+        findRoomBtn->setIcon(icon1);
         findRoomBtn->setIconSize(QSize(20, 20));
 
         verticalLayout->addWidget(findRoomBtn);
@@ -105,9 +88,9 @@ public:
         rankBtn->setObjectName("rankBtn");
         rankBtn->setFont(font1);
         rankBtn->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(207, 57, 71, 255), stop:1 rgba(255, 255, 255, 255));"));
-        QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/images/rank.png"), QSize(), QIcon::Normal, QIcon::Off);
-        rankBtn->setIcon(icon3);
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/images/rank.png"), QSize(), QIcon::Normal, QIcon::Off);
+        rankBtn->setIcon(icon2);
         rankBtn->setIconSize(QSize(20, 20));
 
         verticalLayout->addWidget(rankBtn);
@@ -116,9 +99,9 @@ public:
         signOutBtn->setObjectName("signOutBtn");
         signOutBtn->setFont(font1);
         signOutBtn->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(207, 57, 71, 255), stop:1 rgba(255, 255, 255, 255));"));
-        QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/images/logout.png"), QSize(), QIcon::Normal, QIcon::Off);
-        signOutBtn->setIcon(icon4);
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/images/logout.png"), QSize(), QIcon::Normal, QIcon::Off);
+        signOutBtn->setIcon(icon3);
         signOutBtn->setIconSize(QSize(20, 20));
 
         verticalLayout->addWidget(signOutBtn);
@@ -127,9 +110,9 @@ public:
         quitBtn->setObjectName("quitBtn");
         quitBtn->setFont(font1);
         quitBtn->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(207, 57, 71, 255), stop:1 rgba(255, 255, 255, 255));"));
-        QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/images/exit.png"), QSize(), QIcon::Normal, QIcon::Off);
-        quitBtn->setIcon(icon5);
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/images/exit.png"), QSize(), QIcon::Normal, QIcon::Off);
+        quitBtn->setIcon(icon4);
         quitBtn->setIconSize(QSize(20, 20));
 
         verticalLayout->addWidget(quitBtn);
@@ -189,9 +172,6 @@ public:
 
         retranslateUi(HomeScene);
 
-        playNowBtn->setDefault(false);
-
-
         QMetaObject::connectSlotsByName(HomeScene);
     } // setupUi
 
@@ -199,7 +179,6 @@ public:
     {
         HomeScene->setWindowTitle(QCoreApplication::translate("HomeScene", "Form", nullptr));
         label->setText(QCoreApplication::translate("HomeScene", "Home Scene", nullptr));
-        playNowBtn->setText(QCoreApplication::translate("HomeScene", "Play Now", nullptr));
         createRoomBtn->setText(QCoreApplication::translate("HomeScene", "Create Room", nullptr));
         findRoomBtn->setText(QCoreApplication::translate("HomeScene", "Find Room", nullptr));
         rankBtn->setText(QCoreApplication::translate("HomeScene", "Rank", nullptr));

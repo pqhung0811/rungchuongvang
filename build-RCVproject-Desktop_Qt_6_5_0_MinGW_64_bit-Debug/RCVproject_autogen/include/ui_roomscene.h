@@ -73,7 +73,7 @@ public:
         frame->setFrameShadow(QFrame::Raised);
         gridWidget_2 = new QWidget(frame);
         gridWidget_2->setObjectName("gridWidget_2");
-        gridWidget_2->setGeometry(QRect(20, 20, 421, 171));
+        gridWidget_2->setGeometry(QRect(20, 20, 491, 171));
         gridWidget_2->setStyleSheet(QString::fromUtf8("border: none"));
         gridLayout_2 = new QGridLayout(gridWidget_2);
         gridLayout_2->setObjectName("gridLayout_2");
@@ -259,7 +259,7 @@ public:
         label_3->setGeometry(QRect(640, 30, 41, 31));
         playBtn = new QPushButton(RoomScene);
         playBtn->setObjectName("playBtn");
-        playBtn->setGeometry(QRect(740, 70, 80, 18));
+        playBtn->setGeometry(QRect(650, 60, 80, 18));
 
         retranslateUi(RoomScene);
 

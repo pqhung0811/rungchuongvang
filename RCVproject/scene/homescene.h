@@ -2,6 +2,9 @@
 #define HOMESCENE_H
 
 #include <QWidget>
+#include "core/clientcore.h"
+#include "createroomdialog.h"
+#include "roomscene.h"
 
 namespace Ui {
 class HomeScene;
@@ -19,9 +22,10 @@ public:
     void setUi(Ui::HomeScene *newUi);
 
 private slots:
-    void on_playNowBtn_clicked();
-
     void on_createRoomBtn_clicked();
+
+    void on_findRoomBtn_clicked();
+    void handleFindRoomResponse(const QJsonDocument &response);
 
 public slots:
     void on_label_2_linkActivated(const QString &link);
@@ -29,6 +33,7 @@ public slots:
 
 private:
     Ui::HomeScene *ui;
+    ClientCore* clientCore;
 
 signals:
 };

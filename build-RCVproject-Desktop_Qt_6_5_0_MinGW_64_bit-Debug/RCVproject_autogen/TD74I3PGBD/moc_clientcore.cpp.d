@@ -2,6 +2,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/moc_predefs.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/clientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomclientmessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/findroom/findroomclientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/logout/logoutclientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/message.h \

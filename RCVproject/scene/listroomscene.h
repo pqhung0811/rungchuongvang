@@ -10,6 +10,7 @@
 #include <QModelIndexList>
 #include <QVariant>
 #include "noeditdelegate.h"
+#include <QList>
 
 namespace Ui {
 class ListRoomScene;
@@ -29,6 +30,9 @@ private slots:
 private:
     Ui::ListRoomScene *ui;
     QStandardItemModel* model;
+    quint64 level;
+    QList<int> roomIds;
+    QList<QString> roomnames;
 
 };
 

@@ -98,8 +98,13 @@ void ClientCore::registers(QString username, QString password) {
     sendRequest(clientMsg->toString());
 }
 
-void ClientCore::createRoom(QString roomname, quint64 ownerId, QString username, quint64 ranked, quint64 rankScore) {
-    CreateRoomClientMessage* clientMsg = new CreateRoomClientMessage(roomname, ownerId, username, ranked, rankScore);
+//void ClientCore::createRoom(QString roomname, quint64 ownerId, QString username, quint64 ranked, quint64 rankScore) {
+//    CreateRoomClientMessage* clientMsg = new CreateRoomClientMessage(roomname, ownerId, username, ranked, rankScore);
+//    sendRequest(clientMsg->toString());
+//}
+
+void ClientCore::createRoom(QString roomname) {
+    CreateRoomClientMessage* clientMsg = new CreateRoomClientMessage(roomname);
     sendRequest(clientMsg->toString());
 }
 
@@ -110,5 +115,11 @@ void ClientCore::requestJoinRoom(quint64 userId, quint64 roomId) {
 
 void ClientCore::responseJoinRoom(quint64 userId, quint64 roomId, quint8 reply) {
     ResponseJoinRoomClientMessage* clientMsg = new ResponseJoinRoomClientMessage(userId, roomId, reply);
+    sendRequest(clientMsg->toString());
+}
+
+void ClientCore::findRoom()
+{
+    FindRoomClientMessage* clientMsg = new FindRoomClientMessage();
     sendRequest(clientMsg->toString());
 }

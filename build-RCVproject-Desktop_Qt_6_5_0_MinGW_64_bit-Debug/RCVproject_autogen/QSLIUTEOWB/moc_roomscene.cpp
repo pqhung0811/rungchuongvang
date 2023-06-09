@@ -38,20 +38,36 @@ namespace {
 #ifdef QT_MOC_HAS_STRINGDATA
 struct qt_meta_stringdata_CLASSRoomSceneENDCLASS_t {};
 static constexpr auto qt_meta_stringdata_CLASSRoomSceneENDCLASS = QtMocHelpers::stringData(
-    "RoomScene"
+    "RoomScene",
+    "on_label_linkActivated",
+    "",
+    "link",
+    "on_label_2_linkActivated"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSRoomSceneENDCLASS_t {
-    uint offsetsAndSizes[2];
+    uint offsetsAndSizes[10];
     char stringdata0[10];
+    char stringdata1[23];
+    char stringdata2[1];
+    char stringdata3[5];
+    char stringdata4[25];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSRoomSceneENDCLASS_t::offsetsAndSizes) + ofs), len 
 Q_CONSTINIT static const qt_meta_stringdata_CLASSRoomSceneENDCLASS_t qt_meta_stringdata_CLASSRoomSceneENDCLASS = {
     {
-        QT_MOC_LITERAL(0, 9)   // "RoomScene"
+        QT_MOC_LITERAL(0, 9),  // "RoomScene"
+        QT_MOC_LITERAL(10, 22),  // "on_label_linkActivated"
+        QT_MOC_LITERAL(33, 0),  // ""
+        QT_MOC_LITERAL(34, 4),  // "link"
+        QT_MOC_LITERAL(39, 24)   // "on_label_2_linkActivated"
     },
-    "RoomScene"
+    "RoomScene",
+    "on_label_linkActivated",
+    "",
+    "link",
+    "on_label_2_linkActivated"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -63,12 +79,20 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSRoomSceneENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
+
+ // slots: name, argc, parameters, tag, flags, initial metatype offsets
+       1,    1,   26,    2, 0x0a,    1 /* Public */,
+       4,    1,   29,    2, 0x0a,    3 /* Public */,
+
+ // slots: parameters
+    QMetaType::Void, QMetaType::QString,    3,
+    QMetaType::Void, QMetaType::QString,    3,
 
        0        // eod
 };
@@ -81,17 +105,28 @@ Q_CONSTINIT const QMetaObject RoomScene::staticMetaObject = { {
     nullptr,
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSRoomSceneENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<RoomScene, std::true_type>
+        QtPrivate::TypeAndForceComplete<RoomScene, std::true_type>,
+        // method 'on_label_linkActivated'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        // method 'on_label_2_linkActivated'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>
     >,
     nullptr
 } };
 
 void RoomScene::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    (void)_o;
-    (void)_id;
-    (void)_c;
-    (void)_a;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<RoomScene *>(_o);
+        (void)_t;
+        switch (_id) {
+        case 0: _t->on_label_linkActivated((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 1: _t->on_label_2_linkActivated((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        default: ;
+        }
+    }
 }
 
 const QMetaObject *RoomScene::metaObject() const
@@ -110,6 +145,17 @@ void *RoomScene::qt_metacast(const char *_clname)
 int RoomScene::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QWidget::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 2)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 2;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 2)
+            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
+        _id -= 2;
+    }
     return _id;
 }
 QT_WARNING_POP

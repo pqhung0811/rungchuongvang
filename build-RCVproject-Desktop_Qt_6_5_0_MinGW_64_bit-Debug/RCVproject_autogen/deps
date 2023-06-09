@@ -80,6 +80,8 @@ RCVproject_autogen/timestamp: \
 	D:/Networkprogramming/project/qtPrj/RCVproject/protocol/statuscode.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/protocol/statuscode.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/resource.qrc \
+	D:/Networkprogramming/project/qtPrj/RCVproject/scene/createroomdialog.cpp \
+	D:/Networkprogramming/project/qtPrj/RCVproject/scene/createroomdialog.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/gamescene.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/gamescene.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/scene/homescene.cpp \
@@ -127,6 +129,7 @@ RCVproject_autogen/timestamp: \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QHash \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QIODevice \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QItemSelection \
+	D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonArray \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonDocument \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonObject \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QList \
@@ -512,23 +515,31 @@ RCVproject_autogen/timestamp: \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QListWidget \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QListWidgetItem \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QMainWindow \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QPushButton \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QSizePolicy \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QStyleOptionViewItem \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QStyledItemDelegate \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QTableWidgetItem \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QVBoxLayout \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QWidget \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractitemview.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractslider.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qapplication.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qboxlayout.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qframe.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qgridlayout.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlayout.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlayoutitem.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlineedit.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlistview.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlistwidget.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qmainwindow.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qpushbutton.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qrubberband.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qsizepolicy.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qslider.h \

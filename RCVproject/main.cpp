@@ -4,9 +4,7 @@
 #include "user.h"
 #include "connection.h"
 #include "room.h"
-#include "roomapi.h"
 #include "question.h"
-#include "questionapi.h"
 #include "answerapi.h"
 #include "answer.h"
 #include "usercontroller.h"
@@ -18,6 +16,9 @@
 #include "core/clientcore.h"
 #include "scene/listroomscene.h"
 #include "scene/homescene.h"
+#include "message/findroom/findroomservermessage.h"
+#include <QList>
+
 
 int main(int argc, char *argv[])
 {
@@ -31,19 +32,27 @@ int main(int argc, char *argv[])
         qDebug() << "abc";
     }
 
-//    ServerCore* serverCore = new ServerCore();
-//    serverCore->start();
-//    ClientCore* clientCore = ClientCore::getInstance();
-//    clientCore->start();
-//    MainWindow w = MainWindow();
-//    w.show();
+    ServerCore* serverCore = new ServerCore();
+    serverCore->start();
+    ClientCore* clientCore = ClientCore::getInstance();
+    clientCore->start();
+    MainWindow w = MainWindow();
+    w.show();
 
-
-    ListRoomScene* listRoomScene = new ListRoomScene();
-    listRoomScene->show();
 
 //    HomeScene* homeScene = new HomeScene();
 //    homeScene->show();
+
+//    QList<quint64> ids;
+//    QList<QString> names;
+
+//    ids.append(1);
+//    ids.append(2);
+//    names.append("a");
+//    names.append("b");
+
+//    FindRoomServerMessage* findRoomServerMessage = new FindRoomServerMessage(ids, names, "success", "");
+//    qDebug() << "main " << findRoomServerMessage->toString();
 
 //    LogoutClientMessage *login1 = new LogoutClientMessage(1, "hung");
 //    QString tmp = login1->toString();

@@ -31,6 +31,7 @@
 #include "ULO4IMYJZC/moc_requestbody.cpp"
 #include "ULO4IMYJZC/moc_responsebody.cpp"
 #include "ULO4IMYJZC/moc_statuscode.cpp"
+#include "QSLIUTEOWB/moc_createroomdialog.cpp"
 #include "QSLIUTEOWB/moc_gamescene.cpp"
 #include "QSLIUTEOWB/moc_homescene.cpp"
 #include "QSLIUTEOWB/moc_listroomscene.cpp"

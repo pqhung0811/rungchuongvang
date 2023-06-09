@@ -31,3 +31,24 @@ void ResponseBody::createLogoutBody(quint64 id, QString username) {
     this->responseBody.insert("username", username);
 }
 
+void ResponseBody::createFindRoomBody(QList<quint64> roomIds, QList<QString> roomnames)
+{
+    this->responseBody = QJsonObject();
+
+    QJsonArray idArray;
+    for (quint64 roomId : roomIds) {
+        idArray.append(static_cast<qint64>(roomId));
+    }
+//    responseBody["id"] = idArray;
+    this->responseBody.insert("id", idArray);
+    qDebug() << "id: " << idArray;
+
+    QStringList roomnameList;
+    for (const QString& roomname : roomnames) {
+        roomnameList << roomname;
+    }
+    QString roomnamesString = roomnameList.join(" ");
+    this->responseBody.insert("roomname", roomnamesString);
+//    responseBody["roomname"] = roomnamesString;
+}
+

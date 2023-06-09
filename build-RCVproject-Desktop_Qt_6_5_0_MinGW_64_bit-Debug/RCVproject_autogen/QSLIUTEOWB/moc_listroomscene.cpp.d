@@ -2,6 +2,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/moc_predefs.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/scene/noeditdelegate.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QItemSelection \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QList \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QModelIndex \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QModelIndexList \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QVariant \

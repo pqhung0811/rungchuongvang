@@ -15,3 +15,25 @@ RoomScene::~RoomScene()
 {
     delete ui;
 }
+
+Ui::RoomScene *RoomScene::getUi() const
+{
+    return ui;
+}
+
+void RoomScene::setUi(Ui::RoomScene *newUi)
+{
+    ui = newUi;
+}
+
+void RoomScene::on_label_linkActivated(const QString &link)
+{
+    this->ui->label->setText(link);
+}
+
+
+void RoomScene::on_label_2_linkActivated(const QString &link)
+{
+    this->ui->label_2->setText(link);
+}
+

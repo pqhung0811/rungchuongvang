@@ -48,6 +48,8 @@ set(PROJECT_SOURCES
         scene/mydialog.ui
         scene/noeditdelegate.h
         scene/noeditdelegate.cpp
+        scene/createroomdialog.h
+        scene/createroomdialog.cpp
         entity/user.h
         entity/user.cpp
         entity/room.h

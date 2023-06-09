@@ -51,9 +51,6 @@ static constexpr auto qt_meta_stringdata_CLASSRequestBodyENDCLASS = QtMocHelpers
     "createRegisterBody",
     "createCreateRoomBody",
     "roomname",
-    "ownerId",
-    "ranked",
-    "rankScore",
     "createRequestJoinRoomBody",
     "userId",
     "roomId",
@@ -62,7 +59,7 @@ static constexpr auto qt_meta_stringdata_CLASSRequestBodyENDCLASS = QtMocHelpers
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSRequestBodyENDCLASS_t {
-    uint offsetsAndSizes[42];
+    uint offsetsAndSizes[36];
     char stringdata0[12];
     char stringdata1[15];
     char stringdata2[1];
@@ -76,14 +73,11 @@ struct qt_meta_stringdata_CLASSRequestBodyENDCLASS_t {
     char stringdata10[19];
     char stringdata11[21];
     char stringdata12[9];
-    char stringdata13[8];
+    char stringdata13[26];
     char stringdata14[7];
-    char stringdata15[10];
-    char stringdata16[26];
-    char stringdata17[7];
-    char stringdata18[7];
-    char stringdata19[27];
-    char stringdata20[6];
+    char stringdata15[7];
+    char stringdata16[27];
+    char stringdata17[6];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSRequestBodyENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -102,14 +96,11 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSRequestBodyENDCLASS_t qt_meta_s
         QT_MOC_LITERAL(102, 18),  // "createRegisterBody"
         QT_MOC_LITERAL(121, 20),  // "createCreateRoomBody"
         QT_MOC_LITERAL(142, 8),  // "roomname"
-        QT_MOC_LITERAL(151, 7),  // "ownerId"
-        QT_MOC_LITERAL(159, 6),  // "ranked"
-        QT_MOC_LITERAL(166, 9),  // "rankScore"
-        QT_MOC_LITERAL(176, 25),  // "createRequestJoinRoomBody"
-        QT_MOC_LITERAL(202, 6),  // "userId"
-        QT_MOC_LITERAL(209, 6),  // "roomId"
-        QT_MOC_LITERAL(216, 26),  // "createResponseJoinRoomBody"
-        QT_MOC_LITERAL(243, 5)   // "reply"
+        QT_MOC_LITERAL(151, 25),  // "createRequestJoinRoomBody"
+        QT_MOC_LITERAL(177, 6),  // "userId"
+        QT_MOC_LITERAL(184, 6),  // "roomId"
+        QT_MOC_LITERAL(191, 26),  // "createResponseJoinRoomBody"
+        QT_MOC_LITERAL(218, 5)   // "reply"
     },
     "RequestBody",
     "getRequestBody",
@@ -124,9 +115,6 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSRequestBodyENDCLASS_t qt_meta_s
     "createRegisterBody",
     "createCreateRoomBody",
     "roomname",
-    "ownerId",
-    "ranked",
-    "rankScore",
     "createRequestJoinRoomBody",
     "userId",
     "roomId",
@@ -156,9 +144,9 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSRequestBodyENDCLASS[] = {
        5,    2,   66,    2, 0x0a,    4 /* Public */,
        8,    2,   71,    2, 0x0a,    7 /* Public */,
       10,    2,   76,    2, 0x0a,   10 /* Public */,
-      11,    5,   81,    2, 0x0a,   13 /* Public */,
-      16,    2,   92,    2, 0x0a,   19 /* Public */,
-      19,    3,   97,    2, 0x0a,   22 /* Public */,
+      11,    1,   81,    2, 0x0a,   13 /* Public */,
+      13,    2,   84,    2, 0x0a,   15 /* Public */,
+      16,    3,   89,    2, 0x0a,   18 /* Public */,
 
  // slots: parameters
     QMetaType::QJsonObject,
@@ -166,9 +154,9 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSRequestBodyENDCLASS[] = {
     QMetaType::Void, QMetaType::QString, QMetaType::QString,    6,    7,
     QMetaType::Void, QMetaType::ULongLong, QMetaType::QString,    9,    6,
     QMetaType::Void, QMetaType::QString, QMetaType::QString,    6,    7,
-    QMetaType::Void, QMetaType::QString, QMetaType::ULongLong, QMetaType::QString, QMetaType::ULongLong, QMetaType::ULongLong,   12,   13,    6,   14,   15,
-    QMetaType::Void, QMetaType::ULongLong, QMetaType::ULongLong,   17,   18,
-    QMetaType::Void, QMetaType::ULongLong, QMetaType::ULongLong, QMetaType::UChar,   17,   18,   20,
+    QMetaType::Void, QMetaType::QString,   12,
+    QMetaType::Void, QMetaType::ULongLong, QMetaType::ULongLong,   14,   15,
+    QMetaType::Void, QMetaType::ULongLong, QMetaType::ULongLong, QMetaType::UChar,   14,   15,   17,
 
        0        // eod
 };
@@ -202,10 +190,6 @@ Q_CONSTINIT const QMetaObject RequestBody::staticMetaObject = { {
         // method 'createCreateRoomBody'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<QString, std::false_type>,
-        QtPrivate::TypeAndForceComplete<quint64, std::false_type>,
-        QtPrivate::TypeAndForceComplete<QString, std::false_type>,
-        QtPrivate::TypeAndForceComplete<quint64, std::false_type>,
-        QtPrivate::TypeAndForceComplete<quint64, std::false_type>,
         // method 'createRequestJoinRoomBody'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<quint64, std::false_type>,
@@ -231,7 +215,7 @@ void RequestBody::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 2: _t->createLoginBody((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
         case 3: _t->createLogoutBody((*reinterpret_cast< std::add_pointer_t<quint64>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
         case 4: _t->createRegisterBody((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
-        case 5: _t->createCreateRoomBody((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[5]))); break;
+        case 5: _t->createCreateRoomBody((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 6: _t->createRequestJoinRoomBody((*reinterpret_cast< std::add_pointer_t<quint64>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[2]))); break;
         case 7: _t->createResponseJoinRoomBody((*reinterpret_cast< std::add_pointer_t<quint64>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<quint8>>(_a[3]))); break;
         default: ;
