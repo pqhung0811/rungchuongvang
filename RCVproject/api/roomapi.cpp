@@ -27,14 +27,12 @@ QList<Room*> RoomAPI::getRoomsByStatusAndLevel(quint64 status, quint64 level) {
         QString endtime = query.value(3).toString();
         quint64 status = query.value(4).toInt();
         quint64 level = query.value(5).toInt();
-        qDebug() << "id: " << id;
         room->setId(id);
         room->setRoomname(roomname);
         room->setStartTime(starttime);
         room->setEndTime(endtime);
         room->setStatus(status);
         room->setLevel(level);
-        qDebug() << "ids: " << room->getId();
         listRoom.append(room);
     }
     return listRoom;
@@ -77,7 +75,7 @@ void RoomAPI::addRoom(quint64 ownerId, QString roomname, quint64 level) {
     QString sqlQuery = "INSERT INTO room (name, status, level, owner) VALUES (:name, :status, :level, :owner)";
     query.prepare(sqlQuery);
     query.bindValue(":name", roomname);
-    query.bindValue(":status", 1);
+    query.bindValue(":status", 0);
     query.bindValue(":level", level);
     query.bindValue(":owner", ownerId);
 

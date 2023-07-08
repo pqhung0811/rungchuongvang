@@ -4,7 +4,6 @@
 #include "JH45IGJHDZ/moc_questionapi.cpp"
 #include "JH45IGJHDZ/moc_roomapi.cpp"
 #include "JH45IGJHDZ/moc_userapi.cpp"
-#include "7EM65HM6UG/moc_clientmain.cpp"
 #include "TD74I3PGBD/moc_clientcore.cpp"
 #include "NPUKSKGWT2/moc_createroomcontroller.cpp"
 #include "NPUKSKGWT2/moc_logincontroller.cpp"
@@ -44,5 +43,4 @@
 #include "V2SYCHURF4/moc_requestprocessing.cpp"
 #include "V2SYCHURF4/moc_servercore.cpp"
 #include "V2SYCHURF4/moc_servercreatemessage.cpp"
-#include "ORNZQ2F6DW/moc_servermain.cpp"
 #include "7HEK2XT3N7/moc_userapitest.cpp"

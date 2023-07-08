@@ -120,6 +120,7 @@ QString RequestProcessing::login() {
         if(msg.compare("login successfully")==0) {
             this->user = loginController->getUser();
         }
+        qDebug() << "login: " << this->user->getId();
         return msg;
     }
 }
@@ -216,9 +217,9 @@ QList<Room*> RequestProcessing::findRoom()
     RoomAPI* roomAPI = new RoomAPI();
     QList<Room*> roomss;
     if(roomss.empty()) {
-        qDebug() << "empty concac";
+        qDebug() << "empty";
     }
-    roomss = roomAPI->getRoomsByStatusAndLevel(1, this->user->getRank());
+    roomss = roomAPI->getRoomsByStatusAndLevel(0, this->user->getRank());
     return roomss;
 }
 

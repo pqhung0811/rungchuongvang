@@ -41,5 +41,6 @@ Command* Command::toCommand(QString input){
     commands.insert("REQUESTJOINROOM", new Command("REQUESTJOINROOM"));
     commands.insert("RESPONSEJOINROOM", new Command("RESPONSEJOINROOM"));
     commands.insert("FINDROOM", new Command("FINDROOM"));
+    commands.insert("STARTGAME", new Command("STARTGAME"));
     return commands.value(input);
 }

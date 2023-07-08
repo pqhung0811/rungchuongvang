@@ -123,3 +123,11 @@ void ClientCore::findRoom()
     FindRoomClientMessage* clientMsg = new FindRoomClientMessage();
     sendRequest(clientMsg->toString());
 }
+
+void ClientCore::startGame()
+{
+    StartGameClientMessage* clientMsg = new StartGameClientMessage();
+    sendRequest(clientMsg->toString());
+}
+
+

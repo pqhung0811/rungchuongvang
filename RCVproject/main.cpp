@@ -18,7 +18,23 @@
 #include "scene/homescene.h"
 #include "message/findroom/findroomservermessage.h"
 #include <QList>
+#include <QThread>
 
+//class MyThread : public QThread
+//{
+
+//public:
+//    void run() override
+//    {
+//        ClientCore* clientCore = ClientCore::getInstance();
+//        clientCore->start();
+//        MainWindow w = MainWindow();
+//        w.show();
+//    }
+
+//    explicit MyThread();
+////    MyThread(QObject* parent = nullptr) : QThread(parent) { }
+//};
 
 int main(int argc, char *argv[])
 {
@@ -38,8 +54,11 @@ int main(int argc, char *argv[])
     clientCore->start();
     MainWindow w = MainWindow();
     w.show();
+//    MyThread thread1;
+//    MyThread thread2;
 
-
+//    thread1.start();
+//    thread2.start();
 //    HomeScene* homeScene = new HomeScene();
 //    homeScene->show();
 

@@ -10,6 +10,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Networkprogramming/project/qtPrj/RCVproject/message/register/registerclientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/requestjoinroomclientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/responsejoinroomclientmessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/startgame/startgameclientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/protocol/attachment.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/protocol/command.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/protocol/requestbody.h \

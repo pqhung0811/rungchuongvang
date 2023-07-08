@@ -26,16 +26,12 @@ public:
     QFrame *frame;
     QWidget *gridWidget_2;
     QGridLayout *gridLayout_2;
-    QWidget *myVerticalWidget_3;
-    QVBoxLayout *verticalLayout_5;
-    QLabel *label_13;
-    QLabel *label_14;
-    QLabel *label_15;
     QWidget *myVerticalWidget_2;
     QVBoxLayout *verticalLayout_3;
-    QLabel *label_9;
-    QLabel *label_7;
-    QLabel *label_8;
+    QWidget *myVerticalWidget_3;
+    QVBoxLayout *verticalLayout_5;
+    QWidget *myVerticalWidget_5;
+    QVBoxLayout *verticalLayout_7;
     QWidget *myVerticalWidget;
     QVBoxLayout *verticalLayout_4;
     QLabel *label_12;
@@ -43,9 +39,13 @@ public:
     QLabel *label_10;
     QWidget *myVerticalWidget_4;
     QVBoxLayout *verticalLayout_6;
-    QLabel *label_16;
-    QLabel *label_17;
-    QLabel *label_18;
+    QWidget *verticalWidget;
+    QVBoxLayout *verticalLayout;
+    QWidget *myVerticalWidget_6;
+    QVBoxLayout *verticalLayout_8;
+    QLabel *label_22;
+    QLabel *label_23;
+    QLabel *label_24;
     QFrame *frame_4;
     QLabel *label;
     QFrame *frame_2;
@@ -53,94 +53,57 @@ public:
     QFrame *frame_5;
     QLabel *label_2;
     QFrame *frame_7;
-    QLabel *label_3;
     QPushButton *playBtn;
+    QLabel *roomname;
+    QLabel *level;
+    QLabel *roomname_2;
 
     void setupUi(QWidget *RoomScene)
     {
         if (RoomScene->objectName().isEmpty())
             RoomScene->setObjectName("RoomScene");
-        RoomScene->resize(834, 534);
+        RoomScene->resize(834, 539);
         QFont font;
         font.setPointSize(14);
         RoomScene->setFont(font);
         RoomScene->setStyleSheet(QString::fromUtf8(""));
         frame = new QFrame(RoomScene);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(30, 100, 801, 471));
+        frame->setGeometry(QRect(20, 90, 791, 391));
         frame->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         gridWidget_2 = new QWidget(frame);
         gridWidget_2->setObjectName("gridWidget_2");
-        gridWidget_2->setGeometry(QRect(20, 20, 491, 171));
+        gridWidget_2->setGeometry(QRect(20, 20, 741, 351));
         gridWidget_2->setStyleSheet(QString::fromUtf8("border: none"));
         gridLayout_2 = new QGridLayout(gridWidget_2);
         gridLayout_2->setObjectName("gridLayout_2");
+        myVerticalWidget_2 = new QWidget(gridWidget_2);
+        myVerticalWidget_2->setObjectName("myVerticalWidget_2");
+        myVerticalWidget_2->setStyleSheet(QString::fromUtf8(""));
+        verticalLayout_3 = new QVBoxLayout(myVerticalWidget_2);
+        verticalLayout_3->setObjectName("verticalLayout_3");
+
+        gridLayout_2->addWidget(myVerticalWidget_2, 0, 1, 1, 1);
+
         myVerticalWidget_3 = new QWidget(gridWidget_2);
         myVerticalWidget_3->setObjectName("myVerticalWidget_3");
         myVerticalWidget_3->setCursor(QCursor(Qt::SizeAllCursor));
-        myVerticalWidget_3->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
+        myVerticalWidget_3->setStyleSheet(QString::fromUtf8(""));
         verticalLayout_5 = new QVBoxLayout(myVerticalWidget_3);
         verticalLayout_5->setObjectName("verticalLayout_5");
-        label_13 = new QLabel(myVerticalWidget_3);
-        label_13->setObjectName("label_13");
-        label_13->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
-        label_13->setPixmap(QPixmap(QString::fromUtf8(":/images/icons8-student-64.png")));
-
-        verticalLayout_5->addWidget(label_13);
-
-        label_14 = new QLabel(myVerticalWidget_3);
-        label_14->setObjectName("label_14");
-        QFont font1;
-        font1.setFamilies({QString::fromUtf8("VNI-Duff")});
-        font1.setPointSize(12);
-        label_14->setFont(font1);
-        label_14->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
-
-        verticalLayout_5->addWidget(label_14);
-
-        label_15 = new QLabel(myVerticalWidget_3);
-        label_15->setObjectName("label_15");
-        QFont font2;
-        font2.setFamilies({QString::fromUtf8("VNI-Chancery")});
-        font2.setPointSize(12);
-        label_15->setFont(font2);
-        label_15->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
-
-        verticalLayout_5->addWidget(label_15);
-
 
         gridLayout_2->addWidget(myVerticalWidget_3, 0, 2, 1, 1);
 
-        myVerticalWidget_2 = new QWidget(gridWidget_2);
-        myVerticalWidget_2->setObjectName("myVerticalWidget_2");
-        myVerticalWidget_2->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
-        verticalLayout_3 = new QVBoxLayout(myVerticalWidget_2);
-        verticalLayout_3->setObjectName("verticalLayout_3");
-        label_9 = new QLabel(myVerticalWidget_2);
-        label_9->setObjectName("label_9");
-        label_9->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
-        label_9->setPixmap(QPixmap(QString::fromUtf8(":/images/icons8-student-64.png")));
+        myVerticalWidget_5 = new QWidget(gridWidget_2);
+        myVerticalWidget_5->setObjectName("myVerticalWidget_5");
+        myVerticalWidget_5->setCursor(QCursor(Qt::SizeAllCursor));
+        myVerticalWidget_5->setStyleSheet(QString::fromUtf8(""));
+        verticalLayout_7 = new QVBoxLayout(myVerticalWidget_5);
+        verticalLayout_7->setObjectName("verticalLayout_7");
 
-        verticalLayout_3->addWidget(label_9);
-
-        label_7 = new QLabel(myVerticalWidget_2);
-        label_7->setObjectName("label_7");
-        label_7->setFont(font1);
-        label_7->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
-
-        verticalLayout_3->addWidget(label_7);
-
-        label_8 = new QLabel(myVerticalWidget_2);
-        label_8->setObjectName("label_8");
-        label_8->setFont(font2);
-        label_8->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
-
-        verticalLayout_3->addWidget(label_8);
-
-
-        gridLayout_2->addWidget(myVerticalWidget_2, 0, 1, 1, 1);
+        gridLayout_2->addWidget(myVerticalWidget_5, 0, 4, 1, 1);
 
         myVerticalWidget = new QWidget(gridWidget_2);
         myVerticalWidget->setObjectName("myVerticalWidget");
@@ -157,6 +120,9 @@ public:
 
         label_11 = new QLabel(myVerticalWidget);
         label_11->setObjectName("label_11");
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("VNI-Duff")});
+        font1.setPointSize(12);
         label_11->setFont(font1);
         label_11->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
 
@@ -164,6 +130,9 @@ public:
 
         label_10 = new QLabel(myVerticalWidget);
         label_10->setObjectName("label_10");
+        QFont font2;
+        font2.setFamilies({QString::fromUtf8("VNI-Chancery")});
+        font2.setPointSize(12);
         label_10->setFont(font2);
         label_10->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
 
@@ -175,32 +144,48 @@ public:
         myVerticalWidget_4 = new QWidget(gridWidget_2);
         myVerticalWidget_4->setObjectName("myVerticalWidget_4");
         myVerticalWidget_4->setCursor(QCursor(Qt::SizeAllCursor));
-        myVerticalWidget_4->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
+        myVerticalWidget_4->setStyleSheet(QString::fromUtf8(""));
         verticalLayout_6 = new QVBoxLayout(myVerticalWidget_4);
         verticalLayout_6->setObjectName("verticalLayout_6");
-        label_16 = new QLabel(myVerticalWidget_4);
-        label_16->setObjectName("label_16");
-        label_16->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
-        label_16->setPixmap(QPixmap(QString::fromUtf8(":/images/icons8-student-64.png")));
-
-        verticalLayout_6->addWidget(label_16);
-
-        label_17 = new QLabel(myVerticalWidget_4);
-        label_17->setObjectName("label_17");
-        label_17->setFont(font1);
-        label_17->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
-
-        verticalLayout_6->addWidget(label_17);
-
-        label_18 = new QLabel(myVerticalWidget_4);
-        label_18->setObjectName("label_18");
-        label_18->setFont(font2);
-        label_18->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
-
-        verticalLayout_6->addWidget(label_18);
-
 
         gridLayout_2->addWidget(myVerticalWidget_4, 0, 3, 1, 1);
+
+        verticalWidget = new QWidget(gridWidget_2);
+        verticalWidget->setObjectName("verticalWidget");
+        verticalLayout = new QVBoxLayout(verticalWidget);
+        verticalLayout->setObjectName("verticalLayout");
+
+        gridLayout_2->addWidget(verticalWidget, 1, 0, 1, 1);
+
+        myVerticalWidget_6 = new QWidget(gridWidget_2);
+        myVerticalWidget_6->setObjectName("myVerticalWidget_6");
+        myVerticalWidget_6->setCursor(QCursor(Qt::SizeAllCursor));
+        myVerticalWidget_6->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
+        verticalLayout_8 = new QVBoxLayout(myVerticalWidget_6);
+        verticalLayout_8->setObjectName("verticalLayout_8");
+        label_22 = new QLabel(myVerticalWidget_6);
+        label_22->setObjectName("label_22");
+        label_22->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
+        label_22->setPixmap(QPixmap(QString::fromUtf8(":/images/icons8-student-64.png")));
+
+        verticalLayout_8->addWidget(label_22);
+
+        label_23 = new QLabel(myVerticalWidget_6);
+        label_23->setObjectName("label_23");
+        label_23->setFont(font1);
+        label_23->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
+
+        verticalLayout_8->addWidget(label_23);
+
+        label_24 = new QLabel(myVerticalWidget_6);
+        label_24->setObjectName("label_24");
+        label_24->setFont(font2);
+        label_24->setStyleSheet(QString::fromUtf8("background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
+
+        verticalLayout_8->addWidget(label_24);
+
+
+        gridLayout_2->addWidget(myVerticalWidget_6, 1, 4, 1, 1);
 
         frame_4 = new QFrame(RoomScene);
         frame_4->setObjectName("frame_4");
@@ -254,12 +239,30 @@ public:
 ""));
         frame_7->setFrameShape(QFrame::StyledPanel);
         frame_7->setFrameShadow(QFrame::Raised);
-        label_3 = new QLabel(RoomScene);
-        label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(640, 30, 41, 31));
         playBtn = new QPushButton(RoomScene);
         playBtn->setObjectName("playBtn");
-        playBtn->setGeometry(QRect(650, 60, 80, 18));
+        playBtn->setGeometry(QRect(350, 490, 111, 41));
+        playBtn->setStyleSheet(QString::fromUtf8("image: url(:/images/Play-Now-Button.png);"));
+        roomname = new QLabel(RoomScene);
+        roomname->setObjectName("roomname");
+        roomname->setGeometry(QRect(310, 30, 251, 41));
+        QFont font5;
+        font5.setFamilies({QString::fromUtf8("Showcard Gothic")});
+        font5.setPointSize(30);
+        roomname->setFont(font5);
+        level = new QLabel(RoomScene);
+        level->setObjectName("level");
+        level->setGeometry(QRect(650, 40, 161, 31));
+        QFont font6;
+        font6.setFamilies({QString::fromUtf8("Lucida Handwriting")});
+        font6.setPointSize(14);
+        level->setFont(font6);
+        level->setStyleSheet(QString::fromUtf8("background-color: white; border: 2px solid color ; border-radius: 10px;\n"
+"color: rgb(255, 0, 0);"));
+        roomname_2 = new QLabel(RoomScene);
+        roomname_2->setObjectName("roomname_2");
+        roomname_2->setGeometry(QRect(570, 360, 251, 41));
+        roomname_2->setFont(font5);
 
         retranslateUi(RoomScene);
 
@@ -269,22 +272,18 @@ public:
     void retranslateUi(QWidget *RoomScene)
     {
         RoomScene->setWindowTitle(QCoreApplication::translate("RoomScene", "Form", nullptr));
-        label_13->setText(QString());
-        label_14->setText(QCoreApplication::translate("RoomScene", "Johnathan", nullptr));
-        label_15->setText(QCoreApplication::translate("RoomScene", "Dimond 500", nullptr));
-        label_9->setText(QString());
-        label_7->setText(QCoreApplication::translate("RoomScene", "Johnathan", nullptr));
-        label_8->setText(QCoreApplication::translate("RoomScene", "Dimond 500", nullptr));
         label_12->setText(QString());
         label_11->setText(QCoreApplication::translate("RoomScene", "Johnathan", nullptr));
         label_10->setText(QCoreApplication::translate("RoomScene", "Dimond 500", nullptr));
-        label_16->setText(QString());
-        label_17->setText(QCoreApplication::translate("RoomScene", "Johnathan", nullptr));
-        label_18->setText(QCoreApplication::translate("RoomScene", "Dimond 500", nullptr));
+        label_22->setText(QString());
+        label_23->setText(QCoreApplication::translate("RoomScene", "Johnathan", nullptr));
+        label_24->setText(QCoreApplication::translate("RoomScene", "Dimond 500", nullptr));
         label->setText(QCoreApplication::translate("RoomScene", "    Johnathan", nullptr));
         label_2->setText(QCoreApplication::translate("RoomScene", "      gold: 2000", nullptr));
-        label_3->setText(QCoreApplication::translate("RoomScene", "Level:", nullptr));
-        playBtn->setText(QCoreApplication::translate("RoomScene", "Play", nullptr));
+        playBtn->setText(QString());
+        roomname->setText(QCoreApplication::translate("RoomScene", "Roomname", nullptr));
+        level->setText(QCoreApplication::translate("RoomScene", "Level:", nullptr));
+        roomname_2->setText(QCoreApplication::translate("RoomScene", "Roomname", nullptr));
     } // retranslateUi
 
 };

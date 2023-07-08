@@ -1,23 +1,21 @@
+#include <QCoreApplication>
+#include "core/servercore.h"
+#include "connection.h"
 
-#include "servermain.h"
+//int main(int argc, char *argv[])
+//{
+//    QCoreApplication a(argc, argv);
+//    Connection* connection = new Connection();
+//    if (!connection->setConnection()) {
+//        qDebug() << "Can not connect";
+//    }
+//    else {
+//        qDebug() << "abc";
+//    }
+//    // Khởi tạo và chạy server
+//    ServerCore* server = new ServerCore();
+//    server->start();
 
-ServerMain::ServerMain(QObject *parent)
-    : QObject{parent}
-{
-
-}
-
-//void onNewConnection(QTcpServer *server) {
-//    QTcpSocket *socket = server->nextPendingConnection();
-//    connect(socket, SIGNAL(readyRead()), this, SLOT(onReadyRead()));
-//    connect(socket, SIGNAL(disconnected()), socket, SLOT(deleteLater()));
+//    return a.exec();
 //}
 
-//void onReadyRead() {
-//    QTcpSocket *socket = qobject_cast<QTcpSocket *>(sender());
-//    if (!socket)
-//        return;
-
-//    QByteArray data = socket->readAll();
-//    // Xử lý dữ liệu được gửi đến từ client
-//}

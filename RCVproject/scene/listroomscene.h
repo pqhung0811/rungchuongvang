@@ -24,6 +24,13 @@ public:
     explicit ListRoomScene(QWidget *parent = nullptr);
     ~ListRoomScene();
 
+    QList<QString> getRoomnames() const;
+    void setRoomnames(const QList<QString> &newRoomnames);
+
+    QList<QString> getRoomIds() const;
+    void setRoomIds(const QList<QString> &newRoomIds);
+    void setupList();
+
 private slots:
     void onSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected, QStandardItemModel* model);
 
@@ -31,7 +38,7 @@ private:
     Ui::ListRoomScene *ui;
     QStandardItemModel* model;
     quint64 level;
-    QList<int> roomIds;
+    QList<QString> roomIds;
     QList<QString> roomnames;
 
 };

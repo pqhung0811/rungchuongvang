@@ -11,7 +11,6 @@ RCVproject_autogen/timestamp: \
 	D:/Networkprogramming/project/qtPrj/RCVproject/api/userapi.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/api/userapi.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/client/clientmain.cpp \
-	D:/Networkprogramming/project/qtPrj/RCVproject/client/clientmain.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/client/core/clientcore.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/client/core/clientcore.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/controller/createroomcontroller.cpp \
@@ -69,6 +68,8 @@ RCVproject_autogen/timestamp: \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/responsejoinroomservermessage.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/servermessage.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/servermessage.h \
+	D:/Networkprogramming/project/qtPrj/RCVproject/message/startgame/startgameclientmessage.cpp \
+	D:/Networkprogramming/project/qtPrj/RCVproject/message/startgame/startgameclientmessage.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/protocol/attachment.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/protocol/attachment.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/protocol/command.cpp \
@@ -109,7 +110,6 @@ RCVproject_autogen/timestamp: \
 	D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercreatemessage.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercreatemessage.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/server/servermain.cpp \
-	D:/Networkprogramming/project/qtPrj/RCVproject/server/servermain.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/test/userapitest.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/test/userapitest.h \
 	D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
@@ -141,6 +141,7 @@ RCVproject_autogen/timestamp: \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QModelIndexList \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QMutex \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QObject \
+	D:/Qt/6.5.0/mingw_64/include/QtCore/QPair \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QRect \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QSharedDataPointer \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QSize \
@@ -426,6 +427,7 @@ RCVproject_autogen/timestamp: \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qpaintdevice.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qpalette.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qpen.h \
+	D:/Qt/6.5.0/mingw_64/include/QtGui/qpicture.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qpixelformat.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qpixmap.h \
 	D:/Qt/6.5.0/mingw_64/include/QtGui/qpointingdevice.h \
@@ -511,6 +513,8 @@ RCVproject_autogen/timestamp: \
 	D:/Qt/6.5.0/mingw_64/include/QtTest/qttestlib-config.h \
 	D:/Qt/6.5.0/mingw_64/include/QtTest/qttestversion.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QDialog \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QLabel \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QLayout \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QLineEdit \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QListWidget \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QListWidgetItem \
@@ -533,6 +537,7 @@ RCVproject_autogen/timestamp: \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qframe.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qgridlayout.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlabel.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlayout.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlayoutitem.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlineedit.h \

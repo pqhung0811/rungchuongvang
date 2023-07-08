@@ -43,12 +43,19 @@ void ResponseBody::createFindRoomBody(QList<quint64> roomIds, QList<QString> roo
     this->responseBody.insert("id", idArray);
     qDebug() << "id: " << idArray;
 
-    QStringList roomnameList;
+    QJsonArray roomnameList;
     for (const QString& roomname : roomnames) {
-        roomnameList << roomname;
+        roomnameList.append(roomname);
     }
-    QString roomnamesString = roomnameList.join(" ");
-    this->responseBody.insert("roomname", roomnamesString);
-//    responseBody["roomname"] = roomnamesString;
+    this->responseBody.insert("roomname", roomnameList);
+    //    responseBody["roomname"] = roomnamesString;
 }
 
+void ResponseBody::createCreateRoomBody(QString username, quint64 ranked, quint64 rankScore)
+{
+    this->responseBody = QJsonObject();
+
+    this->responseBody.insert("username", username);
+    this->responseBody.insert("ranked", QString::number(ranked));
+    this->responseBody.insert("rankscore", QString::number(rankScore));
+}

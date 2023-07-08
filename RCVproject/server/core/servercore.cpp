@@ -15,6 +15,7 @@ ServerCore::ServerCore(QObject *parent)
     : QObject{parent}
 {
     this->server = new QTcpServer(this);
+    this->serverCreateMessage = new ServerCreateMessage();
     connect(server, &QTcpServer::newConnection, this, &ServerCore::onNewConnection);
 }
 
@@ -46,7 +47,6 @@ void ServerCore::onNewConnection() {
 
 void ServerCore::onReadyRead() {
     QTcpSocket *clientSocket = qobject_cast<QTcpSocket*>(sender());
-    ServerCreateMessage* serverCreateMessage = new ServerCreateMessage();
     QString responseString;
 
     if (clientSocket)

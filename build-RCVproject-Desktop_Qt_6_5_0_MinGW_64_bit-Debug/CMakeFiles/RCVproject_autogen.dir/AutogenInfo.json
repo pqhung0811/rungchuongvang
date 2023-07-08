@@ -574,12 +574,6 @@
 			null
 		],
 		[
-			"D:/Networkprogramming/project/qtPrj/RCVproject/client/clientmain.h",
-			"MU",
-			"7EM65HM6UG/moc_clientmain.cpp",
-			null
-		],
-		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/client/core/clientcore.h",
 			"MU",
 			"TD74I3PGBD/moc_clientcore.cpp",
@@ -748,6 +742,12 @@
 			null
 		],
 		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/startgame/startgameclientmessage.h",
+			"MU",
+			"D3PLVQQRNC/moc_startgameclientmessage.cpp",
+			null
+		],
+		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/protocol/attachment.h",
 			"MU",
 			"ULO4IMYJZC/moc_attachment.cpp",
@@ -859,12 +859,6 @@
 			"D:/Networkprogramming/project/qtPrj/RCVproject/server/core/servercreatemessage.h",
 			"MU",
 			"V2SYCHURF4/moc_servercreatemessage.cpp",
-			null
-		],
-		[
-			"D:/Networkprogramming/project/qtPrj/RCVproject/server/servermain.h",
-			"MU",
-			"ORNZQ2F6DW/moc_servermain.cpp",
 			null
 		],
 		[
@@ -1128,6 +1122,11 @@
 		],
 		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/message/servermessage.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/startgame/startgameclientmessage.cpp",
 			"MU",
 			null
 		],

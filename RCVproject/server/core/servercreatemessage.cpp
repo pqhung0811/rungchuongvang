@@ -46,14 +46,16 @@ QString ServerCreateMessage::createMessage(QString msg)
     else if(msg.compare("find room")==0) {
         QList<quint64> roomIds;
         QList<QString> roomnames;
-        qDebug() << "concac";
         for(int i=0; i < this->requestProcessing->getRooms().size(); i++) {
             Room* room = this->requestProcessing->getRooms().at(i);
             roomIds.append(room->getId());
-            qDebug() << "concac1: " << room->getId();
             roomnames.append(room->getRoomname());
         }
         FindRoomServerMessage* serverMsg = new FindRoomServerMessage(roomIds, roomnames, "success", " ");
+        return serverMsg->toString();
+    }
+    else if(msg.compare("create room successfully")==0) {
+        NoInfoMessage* serverMsg = new NoInfoMessage("success", "create room successfully", "CREATEROOM");
         return serverMsg->toString();
     }
 }

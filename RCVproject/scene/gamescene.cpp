@@ -12,3 +12,15 @@ GameScene::~GameScene()
 {
     delete ui;
 }
+
+void GameScene::on_name_linkActivated(const QString &link)
+{
+
+}
+
+
+void GameScene::on_rank_linkActivated(const QString &link)
+{
+
+}
+

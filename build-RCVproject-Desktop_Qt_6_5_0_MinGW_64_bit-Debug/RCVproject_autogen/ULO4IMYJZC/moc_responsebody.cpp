@@ -53,11 +53,12 @@ static constexpr auto qt_meta_stringdata_CLASSResponseBodyENDCLASS = QtMocHelper
     "createFindRoomBody",
     "QList<quint64>",
     "roomIds",
-    "roomnames"
+    "roomnames",
+    "createCreateRoomBody"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSResponseBodyENDCLASS_t {
-    uint offsetsAndSizes[30];
+    uint offsetsAndSizes[32];
     char stringdata0[13];
     char stringdata1[16];
     char stringdata2[1];
@@ -73,6 +74,7 @@ struct qt_meta_stringdata_CLASSResponseBodyENDCLASS_t {
     char stringdata12[15];
     char stringdata13[8];
     char stringdata14[10];
+    char stringdata15[21];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSResponseBodyENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -92,7 +94,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSResponseBodyENDCLASS_t qt_meta_
         QT_MOC_LITERAL(121, 18),  // "createFindRoomBody"
         QT_MOC_LITERAL(140, 14),  // "QList<quint64>"
         QT_MOC_LITERAL(155, 7),  // "roomIds"
-        QT_MOC_LITERAL(163, 9)   // "roomnames"
+        QT_MOC_LITERAL(163, 9),  // "roomnames"
+        QT_MOC_LITERAL(173, 20)   // "createCreateRoomBody"
     },
     "ResponseBody",
     "setResponseBody",
@@ -108,7 +111,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSResponseBodyENDCLASS_t qt_meta_
     "createFindRoomBody",
     "QList<quint64>",
     "roomIds",
-    "roomnames"
+    "roomnames",
+    "createCreateRoomBody"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -120,7 +124,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSResponseBodyENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -128,11 +132,12 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSResponseBodyENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   44,    2, 0x0a,    1 /* Public */,
-       4,    0,   47,    2, 0x0a,    3 /* Public */,
-       5,    4,   48,    2, 0x0a,    4 /* Public */,
-      10,    2,   57,    2, 0x0a,    9 /* Public */,
-      11,    2,   62,    2, 0x0a,   12 /* Public */,
+       1,    1,   50,    2, 0x0a,    1 /* Public */,
+       4,    0,   53,    2, 0x0a,    3 /* Public */,
+       5,    4,   54,    2, 0x0a,    4 /* Public */,
+      10,    2,   63,    2, 0x0a,    9 /* Public */,
+      11,    2,   68,    2, 0x0a,   12 /* Public */,
+      15,    3,   73,    2, 0x0a,   15 /* Public */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QJsonObject,    3,
@@ -140,6 +145,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSResponseBodyENDCLASS[] = {
     QMetaType::Void, QMetaType::ULongLong, QMetaType::QString, QMetaType::ULongLong, QMetaType::ULongLong,    6,    7,    8,    9,
     QMetaType::Void, QMetaType::ULongLong, QMetaType::QString,    6,    7,
     QMetaType::Void, 0x80000000 | 12, QMetaType::QStringList,   13,   14,
+    QMetaType::Void, QMetaType::QString, QMetaType::ULongLong, QMetaType::ULongLong,    7,    8,    9,
 
        0        // eod
 };
@@ -171,7 +177,12 @@ Q_CONSTINIT const QMetaObject ResponseBody::staticMetaObject = { {
         // method 'createFindRoomBody'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<QList<quint64>, std::false_type>,
-        QtPrivate::TypeAndForceComplete<QList<QString>, std::false_type>
+        QtPrivate::TypeAndForceComplete<QList<QString>, std::false_type>,
+        // method 'createCreateRoomBody'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QString, std::false_type>,
+        QtPrivate::TypeAndForceComplete<quint64, std::false_type>,
+        QtPrivate::TypeAndForceComplete<quint64, std::false_type>
     >,
     nullptr
 } };
@@ -188,6 +199,7 @@ void ResponseBody::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 2: _t->createLoginBody((*reinterpret_cast< std::add_pointer_t<quint64>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[4]))); break;
         case 3: _t->createLogoutBody((*reinterpret_cast< std::add_pointer_t<quint64>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
         case 4: _t->createFindRoomBody((*reinterpret_cast< std::add_pointer_t<QList<quint64>>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QList<QString>>>(_a[2]))); break;
+        case 5: _t->createCreateRoomBody((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[3]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -223,13 +235,13 @@ int ResponseBody::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     }
     return _id;
 }

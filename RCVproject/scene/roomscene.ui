@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>834</width>
-    <height>534</height>
+    <height>539</height>
    </rect>
   </property>
   <property name="font">
@@ -24,10 +24,10 @@
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>100</y>
-     <width>801</width>
-     <height>471</height>
+     <x>20</x>
+     <y>90</y>
+     <width>791</width>
+     <height>391</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -44,123 +44,42 @@
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>491</width>
-      <height>171</height>
+      <width>741</width>
+      <height>351</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">border: none</string>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="1">
+      <widget class="QWidget" name="myVerticalWidget_2" native="true">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3"/>
+      </widget>
+     </item>
      <item row="0" column="2">
       <widget class="QWidget" name="myVerticalWidget_3" native="true">
        <property name="cursor">
         <cursorShape>SizeAllCursor</cursorShape>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string>
+        <string notr="true"/>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_5">
-        <item>
-         <widget class="QLabel" name="label_13">
-          <property name="styleSheet">
-           <string notr="true">background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="pixmap">
-           <pixmap resource="../resource.qrc">:/images/icons8-student-64.png</pixmap>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_14">
-          <property name="font">
-           <font>
-            <family>VNI-Duff</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string>
-          </property>
-          <property name="text">
-           <string>Johnathan</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_15">
-          <property name="font">
-           <font>
-            <family>VNI-Chancery</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string>
-          </property>
-          <property name="text">
-           <string>Dimond 500</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <layout class="QVBoxLayout" name="verticalLayout_5"/>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QWidget" name="myVerticalWidget_2" native="true">
-       <property name="styleSheet">
-        <string notr="true">background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string>
+     <item row="0" column="4">
+      <widget class="QWidget" name="myVerticalWidget_5" native="true">
+       <property name="cursor">
+        <cursorShape>SizeAllCursor</cursorShape>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
-        <item>
-         <widget class="QLabel" name="label_9">
-          <property name="styleSheet">
-           <string notr="true">background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="pixmap">
-           <pixmap resource="../resource.qrc">:/images/icons8-student-64.png</pixmap>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_7">
-          <property name="font">
-           <font>
-            <family>VNI-Duff</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string>
-          </property>
-          <property name="text">
-           <string>Johnathan</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_8">
-          <property name="font">
-           <font>
-            <family>VNI-Chancery</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string>
-          </property>
-          <property name="text">
-           <string>Dimond 500</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_7"/>
       </widget>
      </item>
      <item row="0" column="0">
@@ -226,11 +145,27 @@
         <cursorShape>SizeAllCursor</cursorShape>
        </property>
        <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_6"/>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QWidget" name="verticalWidget" native="true">
+       <layout class="QVBoxLayout" name="verticalLayout"/>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="QWidget" name="myVerticalWidget_6" native="true">
+       <property name="cursor">
+        <cursorShape>SizeAllCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
         <string notr="true">background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_6">
+       <layout class="QVBoxLayout" name="verticalLayout_8">
         <item>
-         <widget class="QLabel" name="label_16">
+         <widget class="QLabel" name="label_22">
           <property name="styleSheet">
            <string notr="true">background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string>
           </property>
@@ -243,7 +178,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_17">
+         <widget class="QLabel" name="label_23">
           <property name="font">
            <font>
             <family>VNI-Duff</family>
@@ -259,7 +194,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_18">
+         <widget class="QLabel" name="label_24">
           <property name="font">
            <font>
             <family>VNI-Chancery</family>
@@ -421,30 +356,81 @@ background-image: url(:/images/icons8-gold-medal-30.png);
     <enum>QFrame::Raised</enum>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QPushButton" name="playBtn">
    <property name="geometry">
     <rect>
-     <x>640</x>
+     <x>350</x>
+     <y>490</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/images/Play-Now-Button.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="roomname">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
      <y>30</y>
-     <width>41</width>
+     <width>251</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Showcard Gothic</family>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Roomname</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="level">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>40</y>
+     <width>161</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lucida Handwriting</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white; border: 2px solid color ; border-radius: 10px;
+color: rgb(255, 0, 0);</string>
    </property>
    <property name="text">
     <string>Level:</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="playBtn">
+  <widget class="QLabel" name="roomname_2">
    <property name="geometry">
     <rect>
-     <x>650</x>
-     <y>60</y>
-     <width>80</width>
-     <height>18</height>
+     <x>570</x>
+     <y>360</y>
+     <width>251</width>
+     <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Showcard Gothic</family>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
    <property name="text">
-    <string>Play</string>
+    <string>Roomname</string>
    </property>
   </widget>
  </widget>

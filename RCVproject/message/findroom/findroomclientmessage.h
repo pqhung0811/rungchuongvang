@@ -5,7 +5,6 @@
 #include "clientmessage.h"
 
 
-
 class FindRoomClientMessage : public ClientMessage
 {
 public:

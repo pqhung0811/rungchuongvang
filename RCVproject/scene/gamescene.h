@@ -16,6 +16,12 @@ public:
     explicit GameScene(QWidget *parent = nullptr);
     ~GameScene();
 
+private slots:
+
+public slots:
+    void on_name_linkActivated(const QString &link);
+    void on_rank_linkActivated(const QString &link);
+
 private:
     Ui::GameScene *ui;
 };

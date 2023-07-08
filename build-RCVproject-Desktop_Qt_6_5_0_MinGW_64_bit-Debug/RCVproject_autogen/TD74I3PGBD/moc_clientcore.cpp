@@ -61,11 +61,12 @@ static constexpr auto qt_meta_stringdata_CLASSClientCoreENDCLASS = QtMocHelpers:
     "roomId",
     "responseJoinRoom",
     "reply",
-    "findRoom"
+    "findRoom",
+    "startGame"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSClientCoreENDCLASS_t {
-    uint offsetsAndSizes[48];
+    uint offsetsAndSizes[50];
     char stringdata0[11];
     char stringdata1[9];
     char stringdata2[1];
@@ -90,6 +91,7 @@ struct qt_meta_stringdata_CLASSClientCoreENDCLASS_t {
     char stringdata21[17];
     char stringdata22[6];
     char stringdata23[9];
+    char stringdata24[10];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSClientCoreENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -118,7 +120,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSClientCoreENDCLASS_t qt_meta_st
         QT_MOC_LITERAL(187, 6),  // "roomId"
         QT_MOC_LITERAL(194, 16),  // "responseJoinRoom"
         QT_MOC_LITERAL(211, 5),  // "reply"
-        QT_MOC_LITERAL(217, 8)   // "findRoom"
+        QT_MOC_LITERAL(217, 8),  // "findRoom"
+        QT_MOC_LITERAL(226, 9)   // "startGame"
     },
     "ClientCore",
     "Finished",
@@ -143,7 +146,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSClientCoreENDCLASS_t qt_meta_st
     "roomId",
     "responseJoinRoom",
     "reply",
-    "findRoom"
+    "findRoom",
+    "startGame"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -155,7 +159,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSClientCoreENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+      14,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -163,21 +167,22 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSClientCoreENDCLASS[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   92,    2, 0x06,    1 /* Public */,
+       1,    1,   98,    2, 0x06,    1 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    0,   95,    2, 0x0a,    3 /* Public */,
-       5,    0,   96,    2, 0x0a,    4 /* Public */,
-       6,    0,   97,    2, 0x0a,    5 /* Public */,
-       7,    0,   98,    2, 0x0a,    6 /* Public */,
-       8,    2,   99,    2, 0x0a,    7 /* Public */,
-      11,    1,  104,    2, 0x0a,   10 /* Public */,
-      13,    2,  107,    2, 0x0a,   12 /* Public */,
-      15,    2,  112,    2, 0x0a,   15 /* Public */,
-      16,    1,  117,    2, 0x0a,   18 /* Public */,
-      18,    2,  120,    2, 0x0a,   20 /* Public */,
-      21,    3,  125,    2, 0x0a,   23 /* Public */,
-      23,    0,  132,    2, 0x0a,   27 /* Public */,
+       4,    0,  101,    2, 0x0a,    3 /* Public */,
+       5,    0,  102,    2, 0x0a,    4 /* Public */,
+       6,    0,  103,    2, 0x0a,    5 /* Public */,
+       7,    0,  104,    2, 0x0a,    6 /* Public */,
+       8,    2,  105,    2, 0x0a,    7 /* Public */,
+      11,    1,  110,    2, 0x0a,   10 /* Public */,
+      13,    2,  113,    2, 0x0a,   12 /* Public */,
+      15,    2,  118,    2, 0x0a,   15 /* Public */,
+      16,    1,  123,    2, 0x0a,   18 /* Public */,
+      18,    2,  126,    2, 0x0a,   20 /* Public */,
+      21,    3,  131,    2, 0x0a,   23 /* Public */,
+      23,    0,  138,    2, 0x0a,   27 /* Public */,
+      24,    0,  139,    2, 0x0a,   28 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QJsonDocument,    3,
@@ -194,6 +199,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSClientCoreENDCLASS[] = {
     QMetaType::Void, QMetaType::QString,   17,
     QMetaType::Void, QMetaType::ULongLong, QMetaType::ULongLong,   19,   20,
     QMetaType::Void, QMetaType::ULongLong, QMetaType::ULongLong, QMetaType::UChar,   19,   20,   22,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -247,6 +253,8 @@ Q_CONSTINIT const QMetaObject ClientCore::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<quint64, std::false_type>,
         QtPrivate::TypeAndForceComplete<quint8, std::false_type>,
         // method 'findRoom'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'startGame'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -271,6 +279,7 @@ void ClientCore::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 10: _t->requestJoinRoom((*reinterpret_cast< std::add_pointer_t<quint64>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[2]))); break;
         case 11: _t->responseJoinRoom((*reinterpret_cast< std::add_pointer_t<quint64>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<quint64>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<quint8>>(_a[3]))); break;
         case 12: _t->findRoom(); break;
+        case 13: _t->startGame(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -304,13 +313,13 @@ int ClientCore::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 14;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 14)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 13;
+        _id -= 14;
     }
     return _id;
 }

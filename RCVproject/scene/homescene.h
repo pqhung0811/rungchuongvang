@@ -2,9 +2,12 @@
 #define HOMESCENE_H
 
 #include <QWidget>
+#include <QJsonArray>
+#include <QPair>
 #include "core/clientcore.h"
 #include "createroomdialog.h"
 #include "roomscene.h"
+#include "listroomscene.h"
 
 namespace Ui {
 class HomeScene;

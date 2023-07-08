@@ -86,7 +86,6 @@ set(PROJECT_SOURCES
         controller/createroomcontroller.cpp
         controller/requestjoinroomcontroller.h
         controller/requestjoinroomcontroller.cpp
-        server/servermain.h
         server/servermain.cpp
         server/core/servercore.h
         server/core/servercore.cpp
@@ -96,7 +95,6 @@ set(PROJECT_SOURCES
         server/core/processor/requestprocessor.cpp
         server/core/servercreatemessage.h
         server/core/servercreatemessage.cpp
-        client/clientmain.h
         client/clientmain.cpp
         client/core/clientcore.h
         client/core/clientcore.cpp
@@ -136,6 +134,8 @@ set(PROJECT_SOURCES
         message/findroom/findroomclientmessage.cpp
         message/findroom/findroomservermessage.h
         message/findroom/findroomservermessage.cpp
+        message/startgame/startgameclientmessage.h
+        message/startgame/startgameclientmessage.cpp
         protocol/requestbody.h
         protocol/requestbody.cpp
         protocol/responsebody.h
