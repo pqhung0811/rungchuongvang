@@ -165,3 +165,26 @@ void UserAPI::updateRoomId(quint64 roomId, quint64 id) {
         qDebug() << "can not query";
     }
 }
+
+QList<User *> UserAPI::getAllUsersOrderByRank()
+{
+    QList<User*> listUser;
+    QSqlQuery query;
+    query.prepare("SELECT id, username, ranked, rank_score FROM user ORDER by ranked DESC");
+    if (!query.exec()) {
+        qDebug() << "Không thể thực hiện truy vấn";
+    }
+    while (query.next()) {
+        User* user = new User();
+        quint64 id = query.value(0).toInt();
+        QString username = query.value(1).toString();
+        quint64 ranked = query.value(2).toInt();
+        quint64 rankScore = query.value(3).toInt();
+        user->setId(id);
+        user->setUsername(username);
+        user->setRank(ranked);
+        user->setRankScore(rankScore);
+        listUser.append(user);
+    }
+    return listUser;
+}

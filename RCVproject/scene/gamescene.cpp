@@ -15,12 +15,12 @@ GameScene::~GameScene()
 
 void GameScene::on_name_linkActivated(const QString &link)
 {
-
+    this->ui->name->setText(link);
 }
 
 
 void GameScene::on_rank_linkActivated(const QString &link)
 {
-
+    this->ui->level->setText(link);
 }
 

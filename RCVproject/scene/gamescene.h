@@ -4,6 +4,10 @@
 #include <QWidget>
 #include "user.h"
 
+// Khai báo kiểu dữ liệu Question và Answer
+typedef QPair<QString, QList<QString>> Question;
+typedef QPair<QString, bool> Answer;
+
 namespace Ui {
 class GameScene;
 }

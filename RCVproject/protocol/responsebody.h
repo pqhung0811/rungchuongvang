@@ -24,6 +24,7 @@ public slots:
     void createLogoutBody(quint64 id, QString username);
     void createFindRoomBody(QList<quint64> roomIds, QList<QString> roomnames);
     void createCreateRoomBody(QString username, quint64 ranked, quint64 rankScore);
+    void createViewRankBody(QList<quint64> userIds, QList<QString> usernames, QList<quint64> ranked, QList<quint64> rankScore);
 signals:
 
 };

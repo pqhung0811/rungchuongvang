@@ -7,6 +7,7 @@
 *****************************************************************************/
 
 #include "../../../RCVproject/scene/listroomscene.h"
+#include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 
 #if __has_include(<QtCore/qtmochelpers.h>)
@@ -45,11 +46,15 @@ static constexpr auto qt_meta_stringdata_CLASSListRoomSceneENDCLASS = QtMocHelpe
     "selected",
     "deselected",
     "QStandardItemModel*",
-    "model"
+    "model",
+    "on_pushButton_clicked",
+    "on_label_2_linkActivated",
+    "link",
+    "on_label_3_linkActivated"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSListRoomSceneENDCLASS_t {
-    uint offsetsAndSizes[16];
+    uint offsetsAndSizes[24];
     char stringdata0[14];
     char stringdata1[19];
     char stringdata2[1];
@@ -58,6 +63,10 @@ struct qt_meta_stringdata_CLASSListRoomSceneENDCLASS_t {
     char stringdata5[11];
     char stringdata6[20];
     char stringdata7[6];
+    char stringdata8[22];
+    char stringdata9[25];
+    char stringdata10[5];
+    char stringdata11[25];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSListRoomSceneENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -70,7 +79,11 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSListRoomSceneENDCLASS_t qt_meta
         QT_MOC_LITERAL(49, 8),  // "selected"
         QT_MOC_LITERAL(58, 10),  // "deselected"
         QT_MOC_LITERAL(69, 19),  // "QStandardItemModel*"
-        QT_MOC_LITERAL(89, 5)   // "model"
+        QT_MOC_LITERAL(89, 5),  // "model"
+        QT_MOC_LITERAL(95, 21),  // "on_pushButton_clicked"
+        QT_MOC_LITERAL(117, 24),  // "on_label_2_linkActivated"
+        QT_MOC_LITERAL(142, 4),  // "link"
+        QT_MOC_LITERAL(147, 24)   // "on_label_3_linkActivated"
     },
     "ListRoomScene",
     "onSelectionChanged",
@@ -79,7 +92,11 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSListRoomSceneENDCLASS_t qt_meta
     "selected",
     "deselected",
     "QStandardItemModel*",
-    "model"
+    "model",
+    "on_pushButton_clicked",
+    "on_label_2_linkActivated",
+    "link",
+    "on_label_3_linkActivated"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -91,7 +108,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSListRoomSceneENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -99,10 +116,16 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSListRoomSceneENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    3,   20,    2, 0x08,    1 /* Private */,
+       1,    3,   38,    2, 0x08,    1 /* Private */,
+       8,    0,   45,    2, 0x08,    5 /* Private */,
+       9,    1,   46,    2, 0x0a,    6 /* Public */,
+      11,    1,   49,    2, 0x0a,    8 /* Public */,
 
  // slots: parameters
     QMetaType::Void, 0x80000000 | 3, 0x80000000 | 3, 0x80000000 | 6,    4,    5,    7,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,   10,
+    QMetaType::Void, QMetaType::QString,   10,
 
        0        // eod
 };
@@ -120,7 +143,15 @@ Q_CONSTINIT const QMetaObject ListRoomScene::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QItemSelection &, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QItemSelection &, std::false_type>,
-        QtPrivate::TypeAndForceComplete<QStandardItemModel *, std::false_type>
+        QtPrivate::TypeAndForceComplete<QStandardItemModel *, std::false_type>,
+        // method 'on_pushButton_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_label_2_linkActivated'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        // method 'on_label_3_linkActivated'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>
     >,
     nullptr
 } };
@@ -132,6 +163,9 @@ void ListRoomScene::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         (void)_t;
         switch (_id) {
         case 0: _t->onSelectionChanged((*reinterpret_cast< std::add_pointer_t<QItemSelection>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QItemSelection>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QStandardItemModel*>>(_a[3]))); break;
+        case 1: _t->on_pushButton_clicked(); break;
+        case 2: _t->on_label_2_linkActivated((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 3: _t->on_label_3_linkActivated((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -170,13 +204,13 @@ int ListRoomScene::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 4;
     }
     return _id;
 }

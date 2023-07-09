@@ -580,6 +580,12 @@
 			null
 		],
 		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/client/core/clientmanager.h",
+			"MU",
+			"TD74I3PGBD/moc_clientmanager.cpp",
+			null
+		],
+		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/createroomcontroller.h",
 			"MU",
 			"NPUKSKGWT2/moc_createroomcontroller.cpp",
@@ -607,6 +613,12 @@
 			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/requestjoinroomcontroller.h",
 			"MU",
 			"NPUKSKGWT2/moc_requestjoinroomcontroller.cpp",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/startgamecontroller.h",
+			"MU",
+			"NPUKSKGWT2/moc_startgamecontroller.cpp",
 			null
 		],
 		[
@@ -745,6 +757,24 @@
 			"D:/Networkprogramming/project/qtPrj/RCVproject/message/startgame/startgameclientmessage.h",
 			"MU",
 			"D3PLVQQRNC/moc_startgameclientmessage.cpp",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/startgame/startgameservermessage.h",
+			"MU",
+			"D3PLVQQRNC/moc_startgameservermessage.cpp",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/viewrank/viewrankclientmessage.h",
+			"MU",
+			"ZEX4WG3MCG/moc_viewrankclientmessage.cpp",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/viewrank/viewrankservermessage.h",
+			"MU",
+			"ZEX4WG3MCG/moc_viewrankservermessage.cpp",
 			null
 		],
 		[
@@ -990,6 +1020,11 @@
 			null
 		],
 		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/client/core/clientmanager.cpp",
+			"MU",
+			null
+		],
+		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/createroomcontroller.cpp",
 			"MU",
 			null
@@ -1011,6 +1046,11 @@
 		],
 		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/requestjoinroomcontroller.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/controller/startgamecontroller.cpp",
 			"MU",
 			null
 		],
@@ -1127,6 +1167,21 @@
 		],
 		[
 			"D:/Networkprogramming/project/qtPrj/RCVproject/message/startgame/startgameclientmessage.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/startgame/startgameservermessage.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/viewrank/viewrankclientmessage.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Networkprogramming/project/qtPrj/RCVproject/message/viewrank/viewrankservermessage.cpp",
 			"MU",
 			null
 		],

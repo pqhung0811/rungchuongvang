@@ -124,10 +124,16 @@ void ClientCore::findRoom()
     sendRequest(clientMsg->toString());
 }
 
-void ClientCore::startGame()
+void ClientCore::startGame(quint64 noQuestion)
 {
-    StartGameClientMessage* clientMsg = new StartGameClientMessage();
+    StartGameClientMessage* clientMsg = new StartGameClientMessage(noQuestion);
     sendRequest(clientMsg->toString());
+}
+
+void ClientCore::viewRank()
+{
+    ViewRankClientMessage* clientMsg = new ViewRankClientMessage();
+    sendRequest((clientMsg->toString()));
 }
 
 

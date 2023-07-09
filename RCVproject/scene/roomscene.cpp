@@ -6,6 +6,7 @@ RoomScene::RoomScene(QWidget *parent) :
     ui(new Ui::RoomScene)
 {
     ui->setupUi(this);
+    clientCore = ClientCore::getInstance();
 //    setStyleSheet("QWidget {background-image:url(D:/Networkprogramming/project/images/gold-frame.jpg)}");
     this->ui->gridLayout_2->setSpacing(20);
 }
@@ -106,10 +107,13 @@ void RoomScene::on_level_linkActivated(const QString &link)
 
 void RoomScene::on_playBtn_clicked()
 {
+    QSpinBox spin = QSpinBox();
+    quint64 noQuestion = spin.value();
+    clientCore->startGame(noQuestion);
     GameScene* gameScene = new GameScene();
+    gameScene->on_name_linkActivated(this->ui->label->text());
+    gameScene->on_rank_linkActivated(this->ui->label_2->text());
     gameScene->show();
-    gameScene->
     close();
-
 }
 

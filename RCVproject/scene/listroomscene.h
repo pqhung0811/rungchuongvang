@@ -11,6 +11,7 @@
 #include <QVariant>
 #include "noeditdelegate.h"
 #include <QList>
+#include "homescene.h"
 
 namespace Ui {
 class ListRoomScene;
@@ -27,18 +28,26 @@ public:
     QList<QString> getRoomnames() const;
     void setRoomnames(const QList<QString> &newRoomnames);
 
-    QList<QString> getRoomIds() const;
-    void setRoomIds(const QList<QString> &newRoomIds);
     void setupList();
+
+    QList<quint64> getRoomIds() const;
+    void setRoomIds(const QList<quint64> &newRoomIds);
 
 private slots:
     void onSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected, QStandardItemModel* model);
+
+    void on_pushButton_clicked();
+
+public slots:
+    void on_label_2_linkActivated(const QString &link);
+
+    void on_label_3_linkActivated(const QString &link);
 
 private:
     Ui::ListRoomScene *ui;
     QStandardItemModel* model;
     quint64 level;
-    QList<QString> roomIds;
+    QList<quint64> roomIds;
     QList<QString> roomnames;
 
 };

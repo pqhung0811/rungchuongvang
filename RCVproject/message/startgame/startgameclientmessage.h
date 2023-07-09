@@ -10,6 +10,7 @@ class StartGameClientMessage : public ClientMessage
 {
 public:
     explicit StartGameClientMessage(QObject *parent = nullptr);
+    explicit StartGameClientMessage(quint64 noQuestion, QObject *parent = nullptr);
 
 
 };

@@ -26,6 +26,7 @@ public slots:
     void createCreateRoomBody(QString roomname);
     void createRequestJoinRoomBody(quint64 userId, quint64 roomId);
     void createResponseJoinRoomBody(quint64 userId, quint64 roomId, quint8 reply);
+    void createStartGameBody(quint64 noQuestion);
 
 signals:
 

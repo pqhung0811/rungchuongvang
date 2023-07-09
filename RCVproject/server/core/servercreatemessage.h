@@ -9,6 +9,7 @@
 #include "logout/logoutservermessage.h"
 #include "register/registerservermessage.h"
 #include "findroom/findroomservermessage.h"
+#include "viewrank/viewrankservermessage.h"
 #include "noinfomessage.h"
 #include "room.h"
 #include "QList"

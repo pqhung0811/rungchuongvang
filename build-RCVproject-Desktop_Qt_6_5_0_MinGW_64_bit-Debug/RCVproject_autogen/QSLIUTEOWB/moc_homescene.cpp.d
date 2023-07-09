@@ -1,6 +1,7 @@
 D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/QSLIUTEOWB/moc_homescene.cpp: D:/Networkprogramming/project/qtPrj/RCVproject/scene/homescene.h \
   D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/moc_predefs.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/client/core/clientcore.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/client/core/clientmanager.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/entity/user.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/clientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomclientmessage.h \
@@ -12,13 +13,16 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/requestjoinroomclientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/responsejoinroomclientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/startgame/startgameclientmessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/viewrank/viewrankclientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/protocol/attachment.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/protocol/command.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/protocol/requestbody.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/scene/createroomdialog.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/scene/gamescene.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/scene/homescene.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/scene/listroomscene.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/scene/noeditdelegate.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/scene/rankscene.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/scene/roomscene.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QAtomicInt \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QBuffer \
@@ -212,6 +216,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/QListWidget \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/QListWidgetItem \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/QPushButton \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/QScrollBar \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/QStyleOptionViewItem \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/QStyledItemDelegate \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/QTableWidgetItem \
@@ -235,6 +240,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlistwidget.h \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/qpushbutton.h \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/qrubberband.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qscrollbar.h \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/qsizepolicy.h \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/qslider.h \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/qstyle.h \

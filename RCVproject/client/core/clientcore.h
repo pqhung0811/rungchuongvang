@@ -18,6 +18,7 @@
 #include "requestjoinroom/responsejoinroomclientmessage.h"
 #include "findroom/findroomclientmessage.h"
 #include "startgame/startgameclientmessage.h"
+#include "viewrank/viewrankclientmessage.h"
 #include "attachment.h"
 #include <QBuffer>
 #include <QIODevice>
@@ -59,7 +60,8 @@ public slots:
     void requestJoinRoom(quint64 userId, quint64 roomId);
     void responseJoinRoom(quint64 userId, quint64 roomId, quint8 reply);
     void findRoom();
-    void startGame();
+    void startGame(quint64 noQuestion);
+    void viewRank();
 
 signals:
     void Finished(const QJsonDocument& response);

@@ -43,12 +43,16 @@ public:
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
     QLabel *clock;
+    QLabel *labelscore;
+    QLabel *score;
+    QLabel *labelscore_2;
+    QLabel *score_2;
 
     void setupUi(QWidget *GameScene)
     {
         if (GameScene->objectName().isEmpty())
             GameScene->setObjectName("GameScene");
-        GameScene->resize(805, 456);
+        GameScene->resize(1018, 593);
         frame_4 = new QFrame(GameScene);
         frame_4->setObjectName("frame_4");
         frame_4->setGeometry(QRect(20, 10, 171, 31));
@@ -103,27 +107,27 @@ public:
         frame_7->setFrameShadow(QFrame::Raised);
         scrollArea = new QScrollArea(GameScene);
         scrollArea->setObjectName("scrollArea");
-        scrollArea->setGeometry(QRect(10, 90, 121, 361));
+        scrollArea->setGeometry(QRect(10, 90, 121, 491));
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 119, 359));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 119, 489));
         verticalWidget = new QWidget(scrollAreaWidgetContents);
         verticalWidget->setObjectName("verticalWidget");
-        verticalWidget->setGeometry(QRect(0, 0, 121, 361));
+        verticalWidget->setGeometry(QRect(0, 0, 121, 491));
         verticalLayout = new QVBoxLayout(verticalWidget);
         verticalLayout->setObjectName("verticalLayout");
         scrollArea->setWidget(scrollAreaWidgetContents);
         roomname = new QLabel(GameScene);
         roomname->setObjectName("roomname");
-        roomname->setGeometry(QRect(330, 10, 251, 41));
+        roomname->setGeometry(QRect(450, 10, 251, 41));
         QFont font2;
         font2.setFamilies({QString::fromUtf8("Showcard Gothic")});
         font2.setPointSize(30);
         roomname->setFont(font2);
         level = new QLabel(GameScene);
         level->setObjectName("level");
-        level->setGeometry(QRect(630, 20, 161, 31));
+        level->setGeometry(QRect(840, 20, 161, 31));
         QFont font3;
         font3.setFamilies({QString::fromUtf8("Lucida Handwriting")});
         font3.setPointSize(14);
@@ -132,14 +136,14 @@ public:
 "color: rgb(255, 0, 0);"));
         frame = new QFrame(GameScene);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(160, 90, 621, 351));
+        frame->setGeometry(QRect(160, 90, 851, 491));
         frame->setStyleSheet(QString::fromUtf8("image: url(:/images/backgameplay1.jpg);\n"
 ""));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         pushButton = new QPushButton(frame);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(130, 170, 91, 31));
+        pushButton->setGeometry(QRect(190, 240, 121, 41));
         QFont font4;
         font4.setFamilies({QString::fromUtf8("Sitka Text")});
         font4.setPointSize(18);
@@ -147,7 +151,7 @@ public:
         pushButton->setStyleSheet(QString::fromUtf8("image: url(:/images/free-vector-gold-button-010_101796_Gold_Button_010.png);"));
         label = new QLabel(frame);
         label->setObjectName("label");
-        label->setGeometry(QRect(76, 91, 391, 51));
+        label->setGeometry(QRect(80, 110, 581, 91));
         QFont font5;
         font5.setFamilies({QString::fromUtf8("Modern No. 20")});
         font5.setPointSize(15);
@@ -156,28 +160,63 @@ public:
 "background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;"));
         pushButton_2 = new QPushButton(frame);
         pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(310, 170, 91, 31));
+        pushButton_2->setGeometry(QRect(440, 240, 111, 41));
         pushButton_2->setFont(font4);
         pushButton_2->setStyleSheet(QString::fromUtf8("image: url(:/images/free-vector-gold-button-010_101796_Gold_Button_010.png);"));
         pushButton_3 = new QPushButton(frame);
         pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(130, 260, 91, 31));
+        pushButton_3->setGeometry(QRect(190, 350, 121, 41));
         pushButton_3->setFont(font4);
         pushButton_3->setStyleSheet(QString::fromUtf8("image: url(:/images/free-vector-gold-button-010_101796_Gold_Button_010.png);"));
         pushButton_4 = new QPushButton(frame);
         pushButton_4->setObjectName("pushButton_4");
-        pushButton_4->setGeometry(QRect(310, 260, 91, 31));
+        pushButton_4->setGeometry(QRect(440, 350, 111, 41));
         pushButton_4->setFont(font4);
         pushButton_4->setStyleSheet(QString::fromUtf8("image: url(:/images/free-vector-gold-button-010_101796_Gold_Button_010.png);"));
         clock = new QLabel(frame);
         clock->setObjectName("clock");
-        clock->setGeometry(QRect(240, 210, 51, 51));
+        clock->setGeometry(QRect(350, 290, 51, 51));
         QFont font6;
         font6.setFamilies({QString::fromUtf8("Segoe UI Variable Text Semibold")});
         font6.setPointSize(20);
         clock->setFont(font6);
-        clock->setStyleSheet(QString::fromUtf8("image: url(:/images/circle-icon-png-favpng.jpg);"));
+        clock->setStyleSheet(QString::fromUtf8("image: url(:/images/circle-icon-png-favpng.jpg);\n"
+"QLabel { text-align: center; }"));
         clock->setMidLineWidth(1);
+        clock->setAlignment(Qt::AlignCenter);
+        labelscore = new QLabel(frame);
+        labelscore->setObjectName("labelscore");
+        labelscore->setGeometry(QRect(80, 40, 81, 31));
+        QFont font7;
+        font7.setFamilies({QString::fromUtf8("Lucida Handwriting")});
+        font7.setPointSize(18);
+        labelscore->setFont(font7);
+        labelscore->setStyleSheet(QString::fromUtf8("background-color: white; border: 2px solid color ; border-radius: 10px;\n"
+"image: url(:/images/white.jpg);\n"
+"color: rgb(255, 0, 0);"));
+        score = new QLabel(frame);
+        score->setObjectName("score");
+        score->setGeometry(QRect(160, 40, 71, 31));
+        score->setFont(font7);
+        score->setStyleSheet(QString::fromUtf8("background-color: white; border: 2px solid color ; border-radius: 10px;\n"
+"image: url(:/images/white.jpg);\n"
+"color: rgb(255, 0, 0);"));
+        score->setAlignment(Qt::AlignCenter);
+        labelscore_2 = new QLabel(frame);
+        labelscore_2->setObjectName("labelscore_2");
+        labelscore_2->setGeometry(QRect(500, 30, 131, 51));
+        labelscore_2->setFont(font7);
+        labelscore_2->setStyleSheet(QString::fromUtf8("background-color: white; border: 2px solid color ; border-radius: 10px;\n"
+"image: url(:/images/white.jpg);\n"
+"color: rgb(255, 0, 0);"));
+        score_2 = new QLabel(frame);
+        score_2->setObjectName("score_2");
+        score_2->setGeometry(QRect(630, 40, 41, 41));
+        score_2->setFont(font7);
+        score_2->setStyleSheet(QString::fromUtf8("background-color: white; border: 2px solid color ; border-radius: 10px;\n"
+"image: url(:/images/white.jpg);\n"
+"color: rgb(255, 0, 0);"));
+        score_2->setAlignment(Qt::AlignCenter);
 
         retranslateUi(GameScene);
 
@@ -196,7 +235,12 @@ public:
         pushButton_2->setText(QCoreApplication::translate("GameScene", "B", nullptr));
         pushButton_3->setText(QCoreApplication::translate("GameScene", "C", nullptr));
         pushButton_4->setText(QCoreApplication::translate("GameScene", "D", nullptr));
-        clock->setText(QCoreApplication::translate("GameScene", "5", nullptr));
+        clock->setText(QCoreApplication::translate("GameScene", "30", nullptr));
+        labelscore->setText(QCoreApplication::translate("GameScene", "Score:", nullptr));
+        score->setText(QCoreApplication::translate("GameScene", "0", nullptr));
+        labelscore_2->setText(QCoreApplication::translate("GameScene", "Remaining \n"
+"Question:", nullptr));
+        score_2->setText(QCoreApplication::translate("GameScene", "0", nullptr));
     } // retranslateUi
 
 };

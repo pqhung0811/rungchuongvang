@@ -58,5 +58,20 @@ QString ServerCreateMessage::createMessage(QString msg)
         NoInfoMessage* serverMsg = new NoInfoMessage("success", "create room successfully", "CREATEROOM");
         return serverMsg->toString();
     }
+    else if(msg.compare("view rank")==0) {
+        QList<quint64> userIds;
+        QList<QString> usernames;
+        QList<quint64> ranked;
+        QList<quint64> rankScore;
+        for(int i=0; i < this->requestProcessing->getUsers().size(); i++) {
+            User* user = this->requestProcessing->getUsers().at(i);
+            userIds.append(user->getId());
+            usernames.append(user->getUsername());
+            ranked.append(user->getRank());
+            rankScore.append(user->getRankScore());
+        }
+        ViewRankServerMessage* serverMsg = new ViewRankServerMessage(userIds, usernames, ranked, rankScore, "success", " ");
+        return serverMsg->toString();
+    }
 }
 

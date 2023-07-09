@@ -67,3 +67,12 @@ void RequestBody::createResponseJoinRoomBody(quint64 userId, quint64 roomId, qui
     this->requestBody.insert("roomId", QString::number(roomId));
     this->requestBody.insert("reply", QString::number(reply));
 }
+
+void RequestBody::createStartGameBody(quint64 noQuestion)
+{
+    this->requestBody = QJsonObject();
+
+    this->requestBody.insert("noQuestion", QString::number(noQuestion));
+}
+
+

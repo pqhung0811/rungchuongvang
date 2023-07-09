@@ -15,6 +15,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Networkprogramming/project/qtPrj/RCVproject/message/noinfomessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/register/registerservermessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/servermessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/viewrank/viewrankservermessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/protocol/command.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/protocol/responsebody.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/protocol/statuscode.h \

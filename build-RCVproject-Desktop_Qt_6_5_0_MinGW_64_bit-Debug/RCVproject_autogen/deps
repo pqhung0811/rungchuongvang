@@ -13,6 +13,8 @@ RCVproject_autogen/timestamp: \
 	D:/Networkprogramming/project/qtPrj/RCVproject/client/clientmain.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/client/core/clientcore.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/client/core/clientcore.h \
+	D:/Networkprogramming/project/qtPrj/RCVproject/client/core/clientmanager.cpp \
+	D:/Networkprogramming/project/qtPrj/RCVproject/client/core/clientmanager.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/controller/createroomcontroller.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/controller/createroomcontroller.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/controller/logincontroller.cpp \
@@ -70,6 +72,10 @@ RCVproject_autogen/timestamp: \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/servermessage.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/startgame/startgameclientmessage.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/message/startgame/startgameclientmessage.h \
+	D:/Networkprogramming/project/qtPrj/RCVproject/message/viewrank/viewrankclientmessage.cpp \
+	D:/Networkprogramming/project/qtPrj/RCVproject/message/viewrank/viewrankclientmessage.h \
+	D:/Networkprogramming/project/qtPrj/RCVproject/message/viewrank/viewrankservermessage.cpp \
+	D:/Networkprogramming/project/qtPrj/RCVproject/message/viewrank/viewrankservermessage.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/protocol/attachment.cpp \
 	D:/Networkprogramming/project/qtPrj/RCVproject/protocol/attachment.h \
 	D:/Networkprogramming/project/qtPrj/RCVproject/protocol/command.cpp \
@@ -149,10 +155,12 @@ RCVproject_autogen/timestamp: \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QStandardPaths \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QString \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QStringList \
+	D:/Qt/6.5.0/mingw_64/include/QtCore/QThread \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QTime \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QUrl \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QVariant \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QVector \
+	D:/Qt/6.5.0/mingw_64/include/QtCore/QWaitCondition \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QtCore \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/QtCoreDepends \
 	D:/Qt/6.5.0/mingw_64/include/QtCore/q20algorithm.h \
@@ -520,6 +528,7 @@ RCVproject_autogen/timestamp: \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QListWidgetItem \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QMainWindow \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QPushButton \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QScrollBar \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QSizePolicy \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QStyleOptionViewItem \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/QStyledItemDelegate \
@@ -546,6 +555,7 @@ RCVproject_autogen/timestamp: \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qmainwindow.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qpushbutton.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qrubberband.h \
+	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qscrollbar.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qsizepolicy.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qslider.h \
 	D:/Qt/6.5.0/mingw_64/include/QtWidgets/qstyle.h \

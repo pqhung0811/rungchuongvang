@@ -5,6 +5,7 @@
 #include "JH45IGJHDZ/moc_roomapi.cpp"
 #include "JH45IGJHDZ/moc_userapi.cpp"
 #include "TD74I3PGBD/moc_clientcore.cpp"
+#include "TD74I3PGBD/moc_clientmanager.cpp"
 #include "NPUKSKGWT2/moc_createroomcontroller.cpp"
 #include "NPUKSKGWT2/moc_logincontroller.cpp"
 #include "NPUKSKGWT2/moc_logoutcontroller.cpp"

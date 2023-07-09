@@ -15,6 +15,7 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -56,13 +57,15 @@ public:
     QPushButton *playBtn;
     QLabel *roomname;
     QLabel *level;
-    QLabel *roomname_2;
+    QPushButton *back;
+    QSpinBox *spinBoxNo;
+    QLabel *noquestion;
 
     void setupUi(QWidget *RoomScene)
     {
         if (RoomScene->objectName().isEmpty())
             RoomScene->setObjectName("RoomScene");
-        RoomScene->resize(834, 539);
+        RoomScene->resize(834, 542);
         QFont font;
         font.setPointSize(14);
         RoomScene->setFont(font);
@@ -259,10 +262,28 @@ public:
         level->setFont(font6);
         level->setStyleSheet(QString::fromUtf8("background-color: white; border: 2px solid color ; border-radius: 10px;\n"
 "color: rgb(255, 0, 0);"));
-        roomname_2 = new QLabel(RoomScene);
-        roomname_2->setObjectName("roomname_2");
-        roomname_2->setGeometry(QRect(570, 360, 251, 41));
-        roomname_2->setFont(font5);
+        back = new QPushButton(RoomScene);
+        back->setObjectName("back");
+        back->setGeometry(QRect(20, 490, 51, 41));
+        back->setStyleSheet(QString::fromUtf8("image: url(:/images/pngwing.com.png);"));
+        spinBoxNo = new QSpinBox(RoomScene);
+        spinBoxNo->setObjectName("spinBoxNo");
+        spinBoxNo->setGeometry(QRect(750, 490, 51, 31));
+        QFont font7;
+        font7.setFamilies({QString::fromUtf8("GeoSlab703 Md BT")});
+        font7.setPointSize(16);
+        spinBoxNo->setFont(font7);
+        spinBoxNo->setStyleSheet(QString::fromUtf8(""));
+        noquestion = new QLabel(RoomScene);
+        noquestion->setObjectName("noquestion");
+        noquestion->setGeometry(QRect(590, 490, 151, 31));
+        QFont font8;
+        font8.setFamilies({QString::fromUtf8("Lucida Handwriting")});
+        font8.setPointSize(12);
+        noquestion->setFont(font8);
+        noquestion->setStyleSheet(QString::fromUtf8("background-color: white; border: 2px solid color ; border-radius: 10px;\n"
+"image: url(:/images/white.jpg);\n"
+"color: rgb(255, 0, 0);"));
 
         retranslateUi(RoomScene);
 
@@ -283,7 +304,8 @@ public:
         playBtn->setText(QString());
         roomname->setText(QCoreApplication::translate("RoomScene", "Roomname", nullptr));
         level->setText(QCoreApplication::translate("RoomScene", "Level:", nullptr));
-        roomname_2->setText(QCoreApplication::translate("RoomScene", "Roomname", nullptr));
+        back->setText(QString());
+        noquestion->setText(QCoreApplication::translate("RoomScene", "Number of question:", nullptr));
     } // retranslateUi
 
 };

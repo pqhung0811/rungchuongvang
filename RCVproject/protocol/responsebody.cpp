@@ -59,3 +59,36 @@ void ResponseBody::createCreateRoomBody(QString username, quint64 ranked, quint6
     this->responseBody.insert("ranked", QString::number(ranked));
     this->responseBody.insert("rankscore", QString::number(rankScore));
 }
+
+void ResponseBody::createViewRankBody(QList<quint64> userIds, QList<QString> usernames, QList<quint64> ranked, QList<quint64> rankScore)
+{
+    this->responseBody = QJsonObject();
+
+    QJsonArray idArray;
+    for (quint64 userId : userIds) {
+        idArray.append(static_cast<qint64>(userId));
+    }
+    //    responseBody["id"] = idArray;
+    this->responseBody.insert("id", idArray);
+
+    QJsonArray usernameList;
+    for (const QString& username : usernames) {
+        usernameList.append(username);
+    }
+    this->responseBody.insert("username", usernameList);
+    //    responseBody["roomname"] = roomnamesString;
+
+    QJsonArray rankArray;
+    for (quint64 rank : ranked) {
+        rankArray.append(static_cast<qint64>(rank));
+    }
+    //    responseBody["id"] = idArray;
+    this->responseBody.insert("ranked", rankArray);
+
+    QJsonArray rankScoreArray;
+    for (quint64 rankscore : rankScore) {
+        rankScoreArray.append(static_cast<qint64>(rankscore));
+    }
+    //    responseBody["id"] = idArray;
+    this->responseBody.insert("rankScore", rankScoreArray);
+}

@@ -4,9 +4,14 @@
 StartGameClientMessage::StartGameClientMessage(QObject *parent)
     : ClientMessage{parent}
 {
+
+}
+
+StartGameClientMessage::StartGameClientMessage(quint64 noQuestion, QObject *parent)
+    : ClientMessage{parent}
+{
     this->addCommandCode(command->toCommand("STARTGAME"));
-    QJsonObject json = QJsonObject();
-    this->requestBody->setRequestBody(json);
+    this->requestBody->createStartGameBody(noQuestion);
     this->finalizeMessageObject();
 }
 

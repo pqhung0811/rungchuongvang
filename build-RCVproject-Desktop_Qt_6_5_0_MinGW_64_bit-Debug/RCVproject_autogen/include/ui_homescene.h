@@ -185,7 +185,7 @@ public:
         signOutBtn->setText(QCoreApplication::translate("HomeScene", "Sign Out", nullptr));
         quitBtn->setText(QCoreApplication::translate("HomeScene", "Quit", nullptr));
         label_2->setText(QCoreApplication::translate("HomeScene", "    Johnathan", nullptr));
-        label_3->setText(QCoreApplication::translate("HomeScene", "      gold: 2000", nullptr));
+        label_3->setText(QCoreApplication::translate("HomeScene", "      abc: 2000", nullptr));
     } // retranslateUi
 
 };

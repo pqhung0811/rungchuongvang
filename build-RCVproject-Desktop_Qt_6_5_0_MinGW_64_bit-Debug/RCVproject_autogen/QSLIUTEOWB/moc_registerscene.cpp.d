@@ -1,6 +1,7 @@
 D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/QSLIUTEOWB/moc_registerscene.cpp: D:/Networkprogramming/project/qtPrj/RCVproject/scene/registerscene.h \
   D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/moc_predefs.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/client/core/clientcore.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/client/core/clientmanager.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/clientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomclientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/findroom/findroomclientmessage.h \
@@ -11,6 +12,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/requestjoinroomclientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/responsejoinroomclientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/message/startgame/startgameclientmessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/viewrank/viewrankclientmessage.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/protocol/attachment.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/protocol/command.h \
   D:/Networkprogramming/project/qtPrj/RCVproject/protocol/requestbody.h \
@@ -19,13 +21,17 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/QAtomicInt \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QBuffer \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QByteArray \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QDeadlineTimer \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QIODevice \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonDocument \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonObject \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QMap \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QMutex \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QObject \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QStandardPaths \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QThread \
   D:/Qt/6.5.0/mingw_64/include/QtCore/QVector \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QWaitCondition \
   D:/Qt/6.5.0/mingw_64/include/QtCore/q20memory.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/q20type_traits.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qalgorithms.h \
@@ -59,7 +65,9 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qdarwinhelpers.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qdatastream.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qdatetime.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qdeadlinetimer.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qdebug.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qelapsedtimer.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qexceptionhandling.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qflags.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qfloat16.h \
@@ -88,6 +96,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qmetacontainer.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qmetatype.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qminmax.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qmutex.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qnamespace.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qnumeric.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qobject.h \
@@ -130,10 +139,12 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qtdeprecationmarkers.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qtenvironmentvariables.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qtextstream.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qthread.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qtmetamacros.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qtnoop.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qtpreprocessorsupport.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qtresource.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qtsan_impl.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qttranslation.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qttypetraits.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qtversion.h \
@@ -147,6 +158,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qvarlengtharray.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qvector.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qversiontagging.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qwaitcondition.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qxptype_traits.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qaction.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qbitmap.h \
@@ -325,6 +337,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ext/string_conversions.h \
   D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ext/type_traits.h \
   D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/functional \
+  D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/future \
   D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/initializer_list \
   D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios \
   D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iosfwd \

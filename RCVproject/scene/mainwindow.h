@@ -5,8 +5,12 @@
 #include <QMainWindow>
 #include <QLineEdit>
 #include <core/clientcore.h>
+#include <core/clientmanager.h>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QMutex>
+#include <QWaitCondition>
+#include <QThread>
 #include "mydialog.h"
 
 QT_BEGIN_NAMESPACE
@@ -33,13 +37,17 @@ private slots:
     void handleUserLineEditReturnPressed();
     void handlePassLineEditReturnPressed();
     void handleLoginResponse(const QJsonDocument& response);
-    void start();
+//    void start();
 
 private:
     Ui::MainWindow *ui;
     ClientCore* clientCore;
+//    ClientManager* clientManager;
     QString username;
     QString password;
+    QMutex mutex;
+    bool responseReceived = false;
+
 };
 
 #endif // MAINWINDOW_H

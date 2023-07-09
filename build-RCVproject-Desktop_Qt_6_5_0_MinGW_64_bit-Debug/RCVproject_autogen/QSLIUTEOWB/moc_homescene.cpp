@@ -45,22 +45,26 @@ static constexpr auto qt_meta_stringdata_CLASSHomeSceneENDCLASS = QtMocHelpers::
     "on_findRoomBtn_clicked",
     "handleFindRoomResponse",
     "response",
+    "handleViewRankResponse",
+    "on_rankBtn_clicked",
     "on_label_2_linkActivated",
     "link",
     "on_label_3_linkActivated"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSHomeSceneENDCLASS_t {
-    uint offsetsAndSizes[18];
+    uint offsetsAndSizes[22];
     char stringdata0[10];
     char stringdata1[25];
     char stringdata2[1];
     char stringdata3[23];
     char stringdata4[23];
     char stringdata5[9];
-    char stringdata6[25];
-    char stringdata7[5];
+    char stringdata6[23];
+    char stringdata7[19];
     char stringdata8[25];
+    char stringdata9[5];
+    char stringdata10[25];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSHomeSceneENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -72,9 +76,11 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSHomeSceneENDCLASS_t qt_meta_str
         QT_MOC_LITERAL(36, 22),  // "on_findRoomBtn_clicked"
         QT_MOC_LITERAL(59, 22),  // "handleFindRoomResponse"
         QT_MOC_LITERAL(82, 8),  // "response"
-        QT_MOC_LITERAL(91, 24),  // "on_label_2_linkActivated"
-        QT_MOC_LITERAL(116, 4),  // "link"
-        QT_MOC_LITERAL(121, 24)   // "on_label_3_linkActivated"
+        QT_MOC_LITERAL(91, 22),  // "handleViewRankResponse"
+        QT_MOC_LITERAL(114, 18),  // "on_rankBtn_clicked"
+        QT_MOC_LITERAL(133, 24),  // "on_label_2_linkActivated"
+        QT_MOC_LITERAL(158, 4),  // "link"
+        QT_MOC_LITERAL(163, 24)   // "on_label_3_linkActivated"
     },
     "HomeScene",
     "on_createRoomBtn_clicked",
@@ -82,6 +88,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSHomeSceneENDCLASS_t qt_meta_str
     "on_findRoomBtn_clicked",
     "handleFindRoomResponse",
     "response",
+    "handleViewRankResponse",
+    "on_rankBtn_clicked",
     "on_label_2_linkActivated",
     "link",
     "on_label_3_linkActivated"
@@ -96,7 +104,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSHomeSceneENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -104,18 +112,22 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSHomeSceneENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   44,    2, 0x08,    1 /* Private */,
-       3,    0,   45,    2, 0x08,    2 /* Private */,
-       4,    1,   46,    2, 0x08,    3 /* Private */,
-       6,    1,   49,    2, 0x0a,    5 /* Public */,
-       8,    1,   52,    2, 0x0a,    7 /* Public */,
+       1,    0,   56,    2, 0x08,    1 /* Private */,
+       3,    0,   57,    2, 0x08,    2 /* Private */,
+       4,    1,   58,    2, 0x08,    3 /* Private */,
+       6,    1,   61,    2, 0x08,    5 /* Private */,
+       7,    0,   64,    2, 0x08,    7 /* Private */,
+       8,    1,   65,    2, 0x0a,    8 /* Public */,
+      10,    1,   68,    2, 0x0a,   10 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QJsonDocument,    5,
-    QMetaType::Void, QMetaType::QString,    7,
-    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::QJsonDocument,    5,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    9,
+    QMetaType::Void, QMetaType::QString,    9,
 
        0        // eod
 };
@@ -136,6 +148,11 @@ Q_CONSTINIT const QMetaObject HomeScene::staticMetaObject = { {
         // method 'handleFindRoomResponse'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QJsonDocument &, std::false_type>,
+        // method 'handleViewRankResponse'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QJsonDocument &, std::false_type>,
+        // method 'on_rankBtn_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_label_2_linkActivated'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
@@ -155,8 +172,10 @@ void HomeScene::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 0: _t->on_createRoomBtn_clicked(); break;
         case 1: _t->on_findRoomBtn_clicked(); break;
         case 2: _t->handleFindRoomResponse((*reinterpret_cast< std::add_pointer_t<QJsonDocument>>(_a[1]))); break;
-        case 3: _t->on_label_2_linkActivated((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 4: _t->on_label_3_linkActivated((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 3: _t->handleViewRankResponse((*reinterpret_cast< std::add_pointer_t<QJsonDocument>>(_a[1]))); break;
+        case 4: _t->on_rankBtn_clicked(); break;
+        case 5: _t->on_label_2_linkActivated((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 6: _t->on_label_3_linkActivated((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
     }
@@ -181,13 +200,13 @@ int HomeScene::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 7)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 5;
+        _id -= 7;
     }
     return _id;
 }

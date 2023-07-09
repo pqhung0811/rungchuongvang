@@ -40,6 +40,7 @@ public:
         if (RegisterScene->objectName().isEmpty())
             RegisterScene->setObjectName("RegisterScene");
         RegisterScene->resize(400, 415);
+        RegisterScene->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(187, 225, 96, 255), stop:1 rgba(255, 255, 255, 255));"));
         registerBtn = new QPushButton(RegisterScene);
         registerBtn->setObjectName("registerBtn");
         registerBtn->setGeometry(QRect(160, 370, 91, 21));

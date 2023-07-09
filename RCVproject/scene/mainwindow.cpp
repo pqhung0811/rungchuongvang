@@ -8,12 +8,12 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-    this->clientCore = ClientCore::getInstance();
     setStyleSheet("MainWindow {background-image:url(D:/Networkprogramming/project/images/aaa.jpg)}");
     ui->setupUi(this);
-
-//    connect(ui->registerBtn, &QPushButton::clicked, this, &MainWindow::on_registerBtn_clicked);
-//    connect(ui->signInBtn, SIGNAL(clicked()), this, SLOT(on_signInBtn_clicked()));
+    this->clientCore = ClientCore::getInstance();
+    //    this->clientManager = new ClientManager();
+    //    connect(ui->registerBtn, &QPushButton::clicked, this, &MainWindow::on_registerBtn_clicked);
+    //    connect(ui->signInBtn, SIGNAL(clicked()), this, SLOT(on_signInBtn_clicked()));
     connect(ui->usernameEdit, &QLineEdit::returnPressed, this, &MainWindow::handleUserLineEditReturnPressed);
     connect(ui->passwordEdit, &QLineEdit::returnPressed, this, &MainWindow::handlePassLineEditReturnPressed);
 }
@@ -25,8 +25,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_signInBtn_clicked()
 {
+    qDebug() << "hello boy";
     clientCore->login(this->username, this->password);
-//    QString msg = clientCore->getOutputMessage();
+//    clientManager->login(this->username, this->password);
+
     // Lắng nghe sự kiện finished() để nhận phản hồi từ server
     connect(clientCore, &ClientCore::Finished, this, &MainWindow::handleLoginResponse);
 }
@@ -49,6 +51,7 @@ void MainWindow::handlePassLineEditReturnPressed() {
 void MainWindow::handleLoginResponse(const QJsonDocument &response)
 {
     qDebug() << "Login response: " << response;
+
     QString status;
     QString errorMsg;
     QString username;
@@ -56,6 +59,9 @@ void MainWindow::handleLoginResponse(const QJsonDocument &response)
     QString ranked;
     if (!response.isNull() && response.isObject()) {
         QJsonObject jsonObject = response.object();
+        if (jsonObject.contains("command_code") && jsonObject["command_code"].isString()) {
+            if(jsonObject["command_code"].toString().compare("LOGIN")!=0) return;
+        }
         if (jsonObject.contains("status_code") && jsonObject["status_code"].isString()) {
             status = jsonObject["status_code"].toString();
         }
@@ -69,7 +75,6 @@ void MainWindow::handleLoginResponse(const QJsonDocument &response)
             // Lấy giá trị của key "username" từ QJsonObject "infoObject"
             if (infoObject.contains("username") && infoObject["username"].isString()) {
                 username = infoObject["username"].toString();
-                qDebug() << "main window app: " << username;
             }
             if(infoObject.contains("ranked") && infoObject["ranked"].isString()) {
                 ranked = infoObject["ranked"].toString();
@@ -81,7 +86,6 @@ void MainWindow::handleLoginResponse(const QJsonDocument &response)
     }
     if (status.compare("success") == 0) {
         HomeScene* homeScene = new HomeScene();
-        qDebug() << "main win: " << username;
         homeScene->on_label_2_linkActivated("   " + username);
         if(ranked.compare("0")==0) {
             homeScene->on_label_3_linkActivated("   Bronze: " + rankScore);
@@ -92,8 +96,9 @@ void MainWindow::handleLoginResponse(const QJsonDocument &response)
         else {
             homeScene->on_label_3_linkActivated("   Gold: " + rankScore);
         }
+//        homeScene->setClientManager(this->clientManager);
         homeScene->show();
-        close();
+        this->close();
     } else {
         if(errorMsg.compare("invalid username")==0) {
             MyDialog* myDialog = new MyDialog();
@@ -108,12 +113,12 @@ void MainWindow::handleLoginResponse(const QJsonDocument &response)
     }
 }
 
-void MainWindow::start()
-{
-    clientCore = ClientCore::getInstance();
-    clientCore->start();
-    clientCore->login(this->username, this->password);
-}
+//void MainWindow::start()
+//{
+//    clientCore = ClientCore::getInstance();
+//    clientCore->start();
+//    clientCore->login(this->username, this->password);
+//}
 
 ClientCore *MainWindow::getClientCore() const
 {

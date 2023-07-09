@@ -252,7 +252,7 @@
      </font>
     </property>
     <property name="text">
-     <string>      gold: 2000</string>
+     <string>      abc: 2000</string>
     </property>
    </widget>
   </widget>

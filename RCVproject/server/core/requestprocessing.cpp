@@ -51,6 +51,16 @@ void RequestProcessing::setRooms(const QList<Room *> &newRooms)
     rooms = newRooms;
 }
 
+QList<User *> RequestProcessing::getUsers() const
+{
+    return users;
+}
+
+void RequestProcessing::setUsers(const QList<User *> &newUsers)
+{
+    users = newUsers;
+}
+
 RequestProcessing::RequestProcessing(QObject *parent)
     : QObject{parent}
 {
@@ -69,6 +79,7 @@ QString RequestProcessing::handle() {
         else if(command.compare("REQUESTJOINROOM")==0) cmd=5;
         else if(command.compare("RESPONSEJOINROOM")==0) cmd=6;
         else if(command.compare("FINDROOM")==0) cmd=7;
+        else if(command.compare("VIEWRANK")==0) cmd=8;
         switch (cmd) {
             case 1:
                 output = this->login();
@@ -92,6 +103,9 @@ QString RequestProcessing::handle() {
                 this->rooms = this->findRoom();
                 output = "find room";
                 break;
+            case 8:
+                this->users = this->viewRank();
+                output = "view rank";
             default:
                 break;
         }
@@ -268,3 +282,15 @@ QString RequestProcessing::responseJoinRoom() {
     }
     return msg;
 }
+
+QList<User *> RequestProcessing::viewRank()
+{
+    UserAPI* userAPI = new UserAPI();
+    QList<User*> users;
+    if(users.empty()) {
+        qDebug() << "empty";
+    }
+    users = userAPI->getAllUsersOrderByRank();
+    return users;
+}
+

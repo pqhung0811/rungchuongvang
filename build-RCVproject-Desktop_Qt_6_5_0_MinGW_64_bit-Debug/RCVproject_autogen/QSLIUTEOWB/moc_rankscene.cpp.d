@@ -1,7 +1,49 @@
 D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/QSLIUTEOWB/moc_rankscene.cpp: D:/Networkprogramming/project/qtPrj/RCVproject/scene/rankscene.h \
   D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/RCVproject_autogen/moc_predefs.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/client/core/clientcore.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/client/core/clientmanager.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/entity/user.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/clientmessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/createroom/createroomclientmessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/findroom/findroomclientmessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/login/loginclientmessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/logout/logoutclientmessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/message.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/register/registerclientmessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/requestjoinroomclientmessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/requestjoinroom/responsejoinroomclientmessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/startgame/startgameclientmessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/message/viewrank/viewrankclientmessage.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/protocol/attachment.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/protocol/command.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/protocol/requestbody.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/scene/createroomdialog.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/scene/gamescene.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/scene/homescene.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/scene/listroomscene.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/scene/noeditdelegate.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/scene/rankscene.h \
+  D:/Networkprogramming/project/qtPrj/RCVproject/scene/roomscene.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QAtomicInt \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QBuffer \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QByteArray \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QIODevice \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QItemSelection \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonArray \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonDocument \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QJsonObject \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QList \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QMap \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QModelIndex \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QModelIndexList \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QObject \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QPair \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QStandardPaths \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QVariant \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/QVector \
   D:/Qt/6.5.0/mingw_64/include/QtCore/q20memory.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/q20type_traits.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qabstractitemmodel.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qalgorithms.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qanystringview.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qarraydata.h \
@@ -12,10 +54,14 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qatomic_cxx11.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qbasicatomic.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qbindingstorage.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qbuffer.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qbytearray.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qbytearrayalgorithms.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qbytearraylist.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qbytearrayview.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qcalendar.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qcborcommon.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qcborvalue.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qchar.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qcompare.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qcompare_impl.h \
@@ -28,6 +74,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qcontiguouscache.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qdarwinhelpers.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qdatastream.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qdatetime.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qdebug.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qexceptionhandling.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qflags.h \
@@ -39,11 +86,18 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qglobalstatic.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qhash.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qhashfunctions.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qiodevice.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qiodevicebase.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qitemselectionmodel.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qiterable.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qiterator.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qjsonarray.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qjsondocument.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qjsonobject.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qjsonvalue.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qline.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qlist.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qlocale.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qlogging.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qmalloc.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qmap.h \
@@ -64,6 +118,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qprocessordetection.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qrect.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qrefcount.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qregularexpression.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qscopedpointer.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qscopeguard.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qset.h \
@@ -72,6 +127,7 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qsharedpointer.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qsharedpointer_impl.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qsize.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qstandardpaths.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qstring.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qstringalgorithms.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qstringconverter_base.h \
@@ -102,11 +158,15 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtCore/qtversionchecks.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qtypeinfo.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qtypes.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qurl.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qutf8stringview.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/quuid.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qvariant.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qvarlengtharray.h \
+  D:/Qt/6.5.0/mingw_64/include/QtCore/qvector.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qversiontagging.h \
   D:/Qt/6.5.0/mingw_64/include/QtCore/qxptype_traits.h \
+  D:/Qt/6.5.0/mingw_64/include/QtGui/QStandardItemModel \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qaction.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qbitmap.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qbrush.h \
@@ -120,20 +180,76 @@ D:/Networkprogramming/project/qtPrj/build-RCVproject-Desktop_Qt_6_5_0_MinGW_64_b
   D:/Qt/6.5.0/mingw_64/include/QtGui/qkeysequence.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qpaintdevice.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qpalette.h \
+  D:/Qt/6.5.0/mingw_64/include/QtGui/qpen.h \
+  D:/Qt/6.5.0/mingw_64/include/QtGui/qpicture.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qpixelformat.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qpixmap.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qpolygon.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qregion.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qrgb.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qrgba64.h \
+  D:/Qt/6.5.0/mingw_64/include/QtGui/qstandarditemmodel.h \
+  D:/Qt/6.5.0/mingw_64/include/QtGui/qtextcursor.h \
+  D:/Qt/6.5.0/mingw_64/include/QtGui/qtextdocument.h \
+  D:/Qt/6.5.0/mingw_64/include/QtGui/qtextformat.h \
+  D:/Qt/6.5.0/mingw_64/include/QtGui/qtextoption.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qtgui-config.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qtguiexports.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qtguiglobal.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qtransform.h \
+  D:/Qt/6.5.0/mingw_64/include/QtGui/qvalidator.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.5.0/mingw_64/include/QtGui/qwindowdefs_win.h \
+  D:/Qt/6.5.0/mingw_64/include/QtNetwork/QAbstractSocket \
+  D:/Qt/6.5.0/mingw_64/include/QtNetwork/QHostAddress \
+  D:/Qt/6.5.0/mingw_64/include/QtNetwork/QTcpSocket \
+  D:/Qt/6.5.0/mingw_64/include/QtNetwork/qabstractsocket.h \
+  D:/Qt/6.5.0/mingw_64/include/QtNetwork/qhostaddress.h \
+  D:/Qt/6.5.0/mingw_64/include/QtNetwork/qtcpsocket.h \
+  D:/Qt/6.5.0/mingw_64/include/QtNetwork/qtnetwork-config.h \
+  D:/Qt/6.5.0/mingw_64/include/QtNetwork/qtnetworkexports.h \
+  D:/Qt/6.5.0/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/QDialog \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/QLabel \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/QLayout \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/QLineEdit \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/QListWidget \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/QListWidgetItem \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/QPushButton \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/QScrollBar \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/QStyleOptionViewItem \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/QStyledItemDelegate \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/QTableWidgetItem \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/QVBoxLayout \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/QWidget \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractslider.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qboxlayout.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qframe.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qgridlayout.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlabel.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlayout.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlayoutitem.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlineedit.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlistview.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qlistwidget.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qpushbutton.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qrubberband.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qscrollbar.h \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/qsizepolicy.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qslider.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qstyle.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qstyleditemdelegate.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qstyleoption.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtabbar.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtableview.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtablewidget.h \
+  D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtabwidget.h \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   D:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \

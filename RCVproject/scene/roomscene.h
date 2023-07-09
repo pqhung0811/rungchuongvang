@@ -5,6 +5,8 @@
 #include "gamescene.h"
 #include <QLabel>
 #include <QLayout>
+#include <QSpinBox>
+#include "core/clientcore.h"
 
 namespace Ui {
 class RoomScene;
@@ -13,6 +15,10 @@ class RoomScene;
 class RoomScene : public QWidget
 {
     Q_OBJECT
+
+// Khai báo cấu trúc cho câu hỏi và đáp án
+typedef QPair<QString, QList<QString>> Question;
+typedef QPair<QString, bool> Answer;
 
 public:
     explicit RoomScene(QWidget *parent = nullptr);
@@ -39,6 +45,7 @@ public slots:
 private:
     Ui::RoomScene *ui;
     QList<QPair<QString, QString>> listUser;
+    ClientCore* clientCore;
 
 };
 

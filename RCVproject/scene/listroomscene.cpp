@@ -29,16 +29,6 @@ void ListRoomScene::onSelectionChanged(const QItemSelection &selected, const QIt
     }
 }
 
-QList<QString> ListRoomScene::getRoomIds() const
-{
-    return roomIds;
-}
-
-void ListRoomScene::setRoomIds(const QList<QString> &newRoomIds)
-{
-    roomIds = newRoomIds;
-}
-
 void ListRoomScene::setupList()
 {
     model = new QStandardItemModel();
@@ -57,7 +47,7 @@ void ListRoomScene::setupList()
         //    for (const auto& room : roomList) {
         QList<QStandardItem*> rowItems;
         qDebug() << "list room scene: " << this->roomIds.at(i);
-        rowItems << new QStandardItem(this->roomIds.at(i));
+        rowItems << new QStandardItem(QString::number(this->roomIds.at(i)));
         rowItems << new QStandardItem(this->roomnames.at(i));
         //        rowItems << new QStandardItem(room.first);
         //        rowItems << new QStandardItem(room.second);
@@ -85,5 +75,36 @@ QList<QString> ListRoomScene::getRoomnames() const
 void ListRoomScene::setRoomnames(const QList<QString> &newRoomnames)
 {
     roomnames = newRoomnames;
+}
+
+
+void ListRoomScene::on_label_2_linkActivated(const QString &link)
+{
+    this->ui->label_2->setText(link);
+}
+
+
+void ListRoomScene::on_label_3_linkActivated(const QString &link)
+{
+    this->ui->label_3->setText((link));
+}
+
+QList<quint64> ListRoomScene::getRoomIds() const
+{
+    return roomIds;
+}
+
+void ListRoomScene::setRoomIds(const QList<quint64> &newRoomIds)
+{
+    roomIds = newRoomIds;
+}
+
+void ListRoomScene::on_pushButton_clicked()
+{
+    HomeScene* homeScene = new HomeScene();
+    homeScene->on_label_2_linkActivated(this->ui->label_2->text());
+    homeScene->on_label_3_linkActivated(this->ui->label_3->text());
+    homeScene->show();
+    hide();
 }
 
