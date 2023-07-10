@@ -92,3 +92,26 @@ void ResponseBody::createViewRankBody(QList<quint64> userIds, QList<QString> use
     //    responseBody["id"] = idArray;
     this->responseBody.insert("rankScore", rankScoreArray);
 }
+
+void ResponseBody::createQuestionBody(QList<Question *> questions)
+{
+    this->responseBody = QJsonObject();
+    QJsonArray jsonArrayQues;
+
+    for(Question* question : questions) {
+        QJsonObject jsonObQues = QJsonObject();
+        QJsonArray jsonArrayAns;
+        jsonObQues.insert("content", question->getContent());
+        for(Answer* answer : question->getListAnswer())
+        {
+            QJsonObject jsonObAns = QJsonObject();
+            jsonObAns.insert("content", answer->getContent());
+            jsonObAns.insert("result", QString::number(answer->getResult()));
+            jsonArrayAns.append(jsonObAns);
+        }
+        jsonObQues.insert("answer", jsonArrayAns);
+        jsonArrayQues.append(jsonObQues);
+    }
+    this->responseBody.insert("question", jsonArrayQues);
+}
+

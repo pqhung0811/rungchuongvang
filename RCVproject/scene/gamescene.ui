@@ -465,7 +465,7 @@ color: rgb(255, 0, 0);</string>
 Question:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="score_2">
+   <widget class="QLabel" name="remainQuestion">
     <property name="geometry">
      <rect>
       <x>670</x>

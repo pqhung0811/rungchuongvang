@@ -13,6 +13,7 @@
 #include "createroomcontroller.h"
 #include "requestjoinroomcontroller.h"
 #include "roomapi.h"
+#include "questionapi.h"
 #include <QList>
 
 class RequestProcessing : public QObject
@@ -57,7 +58,7 @@ public slots:
     QString requestJoinRoom();
     QString responseJoinRoom();
     QList<User*> viewRank();
-
+    QList<Question*> startGame();
 
 signals:
 

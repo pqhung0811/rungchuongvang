@@ -80,6 +80,7 @@ QString RequestProcessing::handle() {
         else if(command.compare("RESPONSEJOINROOM")==0) cmd=6;
         else if(command.compare("FINDROOM")==0) cmd=7;
         else if(command.compare("VIEWRANK")==0) cmd=8;
+        else if(command.compare("STARTGAME")==0) cmd=9;
         switch (cmd) {
             case 1:
                 output = this->login();
@@ -106,6 +107,11 @@ QString RequestProcessing::handle() {
             case 8:
                 this->users = this->viewRank();
                 output = "view rank";
+                break;
+            case 9:
+                this->room->setListQuestions(this->startGame());
+                output = "get question";
+                break;
             default:
                 break;
         }
@@ -293,4 +299,27 @@ QList<User *> RequestProcessing::viewRank()
     users = userAPI->getAllUsersOrderByRank();
     return users;
 }
+
+QList<Question*> RequestProcessing::startGame()
+{
+    quint64 noQuestion;
+    QList<Question*> listQuestion;
+    QuestionAPI* questionAPI = new QuestionAPI();
+
+    if (this->message.contains("info") && this->message["info"].isString())
+    {
+        QString infoString = this->message["info"].toString();
+        QJsonObject infoObject = QJsonDocument::fromJson(infoString.toUtf8()).object();
+
+        if (infoObject.contains("noQuestion") && infoObject["noQuestion"].isString()) {
+            QString noQuestionStr = infoObject["noQuestion"].toString();
+            noQuestion = noQuestionStr.toInt();
+        }
+    }
+    listQuestion = questionAPI->getRandomSomeQuestion(noQuestion);
+    qDebug() << "request processing question: " << listQuestion.first()->getContent();
+    return listQuestion;
+}
+
+
 

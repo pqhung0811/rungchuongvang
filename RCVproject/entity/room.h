@@ -6,6 +6,7 @@
 #include <QMap>
 #include <QHash>
 #include "user.h"
+#include "question.h"
 
 class Room : public QObject
 {
@@ -21,6 +22,7 @@ protected:
     QMap<User*, quint64> userAndPoint;
     quint64 status;
     quint64 level;
+    QList<Question*> listQuestions;
 
 public:
     explicit Room(QObject *parent = nullptr);
@@ -48,6 +50,9 @@ public:
 
     quint64 getLevel() const;
     void setLevel(quint64 newLevel);
+
+    QList<Question *> getListQuestions() const;
+    void setListQuestions(const QList<Question *> &newListQuestions);
 
 public slots:
 //    quint64 getId();

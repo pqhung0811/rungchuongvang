@@ -73,5 +73,9 @@ QString ServerCreateMessage::createMessage(QString msg)
         ViewRankServerMessage* serverMsg = new ViewRankServerMessage(userIds, usernames, ranked, rankScore, "success", " ");
         return serverMsg->toString();
     }
+    else if(msg.compare("get question")==0) {
+        StartGameServerMessage* serverMsg = new StartGameServerMessage(this->requestProcessing->getRoom()->getListQuestions(), "success", " ");
+        return serverMsg->toString();
+    }
 }
 

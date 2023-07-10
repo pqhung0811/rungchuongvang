@@ -1,6 +1,7 @@
 #include <QApplication>
 #include "scene/mainwindow.h"
 #include "userapi.h"
+#include "questionapi.h".h"
 #include "user.h"
 #include "connection.h"
 #include "room.h"
@@ -8,15 +9,10 @@
 #include "answerapi.h"
 #include "answer.h"
 #include "usercontroller.h"
-#include "login/loginclientmessage.h"
-#include "login/loginservermessage.h"
-#include "logout/logoutclientmessage.h"
-#include "logout/logoutservermessage.h"
 #include "core/servercore.h"
 #include "core/clientcore.h"
 #include "scene/listroomscene.h"
 #include "scene/homescene.h"
-#include "message/findroom/findroomservermessage.h"
 #include <QList>
 #include <QThread>
 
@@ -39,6 +35,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    a.setWindowIcon(QIcon(":/../images/Golden-Bell-PNG.png"));
 
     Connection* connection = new Connection();
     if (!connection->setConnection()) {
@@ -48,12 +45,17 @@ int main(int argc, char *argv[])
         qDebug() << "abc";
     }
 
+//    QuestionAPI* questionAPI = new QuestionAPI();
+//    qDebug() << "main: " << questionAPI->getRandomSomeQuestion(1).size();
     ServerCore* serverCore = new ServerCore();
     serverCore->start();
     ClientCore* clientCore = ClientCore::getInstance();
     clientCore->start();
     MainWindow w = MainWindow();
     w.show();
+
+
+
 //    MyThread thread1;
 //    MyThread thread2;
 

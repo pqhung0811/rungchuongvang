@@ -24,10 +24,7 @@ QList<Question*> QuestionAPI::getRandomSomeQuestion(quint64 n) {
         quint64 id = query.value(0).toInt();
         QString content = query.value(1).toString();
         QString topic = query.value(2).toString();
-        qDebug() << "content: " << id;
-        qDebug() << "topic: " << content << "\n";
         question->setId(id);
-        qDebug() << "id of user: " << question->getId();
         question->setContent(content);
         question->setTopic(topic);
         AnswerAPI* answerAPI = new AnswerAPI();

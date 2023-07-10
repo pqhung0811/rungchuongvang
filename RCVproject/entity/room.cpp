@@ -81,6 +81,16 @@ void Room::setLevel(quint64 newLevel)
     level = newLevel;
 }
 
+QList<Question *> Room::getListQuestions() const
+{
+    return listQuestions;
+}
+
+void Room::setListQuestions(const QList<Question *> &newListQuestions)
+{
+    listQuestions = newListQuestions;
+}
+
 Room::Room(QObject *parent)
     : QObject{parent}
 {

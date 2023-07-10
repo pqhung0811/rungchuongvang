@@ -107,13 +107,64 @@ void RoomScene::on_level_linkActivated(const QString &link)
 
 void RoomScene::on_playBtn_clicked()
 {
-    QSpinBox spin = QSpinBox();
-    quint64 noQuestion = spin.value();
-    clientCore->startGame(noQuestion);
+    clientCore->startGame(this->noQuestion);
+    connect(clientCore, &ClientCore::Finished, this, &RoomScene::handlePlayResponse);
+}
+
+void RoomScene::handlePlayResponse(const QJsonDocument &response)
+{
+    QList<QPair<QString, QList<QPair<QString, quint64>>>> questions;
+
+    if (!response.isNull() && response.isObject()) {
+        QJsonObject jsonObject = response.object();
+        if (jsonObject.contains("command_code") && jsonObject["command_code"].isString()) {
+            if(jsonObject["command_code"].toString().compare("STARTGAME")!=0) return;
+        }
+        if (jsonObject.contains("info") && jsonObject["info"].isString()) {
+            QString infoString = jsonObject["info"].toString();
+            QJsonObject infoObject = QJsonDocument::fromJson(infoString.toUtf8()).object();
+
+            if (infoObject.contains("question") && infoObject["question"].isArray()) {
+                QJsonArray questionsArray = infoObject.value("question").toArray();
+
+                for (int i = 0; i < questionsArray.size(); ++i) {
+                    QPair<QString, QList<QPair<QString, quint64>>> question;
+                    QList<QPair<QString, quint64>> answers;
+                    QJsonObject questionObject = questionsArray.at(i).toObject();
+                    QString content = questionObject.value("content").toString();
+                    question.first = content;
+                    QJsonArray answerArray = questionObject.value("answer").toArray();
+
+                    for (int j = 0; j < answerArray.size(); j++) {
+                        QPair<QString, quint64> answer;
+                        QJsonObject answerObject = answerArray.at(j).toObject();
+                        QString answerContent = answerObject.value("content").toString();
+                        QString resultStr = answerObject.value("result").toString();
+                        quint64 result = resultStr.toInt();
+                        answer.first = answerContent;
+                        answer.second = result;
+                        answers.append(answer);
+                    }
+                    question.second = answers;
+                    questions.append(question);
+                }
+            }
+        }
+    }
     GameScene* gameScene = new GameScene();
     gameScene->on_name_linkActivated(this->ui->label->text());
     gameScene->on_rank_linkActivated(this->ui->label_2->text());
+    gameScene->on_level_linkActivated(this->ui->level->text());
+    gameScene->on_roomname_linkActivated(this->ui->roomname->text());
+    gameScene->setQuestions(questions);
+    gameScene->setupList();
     gameScene->show();
     close();
+}
+
+
+void RoomScene::on_spinBoxNo_valueChanged(int arg1)
+{
+    this->noQuestion = arg1;
 }
 
