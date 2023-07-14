@@ -19,6 +19,8 @@
 #include "findroom/findroomclientmessage.h"
 #include "startgame/startgameclientmessage.h"
 #include "viewrank/viewrankclientmessage.h"
+#include "viewhistory/viewhistoryclientmessage.h"
+#include "checkfinish/checkfinishclientmessage.h"
 #include "attachment.h"
 #include <QBuffer>
 #include <QIODevice>
@@ -62,6 +64,8 @@ public slots:
     void findRoom();
     void startGame(quint64 noQuestion);
     void viewRank();
+    void viewHistory();
+    void finishGame(quint64 score);
 
 signals:
     void Finished(const QJsonDocument& response);

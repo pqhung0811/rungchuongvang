@@ -119,7 +119,8 @@ void HomeScene::handleFindRoomResponse(const QJsonDocument &response)
     listRoomScene->on_label_3_linkActivated(this->ui->label_3->text());
     listRoomScene->setRoomIds(ids);
     listRoomScene->setRoomnames(roomnames);
-    listRoomScene->setupList();
+//    listRoomScene->setupList();
+    listRoomScene->setupLayout();
     listRoomScene->show();
     close();
 }
@@ -131,7 +132,6 @@ void HomeScene::on_rankBtn_clicked()
 //    this->clientManager->viewrank();
     connect(clientCore, &ClientCore::Finished, this, &HomeScene::handleViewRankResponse);
 //    handleViewRankResponse(this->clientManager->getJsonDoc());
-    this->close();
 }
 
 void HomeScene::handleViewRankResponse(const QJsonDocument &response)
@@ -194,6 +194,89 @@ void HomeScene::handleViewRankResponse(const QJsonDocument &response)
     rankScene->setupList();
 //    rankScene->setClientManager(this->clientManager);
     rankScene->show();
+    this->close();
+
 }
 
+
+
+void HomeScene::on_quitBtn_clicked()
+{
+    close();
+}
+
+
+void HomeScene::on_signOutBtn_clicked()
+{
+    MainWindow w = MainWindow();
+    w.show();
+    close();
+}
+
+
+
+void HomeScene::on_history_clicked()
+{
+    this->clientCore->viewHistory();
+    connect(clientCore, &ClientCore::Finished, this, &HomeScene::handleViewHistoryResponse);
+
+}
+
+void HomeScene::handleViewHistoryResponse(const QJsonDocument &response)
+{
+    QList<quint64> tops;
+    QList<quint64> scores;
+    QList<QString> startgames;
+    QList<QString> endgames;
+    if (!response.isNull() && response.isObject()) {
+        QJsonObject jsonObject = response.object();
+
+        if (jsonObject.contains("command_code") && jsonObject["command_code"].isString()) {
+            if(jsonObject["command_code"].toString().compare("VIEWHISTORY")!=0) return;
+        }
+        if (jsonObject.contains("info") && jsonObject["info"].isString()) {
+            QString infoString = jsonObject["info"].toString();
+            QJsonObject infoObject = QJsonDocument::fromJson(infoString.toUtf8()).object();
+
+            if (infoObject.contains("top") && infoObject["top"].isArray()) {
+                QJsonArray topArray = infoObject.value("top").toArray();
+                for (const QJsonValue& value : topArray) {
+                    tops.append(value.toInt());
+                }
+            }
+
+            if(infoObject.contains("score") && infoObject["score"].isArray()) {
+                QJsonArray scoreArray = infoObject.value("score").toArray();
+                for (const QJsonValue& value : scoreArray) {
+                    scores.append(value.toInt());
+                }
+            }
+
+            if(infoObject.contains("startgame") && infoObject["startgame"].isArray()) {
+                QJsonArray startgameArray = infoObject.value("startgame").toArray();
+                for (const QJsonValue& value : startgameArray) {
+                    startgames.append(value.toString());
+                }
+            }
+
+            if(infoObject.contains("endgame") && infoObject["endgame"].isArray()) {
+                QJsonArray endgameArray = infoObject.value("endgame").toArray();
+                for (const QJsonValue& value : endgameArray) {
+                    endgames.append(value.toString());
+                }
+            }
+        }
+    }
+    HistoryScene* historyScene = new HistoryScene();
+    historyScene->setTops(tops);
+    historyScene->setScores(scores);
+    historyScene->setStartgames(startgames);
+    historyScene->setEndgames(endgames);
+    historyScene->on_name_linkActivated(this->ui->label_2->text());
+    historyScene->on_rank_linkActivated(this->ui->label_3->text());
+    historyScene->setupList();
+    //    rankScene->setClientManager(this->clientManager);
+    historyScene->show();
+    this->close();
+}
 

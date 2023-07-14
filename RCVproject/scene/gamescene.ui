@@ -297,7 +297,7 @@ background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>450</x>
       <y>240</y>
       <width>111</width>
       <height>41</height>
@@ -320,7 +320,7 @@ background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>350</y>
+      <y>360</y>
       <width>121</width>
       <height>41</height>
      </rect>
@@ -341,8 +341,8 @@ background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>350</y>
+      <x>450</x>
+      <y>360</y>
       <width>111</width>
       <height>41</height>
      </rect>
@@ -363,10 +363,10 @@ background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string
    <widget class="QLabel" name="clock">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>290</y>
-      <width>51</width>
-      <height>51</height>
+      <x>320</x>
+      <y>300</y>
+      <width>121</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -376,8 +376,9 @@ background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">image: url(:/images/circle-icon-png-favpng.jpg);
-QLabel { text-align: center; }</string>
+     <string notr="true">background-color: white; border-radius: 15px; border: 1px solid gold;
+background-color: qlineargradient(spread:pad, x1:0.0852273, y1:0.107955, x2:1, y2:1, stop:0 rgba(223, 136, 106, 255), stop:1 rgba(255, 255, 255, 255));
+Image: &quot;disable&quot;</string>
     </property>
     <property name="midLineWidth">
      <number>1</number>

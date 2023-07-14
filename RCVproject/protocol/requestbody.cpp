@@ -75,4 +75,11 @@ void RequestBody::createStartGameBody(quint64 noQuestion)
     this->requestBody.insert("noQuestion", QString::number(noQuestion));
 }
 
+void RequestBody::createCheckFinishBody(quint64 score)
+{
+    this->requestBody = QJsonObject();
+
+    this->requestBody.insert("score", QString::number(score));
+}
+
 

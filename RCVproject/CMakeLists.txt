@@ -50,6 +50,12 @@ set(PROJECT_SOURCES
         scene/noeditdelegate.cpp
         scene/createroomdialog.h
         scene/createroomdialog.cpp
+        scene/historyscene.h
+        scene/historyscene.cpp
+        scene/historyscene.ui
+        scene/resultscene.h
+        scene/resultscene.cpp
+        scene/resultscene.ui
         entity/user.h
         entity/user.cpp
         entity/room.h
@@ -58,6 +64,8 @@ set(PROJECT_SOURCES
         entity/question.cpp
         entity/answer.h
         entity/answer.cpp
+        entity/history.h
+        entity/history.cpp
         api/connection.h
         api/connection.cpp
         api/userapi.h
@@ -68,6 +76,8 @@ set(PROJECT_SOURCES
         api/questionapi.cpp
         api/answerapi.h
         api/answerapi.cpp
+        api/historyapi.h
+        api/historyapi.cpp
 #        controller/usercontroller.h
 #        controller/usercontroller.cpp
 #        controller/roomcontroller.h
@@ -146,6 +156,14 @@ set(PROJECT_SOURCES
         message/startgame/startgameclientmessage.cpp
         message/startgame/startgameservermessage.h
         message/startgame/startgameservermessage.cpp
+        message/viewhistory/viewhistoryclientmessage.h
+        message/viewhistory/viewhistoryclientmessage.cpp
+        message/viewhistory/viewhistoryservermessage.h
+        message/viewhistory/viewhistoryservermessage.cpp
+        message/checkfinish/checkfinishclientmessage.h
+        message/checkfinish/checkfinishclientmessage.cpp
+        message/checkfinish/checkfinishservermessage.h
+        message/checkfinish/checkfinishservermessage.cpp
         protocol/requestbody.h
         protocol/requestbody.cpp
         protocol/responsebody.h

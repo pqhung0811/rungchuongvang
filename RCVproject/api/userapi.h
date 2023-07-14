@@ -22,6 +22,7 @@ public slots:
     void updateRankscoreAndRanked(quint64 rankscore, quint64 rank, quint64 id);
     void updateRoomId(quint64 roomId, quint64 id);
     QList<User*> getAllUsersOrderByRank();
+    QList<User*> getUsersByRoomId(quint64 roomId);
 
 signals:
 

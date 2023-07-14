@@ -8,6 +8,7 @@ CreateRoomServerMessage::CreateRoomServerMessage(QObject *parent)
 }
 
 CreateRoomServerMessage::CreateRoomServerMessage(QString username, quint64 ranked, quint64 rankScore, QString status, QString errorMsg, QObject *parent)
+    : ServerMessage{status, errorMsg, parent}
 {
     this->username = username;
     this->ranked = ranked;

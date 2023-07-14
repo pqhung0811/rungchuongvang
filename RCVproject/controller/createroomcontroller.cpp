@@ -34,5 +34,7 @@ QString CreateRoomController::createRoom(QString roomname) {
     this->room->setOwner(this->owner);
     userAndPoints.insert(this->owner, 0);
     this->room->setUserAndPoint(userAndPoints);
+    UserAPI* userAPI = new UserAPI();
+    userAPI->updateRoomId(this->room->getId(), this->owner->getId());
     return "create room successfully";
 }

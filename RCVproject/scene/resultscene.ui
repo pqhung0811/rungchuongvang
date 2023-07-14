@@ -1,27 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>RankScene</class>
- <widget class="QWidget" name="RankScene">
+ <class>ResultScene</class>
+ <widget class="QWidget" name="ResultScene">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>543</width>
-    <height>543</height>
+    <width>491</width>
+    <height>512</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(187, 225, 96, 255), stop:1 rgba(255, 255, 255, 255));</string>
-  </property>
+  <widget class="QLabel" name="roomname">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>70</y>
+     <width>191</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Showcard Gothic</family>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Result</string>
+   </property>
+  </widget>
   <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>170</y>
-     <width>461</width>
+     <x>80</x>
+     <y>130</y>
+     <width>351</width>
      <height>361</height>
     </rect>
    </property>
@@ -37,16 +53,16 @@ QScrollBar:horizontal { background-color: #00FF00; }</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>459</width>
+      <width>349</width>
       <height>359</height>
      </rect>
     </property>
-    <widget class="QTableView" name="ListRankView">
+    <widget class="QTableView" name="ListResultView">
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>461</width>
+       <width>351</width>
        <height>361</height>
       </rect>
      </property>
@@ -55,28 +71,6 @@ QScrollBar:horizontal { background-color: #00FF00; }</string>
      </property>
     </widget>
    </widget>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>110</y>
-     <width>111</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Showcard Gothic</family>
-     <pointsize>24</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(161, 151, 57, 255), stop:1 rgba(255, 255, 255, 255));</string>
-   </property>
-   <property name="text">
-    <string>Rank</string>
-   </property>
   </widget>
   <widget class="QFrame" name="frame_4">
    <property name="geometry">
@@ -96,7 +90,7 @@ QScrollBar:horizontal { background-color: #00FF00; }</string>
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="name">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -163,7 +157,7 @@ border-radius: 20px;</string>
   <widget class="QFrame" name="frame_5">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>10</x>
      <y>60</y>
      <width>121</width>
      <height>21</height>
@@ -178,7 +172,7 @@ border-radius: 20px;</string>
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="rank">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -198,28 +192,10 @@ border-radius: 20px;</string>
     </property>
    </widget>
   </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>450</x>
-     <y>10</y>
-     <width>61</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">image: url(:/images/back+icon-1320196060092920381.png);
-background-color: yellow;
-border-radius: 8px; border: 2px solid green;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QFrame" name="frame_7">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>0</x>
      <y>50</y>
      <width>31</width>
      <height>31</height>

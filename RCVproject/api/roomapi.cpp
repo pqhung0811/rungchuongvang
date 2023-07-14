@@ -98,3 +98,27 @@ quint64 RoomAPI::getOwnerIdByRoomId(quint64 roomId) {
     }
     return ownerId;
 }
+
+void RoomAPI::updateStatusAndStarttime(quint64 id, quint64 status, QString starttime)
+{
+    QSqlQuery query;
+    query.prepare("UPDATE room SET status = :status, start_time = :starttime WHERE id= :id");
+    query.bindValue(":id", id);
+    query.bindValue(":status", status);
+    query.bindValue(":starttime", starttime);
+    if (!query.exec()) {
+        qDebug() << "Không thể thực hiện truy vấn";
+    }
+}
+
+void RoomAPI::updateStatusAndEndtime(quint64 id, quint64 status, QString endtime)
+{
+    QSqlQuery query;
+    query.prepare("UPDATE room SET status = :status, end_time = :endtime WHERE id= :id");
+    query.bindValue(":id", id);
+    query.bindValue(":status", status);
+    query.bindValue(":endtime", endtime);
+    if (!query.exec()) {
+        qDebug() << "Không thể thực hiện truy vấn";
+    }
+}

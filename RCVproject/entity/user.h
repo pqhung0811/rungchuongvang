@@ -2,6 +2,7 @@
 #define USER_H
 
 #include <QObject>
+#include "history.h"
 
 class User : public QObject
 {
@@ -15,9 +16,13 @@ protected:
     QString password;
     quint64 rankScore;
     quint64 rank;
+    QList<History*> history;
 
 public:
     explicit User(QObject *parent = nullptr);
+
+    QList<History *> getHistory() const;
+    void setHistory(const QList<History *> &newHistory);
 
 public slots:
     quint64 getId();

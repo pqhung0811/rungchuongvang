@@ -6,6 +6,9 @@
 #include <QObject>
 #include <QJsonObject>
 #include <QJsonDocument>
+#include <QFile>
+#include <QTextStream>
+#include <QDir>
 #include "logincontroller.h"
 #include "user.h"
 #include "room.h"
@@ -13,8 +16,16 @@
 #include "createroomcontroller.h"
 #include "requestjoinroomcontroller.h"
 #include "roomapi.h"
+#include "answer.h"
+#include "question.h"
+#include <QDateTime>
 #include "questionapi.h"
+#include "userapi.h"
 #include <QList>
+#include "historyapi.h"
+#include "history.h"
+#include "QThread"
+#include <QNetworkInterface>
 
 class RequestProcessing : public QObject
 {
@@ -26,6 +37,8 @@ private:
     QString ouputMsg;
     QList<Room*> rooms;
     QList<User*> users;
+    QList<QString> usernames;
+    QList<quint64> scores;
 
 public:
     explicit RequestProcessing(QObject *parent = nullptr);
@@ -47,6 +60,13 @@ public:
 
     QList<User *> getUsers() const;
     void setUsers(const QList<User *> &newUsers);
+    QString finishGame();
+
+    QList<QString> getUsernames() const;
+    void setUsernames(const QList<QString> &newUsernames);
+
+    QList<quint64> getScores() const;
+    void setScores(const QList<quint64> &newScores);
 
 public slots:
     QString handle();
@@ -59,8 +79,13 @@ public slots:
     QString responseJoinRoom();
     QList<User*> viewRank();
     QList<Question*> startGame();
+    QList<History*> viewHistory();
+    void updateUserAndPoints();
+    void writeLog(const QString& message);
+    void extractLogFile();
 
 signals:
+    void endGame();
 
 };
 

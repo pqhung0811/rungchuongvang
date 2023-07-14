@@ -43,5 +43,7 @@ Command* Command::toCommand(QString input){
     commands.insert("FINDROOM", new Command("FINDROOM"));
     commands.insert("STARTGAME", new Command("STARTGAME"));
     commands.insert("VIEWRANK", new Command("VIEWRANK"));
+    commands.insert("VIEWHISTORY", new Command("VIEWHISTORY"));
+    commands.insert("FINISHGAME", new Command("FINISHGAME"));
     return commands.value(input);
 }

@@ -133,7 +133,18 @@ void ClientCore::startGame(quint64 noQuestion)
 void ClientCore::viewRank()
 {
     ViewRankClientMessage* clientMsg = new ViewRankClientMessage();
-    sendRequest((clientMsg->toString()));
+    sendRequest(clientMsg->toString());
 }
 
+void ClientCore::viewHistory()
+{
+    ViewHistoryClientMessage* clientMsg = new ViewHistoryClientMessage();
+    sendRequest(clientMsg->toString());
+}
+
+void ClientCore::finishGame(quint64 score)
+{
+    CheckFinishClientMessage* clientMsg = new CheckFinishClientMessage(score);
+    sendRequest(clientMsg->toString());
+}
 

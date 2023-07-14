@@ -10,6 +10,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include "core/clientcore.h"
+#include "homescene.h"
 
 
 namespace Ui {
@@ -40,6 +41,8 @@ private slots:
 
     void on_spinBoxNo_valueChanged(int arg1);
 
+    void on_back_clicked();
+
 public slots:
     void on_label_linkActivated(const QString &link);
     void on_level_linkActivated(const QString &link);
@@ -54,6 +57,8 @@ private:
     QList<QPair<QString, QString>> listUser;
     ClientCore* clientCore;
     int noQuestion;
+    int row;
+    int collumn;
 
 };
 

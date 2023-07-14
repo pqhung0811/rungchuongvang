@@ -77,5 +77,23 @@ QString ServerCreateMessage::createMessage(QString msg)
         StartGameServerMessage* serverMsg = new StartGameServerMessage(this->requestProcessing->getRoom()->getListQuestions(), "success", " ");
         return serverMsg->toString();
     }
+    else if(msg.compare("view history")==0) {
+        QList<quint64> tops;
+        QList<quint64> scores;
+        QList<QString> startgames;
+        QList<QString> endgames;
+        for(History* history : this->requestProcessing->getUser()->getHistory()) {
+            tops.append(history->getTop());
+            scores.append(history->getScore());
+            startgames.append(history->getStartgame());
+            endgames.append(history->getEndgame());
+        }
+        ViewHistoryServerMessage* serverMsg = new ViewHistoryServerMessage(tops, scores, startgames, endgames, "success", " ");
+        return serverMsg->toString();
+    }
+    else if(msg.compare("finish")==0) {
+        CheckFinishServerMessage* serverMsg = new CheckFinishServerMessage(this->requestProcessing->getUsernames(), this->requestProcessing->getScores(), "success", " ");
+        return serverMsg->toString();
+    }
 }
 

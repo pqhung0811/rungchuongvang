@@ -115,3 +115,49 @@ void ResponseBody::createQuestionBody(QList<Question *> questions)
     this->responseBody.insert("question", jsonArrayQues);
 }
 
+void ResponseBody::createViewHistoryBody(QList<quint64> tops, QList<quint64> scores, QList<QString> startgames, QList<QString> endgames)
+{
+    this->responseBody = QJsonObject();
+
+    QJsonArray topsArray;
+    for (quint64 top : tops) {
+        topsArray.append(static_cast<qint64>(top));
+    }
+    this->responseBody.insert("top", topsArray);
+
+    QJsonArray scoresArray;
+    for (quint64 score : scores) {
+        scoresArray.append(static_cast<qint64>(score));
+    }
+    this->responseBody.insert("score", scoresArray);
+
+    QJsonArray startgameArray;
+    for (const QString& startgame : startgames) {
+        startgameArray.append(startgame);
+    }
+    this->responseBody.insert("startgame", startgameArray);
+
+    QJsonArray endgameArray;
+    for (const QString& endgame : endgames) {
+        endgameArray.append(endgame);
+    }
+    this->responseBody.insert("endgame", endgameArray);
+}
+
+void ResponseBody::createFinishBody(QList<QString> usernames, QList<quint64> scores)
+{
+    this->responseBody = QJsonObject();
+
+    QJsonArray usernameArray;
+    for (const QString& username : usernames) {
+        usernameArray.append(username);
+    }
+    this->responseBody.insert("username", usernameArray);
+
+    QJsonArray scoreArray;
+    for (quint64 score : scores) {
+        scoreArray.append(static_cast<qint64>(score));
+    }
+    this->responseBody.insert("score", scoreArray);
+}
+

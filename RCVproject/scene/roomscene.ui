@@ -155,63 +155,6 @@
        <layout class="QVBoxLayout" name="verticalLayout"/>
       </widget>
      </item>
-     <item row="1" column="4">
-      <widget class="QWidget" name="myVerticalWidget_6" native="true">
-       <property name="cursor">
-        <cursorShape>SizeAllCursor</cursorShape>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_8">
-        <item>
-         <widget class="QLabel" name="label_22">
-          <property name="styleSheet">
-           <string notr="true">background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="pixmap">
-           <pixmap resource="../resource.qrc">:/images/icons8-student-64.png</pixmap>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_23">
-          <property name="font">
-           <font>
-            <family>VNI-Duff</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string>
-          </property>
-          <property name="text">
-           <string>Johnathan</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_24">
-          <property name="font">
-           <font>
-            <family>VNI-Chancery</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: #b8b8b8; border: 2px solid black; border-radius: 10px;</string>
-          </property>
-          <property name="text">
-           <string>Dimond 500</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
     </layout>
    </widget>
   </widget>

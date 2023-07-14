@@ -1,6 +1,16 @@
 
 #include "user.h"
 
+QList<History *> User::getHistory() const
+{
+    return history;
+}
+
+void User::setHistory(const QList<History *> &newHistory)
+{
+    history = newHistory;
+}
+
 User::User(QObject *parent)
     : QObject{parent}
 {

@@ -20,6 +20,9 @@ public slots:
     void addRoom(quint64 ownerId, QString roomname, quint64 level);
     Room* getLastRoom();
     quint64 getOwnerIdByRoomId(quint64 roomId);
+    void updateStatusAndStarttime(quint64 id, quint64 status, QString starttime);
+    void updateStatusAndEndtime(quint64 id, quint64 status, QString endtime);
+
 
 signals:
 

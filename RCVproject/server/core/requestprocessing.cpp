@@ -61,10 +61,30 @@ void RequestProcessing::setUsers(const QList<User *> &newUsers)
     users = newUsers;
 }
 
+QList<QString> RequestProcessing::getUsernames() const
+{
+    return usernames;
+}
+
+void RequestProcessing::setUsernames(const QList<QString> &newUsernames)
+{
+    usernames = newUsernames;
+}
+
+QList<quint64> RequestProcessing::getScores() const
+{
+    return scores;
+}
+
+void RequestProcessing::setScores(const QList<quint64> &newScores)
+{
+    scores = newScores;
+}
+
 RequestProcessing::RequestProcessing(QObject *parent)
     : QObject{parent}
 {
-
+//    connect(this, &RequestProcessing::endGame, this, &RequestProcessing::updateUserAdnPoints);
 }
 
 QString RequestProcessing::handle() {
@@ -73,7 +93,7 @@ QString RequestProcessing::handle() {
     if (this->message.contains("command_code") && this->message["command_code"].isString()) {
         QString command = this->message["command_code"].toString();
         if(command.compare("LOGIN")==0)  cmd=1;
-        else if(command.compare("LOGOUT")==0) cmd=2;
+        else if(command.compare("VIEWHISTORY")==0) cmd=2;
         else if(command.compare("REGISTER")==0) cmd=3;
         else if(command.compare("CREATEROOM")==0) cmd=4;
         else if(command.compare("REQUESTJOINROOM")==0) cmd=5;
@@ -81,15 +101,17 @@ QString RequestProcessing::handle() {
         else if(command.compare("FINDROOM")==0) cmd=7;
         else if(command.compare("VIEWRANK")==0) cmd=8;
         else if(command.compare("STARTGAME")==0) cmd=9;
+        else if(command.compare("FINISHGAME")==0) cmd=10;
         switch (cmd) {
             case 1:
                 output = this->login();
                 break;
-//            case 2:
-//                output = this
+            case 2:
+                this->user->setHistory(this->viewHistory());
+                output = "view history";
+                break;
             case 3:
                 output = this->registers();
-
                 break;
             case 4:
                 output = this->createRoom();
@@ -111,6 +133,9 @@ QString RequestProcessing::handle() {
             case 9:
                 this->room->setListQuestions(this->startGame());
                 output = "get question";
+                break;
+            case 10:
+                return this->finishGame();
                 break;
             default:
                 break;
@@ -186,10 +211,6 @@ QString RequestProcessing::registers() {
 
 QString RequestProcessing::createRoom() {
     QString roomname;
-    QString username;
-    quint64 ownerId;
-    quint64 ranked;
-    quint64 rankScore;
     QString msg;
     if (this->message.contains("info") && this->message["info"].isString())
     {
@@ -200,29 +221,7 @@ QString RequestProcessing::createRoom() {
         if (infoObject.contains("roomname") && infoObject["roomname"].isString()) {
             roomname = infoObject["roomname"].toString();
         }
-        if (infoObject.contains("username") && infoObject["username"].isString()) {
-            username = infoObject["username"].toString();
-        }
-        if (infoObject.contains("ownerId") && infoObject["ownerId"].isString()) {
-            QString ownerIdStr = infoObject["ownerId"].toString();
-            ownerId = ownerIdStr.toInt();
-        }
-        if (infoObject.contains("ranked") && infoObject["ranked"].isString()) {
-            QString rankedStr = infoObject["ranked"].toString();
-            ranked = rankedStr.toInt();
-        }
-        if (infoObject.contains("rankScore") && infoObject["rankScore"].isString()) {
-            QString rankScoreStr = infoObject["rankScore"].toString();
-            rankScore = rankScoreStr.toInt();
-        }
         CreateRoomController* createRoomController = new CreateRoomController();
-        User* owner = new User();
-        owner->setId(ownerId);
-        owner->setUsername(username);
-        owner->setRank(ranked);
-        owner->setRankScore(rankScore);
-//        createRoomController->setOwner(owner);
-        qDebug() << "Owner: " << this->user->getUsername();
         createRoomController->setOwner(this->user);
         msg = createRoomController->createRoom(roomname);
         this->room = createRoomController->getRoom();
@@ -297,6 +296,7 @@ QList<User *> RequestProcessing::viewRank()
         qDebug() << "empty";
     }
     users = userAPI->getAllUsersOrderByRank();
+    delete userAPI;
     return users;
 }
 
@@ -305,6 +305,16 @@ QList<Question*> RequestProcessing::startGame()
     quint64 noQuestion;
     QList<Question*> listQuestion;
     QuestionAPI* questionAPI = new QuestionAPI();
+    RoomAPI* roomAPI = new RoomAPI;
+
+    this->room->setStatus(1);
+    QDateTime currentDateTime = QDateTime::currentDateTime();
+    QString currentDateTimeString = currentDateTime.toString("dd/MM/yyyy hh:mm:ss");
+    this->room->setStartTime(currentDateTimeString);
+
+    if(this->user->getId()==this->room->getOwner()->getId()) {
+        roomAPI->updateStatusAndStarttime(this->room->getId(), 1, currentDateTimeString);
+    }
 
     if (this->message.contains("info") && this->message["info"].isString())
     {
@@ -317,9 +327,173 @@ QList<Question*> RequestProcessing::startGame()
         }
     }
     listQuestion = questionAPI->getRandomSomeQuestion(noQuestion);
-    qDebug() << "request processing question: " << listQuestion.first()->getContent();
+
+    delete questionAPI;
+    delete roomAPI;
+
     return listQuestion;
 }
 
+QList<History *> RequestProcessing::viewHistory()
+{
+    HistoryAPI* histopyAPI = new HistoryAPI();
+    QList<History*> listHistory;
+    listHistory = histopyAPI->getHistoryByUserId(this->user->getId());
 
+    delete histopyAPI;
+    return listHistory;
+}
 
+void RequestProcessing::updateUserAndPoints()
+{
+    HistoryAPI* histopyAPI = new HistoryAPI();
+    UserAPI* userAPI = new UserAPI();
+    QMap<User*, quint64> nameAndScore = this->room->getUserAndPoint();
+
+    for (auto it = nameAndScore.begin(); it != nameAndScore.end(); it++) {
+        nameAndScore.insert(it.key(), histopyAPI->getScoreByUserId(it.key()->getId()));
+    }
+
+    for (auto it = nameAndScore.begin(); it != nameAndScore.end(); ++it) {
+        usernames.append(it.key()->getUsername());
+        scores.append(it.value());
+    }
+
+    QList<QPair<QString, quint64>> sortedData;
+    for (int i = 0; i < scores.size(); ++i) {
+        sortedData.append(qMakePair(usernames[i], scores[i]));
+    }
+
+    std::sort(sortedData.begin(), sortedData.end(),
+              [](const QPair<QString, quint64>& pair1, const QPair<QString, quint64>& pair2) {
+                  return pair1.second > pair2.second;
+              });
+
+    usernames.clear();
+    scores.clear();
+
+    for (const auto& pair : sortedData) {
+        usernames.append(pair.first);
+        scores.append(pair.second);
+    }
+
+    if(this->usernames.indexOf(this->user->getUsername())==0 || this->usernames.indexOf(this->user->getUsername())==1) {
+        quint64 rankscore = this->user->getRankScore()+5;
+        quint64 rank;
+        if(rankscore<100) rank=0;
+        else if(rankscore>=100 && rankscore<500) rank=1;
+        else if(rankscore>=500) rank=2;
+        userAPI->updateRankscoreAndRanked(rankscore, rank, this->user->getId());
+    }
+
+    this->extractLogFile();
+
+    delete histopyAPI;
+    delete userAPI;
+    qDebug() << "\n\nrequest process: " << this->usernames;
+}
+
+void RequestProcessing::extractLogFile()
+{
+    QList<Question*> questions = this->room->getListQuestions();
+    QString content;
+    content = "Id: " + QString::number(this->room->getId()) +
+              "\nRoom Name: " + this->room->getRoomname() +
+              "\nStart Time: " + this->room->getStartTime() +
+              "\nEnd Time: " + this->room->getEndTime() +
+              "\n\nUsername    score    top\n";
+
+    for(int i=0; i<this->usernames.size(); i++) {
+        content = content + this->usernames.at(i) + "    " + QString::number(this->scores.at(i)) + "    " + QString::number(i) + "\n";
+    }
+
+    content = content + "\nQuestion and True Answer\n";
+    for(int i=0; i<questions.size(); i++) {
+        Question* question = questions.at(i);
+        content = content + question->getContent() + "   ";
+        for(int j=0; j<question->getListAnswer().size(); j++) {
+            Answer* answer = question->getListAnswer().at(j);
+            if(answer->getResult()==1) {
+                content = content + answer->getContent() + "\n";
+            }
+        }
+    }
+
+    QList<QHostAddress> ipAddressesList = QNetworkInterface::allAddresses();
+
+    // Lặp qua danh sách các địa chỉ IP và tìm địa chỉ IP công cộng
+    for (const QHostAddress &ipAddress : ipAddressesList)
+    {
+        if (ipAddress != QHostAddress::LocalHost && ipAddress.toIPv4Address())
+        {
+            content = content + "\nIP: " + ipAddress.toString();
+        }
+    }
+
+    this->writeLog(content);
+}
+
+QString RequestProcessing::finishGame()
+{
+    quint64 score;
+    RoomAPI* roomAPI = new RoomAPI;
+    HistoryAPI* histopyAPI = new HistoryAPI();
+
+    qDebug() << "request finish 1";
+
+    if (this->message.contains("info") && this->message["info"].isString())
+    {
+        QString infoString = this->message["info"].toString();
+        QJsonObject infoObject = QJsonDocument::fromJson(infoString.toUtf8()).object();
+
+        if (infoObject.contains("score") && infoObject["score"].isString()) {
+            QString scoreStr = infoObject["score"].toString();
+            score = scoreStr.toInt();
+        }
+    }
+
+    qDebug() << "request finish 2" << score;
+
+    this->room->setStatus(2);
+    QDateTime currentDateTime = QDateTime::currentDateTime();
+    QString currentDateTimeString = currentDateTime.toString("dd/MM/yyyy hh:mm:ss");
+    this->room->setEndTime(currentDateTimeString);
+
+    if(this->user->getId()==this->room->getOwner()->getId()) {
+        roomAPI->updateStatusAndEndtime(this->room->getId(), 2, currentDateTimeString);
+    }
+
+    this->room->getUserAndPoint().insert(this->user, score);
+
+    histopyAPI->updateHistory(this->user->getId(), score, this->room->getStartTime(), this->room->getEndTime());
+
+//    QThread::msleep(2000);
+
+    updateUserAndPoints();
+
+    return "finish";
+}
+
+void RequestProcessing::writeLog(const QString& message)
+{
+    QString basePath = "D:/Networkprogramming/project";
+
+    // Tạo tên file dựa trên thời gian hiện tại
+    QString fileName = QDateTime::currentDateTime().toString("yyyyMMdd_hhmmss") + ".log";
+
+    // Kết hợp đường dẫn thư mục gốc với tên file
+    QString filePath = QDir(basePath).filePath(fileName);
+
+    // Mở file log để ghi
+    QFile file(filePath);
+    if (file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        QTextStream stream(&file);
+
+        // Ghi thông tin log
+        stream << message << "\n";
+
+        // Đóng file
+        file.close();
+    }
+}

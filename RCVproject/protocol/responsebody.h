@@ -28,6 +28,9 @@ public slots:
     void createCreateRoomBody(QString username, quint64 ranked, quint64 rankScore);
     void createViewRankBody(QList<quint64> userIds, QList<QString> usernames, QList<quint64> ranked, QList<quint64> rankScore);
     void createQuestionBody(QList<Question*> questions);
+    void createViewHistoryBody(QList<quint64> tops, QList<quint64> scores, QList<QString> startgames, QList<QString> endgames);
+    void createFinishBody(QList<QString> usernames, QList<quint64> scores);
+
 signals:
 
 };

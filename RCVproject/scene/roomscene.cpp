@@ -157,6 +157,9 @@ void RoomScene::handlePlayResponse(const QJsonDocument &response)
     gameScene->on_level_linkActivated(this->ui->level->text());
     gameScene->on_roomname_linkActivated(this->ui->roomname->text());
     gameScene->setQuestions(questions);
+    gameScene->setRemainQuestion(gameScene->getQuestions().size());
+    gameScene->on_remainQuestion_linkActivated(QString::number(gameScene->getQuestions().size()));
+    gameScene->setupClock();
     gameScene->setupList();
     gameScene->show();
     close();
@@ -166,5 +169,16 @@ void RoomScene::handlePlayResponse(const QJsonDocument &response)
 void RoomScene::on_spinBoxNo_valueChanged(int arg1)
 {
     this->noQuestion = arg1;
+}
+
+
+void RoomScene::on_back_clicked()
+{
+    HomeScene* homeScene = new HomeScene();
+    homeScene->on_label_2_linkActivated(this->ui->label->text());
+    homeScene->on_label_3_linkActivated(this->ui->label_2->text());
+    //    homeScene->setClientManager(this->clientManager);
+    homeScene->show();
+    close();
 }
 

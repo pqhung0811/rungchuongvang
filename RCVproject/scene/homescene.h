@@ -10,6 +10,8 @@
 #include "listroomscene.h"
 #include "rankscene.h"
 #include "core/clientmanager.h"
+#include "mainwindow.h"
+#include "historyscene.h"
 
 namespace Ui {
 class HomeScene;
@@ -37,6 +39,13 @@ private slots:
     void handleViewRankResponse(const QJsonDocument &response);
     void on_rankBtn_clicked();
 //    void onViewRankClicked();
+
+    void on_quitBtn_clicked();
+
+    void on_signOutBtn_clicked();
+
+    void on_history_clicked();
+    void handleViewHistoryResponse(const QJsonDocument &response);
 
 public slots:
     void on_label_2_linkActivated(const QString &link);
