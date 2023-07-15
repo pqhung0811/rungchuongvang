@@ -10,7 +10,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     setStyleSheet("MainWindow {background-image:url(D:/Networkprogramming/project/images/aaa.jpg)}");
     ui->setupUi(this);
-    this->clientCore = ClientCore::getInstance();
+    this->clientCore = new ClientCore();
+    this->clientCore->start();
     //    this->clientManager = new ClientManager();
     //    connect(ui->registerBtn, &QPushButton::clicked, this, &MainWindow::on_registerBtn_clicked);
     //    connect(ui->signInBtn, SIGNAL(clicked()), this, SLOT(on_signInBtn_clicked()));
@@ -50,8 +51,6 @@ void MainWindow::handlePassLineEditReturnPressed() {
 
 void MainWindow::handleLoginResponse(const QJsonDocument &response)
 {
-    qDebug() << "Login response: " << response;
-
     QString status;
     QString errorMsg;
     QString username;
@@ -96,7 +95,8 @@ void MainWindow::handleLoginResponse(const QJsonDocument &response)
         else {
             homeScene->on_label_3_linkActivated("   Gold: " + rankScore);
         }
-//        homeScene->setClientManager(this->clientManager);
+        homeScene->setClientCore(this->clientCore);
+        this->disconnectSignal();
         homeScene->show();
         this->close();
     } else {
@@ -111,6 +111,11 @@ void MainWindow::handleLoginResponse(const QJsonDocument &response)
             myDialog->show();
         }
     }
+}
+
+void MainWindow::disconnectSignal()
+{
+    disconnect(clientCore, &ClientCore::Finished, this, &MainWindow::handleLoginResponse);
 }
 
 //void MainWindow::start()

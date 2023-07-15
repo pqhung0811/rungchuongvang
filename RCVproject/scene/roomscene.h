@@ -11,6 +11,10 @@
 #include <QJsonObject>
 #include "core/clientcore.h"
 #include "homescene.h"
+#include <QDialog>
+#include <QVBoxLayout>
+#include <QPushButton>
+
 
 
 namespace Ui {
@@ -35,6 +39,23 @@ public:
     QList<QPair<QString, QString> > getListUser() const;
     void setListUser(const QList<QPair<QString, QString> > &newListUser);
 
+    ClientCore *getClientCore() const;
+    void setClientCore(ClientCore *newClientCore);
+
+    int getRow() const;
+
+    int getCollumn() const;
+
+    void setRow(int newRow);
+
+    void setCollumn(int newCollumn);
+
+    QList<QString> getUsernames() const;
+    void setUsernames(const QList<QString> &newUsernames);
+
+    QList<QString> getRankscore() const;
+    void setRankscore(const QList<QString> &newRankscore);
+
 private slots:
 
     void on_playBtn_clicked();
@@ -51,11 +72,20 @@ public slots:
     QWidget* createVerticalUser(QString username, QString rank);
     void addPlayer(QWidget* verticalUser, quint64 row, quint64 column);
     void handlePlayResponse(const QJsonDocument &response);
+    void handleJoinRoomResponse(const QJsonDocument &response);
+    void createDialog(QString content, QString username, QString rankStr, quint64 userId);
+    void setupLayout();
+    void accept(QString username, QString rankStr, quint64 userId);
+    void deny(quint64 userId);
+    void disablePlayButton();
+    void connectSignal();
 
 private:
     Ui::RoomScene *ui;
     QList<QPair<QString, QString>> listUser;
     ClientCore* clientCore;
+    QList<QString> usernames;
+    QList<QString> rankscore;
     int noQuestion;
     int row;
     int collumn;

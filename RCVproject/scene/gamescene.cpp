@@ -13,7 +13,7 @@ GameScene::GameScene(QWidget *parent) :
     resultButton.append(0);
 
     ui->setupUi(this);
-    this->clientcore = ClientCore::getInstance();
+//    this->clientcore = ClientCore::getInstance();
 
     QTimer* timerClock = new QTimer(this);
     connect(timerClock, &QTimer::timeout, this, &GameScene::setupClock);
@@ -125,8 +125,6 @@ void GameScene::handleFinishResponse(const QJsonDocument &response)
         }
     }
 
-    qDebug() << "gamescene: " << usernames;
-
     ResultScene* resultScene = new ResultScene();
     resultScene->on_name_linkActivated(this->ui->name->text());
     resultScene->on_rank_linkActivated(this->ui->rank->text());
@@ -135,6 +133,16 @@ void GameScene::handleFinishResponse(const QJsonDocument &response)
     resultScene->setupList();
     resultScene->show();
     close();
+}
+
+ClientCore *GameScene::getClientcore() const
+{
+    return clientcore;
+}
+
+void GameScene::setClientcore(ClientCore *newClientcore)
+{
+    clientcore = newClientcore;
 }
 
 quint64 GameScene::getRemainQuestion() const

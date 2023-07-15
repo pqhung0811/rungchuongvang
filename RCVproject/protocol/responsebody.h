@@ -10,6 +10,7 @@
 #include <QStringList>
 #include "question.h"
 #include "answer.h"
+#include "user.h"
 
 class ResponseBody : public QObject
 {
@@ -30,6 +31,10 @@ public slots:
     void createQuestionBody(QList<Question*> questions);
     void createViewHistoryBody(QList<quint64> tops, QList<quint64> scores, QList<QString> startgames, QList<QString> endgames);
     void createFinishBody(QList<QString> usernames, QList<quint64> scores);
+    void createRequestJoinRoomBody(quint64 userId, QString username, quint64 rankScore);
+    void createDenyJoinRoomBody(quint64 userId, quint8 reply);
+    void createResponseJoinRoomBody(quint64 userId, QString roomname, QList<User*> users, quint8 reply);
+
 
 signals:
 

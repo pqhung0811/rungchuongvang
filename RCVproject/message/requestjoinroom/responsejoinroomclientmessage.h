@@ -18,7 +18,7 @@ private:
 public:
     explicit ResponseJoinRoomClientMessage(QObject *parent = nullptr);
     explicit ResponseJoinRoomClientMessage(QString input, QObject *parent = nullptr);
-    explicit ResponseJoinRoomClientMessage(quint64 userId, quint64 roomId, quint8 reply, QObject *parent = nullptr);
+    explicit ResponseJoinRoomClientMessage(quint64 userId, quint8 reply, QObject *parent = nullptr);
 };
 
 #endif // RESPONSEJOINROOMCLIENTMESSAGE_H

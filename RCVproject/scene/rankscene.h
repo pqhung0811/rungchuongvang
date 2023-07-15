@@ -8,6 +8,7 @@
 #include <QScrollBar>
 #include "homescene.h"
 #include "core/clientmanager.h"
+#include "core/clientcore.h"
 
 namespace Ui {
 class RankScene;
@@ -38,6 +39,9 @@ public:
 //    ClientManager *getClientManager() const;
 //    void setClientManager(ClientManager *newClientManager);
 
+    ClientCore *getClientCore() const;
+    void setClientCore(ClientCore *newClientCore);
+
 private slots:
     void onSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected, QStandardItemModel* model);
 
@@ -56,6 +60,8 @@ private:
     QList<QString> usernames;
     QList<quint64> ranked;
     QList<quint64> rankScore;
+    ClientCore* clientCore;
+
 };
 
 #endif // RANKSCENE_H

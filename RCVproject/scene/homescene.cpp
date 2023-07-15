@@ -7,8 +7,6 @@ HomeScene::HomeScene(QWidget *parent) :
     ui(new Ui::HomeScene)
 {
     ui->setupUi(this);
-    this->clientCore = ClientCore::getInstance();
-//    this->clientManager = new clientManager();
 
 //    connect(ui->playNowBtn, SIGNAL(clicked()), this, SLOT(on_playNowBtn_clicked()));
 //    connect(ui->createRoomBtn, SIGNAL(clicked()), this, SLOT(on_createRoomBtn_clicked()));
@@ -25,7 +23,6 @@ void HomeScene::on_createRoomBtn_clicked()
 {
     CreateRoomDialog* createRoomDialog = new CreateRoomDialog();
     createRoomDialog->exec();
-//    this->clientManager->createroom(createRoomDialog->getRoomname());
     this->clientCore->createRoom(createRoomDialog->getRoomname());
     RoomScene* roomScene = new RoomScene();
     roomScene->on_roomname_linkActivated(createRoomDialog->getRoomname());
@@ -41,7 +38,10 @@ void HomeScene::on_createRoomBtn_clicked()
         roomScene->on_level_linkActivated("Level: Gold");
     }
     roomScene->getListUser().append(QPair<QString, QString>(this->ui->label_2->text(), this->ui->label_3->text().trimmed()));
-    roomScene->addPlayer(roomScene->createVerticalUser(this->ui->label_2->text(), this->ui->label_3->text().trimmed()), 0, 0);
+    roomScene->addPlayer(roomScene->createVerticalUser(this->ui->label_2->text(), this->ui->label_3->text().trimmed()), roomScene->getRow(), roomScene->getCollumn());
+    roomScene->setCollumn(1);
+    roomScene->setClientCore(this->clientCore);
+    roomScene->connectSignal();
     roomScene->show();
     close();
 }
@@ -67,22 +67,20 @@ void HomeScene::on_label_3_linkActivated(const QString &link)
     this->ui->label_3->setText(link);
 }
 
-//ClientManager *HomeScene::getClientManager() const
-//{
-//    return clientManager;
-//}
+ClientCore *HomeScene::getClientCore() const
+{
+    return clientCore;
+}
 
-//void HomeScene::setClientManager(ClientManager *newClientManager)
-//{
-//    clientManager = newClientManager;
-//}
+void HomeScene::setClientCore(ClientCore *newClientCore)
+{
+    clientCore = newClientCore;
+}
 
 void HomeScene::on_findRoomBtn_clicked()
 {
     clientCore->findRoom();
     connect(clientCore, &ClientCore::Finished, this, &HomeScene::handleFindRoomResponse);
-//    this->clientManager->findroom();
-//    handleFindRoomResponse(this->clientManager->getJsonDoc());
 }
 
 void HomeScene::handleFindRoomResponse(const QJsonDocument &response)
@@ -112,26 +110,23 @@ void HomeScene::handleFindRoomResponse(const QJsonDocument &response)
             }
         }
     }
-    qDebug() << "size of id: " << ids.size();
-    qDebug() << "size of name: " << roomnames.size();
     ListRoomScene* listRoomScene = new ListRoomScene();
     listRoomScene->on_label_2_linkActivated(this->ui->label_2->text());
     listRoomScene->on_label_3_linkActivated(this->ui->label_3->text());
+    listRoomScene->setUsername(this->ui->label_2->text().trimmed());
     listRoomScene->setRoomIds(ids);
     listRoomScene->setRoomnames(roomnames);
-//    listRoomScene->setupList();
     listRoomScene->setupLayout();
+    listRoomScene->setClientCore(this->clientCore);
+    this->disconnectSignal();
     listRoomScene->show();
     close();
 }
 
 void HomeScene::on_rankBtn_clicked()
-//void HomeScene::onViewRankClicked()
 {
     clientCore->viewRank();
-//    this->clientManager->viewrank();
     connect(clientCore, &ClientCore::Finished, this, &HomeScene::handleViewRankResponse);
-//    handleViewRankResponse(this->clientManager->getJsonDoc());
 }
 
 void HomeScene::handleViewRankResponse(const QJsonDocument &response)
@@ -180,9 +175,6 @@ void HomeScene::handleViewRankResponse(const QJsonDocument &response)
             }
         }
     }
-    qDebug() << "size of id: " << ids.size();
-    qDebug() << "size of name: " << usernames.size();
-    qDebug() << "size of ranked: " << ranked.size();
 
     RankScene* rankScene = new RankScene();
     rankScene->setUserIds(ids);
@@ -192,13 +184,11 @@ void HomeScene::handleViewRankResponse(const QJsonDocument &response)
     rankScene->on_label_3_linkActivated(this->ui->label_2->text());
     rankScene->on_label_5_linkActivated(this->ui->label_3->text());
     rankScene->setupList();
-//    rankScene->setClientManager(this->clientManager);
+    rankScene->setClientCore(this->clientCore);
+    this->disconnectSignal();
     rankScene->show();
     this->close();
-
 }
-
-
 
 void HomeScene::on_quitBtn_clicked()
 {
@@ -209,11 +199,10 @@ void HomeScene::on_quitBtn_clicked()
 void HomeScene::on_signOutBtn_clicked()
 {
     MainWindow w = MainWindow();
+    w.setClientCore(this->clientCore);
     w.show();
     close();
 }
-
-
 
 void HomeScene::on_history_clicked()
 {
@@ -275,8 +264,16 @@ void HomeScene::handleViewHistoryResponse(const QJsonDocument &response)
     historyScene->on_name_linkActivated(this->ui->label_2->text());
     historyScene->on_rank_linkActivated(this->ui->label_3->text());
     historyScene->setupList();
-    //    rankScene->setClientManager(this->clientManager);
+    historyScene->setClientCore(this->clientCore);
+    this->disconnectSignal();
     historyScene->show();
     this->close();
+}
+
+void HomeScene::disconnectSignal()
+{
+    disconnect(clientCore, &ClientCore::Finished, this, &HomeScene::handleFindRoomResponse);
+    disconnect(clientCore, &ClientCore::Finished, this, &HomeScene::handleViewHistoryResponse);
+    disconnect(clientCore, &ClientCore::Finished, this, &HomeScene::handleViewRankResponse);
 }
 

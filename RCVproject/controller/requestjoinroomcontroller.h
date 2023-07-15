@@ -11,9 +11,13 @@ class RequestJoinRoomController : public QObject
     Q_OBJECT
 private:
     UserAPI* userAPI;
+    User* user;
 
 public:
     explicit RequestJoinRoomController(QObject *parent = nullptr);
+
+    User *getUser() const;
+    void setUser(User *newUser);
 
 public slots:
     QString requestJoin();

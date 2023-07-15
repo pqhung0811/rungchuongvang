@@ -32,6 +32,9 @@ public:
     quint64 getRemainQuestion() const;
     void setRemainQuestion(quint64 newRemainQuestion);
 
+    ClientCore *getClientcore() const;
+    void setClientcore(ClientCore *newClientcore);
+
 private slots:
 
     void on_pushButton_clicked();

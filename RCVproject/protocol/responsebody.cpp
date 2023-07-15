@@ -161,3 +161,40 @@ void ResponseBody::createFinishBody(QList<QString> usernames, QList<quint64> sco
     this->responseBody.insert("score", scoreArray);
 }
 
+void ResponseBody::createRequestJoinRoomBody(quint64 userId, QString username, quint64 rankScore)
+{
+    this->responseBody = QJsonObject();
+
+    this->responseBody.insert("userId", QString::number(userId));
+    this->responseBody.insert("username", username);
+    this->responseBody.insert("rankScore", QString::number(rankScore));
+}
+
+void ResponseBody::createDenyJoinRoomBody(quint64 userId, quint8 reply)
+{
+    this->responseBody = QJsonObject();
+
+    this->responseBody.insert("userId", QString::number(userId));
+    this->responseBody.insert("reply", QString::number(reply));
+}
+
+void ResponseBody::createResponseJoinRoomBody(quint64 userId, QString roomname, QList<User*> users, quint8 reply)
+{
+    this->responseBody = QJsonObject();
+
+    QJsonArray usernameArray;
+    QJsonArray scoreArray;
+
+    for(User* user : users) {
+        usernameArray.append(user->getUsername());
+        scoreArray.append(static_cast<qint64>(user->getRankScore()));
+    }
+
+    this->responseBody.insert("username", usernameArray);
+    this->responseBody.insert("score", scoreArray);
+
+    this->responseBody.insert("userId", QString::number(userId));
+    this->responseBody.insert("roomname", roomname);
+    this->responseBody.insert("reply", QString::number(reply));
+}
+

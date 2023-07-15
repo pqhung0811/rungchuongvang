@@ -9,6 +9,7 @@ ListRoomScene::ListRoomScene(QWidget *parent) :
     this->ui->gridLayout_2->setSpacing(20);
     this->row = 0;
     this->column = 0;
+    button = 0;
 }
 
 ListRoomScene::~ListRoomScene()
@@ -51,7 +52,7 @@ QWidget *ListRoomScene::createVerticalRoom(quint64 id, QString roomname)
     QLabel* labelName = new QLabel(roomname);
     QPushButton* buttonJoin = new QPushButton();
 
-    QPixmap pixmap(":/images/icons8-school-48.png");
+    QPixmap pixmap(":/images/icons8-school-96.png");
     labelImage->setStyleSheet("background-color: #b8b8b8;"
                               "border: 2px solid black;"
                               "border-radius: 10px;");
@@ -78,25 +79,130 @@ QWidget *ListRoomScene::createVerticalRoom(quint64 id, QString roomname)
     buttonJoin->setText("Join Room");
     buttonJoin->setFont(fontJoin);
 
-    labelImage->setMinimumSize(100, 50);
-    labelId->setMinimumSize(50, 25);
-    labelName->setMinimumSize(50, 25);
-    buttonJoin->setMinimumSize(50, 25);
+    connect(buttonJoin, &QPushButton::clicked, this, [this, id](){
+        handleButtonClick(id);
+    });
+
+    labelImage->setMinimumSize(131, 100);
+    labelId->setFixedSize(131, 25);
+    labelName->setFixedSize(131, 25);
+    buttonJoin->setFixedSize(131, 25);
 
     layout->addWidget(labelImage);
     layout->addWidget(labelId);
     layout->addWidget(labelName);
     layout->addWidget(buttonJoin);
 
-    layout->setStretchFactor(labelImage, 2);
-    layout->setStretchFactor(labelId, 1);
-    layout->setStretchFactor(labelName, 1);
-    layout->setStretchFactor(buttonJoin, 1);
-
     // Thiết lập layout cho widget
     widget->setLayout(layout);
 
     return widget;
+}
+
+void ListRoomScene::handleButtonClick(quint64 id)
+{
+    this->clientCore->requestJoinRoom(id);
+    connect(clientCore, &ClientCore::Finished, this, &ListRoomScene::handleJoinRoomResponse);
+}
+
+void ListRoomScene::handleJoinRoomResponse(const QJsonDocument &response)
+{
+    QList<QString> usernames;
+    QList<quint64> scores;
+    QList<QString> scoreStr;
+    QString roomname;
+    if (!response.isNull() && response.isObject()) {
+        QJsonObject jsonObject = response.object();
+
+        if (jsonObject.contains("command_code") && jsonObject["command_code"].isString()) {
+            if(jsonObject["command_code"].toString().compare("RESPONSEJOINROOM")!=0) return;
+        }
+
+        if (jsonObject.contains("reply") && jsonObject["reply"].isString()) {
+            if(jsonObject["reply"].toString().compare("0")==0) return;
+        }
+
+        if (jsonObject.contains("info") && jsonObject["info"].isString()) {
+            QString infoString = jsonObject["info"].toString();
+            QJsonObject infoObject = QJsonDocument::fromJson(infoString.toUtf8()).object();
+
+            if(infoObject.contains("username") && infoObject["username"].isArray()) {
+                QJsonArray usernamesArray = infoObject.value("username").toArray();
+                for (const QJsonValue& value : usernamesArray) {
+                    usernames.append(value.toString());
+                }
+            }
+
+            if (infoObject.contains("roomname") && infoObject["roomname"].isString()) {
+                roomname = infoObject["roomname"].toString();
+            }
+
+            if(infoObject.contains("score") && infoObject["score"].isArray()) {
+                QJsonArray rankscoreArray = infoObject.value("score").toArray();
+                for (const QJsonValue& value : rankscoreArray) {
+                    scores.append(value.toInt());
+                }
+            }
+        }
+    }
+
+    RoomScene* roomScene = new RoomScene();
+    roomScene->setClientCore(this->clientCore);
+    roomScene->on_roomname_linkActivated(roomname);
+    roomScene->on_label_linkActivated(this->ui->label_2->text());
+    roomScene->on_label_2_linkActivated(this->ui->label_3->text());
+    qDebug() << this->ui->label_3->text();
+
+    if(this->ui->label_3->text().contains("Bronze")) {
+        roomScene->on_level_linkActivated("Level: Bronze");
+        for(int i = 0; i<scores.size(); i++) {
+            QString s = "Bronze: " + QString::number(scores.at(i));
+            scoreStr.append(s);
+        }
+    }
+    else if(this->ui->label_3->text().contains("Silver")) {
+        roomScene->on_level_linkActivated("Level: Silver");
+        for(int i = 0; i<scores.size(); i++) {
+            QString s = "Silver: " + QString::number(scores.at(i));
+            scoreStr.append(s);
+        }
+    }
+    else {
+        roomScene->on_level_linkActivated("Level: Gold");
+        for(int i = 0; i<scores.size(); i++) {
+            QString s = "Gold: " + QString::number(scores.at(i));
+            scoreStr.append(s);
+        }
+    }
+
+    roomScene->setUsernames(usernames);
+    roomScene->setRankscore(scoreStr);
+    roomScene->setupLayout();
+    roomScene->disablePlayButton();
+    this->disconnectSignal();
+    roomScene->connectSignal();
+    roomScene->show();
+    this->close();
+}
+
+void ListRoomScene::disconnectSignal()
+{
+    disconnect(clientCore, &ClientCore::Finished, this, &ListRoomScene::handleJoinRoomResponse);
+}
+
+ClientCore *ListRoomScene::getClientCore() const
+{
+    return clientCore;
+}
+
+void ListRoomScene::setClientCore(ClientCore *newClientCore)
+{
+    clientCore = newClientCore;
+}
+
+void ListRoomScene::setUsername(const QString &newUsername)
+{
+    username = newUsername;
 }
 
 QList<quint64> ListRoomScene::getRoomIds() const
@@ -126,6 +232,7 @@ void ListRoomScene::setupLayout()
 void ListRoomScene::on_pushButton_clicked()
 {
     HomeScene* homeScene = new HomeScene();
+    homeScene->setClientCore(this->clientCore);
     homeScene->on_label_2_linkActivated(this->ui->label_2->text());
     homeScene->on_label_3_linkActivated(this->ui->label_3->text());
     homeScene->show();
@@ -134,7 +241,6 @@ void ListRoomScene::on_pushButton_clicked()
 
 void ListRoomScene::addRoom(QWidget *verticalRoom, quint64 row, quint64 column)
 {
-    qDebug() << "print row col: " << row << " " << column;
     this->ui->gridLayout_2->addWidget(verticalRoom, row, column);
 
 }

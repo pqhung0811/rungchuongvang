@@ -108,13 +108,13 @@ void ClientCore::createRoom(QString roomname) {
     sendRequest(clientMsg->toString());
 }
 
-void ClientCore::requestJoinRoom(quint64 userId, quint64 roomId) {
-    RequestJoinRoomClientMessage* clientMsg = new RequestJoinRoomClientMessage(userId, roomId);
+void ClientCore::requestJoinRoom(quint64 roomId) {
+    RequestJoinRoomClientMessage* clientMsg = new RequestJoinRoomClientMessage(roomId);
     sendRequest(clientMsg->toString());
 }
 
-void ClientCore::responseJoinRoom(quint64 userId, quint64 roomId, quint8 reply) {
-    ResponseJoinRoomClientMessage* clientMsg = new ResponseJoinRoomClientMessage(userId, roomId, reply);
+void ClientCore::responseJoinRoom(quint64 userId, quint8 reply) {
+    ResponseJoinRoomClientMessage* clientMsg = new ResponseJoinRoomClientMessage(userId, reply);
     sendRequest(clientMsg->toString());
 }
 

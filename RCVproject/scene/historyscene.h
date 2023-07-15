@@ -8,6 +8,7 @@
 #include <QItemSelection>
 #include <QScrollBar>
 #include "homescene.h"
+#include "core/clientcore.h"
 
 namespace Ui {
 class HistoryScene;
@@ -35,6 +36,9 @@ public:
 
     void setupList();
 
+    ClientCore *getClientCore() const;
+    void setClientCore(ClientCore *newClientCore);
+
 private slots:
     void onSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected, QStandardItemModel *model);
 
@@ -53,6 +57,7 @@ private:
     QList<quint64> scores;
     QList<QString> startgames;
     QList<QString> endgames;
+    ClientCore* clientCore;
 
 };
 

@@ -13,6 +13,8 @@
 #include "startgame/startgameservermessage.h"
 #include "viewhistory/viewhistoryservermessage.h"
 #include "checkfinish/checkfinishservermessage.h"
+#include "requestjoinroom/requestjoinroomservermessage.h"
+#include "requestjoinroom/responsejoinroomservermessage.h"
 #include "history.h"
 #include "noinfomessage.h"
 #include "room.h"
@@ -32,7 +34,8 @@ public:
 
 public slots:
     QString createMessage(QString msg);
-
+    QString createDenyResponseJoinRoomMessage(quint64 userId, quint8 reply);
+    QString createResponseJoinRoomMessage(quint64 userId, QString roomname, quint8 reply, QList<User*> users);
 
 signals:
 

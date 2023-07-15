@@ -14,15 +14,14 @@ ResponseJoinRoomClientMessage::ResponseJoinRoomClientMessage(QString input, QObj
     this->reply = this->requestBody->getRequestBody().value("reply").toInt();
 }
 
-ResponseJoinRoomClientMessage::ResponseJoinRoomClientMessage(quint64 userId, quint64 roomId, quint8 reply, QObject *parent)
+ResponseJoinRoomClientMessage::ResponseJoinRoomClientMessage(quint64 userId, quint8 reply, QObject *parent)
     : ClientMessage{parent}
 {
     this->userId = userId;
-    this->roomId = roomId;
     this->reply = reply;
 
     this->addCommandCode(command->toCommand("RESPONSEJOINROOM"));
-    this->requestBody->createResponseJoinRoomBody(userId, roomId, reply);
+    this->requestBody->createResponseJoinRoomBody(userId, reply);
     qDebug() << "requesbody: " << this->requestBody->getRequestBody();
 
     this->finalizeMessageObject();

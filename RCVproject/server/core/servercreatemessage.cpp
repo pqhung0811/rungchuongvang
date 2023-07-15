@@ -95,5 +95,22 @@ QString ServerCreateMessage::createMessage(QString msg)
         CheckFinishServerMessage* serverMsg = new CheckFinishServerMessage(this->requestProcessing->getUsernames(), this->requestProcessing->getScores(), "success", " ");
         return serverMsg->toString();
     }
+    else if(msg.contains("requestjoin")) {
+        RequestJoinRoomServerMessage* serverMsg = new RequestJoinRoomServerMessage(this->requestProcessing->getUser()->getId(), this->requestProcessing->getUser()->getUsername(), this->requestProcessing->getUser()->getRankScore(), "success", " ");
+        return serverMsg->toString();
+    }
 }
+
+QString ServerCreateMessage::createDenyResponseJoinRoomMessage(quint64 userId, quint8 reply)
+{
+    ResponseJoinRoomServerMessage* serverMsg = new ResponseJoinRoomServerMessage(userId, reply, "success", " ");
+    return serverMsg->toString();
+}
+
+QString ServerCreateMessage::createResponseJoinRoomMessage(quint64 userId, QString roomname, quint8 reply, QList<User*> users)
+{
+    ResponseJoinRoomServerMessage* serverMsg = new ResponseJoinRoomServerMessage(userId, roomname, reply, users, "success", " ");
+    return serverMsg->toString();
+}
+
 

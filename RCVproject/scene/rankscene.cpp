@@ -37,8 +37,6 @@ void RankScene::setupList()
             rowItems << new QStandardItem("Gold");
         }
         rowItems << new QStandardItem(QString::number(this->rankScore.at(i)));
-        //        rowItems << new QStandardItem(room.first);
-        //        rowItems << new QStandardItem(room.second);
         model->appendRow(rowItems);
     }
     ui->ListRankView->setModel(model);
@@ -92,15 +90,15 @@ void RankScene::on_label_5_linkActivated(const QString &link)
     this->ui->label_5->setText(link);
 }
 
-//ClientManager *RankScene::getClientManager() const
-//{
-//    return clientManager;
-//}
+ClientCore *RankScene::getClientCore() const
+{
+    return clientCore;
+}
 
-//void RankScene::setClientManager(ClientManager *newClientManager)
-//{
-//    clientManager = newClientManager;
-//}
+void RankScene::setClientCore(ClientCore *newClientCore)
+{
+    clientCore = newClientCore;
+}
 
 QList<quint64> RankScene::getRankScore() const
 {
@@ -137,7 +135,7 @@ void RankScene::on_pushButton_clicked()
     HomeScene* homeScene = new HomeScene();
     homeScene->on_label_2_linkActivated(this->ui->label_3->text());
     homeScene->on_label_3_linkActivated(this->ui->label_5->text());
-//    homeScene->setClientManager(this->clientManager);
+    homeScene->setClientCore(this->clientCore);
     homeScene->show();
     close();
 }

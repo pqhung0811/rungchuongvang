@@ -35,10 +35,10 @@ private:
     QTcpSocket* socket;
     QString inputMessage;
     QString outputMessage;
-    explicit ClientCore(QObject *parent = nullptr);
-    Q_DISABLE_COPY(ClientCore)
+//    Q_DISABLE_COPY(ClientCore)
 
 public:
+    explicit ClientCore(QObject *parent = nullptr);
     static ClientCore *getInstance();
     void connectToServer(const QString &host, quint16 port);
 
@@ -59,8 +59,8 @@ public slots:
     void registers(QString username, QString password);
 //    void createRoom(QString roomname, quint64 ownerId, QString username, quint64 ranked, quint64 rankScore);
     void createRoom(QString roomname);
-    void requestJoinRoom(quint64 userId, quint64 roomId);
-    void responseJoinRoom(quint64 userId, quint64 roomId, quint8 reply);
+    void requestJoinRoom(quint64 roomId);
+    void responseJoinRoom(quint64 userId, quint8 reply);
     void findRoom();
     void startGame(quint64 noQuestion);
     void viewRank();

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>853</width>
+    <width>959</width>
     <height>511</height>
    </rect>
   </property>
@@ -19,7 +19,7 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>750</x>
+     <x>860</x>
      <y>10</y>
      <width>71</width>
      <height>31</height>
@@ -144,7 +144,7 @@ background-image: url(:/images/icons8-gold-medal-30.png);
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>360</x>
+     <x>390</x>
      <y>50</y>
      <width>191</width>
      <height>30</height>
@@ -168,7 +168,7 @@ background-image: url(:/images/icons8-gold-medal-30.png);
     <rect>
      <x>30</x>
      <y>110</y>
-     <width>791</width>
+     <width>911</width>
      <height>391</height>
     </rect>
    </property>
@@ -186,7 +186,7 @@ background-image: url(:/images/icons8-gold-medal-30.png);
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>791</width>
+      <width>911</width>
       <height>391</height>
      </rect>
     </property>
@@ -198,7 +198,7 @@ background-image: url(:/images/icons8-gold-medal-30.png);
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>787</width>
+       <width>907</width>
        <height>387</height>
       </rect>
      </property>
@@ -208,10 +208,10 @@ background-image: url(:/images/icons8-gold-medal-30.png);
      <widget class="QWidget" name="gridWidget" native="true">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>10</x>
         <y>10</y>
-        <width>731</width>
-        <height>361</height>
+        <width>881</width>
+        <height>371</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -325,17 +325,17 @@ border: 2px solid black; border-radius: 5px;</string>
          <layout class="QVBoxLayout" name="verticalLayout_6"/>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QWidget" name="verticalWidget" native="true">
-         <layout class="QVBoxLayout" name="verticalLayout"/>
-        </widget>
-       </item>
        <item row="0" column="1">
         <widget class="QWidget" name="myVerticalWidget_2" native="true">
          <property name="styleSheet">
           <string notr="true"/>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3"/>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QWidget" name="verticalWidget" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout"/>
         </widget>
        </item>
       </layout>

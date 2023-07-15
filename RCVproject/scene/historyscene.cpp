@@ -24,6 +24,16 @@ void HistoryScene::on_rank_linkActivated(const QString &link)
     this->ui->rank->setText(link);
 }
 
+ClientCore *HistoryScene::getClientCore() const
+{
+    return clientCore;
+}
+
+void HistoryScene::setClientCore(ClientCore *newClientCore)
+{
+    clientCore = newClientCore;
+}
+
 QList<QString> HistoryScene::getEndgames() const
 {
     return endgames;
@@ -116,9 +126,9 @@ void HistoryScene::setTops(const QList<quint64> &newTops)
 void HistoryScene::on_back_clicked()
 {
     HomeScene* homeScene = new HomeScene();
+    homeScene->setClientCore(this->clientCore);
     homeScene->on_label_2_linkActivated(this->ui->name->text());
     homeScene->on_label_3_linkActivated(this->ui->rank->text());
-    //    homeScene->setClientManager(this->clientManager);
     homeScene->show();
     close();
 }

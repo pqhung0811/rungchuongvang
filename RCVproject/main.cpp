@@ -1,7 +1,7 @@
 #include <QApplication>
 #include "scene/mainwindow.h"
 #include "userapi.h"
-#include "questionapi.h".h"
+#include "questionapi.h"
 #include "user.h"
 #include "connection.h"
 #include "room.h"
@@ -14,6 +14,7 @@
 #include "core/clientcore.h"
 #include "scene/listroomscene.h"
 #include "scene/homescene.h"
+#include "requestjoinroomcontroller.h"
 #include <QList>
 #include <QThread>
 
@@ -49,25 +50,25 @@ int main(int argc, char *argv[])
     ServerCore* serverCore = new ServerCore();
     serverCore->start();
 
-//    QThread thread1;
-//    QThread thread2;
+    QThread thread1;
+    QThread thread2;
 
-//    MainWindow w1;
-//    MainWindow w2;
+    MainWindow w1 = MainWindow();
+    MainWindow w2 = MainWindow();
 
-//    w1.moveToThread(&thread1);
-//    w2.moveToThread(&thread2);
+    w1.moveToThread(&thread1);
+    w2.moveToThread(&thread2);
 
-//    QObject::connect(&thread1, &QThread::started, &w1, &MainWindow::show);
-//    QObject::connect(&thread2, &QThread::started, &w2, &MainWindow::show);
+    QObject::connect(&thread1, &QThread::started, &w1, &MainWindow::show);
+    QObject::connect(&thread2, &QThread::started, &w2, &MainWindow::show);
 
-//    thread1.start();
-//    thread2.start();
+    thread1.start();
+    thread2.start();
 
-    ClientCore* clientCore = ClientCore::getInstance();
-    clientCore->start();
-    MainWindow w = MainWindow();
-    w.show();
+//    ClientCore* clientCore = ClientCore::getInstance();
+//    clientCore->start();
+//    MainWindow w = MainWindow();
+//    w.show();
 
     return a.exec();
 }

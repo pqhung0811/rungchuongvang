@@ -31,6 +31,9 @@ public:
 //    ClientManager *getClientManager() const;
 //    void setClientManager(ClientManager *newClientManager);
 
+    ClientCore *getClientCore() const;
+    void setClientCore(ClientCore *newClientCore);
+
 private slots:
     void on_createRoomBtn_clicked();
 
@@ -38,14 +41,13 @@ private slots:
     void handleFindRoomResponse(const QJsonDocument &response);
     void handleViewRankResponse(const QJsonDocument &response);
     void on_rankBtn_clicked();
-//    void onViewRankClicked();
-
     void on_quitBtn_clicked();
 
     void on_signOutBtn_clicked();
 
     void on_history_clicked();
     void handleViewHistoryResponse(const QJsonDocument &response);
+    void disconnectSignal();
 
 public slots:
     void on_label_2_linkActivated(const QString &link);

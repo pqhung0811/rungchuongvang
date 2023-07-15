@@ -244,6 +244,8 @@ QList<Room*> RequestProcessing::findRoom()
 
 QString RequestProcessing::requestJoinRoom() {
     QString roomIdStr;
+    RoomAPI* roomAPI = new RoomAPI();
+    quint64 ownerId;
     QString msg;
     if (this->message.contains("info") && this->message["info"].isString())
     {
@@ -252,10 +254,11 @@ QString RequestProcessing::requestJoinRoom() {
 
         if (infoObject.contains("roomId") && infoObject["roomId"].isString()) {
             roomIdStr = infoObject["roomId"].toString();
+            ownerId = roomAPI->getOwnerIdByRoomId(roomIdStr.toInt());
         }
     }
-    RequestJoinRoomController* requestJoinRoomController = new RequestJoinRoomController();
-    msg = requestJoinRoomController->requestJoin() + " " + roomIdStr;
+//    RequestJoinRoomController* requestJoinRoomController = new RequestJoinRoomController();
+    msg = "requestjoin " + QString::number(ownerId);
     return msg;
 }
 
@@ -264,26 +267,27 @@ QString RequestProcessing::responseJoinRoom() {
     quint64 userId;
     quint64 roomId;
     quint8 reply;
+
     if (this->message.contains("info") && this->message["info"].isString())
     {
         QString infoString = this->message["info"].toString();
         QJsonObject infoObject = QJsonDocument::fromJson(infoString.toUtf8()).object();
-//        QJsonObject infoObject = this->message.value("info").toObject();
 
         if (infoObject.contains("userId") && infoObject["userId"].isString()) {
             QString userIdStr = infoObject["userId"].toString();
             userId = userIdStr.toInt();
         }
-        if (infoObject.contains("roomId") && infoObject["roomId"].isString()) {
-            QString roomIdStr = infoObject["roomId"].toString();
-            roomId = roomIdStr.toInt();
-        }
         if (infoObject.contains("reply") && infoObject["reply"].isString()) {
             QString replyStr = infoObject["reply"].toString();
             reply = replyStr.toInt();
         }
+        roomId = this->room->getId();
+
         RequestJoinRoomController* requestJoinRoomController = new RequestJoinRoomController();
         msg = requestJoinRoomController->responseJoin(userId, roomId, reply);
+        if(msg.contains("accept")) {
+            this->room->updateUser(requestJoinRoomController->getUser(), 0);
+        }
     }
     return msg;
 }
@@ -404,7 +408,7 @@ void RequestProcessing::extractLogFile()
               "\n\nUsername    score    top\n";
 
     for(int i=0; i<this->usernames.size(); i++) {
-        content = content + this->usernames.at(i) + "    " + QString::number(this->scores.at(i)) + "    " + QString::number(i) + "\n";
+        content = content + this->usernames.at(i) + "    " + QString::number(this->scores.at(i)) + "    " + QString::number(i+1) + "\n";
     }
 
     content = content + "\nQuestion and True Answer\n";

@@ -37,6 +37,7 @@ private slots:
     void handleUserLineEditReturnPressed();
     void handlePassLineEditReturnPressed();
     void handleLoginResponse(const QJsonDocument& response);
+    void disconnectSignal();
 //    void start();
 
 private:

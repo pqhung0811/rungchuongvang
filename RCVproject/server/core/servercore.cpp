@@ -57,6 +57,7 @@ void ServerCore::onReadyRead() {
         QJsonDocument jsonDoc = QJsonDocument::fromJson(requestData);
         QString msg;
 
+        qDebug() << "server core client: " << clientSocket;
         // Kiểm tra xem dữ liệu có đúng định dạng JSON không
         if (!jsonDoc.isNull() && jsonDoc.isObject()) {
             // Chuyển đổi QJsonDocument thành QJsonObject
@@ -67,15 +68,12 @@ void ServerCore::onReadyRead() {
 
             if(msg.compare("login successfully")==0) {
                 connectionSet.insert(serverCreateMessage->getRequestProcessing()->getUser()->getId(), clientSocket);
+                qDebug() << "\nserver core set: " << serverCreateMessage->getRequestProcessing()->getUser()->getId() << "  " << clientSocket << "\n";
             }
-        }
-        if(!this->connectionSet.isEmpty()) {
-            quint64 a = this->connectionSet.firstKey();
         }
 
         if(msg.contains("requestjoin")) {
             quint64 ownerId;
-            QByteArray responseData = requestData;
             QStringList parts = msg.split(" ");
             if (parts.size() == 2) {
                 QString ownerIdStr = parts[1];
@@ -83,19 +81,39 @@ void ServerCore::onReadyRead() {
             } else {
                 qDebug() << "Invalid string format";
             }
+            QByteArray responseData = responseString.toUtf8();
             connectionSet.value(ownerId)->write(responseData);
         }
         else if(msg.contains("deny") || msg.contains("accept")) {
             quint64 userId;
-            QByteArray responseData = msg.toUtf8();;
+            quint64 reply;
             QStringList parts = msg.split(" ");
             if (parts.size() == 2) {
                 QString userIdStr = parts[1];
                 userId = userIdStr.toInt();
+                if(msg.contains("deny")) {
+                    reply = 0;
+                    responseString = serverCreateMessage->createDenyResponseJoinRoomMessage(userId, 0);
+                }
+                else if(msg.contains("accept")) {
+                    reply = 1;
+                    Room* room = this->serverCreateMessage->getRequestProcessing()->getRoom();
+                    QList<User*> users = room->getUserAndPoint().keys();
+                    qDebug() << "server core deny accept: " << users.size();
+                    responseString = serverCreateMessage->createResponseJoinRoomMessage(userId, room->getRoomname(),  1, users);
+                }
             } else {
                 qDebug() << "Invalid string format";
             }
-            connectionSet.value(userId)->write(responseData);
+            qDebug() << responseString;
+            connectionSet.value(userId)->write(responseString.toUtf8());
+        }
+        else if(msg.compare("get question")==0) {
+            Room* room = this->serverCreateMessage->getRequestProcessing()->getRoom();
+            QList<User*> users = room->getUserAndPoint().keys();
+            for(User* user : users) {
+                connectionSet.value(user->getId())->write(responseString.toUtf8());
+            }
         }
         else {
             QByteArray responseData = responseString.toUtf8();

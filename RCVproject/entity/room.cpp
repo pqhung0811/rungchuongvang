@@ -91,6 +91,11 @@ void Room::setListQuestions(const QList<Question *> &newListQuestions)
     listQuestions = newListQuestions;
 }
 
+void Room::updateUser(User *user, quint64 point)
+{
+    this->userAndPoint.insert(user, point);
+}
+
 Room::Room(QObject *parent)
     : QObject{parent}
 {

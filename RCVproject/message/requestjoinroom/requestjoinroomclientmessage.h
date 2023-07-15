@@ -17,7 +17,7 @@ private:
 public:
     explicit RequestJoinRoomClientMessage(QObject *parent = nullptr);
     explicit RequestJoinRoomClientMessage(QString input, QObject *parent = nullptr);
-    explicit RequestJoinRoomClientMessage(quint64 userId, quint64 roomId, QObject *parent = nullptr);
+    explicit RequestJoinRoomClientMessage(quint64 roomId, QObject *parent = nullptr);
 };
 
 #endif // REQUESTJOINROOMCLIENTMESSAGE_H
