@@ -133,6 +133,7 @@ void GameScene::handleFinishResponse(const QJsonDocument &response)
     resultScene->setUsernames(usernames);
     resultScene->setScores(scores);
     resultScene->setupList();
+    resultScene->setClientCore(this->clientcore);
     resultScene->show();
     close();
 }
@@ -252,5 +253,15 @@ void GameScene::on_roomname_linkActivated(const QString &link)
 void GameScene::on_score_linkActivated(const QString &link)
 {
     this->ui->score->setText(link);
+}
+
+void GameScene::on_back_clicked()
+{
+    HomeScene* homeScene = new HomeScene();
+    homeScene->setClientCore(this->clientcore);
+    homeScene->on_label_2_linkActivated(this->ui->name->text());
+    homeScene->on_label_3_linkActivated(this->ui->rank->text());
+    homeScene->show();
+    close();
 }
 

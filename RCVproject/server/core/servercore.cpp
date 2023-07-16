@@ -15,7 +15,7 @@ ServerCore::ServerCore(QObject *parent)
     : QObject{parent}
 {
     this->server = new QTcpServer(this);
-    this->serverCreateMessage = new ServerCreateMessage();
+//    this->serverCreateMessage = new ServerCreateMessage();
     connect(server, &QTcpServer::newConnection, this, &ServerCore::onNewConnection);
 }
 
@@ -35,6 +35,9 @@ void ServerCore::start() {
 void ServerCore::onNewConnection() {
     QTcpSocket *clientSocket = this->server->nextPendingConnection();
 
+    ServerCreateMessage* serverCreateMessage = new ServerCreateMessage();
+    this->serverCreateMessageManager.insert(clientSocket, serverCreateMessage);
+
     // Handle the new client connection asynchronously
     connect(clientSocket, &QTcpSocket::readyRead, this, &ServerCore::onReadyRead);
     connect(clientSocket, &QTcpSocket::disconnected, this, &ServerCore::onDisconnected);
@@ -47,6 +50,7 @@ void ServerCore::onNewConnection() {
 
 void ServerCore::onReadyRead() {
     QTcpSocket *clientSocket = qobject_cast<QTcpSocket*>(sender());
+    ServerCreateMessage* serverCreateMessage = this->serverCreateMessageManager.value(clientSocket);
     QString responseString;
 
     if (clientSocket)
@@ -97,34 +101,35 @@ void ServerCore::onReadyRead() {
                 }
                 else if(msg.contains("accept")) {
                     reply = 1;
-                    Room* room = this->serverCreateMessage->getRequestProcessing()->getRoom();
+                    Room* room = serverCreateMessage->getRequestProcessing()->getRoom();
                     QList<User*> users = room->getUserAndPoint().keys();
                     qDebug() << "server core deny accept: " << users.size();
                     responseString = serverCreateMessage->createResponseJoinRoomMessage(userId, room->getRoomname(),  1, users);
+
+                    User* user = serverCreateMessage->getRequestProcessing()->getUserByUserId(userId);
+                    QString responseStrings = serverCreateMessage->createAcceptResponseJoinRoomMessage(user->getUsername(), user->getRankScore());
+                    Room* roomm = serverCreateMessage->getRequestProcessing()->getRoom();
+                    QList<User*> userss = roomm->getUserAndPoint().keys();
+                    for(User* user : userss) {
+                        if(user->getId()==userId) {
+                            continue;
+                        }
+                        if(user->getId()==roomm->getOwner()->getId()) {
+                            continue;
+                        }
+                        connectionSet.value(user->getId())->write(responseStrings.toUtf8());
+                    }
                 }
             } else {
                 qDebug() << "Invalid string format";
             }
             qDebug() << responseString;
+            this->serverCreateMessageManager.value(connectionSet.value(userId))->getRequestProcessing()->setRoom(serverCreateMessage->getRequestProcessing()->getRoom());
             connectionSet.value(userId)->write(responseString.toUtf8());
-
-            User* user = this->serverCreateMessage->getRequestProcessing()->getUserByUserId(userId);
-            responseString = this->serverCreateMessage->createAcceptResponseJoinRoomMessage(user->getUsername(), user->getRankScore());
-            Room* room = this->serverCreateMessage->getRequestProcessing()->getRoom();
-            QList<User*> users = room->getUserAndPoint().keys();
-            for(User* user : users) {
-                if(user->getId()==userId) {
-                    continue;
-                }
-                if(user->getId()==this->serverCreateMessage->getRequestProcessing()->getRoom()->getOwner()->getId()) {
-                    continue;
-                }
-                connectionSet.value(user->getId())->write(responseString.toUtf8());
-            }
         }
 
         else if(msg.compare("get question")==0) {
-            Room* room = this->serverCreateMessage->getRequestProcessing()->getRoom();
+            Room* room = serverCreateMessage->getRequestProcessing()->getRoom();
             QList<User*> users = room->getUserAndPoint().keys();
             for(User* user : users) {
                 connectionSet.value(user->getId())->write(responseString.toUtf8());
@@ -133,8 +138,8 @@ void ServerCore::onReadyRead() {
 
         else {
             if(msg.compare("finish")==0) {
-                QList<User*> users = this->serverCreateMessage->getRequestProcessing()->getRoom()->getUserAndPoint().keys();
-                QString content = this->serverCreateMessage->getRequestProcessing()->extractLogFile();
+                QList<User*> users = serverCreateMessage->getRequestProcessing()->getRoom()->getUserAndPoint().keys();
+                QString content = serverCreateMessage->getRequestProcessing()->extractLogFile();
                 for(User* user : users) {
                     QTcpSocket* tcpSocket = connectionSet.value(user->getId());
                     // Lấy địa chỉ IP từ QTcpSocket
@@ -143,7 +148,7 @@ void ServerCore::onReadyRead() {
                     QString ipString = ipAddress.toString();
                     content = content + ipString + "\n";
                 }
-                this->serverCreateMessage->getRequestProcessing()->writeLog(content);
+                serverCreateMessage->getRequestProcessing()->writeLog(content);
             }
 
             QByteArray responseData = responseString.toUtf8();

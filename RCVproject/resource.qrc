@@ -44,5 +44,7 @@
         <file>../images/icons8-activity-history-96.png</file>
         <file>../images/icons8-school-96.png</file>
         <file>../images/icons8-school-48.png</file>
+        <file>../images/icons8-quit-60.png</file>
+        <file>../images/icons8-logout-100.png</file>
     </qresource>
 </RCC>

@@ -6,6 +6,8 @@
 #include <noeditdelegate.h>
 #include <QItemSelection>
 #include <QScrollBar>
+#include "homescene.h"
+#include "core/clientcore.h"
 
 namespace Ui {
 class ResultScene;
@@ -25,7 +27,12 @@ public:
     QList<QString> getUsernames() const;
     void setUsernames(const QList<QString> &newUsernames);
 
+    ClientCore *getClientCore() const;
+    void setClientCore(ClientCore *newClientCore);
+
 private slots:
+
+    void on_back_clicked();
 
 public slots:
     void on_name_linkActivated(const QString &link);
@@ -35,9 +42,11 @@ public slots:
 
 private:
     Ui::ResultScene *ui;
+    ClientCore* clientCore;
     QStandardItemModel* model;
     QList<QString> usernames;
     QList<quint64> scores;
+
 
 };
 

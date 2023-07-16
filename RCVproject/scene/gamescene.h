@@ -10,6 +10,8 @@
 #include <QTime>
 #include <QThread>
 #include "resultscene.h"
+#include "roomscene.h"
+#include "homescene.h"
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -48,6 +50,8 @@ private slots:
     void disableButton();
 
     void on_score_linkActivated(const QString &link);
+
+    void on_back_clicked();
 
 public slots:
     void on_name_linkActivated(const QString &link);

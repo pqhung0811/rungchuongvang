@@ -173,8 +173,6 @@ QString RequestProcessing::login() {
 QString RequestProcessing::logout() {
     if (this->message.contains("info") && this->message["info"].isString())
     {
-//        QString infoString = this->message["info"].toString();
-//        QJsonObject infoObject = QJsonDocument::fromJson(infoString.toUtf8()).object();
         QJsonObject infoObject = this->message.value("info").toObject();
 
         if (infoObject.contains("id") && infoObject["id"].isString()) {
@@ -225,8 +223,6 @@ QString RequestProcessing::createRoom() {
         createRoomController->setOwner(this->user);
         msg = createRoomController->createRoom(roomname);
         this->room = createRoomController->getRoom();
-        qDebug() << "processing roomname: " << this->room->getRoomname();
-        qDebug() << "processing owner: " << this->room->getOwner()->getId();
     }
     return msg;
 }
@@ -257,7 +253,6 @@ QString RequestProcessing::requestJoinRoom() {
             ownerId = roomAPI->getOwnerIdByRoomId(roomIdStr.toInt());
         }
     }
-//    RequestJoinRoomController* requestJoinRoomController = new RequestJoinRoomController();
     msg = "requestjoin " + QString::number(ownerId);
     return msg;
 }
@@ -460,7 +455,6 @@ QString RequestProcessing::finishGame()
         roomAPI->updateStatusAndEndtime(this->room->getId(), 2, currentDateTimeString);
     }
 
-//    this->room->getUserAndPoint().insert(this->user, score);
     this->room->updateUser(this->user, score);
 
     histopyAPI->updateHistory(this->user->getId(), score, this->room->getStartTime(), this->room->getEndTime());

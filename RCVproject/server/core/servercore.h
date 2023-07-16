@@ -21,9 +21,9 @@ class ServerCore : public QObject
 private:
     QTcpServer* server;
     QMap<quint64, QTcpSocket*> connectionSet;
-    ServerCreateMessage* serverCreateMessage;
-//    QList<QTcpSocket*> connectionSet;
+//    ServerCreateMessage* serverCreateMessage;
 //    RequestProcessing* requestProcessing;
+    QHash<QTcpSocket*, ServerCreateMessage*> serverCreateMessageManager;
 
 public:
     explicit ServerCore(QObject *parent = nullptr);

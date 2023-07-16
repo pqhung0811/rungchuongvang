@@ -57,6 +57,16 @@ void ResultScene::setupList()
     horizontalScrollBar->setStyleSheet("background-color: #00FF00;");
 }
 
+ClientCore *ResultScene::getClientCore() const
+{
+    return clientCore;
+}
+
+void ResultScene::setClientCore(ClientCore *newClientCore)
+{
+    clientCore = newClientCore;
+}
+
 QList<QString> ResultScene::getUsernames() const
 {
     return usernames;
@@ -75,5 +85,16 @@ QList<quint64> ResultScene::getScores() const
 void ResultScene::setScores(const QList<quint64> &newScores)
 {
     scores = newScores;
+}
+
+
+void ResultScene::on_back_clicked()
+{
+    HomeScene* homeScene = new HomeScene();
+    homeScene->setClientCore(this->clientCore);
+    homeScene->on_label_2_linkActivated(this->ui->name->text());
+    homeScene->on_label_3_linkActivated(this->ui->rank->text());
+    homeScene->show();
+    close();
 }
 
