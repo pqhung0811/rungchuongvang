@@ -178,6 +178,14 @@ void ResponseBody::createDenyJoinRoomBody(quint64 userId, quint8 reply)
     this->responseBody.insert("reply", QString::number(reply));
 }
 
+void ResponseBody::createAcceptJoinRoomBody(QString username, quint64 rankscore)
+{
+    this->responseBody = QJsonObject();
+
+    this->responseBody.insert("username", username);
+    this->responseBody.insert("rankScore", QString::number(rankscore));
+}
+
 void ResponseBody::createResponseJoinRoomBody(quint64 userId, QString roomname, QList<User*> users, quint8 reply)
 {
     this->responseBody = QJsonObject();

@@ -397,7 +397,7 @@ void RequestProcessing::updateUserAndPoints()
     qDebug() << "\n\nrequest process: " << this->usernames;
 }
 
-void RequestProcessing::extractLogFile()
+QString RequestProcessing::extractLogFile()
 {
     QList<Question*> questions = this->room->getListQuestions();
     QString content;
@@ -423,18 +423,25 @@ void RequestProcessing::extractLogFile()
         }
     }
 
-    QList<QHostAddress> ipAddressesList = QNetworkInterface::allAddresses();
+    content = content + "\nIP: \n";
+//    QList<QHostAddress> ipAddressesList = QNetworkInterface::allAddresses();
 
     // Lặp qua danh sách các địa chỉ IP và tìm địa chỉ IP công cộng
-    for (const QHostAddress &ipAddress : ipAddressesList)
-    {
-        if (ipAddress != QHostAddress::LocalHost && ipAddress.toIPv4Address())
-        {
-            content = content + "\nIP: " + ipAddress.toString();
-        }
-    }
+//    for (const QHostAddress &ipAddress : ipAddressesList)
+//    {
+//        if (ipAddress != QHostAddress::LocalHost && ipAddress.toIPv4Address())
+//        {
+//            content = content + "\nIP: " + ipAddress.toString();
+//        }
+//    }
 
-    this->writeLog(content);
+    return content;
+}
+
+User *RequestProcessing::getUserByUserId(quint64 id)
+{
+    UserAPI* userAPI = new UserAPI();
+    return userAPI->getUserbyId(id);
 }
 
 QString RequestProcessing::finishGame()
@@ -442,8 +449,6 @@ QString RequestProcessing::finishGame()
     quint64 score;
     RoomAPI* roomAPI = new RoomAPI;
     HistoryAPI* histopyAPI = new HistoryAPI();
-
-    qDebug() << "request finish 1";
 
     if (this->message.contains("info") && this->message["info"].isString())
     {
@@ -455,8 +460,6 @@ QString RequestProcessing::finishGame()
             score = scoreStr.toInt();
         }
     }
-
-    qDebug() << "request finish 2" << score;
 
     this->room->setStatus(2);
     QDateTime currentDateTime = QDateTime::currentDateTime();
@@ -501,3 +504,4 @@ void RequestProcessing::writeLog(const QString& message)
         file.close();
     }
 }
+

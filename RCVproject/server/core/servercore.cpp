@@ -68,7 +68,6 @@ void ServerCore::onReadyRead() {
 
             if(msg.compare("login successfully")==0) {
                 connectionSet.insert(serverCreateMessage->getRequestProcessing()->getUser()->getId(), clientSocket);
-                qDebug() << "\nserver core set: " << serverCreateMessage->getRequestProcessing()->getUser()->getId() << "  " << clientSocket << "\n";
             }
         }
 
@@ -84,6 +83,7 @@ void ServerCore::onReadyRead() {
             QByteArray responseData = responseString.toUtf8();
             connectionSet.value(ownerId)->write(responseData);
         }
+
         else if(msg.contains("deny") || msg.contains("accept")) {
             quint64 userId;
             quint64 reply;
@@ -107,7 +107,22 @@ void ServerCore::onReadyRead() {
             }
             qDebug() << responseString;
             connectionSet.value(userId)->write(responseString.toUtf8());
+
+            User* user = this->serverCreateMessage->getRequestProcessing()->getUserByUserId(userId);
+            responseString = this->serverCreateMessage->createAcceptResponseJoinRoomMessage(user->getUsername(), user->getRankScore());
+            Room* room = this->serverCreateMessage->getRequestProcessing()->getRoom();
+            QList<User*> users = room->getUserAndPoint().keys();
+            for(User* user : users) {
+                if(user->getId()==userId) {
+                    continue;
+                }
+                if(user->getId()==this->serverCreateMessage->getRequestProcessing()->getRoom()->getOwner()->getId()) {
+                    continue;
+                }
+                connectionSet.value(user->getId())->write(responseString.toUtf8());
+            }
         }
+
         else if(msg.compare("get question")==0) {
             Room* room = this->serverCreateMessage->getRequestProcessing()->getRoom();
             QList<User*> users = room->getUserAndPoint().keys();
@@ -115,7 +130,22 @@ void ServerCore::onReadyRead() {
                 connectionSet.value(user->getId())->write(responseString.toUtf8());
             }
         }
+
         else {
+            if(msg.compare("finish")==0) {
+                QList<User*> users = this->serverCreateMessage->getRequestProcessing()->getRoom()->getUserAndPoint().keys();
+                QString content = this->serverCreateMessage->getRequestProcessing()->extractLogFile();
+                for(User* user : users) {
+                    QTcpSocket* tcpSocket = connectionSet.value(user->getId());
+                    // Lấy địa chỉ IP từ QTcpSocket
+                    QHostAddress ipAddress = tcpSocket->peerAddress();
+                    // Chuyển địa chỉ IP thành chuỗi
+                    QString ipString = ipAddress.toString();
+                    content = content + ipString + "\n";
+                }
+                this->serverCreateMessage->getRequestProcessing()->writeLog(content);
+            }
+
             QByteArray responseData = responseString.toUtf8();
             // Send response back to the client
             clientSocket->write(responseData);

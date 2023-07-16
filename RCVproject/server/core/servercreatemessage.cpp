@@ -107,10 +107,17 @@ QString ServerCreateMessage::createDenyResponseJoinRoomMessage(quint64 userId, q
     return serverMsg->toString();
 }
 
+QString ServerCreateMessage::createAcceptResponseJoinRoomMessage(QString username, quint64 rankscore)
+{
+    ResponseJoinRoomServerMessage* serverMsg = new ResponseJoinRoomServerMessage(username, rankscore, "success", " ");
+    return serverMsg->toString();
+}
+
 QString ServerCreateMessage::createResponseJoinRoomMessage(quint64 userId, QString roomname, quint8 reply, QList<User*> users)
 {
     ResponseJoinRoomServerMessage* serverMsg = new ResponseJoinRoomServerMessage(userId, roomname, reply, users, "success", " ");
     return serverMsg->toString();
 }
+
 
 

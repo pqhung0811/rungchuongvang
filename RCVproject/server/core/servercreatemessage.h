@@ -35,6 +35,7 @@ public:
 public slots:
     QString createMessage(QString msg);
     QString createDenyResponseJoinRoomMessage(quint64 userId, quint8 reply);
+    QString createAcceptResponseJoinRoomMessage(QString username, quint64 rankscore);
     QString createResponseJoinRoomMessage(quint64 userId, QString roomname, quint8 reply, QList<User*> users);
 
 signals:

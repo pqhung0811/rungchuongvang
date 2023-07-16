@@ -10,6 +10,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QMap>
+#include <userapi.h>
 #include "login/loginservermessage.h"
 #include "servercreatemessage.h"
 

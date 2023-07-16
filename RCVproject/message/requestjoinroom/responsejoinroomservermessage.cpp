@@ -23,3 +23,11 @@ ResponseJoinRoomServerMessage::ResponseJoinRoomServerMessage(quint64 userId, qui
     this->finalizeMessageObject();
 }
 
+ResponseJoinRoomServerMessage::ResponseJoinRoomServerMessage(QString username, quint64 rankscore, QString status, QString errorMsg, QObject *parent)
+    : ServerMessage(status, errorMsg, parent)
+{
+    this->addCommandCode(this->command->toCommand("ACCEPTJOINROOM"));
+    this->responseBody->createAcceptJoinRoomBody(username, rankscore);
+    this->finalizeMessageObject();
+}
+

@@ -313,6 +313,52 @@ void RoomScene::connectSignal()
 {
     connect(clientCore, &ClientCore::Finished, this, &RoomScene::handleJoinRoomResponse);
     connect(clientCore, &ClientCore::Finished, this, &RoomScene::handlePlayResponse);
+    connect(clientCore, &ClientCore::Finished, this, &RoomScene::handelAcceptJoinRoomResponse);
+}
+
+void RoomScene::handelAcceptJoinRoomResponse(const QJsonDocument &response)
+{
+    QString username;
+    QString rankStr;
+    qDebug() << "room scene response join";
+    if (!response.isNull() && response.isObject()) {
+        QJsonObject jsonObject = response.object();
+        if (jsonObject.contains("command_code") && jsonObject["command_code"].isString()) {
+            if(jsonObject["command_code"].toString().compare("ACCEPTJOINROOM")!=0) return;
+        }
+        if (jsonObject.contains("info") && jsonObject["info"].isString()) {
+            QString infoString = jsonObject["info"].toString();
+            QJsonObject infoObject = QJsonDocument::fromJson(infoString.toUtf8()).object();
+
+            // Lấy giá trị của key "username" từ QJsonObject "infoObject"
+            if (infoObject.contains("username") && infoObject["username"].isString()) {
+                username = infoObject["username"].toString();
+            }
+
+            if (infoObject.contains("rankScore") && infoObject["rankScore"].isString()) {
+                rankStr = infoObject["rankScore"].toString();
+            }
+        }
+    }
+
+    if(this->ui->label_2->text().contains("Bronze")) {
+        rankStr = "Bronze: " + rankStr;
+    }
+    else if(this->ui->label_2->text().contains("Silver")) {
+        rankStr = "Silver: " + rankStr;
+    }
+    else if(this->ui->label_2->text().contains("Gold")) {
+        rankStr = "Gold: " + rankStr;
+    }
+
+    addPlayer(createVerticalUser(username, rankStr), row, collumn);
+    if(collumn == 4) {
+        row++;
+        collumn=0;
+    }
+    else {
+        collumn++;
+    }
 }
 
 QList<QString> RoomScene::getRankscore() const

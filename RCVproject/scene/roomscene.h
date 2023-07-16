@@ -73,6 +73,7 @@ public slots:
     void addPlayer(QWidget* verticalUser, quint64 row, quint64 column);
     void handlePlayResponse(const QJsonDocument &response);
     void handleJoinRoomResponse(const QJsonDocument &response);
+    void handelAcceptJoinRoomResponse(const QJsonDocument &response);
     void createDialog(QString content, QString username, QString rankStr, quint64 userId);
     void setupLayout();
     void accept(QString username, QString rankStr, quint64 userId);

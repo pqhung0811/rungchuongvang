@@ -82,7 +82,8 @@ public slots:
     QList<History*> viewHistory();
     void updateUserAndPoints();
     void writeLog(const QString& message);
-    void extractLogFile();
+    QString extractLogFile();
+    User* getUserByUserId(quint64 id);
 
 signals:
     void endGame();

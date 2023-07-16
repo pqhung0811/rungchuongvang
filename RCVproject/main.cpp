@@ -52,18 +52,23 @@ int main(int argc, char *argv[])
 
     QThread thread1;
     QThread thread2;
+    QThread thread3;
 
     MainWindow w1 = MainWindow();
     MainWindow w2 = MainWindow();
+    MainWindow w3 = MainWindow();
 
     w1.moveToThread(&thread1);
     w2.moveToThread(&thread2);
+    w3.moveToThread(&thread2);
 
     QObject::connect(&thread1, &QThread::started, &w1, &MainWindow::show);
     QObject::connect(&thread2, &QThread::started, &w2, &MainWindow::show);
+    QObject::connect(&thread2, &QThread::started, &w3, &MainWindow::show);
 
     thread1.start();
     thread2.start();
+    thread3.start();
 
 //    ClientCore* clientCore = ClientCore::getInstance();
 //    clientCore->start();

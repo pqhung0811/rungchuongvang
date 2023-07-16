@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>959</width>
-    <height>511</height>
+    <height>636</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -169,7 +169,7 @@ background-image: url(:/images/icons8-gold-medal-30.png);
      <x>30</x>
      <y>110</y>
      <width>911</width>
-     <height>391</height>
+     <height>511</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -187,7 +187,7 @@ background-image: url(:/images/icons8-gold-medal-30.png);
       <x>0</x>
       <y>0</y>
       <width>911</width>
-      <height>391</height>
+      <height>511</height>
      </rect>
     </property>
     <property name="widgetResizable">
@@ -199,7 +199,7 @@ background-image: url(:/images/icons8-gold-medal-30.png);
        <x>0</x>
        <y>0</y>
        <width>907</width>
-       <height>387</height>
+       <height>507</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -211,7 +211,7 @@ background-image: url(:/images/icons8-gold-medal-30.png);
         <x>10</x>
         <y>10</y>
         <width>881</width>
-        <height>371</height>
+        <height>501</height>
        </rect>
       </property>
       <property name="styleSheet">

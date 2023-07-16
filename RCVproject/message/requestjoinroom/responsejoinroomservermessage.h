@@ -14,6 +14,7 @@ public:
     explicit ResponseJoinRoomServerMessage(QObject *parent = nullptr);
     explicit ResponseJoinRoomServerMessage(quint64 userId, QString roomname, quint8 reply, QList<User*> users, QString status, QString errorMsg, QObject *parent = nullptr);
     explicit ResponseJoinRoomServerMessage(quint64 userId, quint8 reply, QString status, QString errorMsg, QObject *parent = nullptr);
+    explicit ResponseJoinRoomServerMessage(QString username, quint64 rankscore, QString status, QString errorMsg, QObject *parent = nullptr);
 };
 
 #endif // RESPONSEJOINROOMSERVERMESSAGE_H

@@ -33,6 +33,7 @@ public slots:
     void createFinishBody(QList<QString> usernames, QList<quint64> scores);
     void createRequestJoinRoomBody(quint64 userId, QString username, quint64 rankScore);
     void createDenyJoinRoomBody(quint64 userId, quint8 reply);
+    void createAcceptJoinRoomBody(QString username, quint64 rankscore);
     void createResponseJoinRoomBody(quint64 userId, QString roomname, QList<User*> users, quint8 reply);
 
 
