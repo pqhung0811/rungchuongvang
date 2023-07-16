@@ -208,7 +208,6 @@ void HomeScene::on_history_clicked()
 {
     this->clientCore->viewHistory();
     connect(clientCore, &ClientCore::Finished, this, &HomeScene::handleViewHistoryResponse);
-
 }
 
 void HomeScene::handleViewHistoryResponse(const QJsonDocument &response)

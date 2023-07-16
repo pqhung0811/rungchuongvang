@@ -87,7 +87,6 @@ void ResultScene::setScores(const QList<quint64> &newScores)
     scores = newScores;
 }
 
-
 void ResultScene::on_back_clicked()
 {
     HomeScene* homeScene = new HomeScene();

@@ -164,6 +164,10 @@ set(PROJECT_SOURCES
         message/checkfinish/checkfinishclientmessage.cpp
         message/checkfinish/checkfinishservermessage.h
         message/checkfinish/checkfinishservermessage.cpp
+        message/afkgame/afkgameclientmessage.h
+        message/afkgame/afkgameclientmessage.cpp
+        message/afkgame/afkgameservermessage.h
+        message/afkgame/afkgameservermessage.cpp
         protocol/requestbody.h
         protocol/requestbody.cpp
         protocol/responsebody.h

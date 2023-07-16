@@ -84,6 +84,8 @@ public slots:
     void writeLog(const QString& message);
     QString extractLogFile();
     User* getUserByUserId(quint64 id);
+    void afkGame();
+    void removeUser(User* user);
 
 signals:
     void endGame();

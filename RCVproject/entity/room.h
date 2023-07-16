@@ -55,6 +55,7 @@ public:
     void setListQuestions(const QList<Question *> &newListQuestions);
 
     void updateUser(User* user, quint64 point);
+    void removeUser(User* user);
 public slots:
 //    quint64 getId();
 //    QString getRoomname();

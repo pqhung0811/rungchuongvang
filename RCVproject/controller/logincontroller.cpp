@@ -24,7 +24,8 @@ QString LoginController::checkLogin(QString username, QString password) {
     }
     else {
         User* anUser = this->userAPI->getUserByNameAndPass(username, password);
-        if(anUser->getId()==NULL) {
+        qDebug() << "user login pass: " << anUser->getId();
+        if(anUser->getId()==NULL || anUser->getId()==0) {
             return "invalid password";
         }
         else {

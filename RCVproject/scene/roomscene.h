@@ -80,6 +80,7 @@ public slots:
     void deny(quint64 userId);
     void disablePlayButton();
     void connectSignal();
+    void disconnectSignal();
 
 private:
     Ui::RoomScene *ui;

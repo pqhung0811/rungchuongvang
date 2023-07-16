@@ -64,7 +64,7 @@ void ClientCore::onDisconnected()
 
 
 void ClientCore::start() {
-    socket->connectToHost(QHostAddress::LocalHost,8080);
+    socket->connectToHost(QHostAddress::LocalHost, 8080);
     if(socket->waitForConnected())
         qDebug() << "Connect to server";
     else{
@@ -145,6 +145,12 @@ void ClientCore::viewHistory()
 void ClientCore::finishGame(quint64 score)
 {
     CheckFinishClientMessage* clientMsg = new CheckFinishClientMessage(score);
+    sendRequest(clientMsg->toString());
+}
+
+void ClientCore::afkGame()
+{
+    AfkGameClientMessage* clientMsg = new AfkGameClientMessage();
     sendRequest(clientMsg->toString());
 }
 

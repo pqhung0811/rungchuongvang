@@ -160,6 +160,7 @@ void RoomScene::handlePlayResponse(const QJsonDocument &response)
     gameScene->on_remainQuestion_linkActivated(QString::number(gameScene->getQuestions().size()));
     gameScene->setupClock();
     gameScene->setupList();
+    this->disconnectSignal();
     gameScene->setClientcore(this->clientCore);
     gameScene->show();
     close();
@@ -313,6 +314,13 @@ void RoomScene::connectSignal()
     connect(clientCore, &ClientCore::Finished, this, &RoomScene::handelAcceptJoinRoomResponse);
 }
 
+void RoomScene::disconnectSignal()
+{
+    disconnect(clientCore, &ClientCore::Finished, this, &RoomScene::handleJoinRoomResponse);
+    disconnect(clientCore, &ClientCore::Finished, this, &RoomScene::handlePlayResponse);
+    disconnect(clientCore, &ClientCore::Finished, this, &RoomScene::handelAcceptJoinRoomResponse);
+}
+
 void RoomScene::handelAcceptJoinRoomResponse(const QJsonDocument &response)
 {
     QString username;
@@ -420,6 +428,7 @@ void RoomScene::on_back_clicked()
     homeScene->on_label_2_linkActivated(this->ui->label->text());
     homeScene->on_label_3_linkActivated(this->ui->label_2->text());
     homeScene->setClientCore(this->clientCore);
+    this->disconnectSignal();
     homeScene->show();
     close();
 }

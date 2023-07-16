@@ -15,6 +15,7 @@
 #include "checkfinish/checkfinishservermessage.h"
 #include "requestjoinroom/requestjoinroomservermessage.h"
 #include "requestjoinroom/responsejoinroomservermessage.h"
+#include "afkgame/afkgameservermessage.h"
 #include "history.h"
 #include "noinfomessage.h"
 #include "room.h"

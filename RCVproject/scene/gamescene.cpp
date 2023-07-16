@@ -95,6 +95,7 @@ void GameScene::finishGame()
     this->clientcore->finishGame(this->score);
     qDebug() << "score2: " << this->score;
     connect(clientcore, &ClientCore::Finished, this, &GameScene::handleFinishResponse);
+    connect(this, &GameScene::checkFinish, this, &GameScene::finishGame);
 }
 
 void GameScene::handleFinishResponse(const QJsonDocument &response)
@@ -128,6 +129,7 @@ void GameScene::handleFinishResponse(const QJsonDocument &response)
     }
 
     ResultScene* resultScene = new ResultScene();
+    this->disconnectSignal();
     resultScene->on_name_linkActivated(this->ui->name->text());
     resultScene->on_rank_linkActivated(this->ui->rank->text());
     resultScene->setUsernames(usernames);
@@ -136,6 +138,12 @@ void GameScene::handleFinishResponse(const QJsonDocument &response)
     resultScene->setClientCore(this->clientcore);
     resultScene->show();
     close();
+}
+
+void GameScene::disconnectSignal()
+{
+    disconnect(clientcore, &ClientCore::Finished, this, &GameScene::handleFinishResponse);
+    disconnect(this, &GameScene::checkFinish, this, &GameScene::finishGame);
 }
 
 ClientCore *GameScene::getClientcore() const
@@ -249,7 +257,6 @@ void GameScene::on_roomname_linkActivated(const QString &link)
     this->ui->roomname->setText(link);
 }
 
-
 void GameScene::on_score_linkActivated(const QString &link)
 {
     this->ui->score->setText(link);
@@ -258,6 +265,7 @@ void GameScene::on_score_linkActivated(const QString &link)
 void GameScene::on_back_clicked()
 {
     HomeScene* homeScene = new HomeScene();
+    this->disconnectSignal();
     homeScene->setClientCore(this->clientcore);
     homeScene->on_label_2_linkActivated(this->ui->name->text());
     homeScene->on_label_3_linkActivated(this->ui->rank->text());

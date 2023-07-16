@@ -99,6 +99,10 @@ QString ServerCreateMessage::createMessage(QString msg)
         RequestJoinRoomServerMessage* serverMsg = new RequestJoinRoomServerMessage(this->requestProcessing->getUser()->getId(), this->requestProcessing->getUser()->getUsername(), this->requestProcessing->getUser()->getRankScore(), "success", " ");
         return serverMsg->toString();
     }
+    else if(msg.compare("afk")==0) {
+        AfkGameServerMessage* serverMsg = new AfkGameServerMessage("success", " ");
+        return serverMsg->toString();
+    }
 }
 
 QString ServerCreateMessage::createDenyResponseJoinRoomMessage(quint64 userId, quint8 reply)

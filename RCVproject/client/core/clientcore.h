@@ -21,6 +21,7 @@
 #include "viewrank/viewrankclientmessage.h"
 #include "viewhistory/viewhistoryclientmessage.h"
 #include "checkfinish/checkfinishclientmessage.h"
+#include "afkgame/afkgameclientmessage.h"
 #include "attachment.h"
 #include <QBuffer>
 #include <QIODevice>
@@ -66,6 +67,7 @@ public slots:
     void viewRank();
     void viewHistory();
     void finishGame(quint64 score);
+    void afkGame();
 
 signals:
     void Finished(const QJsonDocument& response);

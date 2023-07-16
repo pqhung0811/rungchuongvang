@@ -23,6 +23,7 @@ public slots:
     void updateRoomId(quint64 roomId, quint64 id);
     QList<User*> getAllUsersOrderByRank();
     QList<User*> getUsersByRoomId(quint64 roomId);
+    void removeRoomId(quint64 id);
 
 signals:
 

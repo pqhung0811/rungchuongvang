@@ -85,6 +85,8 @@ void ServerCore::onReadyRead() {
                 qDebug() << "Invalid string format";
             }
             QByteArray responseData = responseString.toUtf8();
+            qDebug() << "server core owner: " << ownerId;
+            qDebug() << "server core keys: " << connectionSet.keys();
             connectionSet.value(ownerId)->write(responseData);
         }
 
@@ -108,24 +110,23 @@ void ServerCore::onReadyRead() {
 
                     User* user = serverCreateMessage->getRequestProcessing()->getUserByUserId(userId);
                     QString responseStrings = serverCreateMessage->createAcceptResponseJoinRoomMessage(user->getUsername(), user->getRankScore());
-                    Room* roomm = serverCreateMessage->getRequestProcessing()->getRoom();
-                    QList<User*> userss = roomm->getUserAndPoint().keys();
-                    for(User* user : userss) {
+                    this->serverCreateMessageManager.value(connectionSet.value(userId))->getRequestProcessing()->setRoom(serverCreateMessage->getRequestProcessing()->getRoom());
+                    for(User* user : users) {
                         if(user->getId()==userId) {
+                            connectionSet.value(userId)->write(responseString.toUtf8());
+                        }
+                        else if(user->getId()==room->getOwner()->getId()) {
                             continue;
                         }
-                        if(user->getId()==roomm->getOwner()->getId()) {
-                            continue;
+                        else {
+                            connectionSet.value(user->getId())->write(responseStrings.toUtf8());
                         }
-                        connectionSet.value(user->getId())->write(responseStrings.toUtf8());
                     }
                 }
             } else {
                 qDebug() << "Invalid string format";
             }
-            qDebug() << responseString;
-            this->serverCreateMessageManager.value(connectionSet.value(userId))->getRequestProcessing()->setRoom(serverCreateMessage->getRequestProcessing()->getRoom());
-            connectionSet.value(userId)->write(responseString.toUtf8());
+//            this->serverCreateMessageManager.value(connectionSet.value(userId))->getRequestProcessing()->setRoom(serverCreateMessage->getRequestProcessing()->getRoom());
         }
 
         else if(msg.compare("get question")==0) {
@@ -134,6 +135,16 @@ void ServerCore::onReadyRead() {
             for(User* user : users) {
                 connectionSet.value(user->getId())->write(responseString.toUtf8());
             }
+        }
+
+        else if(msg.compare("afk")==0) {
+            Room* room = serverCreateMessage->getRequestProcessing()->getRoom();
+            QList<User*> users = room->getUserAndPoint().keys();
+            for(User* user : users) {
+                this->serverCreateMessageManager.value(connectionSet.value(user->getId()))->getRequestProcessing()->removeUser(serverCreateMessage->getRequestProcessing()->getUser());
+            }
+            serverCreateMessage->getRequestProcessing()->afkGame();
+//            clientSocket->write(responseString.toUtf8());
         }
 
         else {
@@ -149,6 +160,7 @@ void ServerCore::onReadyRead() {
                     content = content + ipString + "\n";
                 }
                 serverCreateMessage->getRequestProcessing()->writeLog(content);
+                serverCreateMessage->getRequestProcessing()->setRoom(nullptr);
             }
 
             QByteArray responseData = responseString.toUtf8();

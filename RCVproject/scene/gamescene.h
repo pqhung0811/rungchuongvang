@@ -63,6 +63,7 @@ public slots:
     void setupClock();
     void finishGame();
     void handleFinishResponse(const QJsonDocument &response);
+    void disconnectSignal();
 
 private:
     Ui::GameScene *ui;

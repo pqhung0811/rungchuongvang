@@ -12,7 +12,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->clientCore = new ClientCore();
     this->clientCore->start();
-    //    this->clientManager = new ClientManager();
     //    connect(ui->registerBtn, &QPushButton::clicked, this, &MainWindow::on_registerBtn_clicked);
     //    connect(ui->signInBtn, SIGNAL(clicked()), this, SLOT(on_signInBtn_clicked()));
     connect(ui->usernameEdit, &QLineEdit::returnPressed, this, &MainWindow::handleUserLineEditReturnPressed);
@@ -28,8 +27,6 @@ void MainWindow::on_signInBtn_clicked()
 {
     qDebug() << "hello boy";
     clientCore->login(this->username, this->password);
-//    clientManager->login(this->username, this->password);
-
     // Lắng nghe sự kiện finished() để nhận phản hồi từ server
     connect(clientCore, &ClientCore::Finished, this, &MainWindow::handleLoginResponse);
 }
@@ -105,7 +102,7 @@ void MainWindow::handleLoginResponse(const QJsonDocument &response)
             myDialog->changLabel("Invalid Username");
             myDialog->show();
         }
-        else {
+        else if (errorMsg.compare("invalid password")==0) {
             MyDialog* myDialog = new MyDialog();
             myDialog->changLabel("Invalid Password");
             myDialog->show();
@@ -117,13 +114,6 @@ void MainWindow::disconnectSignal()
 {
     disconnect(clientCore, &ClientCore::Finished, this, &MainWindow::handleLoginResponse);
 }
-
-//void MainWindow::start()
-//{
-//    clientCore = ClientCore::getInstance();
-//    clientCore->start();
-//    clientCore->login(this->username, this->password);
-//}
 
 ClientCore *MainWindow::getClientCore() const
 {

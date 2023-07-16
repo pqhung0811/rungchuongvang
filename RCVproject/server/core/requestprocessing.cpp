@@ -102,6 +102,7 @@ QString RequestProcessing::handle() {
         else if(command.compare("VIEWRANK")==0) cmd=8;
         else if(command.compare("STARTGAME")==0) cmd=9;
         else if(command.compare("FINISHGAME")==0) cmd=10;
+        else if(command.compare("AFKGAME")==0) cmd=11;
         switch (cmd) {
             case 1:
                 output = this->login();
@@ -135,7 +136,10 @@ QString RequestProcessing::handle() {
                 output = "get question";
                 break;
             case 10:
-                return this->finishGame();
+                output = this->finishGame();
+                break;
+            case 11:
+                output = "afk";
                 break;
             default:
                 break;
@@ -165,7 +169,6 @@ QString RequestProcessing::login() {
         if(msg.compare("login successfully")==0) {
             this->user = loginController->getUser();
         }
-        qDebug() << "login: " << this->user->getId();
         return msg;
     }
 }
@@ -429,6 +432,18 @@ User *RequestProcessing::getUserByUserId(quint64 id)
     return userAPI->getUserbyId(id);
 }
 
+void RequestProcessing::afkGame()
+{
+    this->room = nullptr;
+    UserAPI* userAPI = new UserAPI();
+    userAPI->removeRoomId(this->user->getId());
+}
+
+void RequestProcessing::removeUser(User *user)
+{
+    this->room->removeUser(user);
+}
+
 QString RequestProcessing::finishGame()
 {
     quint64 score;
@@ -459,7 +474,7 @@ QString RequestProcessing::finishGame()
 
     histopyAPI->updateHistory(this->user->getId(), score, this->room->getStartTime(), this->room->getEndTime());
 
-    QThread::msleep(1000);
+//    QThread::msleep(2000);
 
     updateUserAndPoints();
 

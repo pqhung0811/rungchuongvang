@@ -38,7 +38,7 @@ QList<User*> UserAPI::getAllUsers() {
 User* UserAPI::getUserByNameAndPass(QString name, QString pass) {
     User* user = new User();
     QSqlQuery query;
-    QString sqlQuery = "SELECT id, username, password FROM user WHERE username = :username AND password = :password";
+    QString sqlQuery = "SELECT id, username, password, ranked, rank_score FROM user WHERE username = :username AND password = :password";
     query.prepare(sqlQuery);
     query.bindValue(":username", name);
     query.bindValue(":password", pass);
@@ -211,4 +211,14 @@ QList<User *> UserAPI::getUsersByRoomId(quint64 roomId)
         listUser.append(user);
     }
     return listUser;
+}
+
+void UserAPI::removeRoomId(quint64 id)
+{
+    QSqlQuery query;
+    query.prepare("UPDATE user SET room_id = NULL WHERE id = :id");
+    query.bindValue(":id", id);
+    if (!query.exec()) {
+        qDebug() << "Không thể thực hiện truy vấn";
+    }
 }

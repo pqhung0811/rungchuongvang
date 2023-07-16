@@ -96,6 +96,11 @@ void Room::updateUser(User *user, quint64 point)
     this->userAndPoint.insert(user, point);
 }
 
+void Room::removeUser(User *user)
+{
+    this->userAndPoint.remove(user);
+}
+
 Room::Room(QObject *parent)
     : QObject{parent}
 {
