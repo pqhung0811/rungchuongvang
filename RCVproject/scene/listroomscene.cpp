@@ -236,7 +236,7 @@ void ListRoomScene::on_pushButton_clicked()
     homeScene->on_label_2_linkActivated(this->ui->label_2->text());
     homeScene->on_label_3_linkActivated(this->ui->label_3->text());
     homeScene->show();
-    hide();
+    close();
 }
 
 void ListRoomScene::addRoom(QWidget *verticalRoom, quint64 row, quint64 column)

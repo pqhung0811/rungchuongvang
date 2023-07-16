@@ -35,7 +35,7 @@ quint64 HistoryAPI::getScoreByUserId(quint64 userId)
 {
     QSqlQuery query;
     query.prepare("SELECT score FROM history WHERE user_id = :userId ORDER by id DESC LIMIT 1");
-    query.bindValue(":userid", userId);
+    query.bindValue(":userId", userId);
     if (!query.exec()) {
         qDebug() << "Can not query";
     }

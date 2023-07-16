@@ -352,11 +352,14 @@ void RequestProcessing::updateUserAndPoints()
 {
     HistoryAPI* histopyAPI = new HistoryAPI();
     UserAPI* userAPI = new UserAPI();
-    QMap<User*, quint64> nameAndScore = this->room->getUserAndPoint();
+    QMap<User*, quint64> nameAndScore;
+    nameAndScore = this->room->getUserAndPoint();
 
+    QMap<User*, quint64> updatedNameAndScore;
     for (auto it = nameAndScore.begin(); it != nameAndScore.end(); it++) {
-        nameAndScore.insert(it.key(), histopyAPI->getScoreByUserId(it.key()->getId()));
+        updatedNameAndScore.insert(it.key(), histopyAPI->getScoreByUserId(it.key()->getId()));
     }
+    nameAndScore = updatedNameAndScore;
 
     for (auto it = nameAndScore.begin(); it != nameAndScore.end(); ++it) {
         usernames.append(it.key()->getUsername());
@@ -390,11 +393,8 @@ void RequestProcessing::updateUserAndPoints()
         userAPI->updateRankscoreAndRanked(rankscore, rank, this->user->getId());
     }
 
-    this->extractLogFile();
-
     delete histopyAPI;
     delete userAPI;
-    qDebug() << "\n\nrequest process: " << this->usernames;
 }
 
 QString RequestProcessing::extractLogFile()
@@ -424,16 +424,6 @@ QString RequestProcessing::extractLogFile()
     }
 
     content = content + "\nIP: \n";
-//    QList<QHostAddress> ipAddressesList = QNetworkInterface::allAddresses();
-
-    // Lặp qua danh sách các địa chỉ IP và tìm địa chỉ IP công cộng
-//    for (const QHostAddress &ipAddress : ipAddressesList)
-//    {
-//        if (ipAddress != QHostAddress::LocalHost && ipAddress.toIPv4Address())
-//        {
-//            content = content + "\nIP: " + ipAddress.toString();
-//        }
-//    }
 
     return content;
 }
@@ -470,11 +460,12 @@ QString RequestProcessing::finishGame()
         roomAPI->updateStatusAndEndtime(this->room->getId(), 2, currentDateTimeString);
     }
 
-    this->room->getUserAndPoint().insert(this->user, score);
+//    this->room->getUserAndPoint().insert(this->user, score);
+    this->room->updateUser(this->user, score);
 
     histopyAPI->updateHistory(this->user->getId(), score, this->room->getStartTime(), this->room->getEndTime());
 
-//    QThread::msleep(2000);
+    QThread::msleep(1000);
 
     updateUserAndPoints();
 

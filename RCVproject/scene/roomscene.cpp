@@ -6,8 +6,6 @@ RoomScene::RoomScene(QWidget *parent) :
     ui(new Ui::RoomScene)
 {
     ui->setupUi(this);
-//    clientCore = ClientCore::getInstance();
-//    setStyleSheet("QWidget {background-image:url(D:/Networkprogramming/project/images/gold-frame.jpg)}");
     this->row = 0;
     this->collumn = 0;
     this->ui->gridLayout_2->setSpacing(20);
@@ -173,7 +171,6 @@ void RoomScene::handleJoinRoomResponse(const QJsonDocument &response)
     QString userIdStr;
     QString rankStr;
     quint64 userId;
-    qDebug() << "room scene response join";
     if (!response.isNull() && response.isObject()) {
         QJsonObject jsonObject = response.object();
         if (jsonObject.contains("command_code") && jsonObject["command_code"].isString()) {

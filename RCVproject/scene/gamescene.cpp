@@ -91,7 +91,9 @@ void GameScene::setupClock()
 
 void GameScene::finishGame()
 {
+    qDebug() << "score1: " << this->score;
     this->clientcore->finishGame(this->score);
+    qDebug() << "score2: " << this->score;
     connect(clientcore, &ClientCore::Finished, this, &GameScene::handleFinishResponse);
 }
 
