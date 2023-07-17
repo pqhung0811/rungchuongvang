@@ -106,8 +106,16 @@ void ServerCore::onReadyRead() {
                     Room* room = serverCreateMessage->getRequestProcessing()->getRoom();
                     QList<User*> users = room->getUserAndPoint().keys();
                     qDebug() << "server core deny accept: " << users.size();
+                    qDebug() << "accerp server core0: " << userId;
+                    qDebug() << "accerp server core rname" << room->getRoomname();
+                    for(User* user: users) {
+                        qDebug() << "sererverr core: " << user->getUsername();
+                        qDebug() << "sererverr cores: " << user->getRankScore();
+                    }
                     responseString = serverCreateMessage->createResponseJoinRoomMessage(userId, room->getRoomname(),  1, users);
 
+                    qDebug() << "accerp server core" << userId;
+                    qDebug() << "accerp server core rname" << userId;
                     User* user = serverCreateMessage->getRequestProcessing()->getUserByUserId(userId);
                     QString responseStrings = serverCreateMessage->createAcceptResponseJoinRoomMessage(user->getUsername(), user->getRankScore());
                     this->serverCreateMessageManager.value(connectionSet.value(userId))->getRequestProcessing()->setRoom(serverCreateMessage->getRequestProcessing()->getRoom());

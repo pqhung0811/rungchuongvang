@@ -198,9 +198,10 @@ void HomeScene::on_quitBtn_clicked()
 
 void HomeScene::on_signOutBtn_clicked()
 {
-    MainWindow w = MainWindow();
-    w.setClientCore(this->clientCore);
-    w.show();
+    MainWindow* w = new MainWindow();
+    w->setClientCore(this->clientCore);
+    this->disconnectSignal();
+    w->show();
     close();
 }
 

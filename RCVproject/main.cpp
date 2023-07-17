@@ -62,9 +62,9 @@ int main(int argc, char *argv[])
     w2.moveToThread(&thread2);
     w3.moveToThread(&thread3);
 
-    QObject::connect(&thread1, &QThread::started, &w1, &MainWindow::show);
-    QObject::connect(&thread2, &QThread::started, &w2, &MainWindow::show);
-    QObject::connect(&thread3, &QThread::started, &w3, &MainWindow::show);
+    QObject::connect(&thread1, &QThread::started, &w1, &MainWindow::start);
+    QObject::connect(&thread2, &QThread::started, &w2, &MainWindow::start);
+    QObject::connect(&thread3, &QThread::started, &w3, &MainWindow::start);
 
     thread1.start();
     thread2.start();

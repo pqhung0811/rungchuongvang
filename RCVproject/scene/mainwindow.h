@@ -28,6 +28,7 @@ public:
 
     ClientCore *getClientCore() const;
     void setClientCore(ClientCore *newClientCore);
+    void start();
 
 private slots:
     void on_signInBtn_clicked();
@@ -38,7 +39,6 @@ private slots:
     void handlePassLineEditReturnPressed();
     void handleLoginResponse(const QJsonDocument& response);
     void disconnectSignal();
-//    void start();
 
 private:
     Ui::MainWindow *ui;

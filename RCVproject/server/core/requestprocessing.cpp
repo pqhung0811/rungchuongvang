@@ -353,21 +353,33 @@ void RequestProcessing::updateUserAndPoints()
     QMap<User*, quint64> nameAndScore;
     nameAndScore = this->room->getUserAndPoint();
 
-    QMap<User*, quint64> updatedNameAndScore;
+//    QMap<User*, quint64> updatedNameAndScore;
     for (auto it = nameAndScore.begin(); it != nameAndScore.end(); it++) {
-        updatedNameAndScore.insert(it.key(), histopyAPI->getScoreByUserId(it.key()->getId()));
+        nameAndScore.insert(it.key(), histopyAPI->getScoreByUserId(it.key()->getId()));
     }
-    nameAndScore = updatedNameAndScore;
+//    nameAndScore = updatedNameAndScore;
+    qDebug() << "nameAndScore.size(); " << nameAndScore.size();
 
-    for (auto it = nameAndScore.begin(); it != nameAndScore.end(); ++it) {
-        usernames.append(it.key()->getUsername());
-        scores.append(it.value());
+    QList<User*> users = nameAndScore.keys();
+    for(User* user : users) {
+        usernames.append(user->getUsername());
+        scores.append(nameAndScore.value(user));
     }
+
+//    for (auto it = nameAndScore.begin(); it != nameAndScore.end(); it++) {
+//        usernames.append(it.key()->getUsername());
+//        scores.append(it.value());
+//    }
+
+    qDebug() << "username size 1: " << usernames.size();
+    qDebug() << "score size 1: " << scores.size();
 
     QList<QPair<QString, quint64>> sortedData;
     for (int i = 0; i < scores.size(); ++i) {
         sortedData.append(qMakePair(usernames[i], scores[i]));
     }
+
+    qDebug() <<  "sortedData size: " << sortedData.size();
 
     std::sort(sortedData.begin(), sortedData.end(),
               [](const QPair<QString, quint64>& pair1, const QPair<QString, quint64>& pair2) {
@@ -381,6 +393,9 @@ void RequestProcessing::updateUserAndPoints()
         usernames.append(pair.first);
         scores.append(pair.second);
     }
+
+    qDebug() << "username size 2: " << usernames.size();
+    qDebug() << "score size 2: " << scores.size();
 
     if(this->usernames.indexOf(this->user->getUsername())==0 || this->usernames.indexOf(this->user->getUsername())==1) {
         quint64 rankscore = this->user->getRankScore()+5;
@@ -470,7 +485,22 @@ QString RequestProcessing::finishGame()
         roomAPI->updateStatusAndEndtime(this->room->getId(), 2, currentDateTimeString);
     }
 
-    this->room->updateUser(this->user, score);
+    // Tìm User có ID bằng với đối tượng user đã cung cấp
+    User* userToUpdate = nullptr;
+    QList<User*> listKey = this->room->getUserAndPoint().keys();
+//    for (auto it = this->room->getUserAndPoint().begin(); it != this->room->getUserAndPoint().end(); ++it) {
+    for(User* it : listKey) {
+        if (it->getId() == this->user->getId()) {
+            userToUpdate = it;
+            break;
+        }
+    }
+
+    // Kiểm tra xem User có tồn tại trong QMap hay không
+    if (userToUpdate) {
+        // Thay đổi giá trị của quint64 cho User tìm thấy
+        this->room->getUserAndPoint().insert(userToUpdate, score);
+    }
 
     histopyAPI->updateHistory(this->user->getId(), score, this->room->getStartTime(), this->room->getEndTime());
 

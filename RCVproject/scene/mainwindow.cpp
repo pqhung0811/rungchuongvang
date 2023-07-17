@@ -10,8 +10,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
     setStyleSheet("MainWindow {background-image:url(D:/Networkprogramming/project/images/aaa.jpg)}");
     ui->setupUi(this);
-    this->clientCore = new ClientCore();
-    this->clientCore->start();
     //    connect(ui->registerBtn, &QPushButton::clicked, this, &MainWindow::on_registerBtn_clicked);
     //    connect(ui->signInBtn, SIGNAL(clicked()), this, SLOT(on_signInBtn_clicked()));
     connect(ui->usernameEdit, &QLineEdit::returnPressed, this, &MainWindow::handleUserLineEditReturnPressed);
@@ -113,6 +111,13 @@ void MainWindow::handleLoginResponse(const QJsonDocument &response)
 void MainWindow::disconnectSignal()
 {
     disconnect(clientCore, &ClientCore::Finished, this, &MainWindow::handleLoginResponse);
+}
+
+void MainWindow::start()
+{
+    this->clientCore = new ClientCore();
+    this->clientCore->start();
+    this->show();
 }
 
 ClientCore *MainWindow::getClientCore() const
