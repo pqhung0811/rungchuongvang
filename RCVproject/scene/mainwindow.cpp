@@ -32,6 +32,7 @@ void MainWindow::on_signInBtn_clicked()
 void MainWindow::on_registerBtn_clicked()
 {
     RegisterScene *registerScene = new RegisterScene();
+    registerScene->setClientCore(this->clientCore);
     registerScene->show();
     close();
 }

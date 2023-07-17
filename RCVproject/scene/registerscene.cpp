@@ -42,7 +42,9 @@ void RegisterScene::handleRegisterResponse(const QJsonDocument &response)
         }
     }
     if (status.compare("success") == 0) {
+        disconnect(clientCore, &ClientCore::Finished, this, &RegisterScene::handleRegisterResponse);
         MainWindow* w = new MainWindow();
+        w->setClientCore(this->clientCore);
         w->show();
         close();
     } else {
